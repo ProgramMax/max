@@ -41,7 +41,7 @@
 
 #if defined __clang__
 	// Clang
-	//#include <max/Compiling/Configuration/Compiler/Clang.hpp>
+	#include <max/Compiling/Configuration/Compiler/Clang.hpp>
 #elif defined __GNUC__
 	// GNU C++
 	#include <max/Compiling/Configuration/Compiler/GCC.hpp>
