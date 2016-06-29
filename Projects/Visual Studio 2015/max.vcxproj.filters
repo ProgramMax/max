@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Documentation">
+      <UniqueIdentifier>{4c7c656f-4470-4128-82ed-47a0684591d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code">
+      <UniqueIdentifier>{d2123baa-7920-4f49-b290-6d7dc9d9a7fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include">
+      <UniqueIdentifier>{5672a906-1e18-430d-91d0-9f2872581d79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max">
+      <UniqueIdentifier>{8fcc280b-3395-4d8f-91f6-efd36b6e095d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max\Algorithms">
+      <UniqueIdentifier>{ef2b33c4-006e-4524-bad8-393affca4fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max\Compiling">
+      <UniqueIdentifier>{0e2c42f3-8745-48ac-82e5-055b18b59af2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max\Compiling\Configuration">
+      <UniqueIdentifier>{a107dc5d-8877-40d9-ae69-9c4e1395584e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max\Compiling\Configuration\Compiler">
+      <UniqueIdentifier>{2e7f9cd0-9d97-4289-9202-0bc4ef0cd599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max\Compiling\Configuration\Platform">
+      <UniqueIdentifier>{39da6255-01a9-44a9-afa7-68f668fd22fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max\Logging">
+      <UniqueIdentifier>{9dcc4813-e67e-4464-b4a1-925d3bc861bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max\Testing">
+      <UniqueIdentifier>{413e845b-b106-4fcc-9f0d-6e2e599c7b97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\TranslationUnits">
+      <UniqueIdentifier>{1707eb6e-83a0-4b69-a866-9d79e863cd01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\TranslationUnits\Logging">
+      <UniqueIdentifier>{c902cd84-8175-46e1-8920-13ddbaf175ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\TranslationUnits\Testing">
+      <UniqueIdentifier>{7b58322f-3f75-45bd-b97f-6b3ea473f3a9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Code\Include\max\Algorithms\IsBetween.inl">
+      <Filter>Code\Include\max\Algorithms</Filter>
+    </None>
+    <None Include="..\..\Code\Include\max\Algorithms\ScopedFunctor.inl">
+      <Filter>Code\Include\max\Algorithms</Filter>
+    </None>
+    <None Include="..\..\Code\Include\max\Algorithms\SwapEndian.inl">
+      <Filter>Code\Include\max\Algorithms</Filter>
+    </None>
+    <None Include="..\..\Code\Include\max\Compiling\UnreferencedValue.inl">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </None>
+    <None Include="..\..\Documentation\StyleGuide.md">
+      <Filter>Documentation</Filter>
+    </None>
+    <None Include="..\..\LICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Code\Include\max\Algorithms\IsBetween.hpp">
+      <Filter>Code\Include\max\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Algorithms\OptimizingAssert.hpp">
+      <Filter>Code\Include\max\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Algorithms\ScopedFunctor.hpp">
+      <Filter>Code\Include\max\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Algorithms\SwapEndian.hpp">
+      <Filter>Code\Include\max\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Algorithms\Yield.hpp">
+      <Filter>Code\Include\max\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler\Clang.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler\GCC.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler\VC.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration\Compiler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\Linux.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\MacOS.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\Win32.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\StandardLibrary.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Alignment.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Assume.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\CurrentVersionNamespace.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\FavorBranchLocality.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\FunctionOptimizations.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\IsRegular.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\MemoryBarrier.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\NoDefault.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\StaticAssert.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\ThrowSpecification.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\UnreferencedValue.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\VirtualFunctionSpecification.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Logging\DoNothingLogger.hpp">
+      <Filter>Code\Include\max\Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Testing\Test.hpp">
+      <Filter>Code\Include\max\Testing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Testing\TestSuite.hpp">
+      <Filter>Code\Include\max\Testing</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Code\TranslationUnits\Testing\Test.cpp">
+      <Filter>Code\TranslationUnits\Testing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\TranslationUnits\Testing\TestSuite.cpp">
+      <Filter>Code\TranslationUnits\Testing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp">
+      <Filter>Code\TranslationUnits\Logging</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
