@@ -1,3 +1,6 @@
+// Copyright 2016, Chris Blume
+// All rights reserved.
+
 #ifndef MAXTESTS_ALGORITHMS_ISBETWEENTEST_HPP
 #define MAXTESTS_ALGORITHMS_ISBETWEENTEST_HPP
 

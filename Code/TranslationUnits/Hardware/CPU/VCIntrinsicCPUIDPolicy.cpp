@@ -1,3 +1,6 @@
+// Copyright 2016, Chris Blume
+// All rights reserved.
+
 #include <max/Hardware/CPU/VCIntrinsicCPUIDPolicy.hpp>
 #include <intrin.h>
 
