@@ -32,24 +32,24 @@ namespace max
 namespace Algirhtms
 {
 
-	inline unsigned int SwapEndian( unsigned int Value ) MAX_DOES_NOT_THROW
+	inline uint32_t SwapEndian( uint32_t Value ) MAX_DOES_NOT_THROW
 	{
 		return ( ( ( Value & 0xff000000 ) >> 24 ) | ( ( Value & 0x00ff0000 ) >> 8 ) | ( ( Value & 0x0000ff00 ) << 8 )  | ( ( Value & 0x000000ff ) << 24 ) );
 	}
 
-	inline unsigned short SwapEndian( unsigned short Value ) MAX_DOES_NOT_THROW
+	inline uint16_t SwapEndian( uint16_t Value ) MAX_DOES_NOT_THROW
 	{
-		return static_cast< unsigned short >( ( ( Value & 0xff00 ) >> 8 ) | ( ( Value & 0x00ff ) << 8 ) );
+		return static_cast< uint16_t >( ( ( Value & 0xff00 ) >> 8 ) | ( ( Value & 0x00ff ) << 8 ) );
 	}
 
-	inline int SwapEndian( int Value ) MAX_DOES_NOT_THROW
+	inline int32_t SwapEndian( int32_t Value ) MAX_DOES_NOT_THROW
 	{
-		return SwapEndian( reinterpret_cast< unsigned int >( Value ) );
+		return SwapEndian( static_cast< uint32_t >( Value ) );
 	}
 
-	inline short SwapEndian( short Value ) MAX_DOES_NOT_THROW
+	inline int16_t SwapEndian( int16_t Value ) MAX_DOES_NOT_THROW
 	{
-		return SwapEndian( reinterpret_cast< unsigned short >( Value ) );
+		return SwapEndian( static_cast< uint16_t >( Value ) );
 	}
 
 } // namespace Algorithms
