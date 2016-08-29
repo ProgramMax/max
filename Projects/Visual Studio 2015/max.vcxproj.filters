@@ -115,9 +115,6 @@
       <Filter>Documentation</Filter>
     </None>
     <None Include="..\..\LICENSE" />
-    <None Include="..\..\Code\TranslationUnits\Hardware\CPU\TODO.md">
-      <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
-    </None>
     <None Include="..\..\Code\TranslationUnits\Hardware\CPU\Documentation.md">
       <Filter>Code\TranslationUnits\Hardware\CPU\Policies\IsCPUIDAvailablePolicies</Filter>
     </None>

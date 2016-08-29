@@ -24,7 +24,6 @@
     <None Include="..\..\Code\Include\max\Algorithms\SwapEndian.inl" />
     <None Include="..\..\Code\Include\max\Compiling\UnreferencedValue.inl" />
     <None Include="..\..\Code\TranslationUnits\Hardware\CPU\Documentation.md" />
-    <None Include="..\..\Code\TranslationUnits\Hardware\CPU\TODO.md" />
     <None Include="..\..\Documentation\StyleGuide.md" />
     <None Include="..\..\LICENSE" />
   </ItemGroup>
@@ -153,9 +152,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>..\..\Code\Include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>..\..\Code\Include;$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>..\..\Code\Include;$(IncludePath)</IncludePath>

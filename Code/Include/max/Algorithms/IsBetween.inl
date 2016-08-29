@@ -33,19 +33,13 @@ namespace Algorithms
 {
 
 	template< typename T >
-	inline bool IsBetween( const T Value, const T Minimum, const T Maximum )
+	inline bool IsBetween( const T Value, const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW
 	{
-		// The use of unsigned here assumes T is an integer type.
-		// This will crash hard if it's a string, for example.
-		// But it's good enough for now.
-		unsigned T Difference = Maximum - Minimum;
-		unsigned T ShiftedValue = Maximum - Value;
-
-		return ShiftedValue < Difference;
+		return Minimum < Value && Value < Maximum;
 	}
 
 	template<>
-	inline bool IsBetween( const char Value, const char Minimum, const char Maximum )
+	inline bool IsBetween( const char Value, const char Minimum, const char Maximum ) MAX_DOES_NOT_THROW
 	{
 		unsigned char Difference = Maximum - Minimum;
 		unsigned char ShiftedValue = Maximum - Value;

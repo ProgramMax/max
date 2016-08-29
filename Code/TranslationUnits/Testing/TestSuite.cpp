@@ -36,7 +36,7 @@ namespace max
 namespace Testing
 {
 
-	TestSuite::TestSuite( wchar_t const * const Name )
+	TestSuite::TestSuite( char const * const Name )
 		: Name( Name )
 	{
 	}
@@ -53,27 +53,27 @@ namespace Testing
 
 	void TestSuite::RunTests()
 	{
-		std::wcout << L"Running test suite " << Name << std::endl;
-		std::wcout << L"Setting up test suite " << Name << "." << std::endl;
+		std::cout << "Running test suite " << Name << std::endl;
+		std::cout << "Setting up test suite " << Name << "." << std::endl;
 		Setup();
-		std::wcout << L"Done setting up test suite " << Name << "." << std::endl;
+		std::cout << "Done setting up test suite " << Name << "." << std::endl;
 
 		for( auto & CurrentTest : Tests )
 		{
-			std::wcout << L"Running test " << CurrentTest.Name << "." << std::endl;
+			std::cout << "Running test " << CurrentTest.Name << "." << std::endl;
 			CurrentTest.TestFunction( CurrentTest );
 			auto TestPassed = CurrentTest.DidTestPass();
 			if( TestPassed )
 			{
-				std::wcout << L"Passed test " << CurrentTest.Name << "." << std::endl;
+				std::cout << "Passed test " << CurrentTest.Name << "." << std::endl;
 			} else {
-				std::wcout << L"Failed test " << CurrentTest.Name << "." << std::endl;
+				std::cout << "Failed test " << CurrentTest.Name << "." << std::endl;
 			}
 		}
 
-		std::wcout << L"Tearing down test suite " << Name << "." << std::endl;
+		std::cout << "Tearing down test suite " << Name << "." << std::endl;
 		TearDown();
-		std::wcout << L"Done tearing down test suite " << Name << "." << std::endl;
+		std::cout << "Done tearing down test suite " << Name << "." << std::endl;
 	}
 
 	void TestSuite::Setup()

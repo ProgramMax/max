@@ -65,7 +65,7 @@ namespace Testing
 	{
 	public:
 
-		TestSuite( wchar_t const * const Name );
+		TestSuite( char const * const Name );
 
 		void AddTest( max::Testing::Test const &  TestToAdd );
 		void AddTest( max::Testing::Test       && TestToAdd );
@@ -78,7 +78,7 @@ namespace Testing
 
 	private:
 
-		std::wstring Name;
+		std::string Name;
 		std::vector< max::Testing::Test > Tests;
 
 	};
