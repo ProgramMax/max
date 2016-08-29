@@ -1,3 +1,6 @@
+// Copyright 2016, Chris Blume
+// All rights reserved.
+
 #include "IsBetweenTest.hpp"
 #include <iostream>
 

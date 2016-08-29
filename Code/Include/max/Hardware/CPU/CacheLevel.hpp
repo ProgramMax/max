@@ -1,3 +1,6 @@
+// Copyright 2016, Chris Blume
+// All rights reserved.
+
 #ifndef MAX_CPU_CACHELEVEL_HPP
 #define MAX_CPU_CACHELEVEL_HPP
 
