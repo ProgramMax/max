@@ -31,6 +31,7 @@
 #define MAX_ALGORITHMS_SWAPENDIAN_HPP
 
 #include <max/Compiling/FunctionOptimizations.hpp>
+#include <cstdint>
 #include <max/Compiling/ThrowSpecification.hpp>
 
 namespace max
@@ -38,10 +39,10 @@ namespace max
 namespace Algorithms
 {
 
-	Pure( inline unsigned int   SwapEndian( unsigned int Value   ) MAX_DOES_NOT_THROW );
-	Pure( inline unsigned short SwapEndian( unsigned short Value ) MAX_DOES_NOT_THROW );
-	Pure( inline unsigned int   SwapEndian( int Value            ) MAX_DOES_NOT_THROW );
-	Pure( inline unsigned short SwapEndian( short Value          ) MAX_DOES_NOT_THROW );
+	Pure( inline uint32_t SwapEndian( uint32_t Value ) MAX_DOES_NOT_THROW );
+	Pure( inline uint16_t SwapEndian( uint16_t Value ) MAX_DOES_NOT_THROW );
+	Pure( inline int32_t  SwapEndian( int32_t  Value ) MAX_DOES_NOT_THROW );
+	Pure( inline int16_t  SwapEndian( int16_t  Value ) MAX_DOES_NOT_THROW );
 
 } // namespace Algorithms
 } // namespace max
