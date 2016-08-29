@@ -38,10 +38,10 @@ namespace Algorithms
 {
 
 	template< typename T >
-	bool IsBetween( const T Value, const T Minimum, const T Maximum ) NO_THROW;
+	bool IsBetween( const T Value, const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW;
 
 	template< >
-	bool IsBetween( const char Value, const char Minimum, const char Maximum ) NO_THROW;
+	bool IsBetween( const char Value, const char Minimum, const char Maximum ) MAX_DOES_NOT_THROW;
 
 } // namespace Algorithms
 } // namespace max

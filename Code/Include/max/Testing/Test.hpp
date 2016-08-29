@@ -51,7 +51,7 @@ namespace Testing
 	{
 	public:
 
-		Test( wchar_t const * const Name, std::function< void( max::Testing::Test & CurrentTest ) > const & TestFunction  );
+		Test( char const * const Name, std::function< void( max::Testing::Test & CurrentTest ) > const & TestFunction  );
 
 		bool DidTestPass() const;
 
@@ -64,7 +64,7 @@ namespace Testing
 		void AssertDoesNotThrow( char const * const FileName, int LineNumber, char const * const ExpressionString, FunctorType const & Functor );
 
 
-		const std::wstring Name;
+		const std::string Name;
 		std::function< void( max::Testing::Test & CurrentTest ) > TestFunction;
 
 	private:

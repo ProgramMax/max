@@ -35,7 +35,7 @@ namespace max
 namespace Testing
 {
 
-	Test::Test( wchar_t const * const Name, std::function< void( max::Testing::Test & CurrentTest ) > const & TestFunction )
+	Test::Test( char const * const Name, std::function< void( max::Testing::Test & CurrentTest ) > const & TestFunction )
 		: Name( Name )
 		, TestFunction( TestFunction )
 		, DidAllAssertionsPass( true )
