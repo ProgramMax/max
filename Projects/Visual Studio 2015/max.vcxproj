@@ -23,6 +23,8 @@
     <None Include="..\..\Code\Include\max\Algorithms\ScopedFunctor.inl" />
     <None Include="..\..\Code\Include\max\Algorithms\SwapEndian.inl" />
     <None Include="..\..\Code\Include\max\Compiling\UnreferencedValue.inl" />
+    <None Include="..\..\Code\TranslationUnits\Hardware\CPU\Documentation.md" />
+    <None Include="..\..\Code\TranslationUnits\Hardware\CPU\TODO.md" />
     <None Include="..\..\Documentation\StyleGuide.md" />
     <None Include="..\..\LICENSE" />
   </ItemGroup>
@@ -54,11 +56,46 @@
     <ClInclude Include="..\..\Code\Include\max\Compiling\ThrowSpecification.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\UnreferencedValue.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\VirtualFunctionSpecification.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\AssemblyCPUIDPolicy.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\AssemblyIsCPUIDAvailablePolicy.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\Associativity.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CacheInfo.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CacheLevel.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CPUID.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafResult.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\GCCAssemblyCPUIDPolicy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\Prefetch.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\TLB.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\VCIntrinsicCPUIDPolicy.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Logging\DoNothingLogger.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Testing\Test.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Testing\TestSuite.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\AssemblyCPUIDPolicy.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\AssemblyIsCPUIDAvailablePolicy.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\Associativity.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\CacheInfo.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\CacheLevel.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\CPUID.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\GCCAssemblyCPUIDPolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\Prefetch.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp" />
+    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\VCIntrinsicCPUIDPolicy.cpp" />
     <ClCompile Include="..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp" />
     <ClCompile Include="..\..\Code\TranslationUnits\Testing\Test.cpp" />
     <ClCompile Include="..\..\Code\TranslationUnits\Testing\TestSuite.cpp" />
