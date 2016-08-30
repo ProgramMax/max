@@ -160,9 +160,11 @@
   <ItemGroup>
     <ClCompile Include="EntryPoint.cpp" />
     <ClCompile Include="IsBetweenTest.cpp" />
+    <ClCompile Include="RangeTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IsBetweenTest.hpp" />
+    <ClInclude Include="RangeTest.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

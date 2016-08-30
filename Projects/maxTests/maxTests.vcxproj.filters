@@ -4,16 +4,25 @@
     <Filter Include="Algorithms">
       <UniqueIdentifier>{9b585a7b-96e7-45e7-8482-d51d1ae891b7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Containers">
+      <UniqueIdentifier>{1233b652-444f-4ed6-8394-ec195226d503}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IsBetweenTest.cpp">
       <Filter>Algorithms</Filter>
     </ClCompile>
     <ClCompile Include="EntryPoint.cpp" />
+    <ClCompile Include="RangeTest.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IsBetweenTest.hpp">
       <Filter>Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="RangeTest.hpp">
+      <Filter>Containers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

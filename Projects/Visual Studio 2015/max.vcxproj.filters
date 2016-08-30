@@ -97,6 +97,9 @@
     <Filter Include="Code\TranslationUnits\Hardware\CPU\Policies\CPUIDPolicis\VCIntrinsic">
       <UniqueIdentifier>{575441b0-7a25-4433-831f-48566d7f6afb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Include\max\Containers">
+      <UniqueIdentifier>{71aa0028-8a13-455b-8cd1-e5dcec8cb389}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Code\Include\max\Algorithms\IsBetween.inl">
@@ -117,6 +120,9 @@
     <None Include="..\..\LICENSE" />
     <None Include="..\..\Code\TranslationUnits\Hardware\CPU\Documentation.md">
       <Filter>Code\TranslationUnits\Hardware\CPU\Policies\IsCPUIDAvailablePolicies</Filter>
+    </None>
+    <None Include="..\..\Code\Include\max\Containers\Range.inl">
+      <Filter>Code\Include\max\Containers</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +254,9 @@
     </ClInclude>
     <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\VCIntrinsicCPUIDPolicy.hpp">
       <Filter>Code\Include\max\Hardware\CPU\Policies\CPUIDPolicies\VCIntrinsic</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Containers\Range.hpp">
+      <Filter>Code\Include\max\Containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

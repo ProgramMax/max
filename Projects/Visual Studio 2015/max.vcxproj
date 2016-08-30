@@ -23,6 +23,7 @@
     <None Include="..\..\Code\Include\max\Algorithms\ScopedFunctor.inl" />
     <None Include="..\..\Code\Include\max\Algorithms\SwapEndian.inl" />
     <None Include="..\..\Code\Include\max\Compiling\UnreferencedValue.inl" />
+    <None Include="..\..\Code\Include\max\Containers\Range.inl" />
     <None Include="..\..\Code\TranslationUnits\Hardware\CPU\Documentation.md" />
     <None Include="..\..\Documentation\StyleGuide.md" />
     <None Include="..\..\LICENSE" />
@@ -55,6 +56,7 @@
     <ClInclude Include="..\..\Code\Include\max\Compiling\ThrowSpecification.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\UnreferencedValue.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\VirtualFunctionSpecification.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Containers\Range.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\AssemblyCPUIDPolicy.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\AssemblyIsCPUIDAvailablePolicy.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\Associativity.hpp" />
