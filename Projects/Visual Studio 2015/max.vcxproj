@@ -31,6 +31,7 @@
     <None Include="..\..\Documentation\max\v0\v0.md" />
     <None Include="..\..\Documentation\StyleGuide.md" />
     <None Include="..\..\LICENSE" />
+    <None Include="IsBetween.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Code\Include\max\Algorithms\IsBetween.hpp" />

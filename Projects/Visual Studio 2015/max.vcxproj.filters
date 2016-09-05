@@ -109,6 +109,9 @@
     <Filter Include="Documentation\max\v0\Containers">
       <UniqueIdentifier>{02e79c1a-a9dc-42f6-91ea-66de4f005068}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Documentation\max\v0\Algorithms">
+      <UniqueIdentifier>{b10e5494-b7eb-49a0-8b13-064f9ea93fb7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Code\Include\max\Algorithms\IsBetween.inl">
@@ -144,6 +147,9 @@
     </None>
     <None Include="..\..\Documentation\max\v0\Containers\MakeRange.md">
       <Filter>Documentation\max\v0\Containers</Filter>
+    </None>
+    <None Include="IsBetween.md">
+      <Filter>Documentation\max\v0\Algorithms</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

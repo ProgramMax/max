@@ -3,6 +3,8 @@
 
 namespace max
 {
+namespace v0
+{
 namespace Algorithms
 {
 
@@ -13,4 +15,5 @@ namespace Algorithms
 	}
 
 } // namespace Algorithms
+} // namespace v0
 } // namespace max
