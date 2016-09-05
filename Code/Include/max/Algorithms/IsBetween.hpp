@@ -13,7 +13,7 @@ namespace Algorithms
 {
 
 	template< typename T >
-	bool IsBetween( const T Value, const max::Containers::Range< T > & Range ) MAX_DOES_NOT_THROW;
+	constexpr bool IsBetween( const T Value, const max::Containers::Range< T > & Range ) MAX_DOES_NOT_THROW;
 
 } // namespace Algorithms
 } // namespace max

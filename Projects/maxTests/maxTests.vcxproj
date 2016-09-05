@@ -158,13 +158,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EntryPoint.cpp" />
-    <ClCompile Include="IsBetweenTest.cpp" />
-    <ClCompile Include="RangeTest.cpp" />
+    <ClCompile Include="..\..\Code\Tests\EntryPoint.cpp" />
+    <ClCompile Include="..\..\Code\Tests\IsBetweenTest.cpp" />
+    <ClCompile Include="..\..\Code\Tests\RangeTest.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IsBetweenTest.hpp" />
-    <ClInclude Include="RangeTest.hpp" />
+    <ClInclude Include="..\..\Code\Tests\IsBetweenTest.hpp" />
+    <ClInclude Include="..\..\Code\Tests\RangeTest.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

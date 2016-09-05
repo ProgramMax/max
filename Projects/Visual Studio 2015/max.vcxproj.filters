@@ -100,6 +100,15 @@
     <Filter Include="Code\Include\max\Containers">
       <UniqueIdentifier>{71aa0028-8a13-455b-8cd1-e5dcec8cb389}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Documentation\max">
+      <UniqueIdentifier>{7537fa1e-d771-4a81-84f1-c8e09f24fba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Documentation\max\v0">
+      <UniqueIdentifier>{f7b357b5-721d-4bec-8443-b6182a1fd974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Documentation\max\v0\Containers">
+      <UniqueIdentifier>{02e79c1a-a9dc-42f6-91ea-66de4f005068}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Code\Include\max\Algorithms\IsBetween.inl">
@@ -123,6 +132,18 @@
     </None>
     <None Include="..\..\Code\Include\max\Containers\Range.inl">
       <Filter>Code\Include\max\Containers</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Containers\Range_ctor.md">
+      <Filter>Documentation\max\v0\Containers</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\v0.md">
+      <Filter>Documentation\max\v0</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Containers\Range.md">
+      <Filter>Documentation\max\v0\Containers</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Containers\MakeRange.md">
+      <Filter>Documentation\max\v0\Containers</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

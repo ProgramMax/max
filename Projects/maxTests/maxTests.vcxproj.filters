@@ -9,20 +9,20 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IsBetweenTest.cpp">
-      <Filter>Algorithms</Filter>
-    </ClCompile>
-    <ClCompile Include="EntryPoint.cpp" />
-    <ClCompile Include="RangeTest.cpp">
+    <ClCompile Include="..\..\Code\Tests\RangeTest.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Code\Tests\IsBetweenTest.cpp">
+      <Filter>Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Code\Tests\EntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IsBetweenTest.hpp">
-      <Filter>Algorithms</Filter>
-    </ClInclude>
-    <ClInclude Include="RangeTest.hpp">
+    <ClInclude Include="..\..\Code\Tests\RangeTest.hpp">
       <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Tests\IsBetweenTest.hpp">
+      <Filter>Algorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,11 +3,13 @@
 
 namespace max
 {
+namespace v0
+{
 namespace Containers
 {
 
 	template< typename T >
-	Range< T >::Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW
+	constexpr Range< T >::Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW
 		: Minimum( Minimum )
 		, Maximum( Maximum )
 	{
@@ -23,4 +25,5 @@ namespace Containers
 	}
 
 } // namespaxe Containers
+} // namespace v0
 } // namespace max

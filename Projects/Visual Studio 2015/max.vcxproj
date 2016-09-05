@@ -25,6 +25,10 @@
     <None Include="..\..\Code\Include\max\Compiling\UnreferencedValue.inl" />
     <None Include="..\..\Code\Include\max\Containers\Range.inl" />
     <None Include="..\..\Code\TranslationUnits\Hardware\CPU\Documentation.md" />
+    <None Include="..\..\Documentation\max\v0\Containers\MakeRange.md" />
+    <None Include="..\..\Documentation\max\v0\Containers\Range.md" />
+    <None Include="..\..\Documentation\max\v0\Containers\Range_ctor.md" />
+    <None Include="..\..\Documentation\max\v0\v0.md" />
     <None Include="..\..\Documentation\StyleGuide.md" />
     <None Include="..\..\LICENSE" />
   </ItemGroup>

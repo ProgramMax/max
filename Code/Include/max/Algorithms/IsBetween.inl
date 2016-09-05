@@ -7,9 +7,9 @@ namespace Algorithms
 {
 
 	template< typename T >
-	inline bool IsBetween( const T Value, const max::Containers::Range< T > & Range ) MAX_DOES_NOT_THROW
+	constexpr inline bool IsBetween( const T Value, const max::Containers::Range< T > & Range ) MAX_DOES_NOT_THROW
 	{
-		return Range.Minimum < Value && Value < Range.Maximum;
+		return Range.Minimum <= Value && Value <= Range.Maximum;
 	}
 
 } // namespace Algorithms

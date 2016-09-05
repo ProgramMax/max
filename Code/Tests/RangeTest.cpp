@@ -12,6 +12,9 @@ namespace Containers
 
 	void RunRangeTestSuite()
 	{
+		static_assert( max::Containers::Range< int >{ 0, 1 }.Maximum == 1, "max::Containers::Range ctor should be constexpr" );
+
+
 		auto RangeTestSuite = max::Testing::TestSuite{ "max::Containers::Range test suite" };
 
 		RangeTestSuite.AddTest( max::Testing::Test{ "constructor sets minimum and maximum correctly", []( max::Testing::Test & CurrentTest ) {
@@ -36,7 +39,7 @@ namespace Containers
 		} );
 
 		RangeTestSuite.AddTest( max::Testing::Test{ "MakeRange with maximum first", []( max::Testing::Test & CurrentTest ) {
-			auto testRange = max::Containers::MakeRange( 100, 42 );
+ 			auto testRange = max::Containers::MakeRange( 100, 42 );
 			CurrentTest.MAX_TESTING_ASSERT( testRange.Minimum == 42  );
 			CurrentTest.MAX_TESTING_ASSERT( testRange.Maximum == 100 );
 		}
