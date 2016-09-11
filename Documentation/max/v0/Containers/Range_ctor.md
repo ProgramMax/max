@@ -34,4 +34,4 @@ max::Algorithms::IsBetween( 50, range );
 
 ## Implementation
 
-Go to [the implementation](../../../Code/Include/max/Containers/Range.inl#L12).
+Go to [the implementation](../../../../Code/Include/max/Containers/Range.inl#L12).
