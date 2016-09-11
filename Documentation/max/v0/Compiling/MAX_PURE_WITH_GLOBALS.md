@@ -26,4 +26,4 @@ MAX_PURE_WITH_GLOBALS( void UpdateGlobalStats( int ElapsedTicks, T ExtraInformat
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L27).
+Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L25).

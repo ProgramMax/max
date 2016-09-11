@@ -24,4 +24,4 @@ MAX_PURE( inline T Max( const T lhs, const T rhs ) );
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L12).
+Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L9).

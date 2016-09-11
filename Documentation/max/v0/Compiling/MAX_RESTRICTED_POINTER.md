@@ -19,4 +19,4 @@ void free( MAX_RESTRICTED_POINTER void * ptr );
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L52).
+Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L50).
