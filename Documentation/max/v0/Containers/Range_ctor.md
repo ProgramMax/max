@@ -7,15 +7,19 @@ API version: [**v0**](../../v0.md)
 This ctor does not enforce Maximum >= Minimum. It is the developer's responsibility to provide valid values.
 A convenience function, [max::Containers::MakeRange](MakeRange.md), is provided to order the values.
 
+This function is [pure](../Compiling/MAX_PURE.md).
+
 ## Signature
 
 ```c++
+MAX_PURE(
 Range(
 
 	const T Minimum,
 	const T Maximum
 
-) MAX_DOES_NOT_THROW;
+) MAX_DOES_NOT_THROW
+);
 ```
 
 ## Parameters

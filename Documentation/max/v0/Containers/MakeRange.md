@@ -8,16 +8,20 @@ This function is provided as a convenience function.
 The [Range ctor](Range_ctor.md) should be called instead if the developer knows which parameter is the minimum and which is the maximum.
 When the min/max is not yet known, this function can be called instead.
 
+This function is [pure](../Compiling/MAX_PURE.md).
+
 ## Signature
 
 ```c++
 template< typename T >
+MAX_PURE(
 Range< T > MakeRange(
 
 	const T Value1,
 	const T Value2
 
-) MAX_DOES_NOT_THROW;
+) MAX_DOES_NOT_THROW
+);
 ```
 
 ## Parameters

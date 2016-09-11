@@ -6,7 +6,7 @@ API version: [**v0**](../../v0.md)
 
 This function uses an inclusive range.
 
-This function is [semi-pure](../Compiling/AliasingOptimizations.md#MAX_SEMI_PURE).
+This function is [semi-pure](../Compiling/MAX_SEMI_PURE.md).
 
 ## Signature
 
