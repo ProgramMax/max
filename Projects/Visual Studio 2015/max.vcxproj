@@ -25,13 +25,20 @@
     <None Include="..\..\Code\Include\max\Compiling\UnreferencedValue.inl" />
     <None Include="..\..\Code\Include\max\Containers\Range.inl" />
     <None Include="..\..\Code\TranslationUnits\Hardware\CPU\Documentation.md" />
+    <None Include="..\..\Documentation\max\v0.md" />
+    <None Include="..\..\Documentation\max\v0\Algorithms\IsBetween.md" />
+    <None Include="..\..\Documentation\max\v0\Compiling\AliasingOptimizations.md" />
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_REFERENCE.md" />
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_POINTER.md" />
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_PURE.md" />
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_PURE_WITH_GLOBALS.md" />
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_SEMI_PURE.md" />
     <None Include="..\..\Documentation\max\v0\Containers\MakeRange.md" />
     <None Include="..\..\Documentation\max\v0\Containers\Range.md" />
     <None Include="..\..\Documentation\max\v0\Containers\Range_ctor.md" />
-    <None Include="..\..\Documentation\max\v0\v0.md" />
     <None Include="..\..\Documentation\StyleGuide.md" />
     <None Include="..\..\LICENSE" />
-    <None Include="IsBetween.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Code\Include\max\Algorithms\IsBetween.hpp" />
@@ -47,13 +54,14 @@
     <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler\GCC.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler\VC.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\Android.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\Linux.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\MacOS.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\Win32.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\StandardLibrary.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\CurrentVersionNamespace.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\FavorBranchLocality.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\FunctionOptimizations.hpp" />
+    <ClInclude Include="..\..\Code\Include\max\Compiling\AliasingOptimizations.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\IsRegular.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\MemoryBarrier.hpp" />
     <ClInclude Include="..\..\Code\Include\max\Compiling\NoDefault.hpp" />

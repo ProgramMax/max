@@ -48,21 +48,21 @@
 #elif _MSC_VER == 1600
 	// VC 10.0 (2010)
 	#define MAX_COMPILER_VERSION_MAJOR 10
-	#define MAX_COMPILER_VERSION_MINOR 0
+	#define MAX_COMPILER_VERSION_MINOR  0
 #elif _MSC_VER == 1700
 	// VC 11.0 (2012)
 	#define MAX_COMPILER_VERSION_MAJOR 11
-	#define MAX_COMPILER_VERSION_MINOR 0
+	#define MAX_COMPILER_VERSION_MINOR  0
 #elif _MSC_VER == 1800
 	// VC 12.0 (2013)
 	#define MAX_COMPILER_VERSION_MAJOR 12
-	#define MAX_COMPILER_VERSION_MINOR 0
+	#define MAX_COMPILER_VERSION_MINOR  0
 #elif _MSC_VER == 1900
 	// VC 14.0 (2015)
 	#define MAX_COMPILER_VERSION_MAJOR 14
-	#define MAX_COMPILER_VERSION_MINOR 0
+	#define MAX_COMPILER_VERSION_MINOR  0
 #endif
-#define MAX_COMPILER_VERSION_REVISION 0
+#define MAX_COMPILER_VERSION_PATCH 0
 
 
 // VC sets _CPPUNWIND on /EHsc but not /EHa ... I think?
@@ -78,8 +78,8 @@
 	#define	MAX_INLINE_NAMESPACES_SUPPORTED
 #endif
 
-#if (_MSC_VER > 1900)
-#error "Unknown compiler version"
+#if _MSC_VER > 1900
+	#error "Unknown compiler version"
 #endif
 
 #endif // #ifndef MAX_COMPILING_CONFIGURATION_COMPILER_VC_HPP

@@ -1,0 +1,7 @@
+﻿C:\Program Files\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (maxTests.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  RangeTest.cpp
+  IsBetweenTest.cpp
+  EntryPoint.cpp
+  Generating Code...
+  maxAutomatedTests.vcxproj -> C:\Programming\Projects\max\Projects\Visual Studio 2015\Debug\maxAutomatedTests.exe
+  maxAutomatedTests.vcxproj -> C:\Programming\Projects\max\Projects\Visual Studio 2015\Debug\maxAutomatedTests.pdb (Full PDB)

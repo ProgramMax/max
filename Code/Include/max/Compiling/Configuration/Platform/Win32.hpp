@@ -8,8 +8,6 @@
 
 #define MAX_PLATFORM_WINDOWS
 
-#define MAX_PLATFORM_WINDOWS
-
 #ifdef _WIN32
 	#define MAX_32BIT_WORD_SIZE
 #endif

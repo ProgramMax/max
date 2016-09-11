@@ -3,15 +3,12 @@
 
 #include "RangeTest.hpp"
 #include "IsBetweenTest.hpp"
-#include <iostream>
 
 int main()
 {
 
-	maxTests::Containers::RunRangeTestSuite();
-	maxTests::Algorithms::RunIsBetweenTestSuite();
-
-	system( "pause" );
+	maxAutomatedTests::Containers::RunRangeTestSuite();
+	maxAutomatedTests::Algorithms::RunIsBetweenTestSuite();
 
 	return 0;
 }

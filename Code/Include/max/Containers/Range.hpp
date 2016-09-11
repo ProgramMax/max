@@ -1,7 +1,10 @@
 #ifndef MAX_CONTAINERS_RANGE_HPP
 #define MAX_CONTAINERS_RANGE_HPP
 
+// Documentaiton: ../../../../Documentation/max/v0/Containers/Range.md
+
 #include <max/Compiling/CurrentVersionNamespace.hpp>
+#include <max/Compiling/AliasingOptimizations.hpp>
 #include <max/Compiling/ThrowSpecification.hpp>
 
 namespace max
@@ -16,15 +19,17 @@ namespace Containers
 	{
 	public:
 
-		constexpr Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW;
+		// Documentation: ../../../../Documentation/max/v0/Containers/Range_ctor.md
+		MAX_PURE( constexpr Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW );
 
 		T Minimum;
 		T Maximum;
 
 	};
 
+	// Documentation: ../../../../Documentation/max/v0/Containers/MakeRange.md
 	template< typename T >
-	Range< T > MakeRange( const T Value1, const T Value2 ) MAX_DOES_NOT_THROW;
+	MAX_PURE( Range< T > MakeRange( const T Value1, const T Value2 ) MAX_DOES_NOT_THROW );
 
 } // namespace Containers
 } // MAX_CURRENT_VERSION_NAMESPACE_BEGIN( v0 )

@@ -5,7 +5,7 @@
 #include <max/Algorithms/IsBetween.hpp>
 #include <max/Testing/TestSuite.hpp>
 
-namespace maxTests
+namespace maxAutomatedTests
 {
 namespace Algorithms
 {
@@ -38,4 +38,4 @@ namespace Algorithms
 	}
 
 } // namespace Algorithms
-} // namespace maxTests
+} // namespace maxAutomatedTests

@@ -1,4 +1,4 @@
-# max::Containers::Range::MakeRange
+# max::Containers::MakeRange
 
 API version: [**v0**](../../v0.md)
 
@@ -33,3 +33,7 @@ Range< T > MakeRange(
 auto range = max::Containers::MakeRange< int >( 1, 100 );
 max::Algorithms::IsBetween( 50, range );
 ```
+
+## Implementation
+
+Go to [the implementation](../../../Code/Include/max/Containers/Range.inl#L20).

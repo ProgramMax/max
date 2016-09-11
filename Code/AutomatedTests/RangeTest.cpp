@@ -5,7 +5,7 @@
 #include <max/Containers/Range.hpp>
 #include <max/Testing/TestSuite.hpp>
 
-namespace maxTests
+namespace maxAutomatedTests
 {
 namespace Containers
 {
@@ -49,4 +49,4 @@ namespace Containers
 	}
 
 } // namespace Containers
-} // namespace maxTests
+} // namespace maxAutomatedTests

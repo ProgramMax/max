@@ -112,6 +112,9 @@
     <Filter Include="Documentation\max\v0\Algorithms">
       <UniqueIdentifier>{b10e5494-b7eb-49a0-8b13-064f9ea93fb7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Documentation\max\v0\Compiling">
+      <UniqueIdentifier>{c79a2bc5-4845-4128-8999-f4ae5cf4ca9e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Code\Include\max\Algorithms\IsBetween.inl">
@@ -139,17 +142,38 @@
     <None Include="..\..\Documentation\max\v0\Containers\Range_ctor.md">
       <Filter>Documentation\max\v0\Containers</Filter>
     </None>
-    <None Include="..\..\Documentation\max\v0\v0.md">
-      <Filter>Documentation\max\v0</Filter>
-    </None>
     <None Include="..\..\Documentation\max\v0\Containers\Range.md">
       <Filter>Documentation\max\v0\Containers</Filter>
     </None>
     <None Include="..\..\Documentation\max\v0\Containers\MakeRange.md">
       <Filter>Documentation\max\v0\Containers</Filter>
     </None>
-    <None Include="IsBetween.md">
+    <None Include="..\..\Documentation\max\v0.md">
+      <Filter>Documentation\max</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Algorithms\IsBetween.md">
       <Filter>Documentation\max\v0\Algorithms</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Compiling\AliasingOptimizations.md">
+      <Filter>Documentation\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_PURE.md">
+      <Filter>Documentation\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_PURE_WITH_GLOBALS.md">
+      <Filter>Documentation\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_SEMI_PURE.md">
+      <Filter>Documentation\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_REFERENCE.md">
+      <Filter>Documentation\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_POINTER.md">
+      <Filter>Documentation\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\Documentation\max\v0\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md">
+      <Filter>Documentation\max\v0\Compiling</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -208,9 +232,6 @@
       <Filter>Code\Include\max\Compiling</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Code\Include\max\Compiling\FavorBranchLocality.hpp">
-      <Filter>Code\Include\max\Compiling</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Code\Include\max\Compiling\FunctionOptimizations.hpp">
       <Filter>Code\Include\max\Compiling</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Code\Include\max\Compiling\IsRegular.hpp">
@@ -284,6 +305,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Code\Include\max\Containers\Range.hpp">
       <Filter>Code\Include\max\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\Android.hpp">
+      <Filter>Code\Include\max\Compiling\Configuration\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Code\Include\max\Compiling\AliasingOptimizations.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

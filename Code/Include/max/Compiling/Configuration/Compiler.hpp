@@ -26,4 +26,9 @@
 	#error "Unknown compiler"
 #endif
 
+#define MAX_COMPILER_VERSION_AT_LEAST( Major, Minor, Patch ) \
+	( MAX_COMPILER_VERSION_MAJOR > Major ) || \
+	( MAX_COMPILER_VERSION_MAJOR == Major && MAX_COMPILER_VERSION_MINOR > Minor ) || \
+	( MAX_COMPILER_VERSION_MAJOR == Major && MAX_COMPILER_VERSION_MINOR == Minor && MAX_COMPILER_VERSION_PATCH >= Patch )
+
 #endif // #ifndef MAX_COMPILING_CONFIGURATION_COMPILER_HPP
