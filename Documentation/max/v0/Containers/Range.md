@@ -13,4 +13,4 @@ The Range class holds lower and upper bounds for a range (inclusive).
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Containers/Range.hpp#L17).
+Go to [the implementation](../../../../Code/Include/max/Containers/Range.hpp#L21).
