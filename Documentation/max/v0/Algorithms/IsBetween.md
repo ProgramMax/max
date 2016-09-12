@@ -42,4 +42,4 @@ if( max::Algorithms::IsBetween( 50, range ) )
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Algorithms/IsBetween.inl#L12).
+Go to [the implementation](../../../../Code/Include/max/Algorithms/IsBetween.inl#L13).

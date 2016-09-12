@@ -6,13 +6,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Code\ManualTests\AliasingOptimizationsTest.cpp">
+    <ClCompile Include="..\..\..\Code\ManualTests\EntryPoint.cpp" />
+    <ClCompile Include="..\..\..\Code\ManualTests\AliasingOptimizationsTest.cpp">
       <Filter>Compiling</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Code\ManualTests\EntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Code\ManualTests\AliasingOptimizationsTest.hpp">
+    <ClInclude Include="..\..\..\Code\ManualTests\AliasingOptimizationsTest.hpp">
       <Filter>Compiling</Filter>
     </ClInclude>
   </ItemGroup>

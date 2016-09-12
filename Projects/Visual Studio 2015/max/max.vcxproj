@@ -19,100 +19,101 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\Code\Include\max\Algorithms\IsBetween.inl" />
-    <None Include="..\..\Code\Include\max\Algorithms\ScopedFunctor.inl" />
-    <None Include="..\..\Code\Include\max\Algorithms\SwapEndian.inl" />
-    <None Include="..\..\Code\Include\max\Compiling\UnreferencedValue.inl" />
-    <None Include="..\..\Code\Include\max\Containers\Range.inl" />
-    <None Include="..\..\Code\TranslationUnits\Hardware\CPU\Documentation.md" />
-    <None Include="..\..\Documentation\max\v0.md" />
-    <None Include="..\..\Documentation\max\v0\Algorithms\IsBetween.md" />
-    <None Include="..\..\Documentation\max\v0\Compiling\AliasingOptimizations.md" />
-    <None Include="..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_REFERENCE.md" />
-    <None Include="..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_POINTER.md" />
-    <None Include="..\..\Documentation\max\v0\Compiling\MAX_PURE.md" />
-    <None Include="..\..\Documentation\max\v0\Compiling\MAX_PURE_WITH_GLOBALS.md" />
-    <None Include="..\..\Documentation\max\v0\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
-    <None Include="..\..\Documentation\max\v0\Compiling\MAX_SEMI_PURE.md" />
-    <None Include="..\..\Documentation\max\v0\Containers\MakeRange.md" />
-    <None Include="..\..\Documentation\max\v0\Containers\Range.md" />
-    <None Include="..\..\Documentation\max\v0\Containers\Range_ctor.md" />
-    <None Include="..\..\Documentation\StyleGuide.md" />
-    <None Include="..\..\LICENSE" />
+    <None Include="..\..\..\Code\Include\max\Algorithms\IsBetween.inl" />
+    <None Include="..\..\..\Code\Include\max\Algorithms\ScopedFunctor.inl" />
+    <None Include="..\..\..\Code\Include\max\Algorithms\SwapEndian.inl" />
+    <None Include="..\..\..\Code\Include\max\Compiling\UnreferencedValue.inl" />
+    <None Include="..\..\..\Code\Include\max\Containers\Range.inl" />
+    <None Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md" />
+    <None Include="..\..\..\Documentation\max\v0.md" />
+    <None Include="..\..\..\Documentation\max\v0\Algorithms\IsBetween.md" />
+    <None Include="..\..\..\Documentation\max\v0\Compiling\AliasingOptimizations.md" />
+    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_PURE.md" />
+    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_PURE_WITH_GLOBALS.md" />
+    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_POINTER.md" />
+    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_REFERENCE.md" />
+    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
+    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_SEMI_PURE.md" />
+    <None Include="..\..\..\Documentation\max\v0\Containers\MakeRange.md" />
+    <None Include="..\..\..\Documentation\max\v0\Containers\Range.md" />
+    <None Include="..\..\..\Documentation\max\v0\Containers\Range_ctor.md" />
+    <None Include="..\..\..\Documentation\StyleGuide.md" />
+    <None Include="..\..\..\LICENSE" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Code\Include\max\Algorithms\IsBetween.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Algorithms\OptimizingAssert.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Algorithms\ScopedFunctor.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Algorithms\SwapEndian.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Algorithms\Yield.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Alignment.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Assume.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler\Clang.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler\GCC.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Compiler\VC.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\Android.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\Linux.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\MacOS.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\Platform\Win32.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\Configuration\StandardLibrary.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\CurrentVersionNamespace.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\FavorBranchLocality.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\AliasingOptimizations.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\IsRegular.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\MemoryBarrier.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\NoDefault.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\StaticAssert.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\ThrowSpecification.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\UnreferencedValue.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Compiling\VirtualFunctionSpecification.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Containers\Range.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\AssemblyCPUIDPolicy.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\AssemblyIsCPUIDAvailablePolicy.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\Associativity.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CacheInfo.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CacheLevel.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CPUID.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafResult.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\GCCAssemblyCPUIDPolicy.hpp">
+    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\IsBetween.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\OptimizingAssert.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\ScopedFunctor.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\SwapEndian.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\Yield.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\AliasingOptimizations.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Alignment.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Assume.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Compiler.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Compiler\Clang.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Compiler\GCC.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Compiler\VC.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform\Android.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform\Linux.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform\MacOS.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform\Win32.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\StandardLibrary.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\CurrentVersionNamespace.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\FavorBranchLocality.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\IsRegular.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\MemoryBarrier.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\NoDefault.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\StaticAssert.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\ThrowSpecification.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\UnreferencedValue.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\VirtualFunctionSpecification.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Range.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Associativity.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheInfo.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheLevel.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUID.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\GCCAssemblyCPUIDPolicy.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\Prefetch.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\TLB.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Hardware\CPU\VCIntrinsicCPUIDPolicy.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Logging\DoNothingLogger.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Testing\Test.hpp" />
-    <ClInclude Include="..\..\Code\Include\max\Testing\TestSuite.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafResult.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Prefetch.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TLB.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Logging\DoNothingLogger.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Testing\Test.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Testing\TestSuite.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\AssemblyCPUIDPolicy.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\AssemblyIsCPUIDAvailablePolicy.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\Associativity.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\CacheInfo.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\CacheLevel.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\CPUID.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\GCCAssemblyCPUIDPolicy.cpp">
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Associativity.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheInfo.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheLevel.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUID.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\GCCAssemblyCPUIDPolicy.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\Prefetch.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Hardware\CPU\VCIntrinsicCPUIDPolicy.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Testing\Test.cpp" />
-    <ClCompile Include="..\..\Code\TranslationUnits\Testing\TestSuite.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\EntryPoint.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Prefetch.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\Test.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\TestSuite.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3A9E3E87-9F00-4240-8E5D-489DC37C73DA}</ProjectGuid>

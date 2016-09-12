@@ -1,8 +1,9 @@
-// Copyright 2016, Chris Blume
-// All rights reserved.
+// Copyright 2016, Chris Blume. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
 
-#ifndef MAX_CPU_GCCASSEMBLYCPUIDPOLICY_HPP
-#define MAX_CPU_GCCASSEMBLYCPUIDPOLICY_HPP
+#ifndef MAX_CPU_VCINTRINSICCPUIDPOLICY_HPP
+#define MAX_CPU_VCINTRINSICCPUIDPOLICY_HPP
 
 #include <array>
 #include <cstdint>
@@ -13,7 +14,7 @@ namespace max
 namespace CPU
 {
 
-	class GCCAssemblyCPUIDPolicy
+	class VCIntrinsicCPUIDPolicy
 	{
 	public:
 
@@ -25,4 +26,4 @@ namespace CPU
 } // namespace CPU
 } // namespace max
 
-#endif // #ifndef MAX_CPU_GCCASSEMBLYCPUIDPOLICY_HPP
+#endif // #ifndef MAX_CPU_VCINTRINSICCPUIDPOLICY_HPP
