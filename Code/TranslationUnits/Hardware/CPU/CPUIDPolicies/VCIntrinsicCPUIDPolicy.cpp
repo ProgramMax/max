@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include <max/Hardware/CPU/VCIntrinsicCPUIDPolicy.hpp>
+#include <max/Hardware/CPU/CPUIDPolicies/VCIntrinsicCPUIDPolicy.hpp>
 #include <intrin.h>
 
 namespace max

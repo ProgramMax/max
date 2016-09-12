@@ -106,7 +106,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\EntryPoint.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Prefetch.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp" />
@@ -167,18 +166,18 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\Code\Include;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\Code\Include;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\Code\Include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\Code\Include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

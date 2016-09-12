@@ -4,8 +4,8 @@
 
 #include <max/Hardware/CPU/CPUID.hpp>
 #include <cstdint>
-#include <max/Hardware/CPU/VCIntrinsicCPUIDPolicy.hpp>
-#include <max/Hardware/CPU/AssemblyIsCPUIDAvailablePolicy.hpp>
+#include <max/Hardware/CPU/CPUIDPolicies/VCIntrinsicCPUIDPolicy.hpp>
+#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/AssemblyIsCPUIDAvailablePolicy.hpp>
 #include <utility>
 #include <array>
 #include <memory>

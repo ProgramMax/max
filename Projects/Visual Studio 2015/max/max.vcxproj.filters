@@ -64,14 +64,8 @@
     <Filter Include="Code\TranslationUnits\Hardware\CPU\Policies">
       <UniqueIdentifier>{78c19d89-a40d-4250-8da2-574e7e5f1f00}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\TranslationUnits\Hardware\CPU\Policies\IsCPUIDAvailablePolicies">
-      <UniqueIdentifier>{2f6cdb25-9641-4172-be50-02d475b213ae}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Code\Include\max\Hardware\CPU\Policies\CPUIDPolicies">
       <UniqueIdentifier>{e5889ff7-80aa-4efc-850a-758178506362}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\TranslationUnits\Hardware\CPU\Policies\CPUIDPolicis">
-      <UniqueIdentifier>{a2f67fcd-70e1-4176-a3c8-30e6fa0d5df4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Documentation\max">
       <UniqueIdentifier>{7537fa1e-d771-4a81-84f1-c8e09f24fba0}</UniqueIdentifier>
@@ -91,6 +85,12 @@
     <Filter Include="Code\Include\max\Containers">
       <UniqueIdentifier>{71aa0028-8a13-455b-8cd1-e5dcec8cb389}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\TranslationUnits\Hardware\CPU\CPUIDPolicis">
+      <UniqueIdentifier>{a2f67fcd-70e1-4176-a3c8-30e6fa0d5df4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies">
+      <UniqueIdentifier>{2f6cdb25-9641-4172-be50-02d475b213ae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Code\Include\max\Algorithms\IsBetween.inl">
@@ -109,7 +109,7 @@
       <Filter>Code\Include\max\Containers</Filter>
     </None>
     <None Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies\IsCPUIDAvailablePolicies</Filter>
+      <Filter>Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
     </None>
     <None Include="..\..\..\Documentation\max\v0\Algorithms\IsBetween.md">
       <Filter>Documentation\max\v0\Algorithms</Filter>
@@ -291,43 +291,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies\CPUIDPolicis</Filter>
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicis</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\GCCAssemblyCPUIDPolicy.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies\CPUIDPolicis</Filter>
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicis</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies\CPUIDPolicis</Filter>
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicis</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies\IsCPUIDAvailablePolicies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Associativity.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheInfo.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheLevel.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUID.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\EntryPoint.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Prefetch.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\Policies</Filter>
+      <Filter>Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp">
       <Filter>Code\TranslationUnits\Logging</Filter>
@@ -337,6 +310,30 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\TestSuite.cpp">
       <Filter>Code\TranslationUnits\Testing</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Associativity.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheInfo.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheLevel.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUID.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Prefetch.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include <max/Hardware/CPU/AssemblyCPUIDPolicy.hpp>
+#include <max/Hardware/CPU/CPUIDPolicies/AssemblyCPUIDPolicy.hpp>
 
 namespace max
 {

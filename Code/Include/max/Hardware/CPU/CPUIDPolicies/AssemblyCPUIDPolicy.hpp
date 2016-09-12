@@ -7,7 +7,7 @@
 
 #include <array>
 #include <cstdint>
-#include "CPUIDSubleafResult.hpp"
+#include "../CPUIDSubleafResult.hpp"
 
 namespace max
 {
