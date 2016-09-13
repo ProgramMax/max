@@ -30,7 +30,7 @@ namespace CPU
 			pop    eax                ; Put the new EFLAGS value in EAX
 			mov    AlteredEFLAGS, eax ; Store the EFLAGS value in our C++ variable
 			push   ebx                ; Put the original, unaltered EFLAGS back on the stack
-			popfd                     ; # Put the original, unaltered EFLAGS back into the EFLAGS register
+			popfd                     ; Put the original, unaltered EFLAGS back into the EFLAGS register
 		}
 
 		return ( AlteredEFLAGS & 0x200000 ) == 0x200000;

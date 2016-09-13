@@ -11,23 +11,26 @@ namespace CPU
 
 	void GCCAssemblyCPUIDPolicy::CPUID( CPUIDSubleafResult & Registers, uint32_t Leaf ) noexcept
 	{
-		uint32_t a, b, c, d;
-		// #if defined(__GNUC__)
-		__asm( "cpuid" : "=a"( a ), "=b"( b ), "=c"( c ), "=d"( d ) : "a"( Leaf ), "c"( 0 ) : );
-		Registers.EAX = a;
-		Registers.EBX = b;
-		Registers.ECX = c;
-		Registers.EDX = d;
+		__asm__( "cpuid"
+			: "=eax"( Registers.EAX ),
+			  "=ebx"( Registers.EBX ),
+			  "=ecx"( Registers.ECX ),
+			  "=edx"( Registers.EDX )
+			: "eax"( Leaf ),
+			  "ecx"( 0 )
+			: );
 	}
 
 	void GCCAssemblyCPUIDPolicy::CPUIDExtended( CPUIDSubleafResult & Registers, uint32_t Leaf, uint32_t Subleaf ) noexcept
 	{
-		uint32_t a, b, c, d;
-		__asm( "cpuid" : "=a"( a ), "=b"( b ), "=c"( c ), "=d"( d ), "a"( Leaf ), "c"( Subleaf ) : );
-		Registers.EAX = a;
-		Registers.EBX = b;
-		Registers.ECX = c;
-		Registers.EDX = d;
+		__asm__( "cpuid"
+			: "=eax"( Registers.EAX ),
+			  "=ebx"( Registers.EBX ),
+			  "=ecx"( Registers.ECX ),
+			  "=edx"( Registers.EDX )
+			: "eax"( Leaf ),
+			  "ecx"( Subleaf )
+			: );
 	}
 
 } // namespace CPU

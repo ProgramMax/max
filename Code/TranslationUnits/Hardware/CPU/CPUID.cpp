@@ -9,6 +9,7 @@
 #include <utility>
 #include <array>
 #include <memory>
+#include <cstring>
 #include <max/Hardware/CPU/TLB.hpp>
 #include <max/Hardware/CPU/CacheLevel.hpp>
 #include <max/Hardware/CPU/TraceCache.hpp>
@@ -528,7 +529,7 @@ namespace CPU
 			} else {
 				CacheAssociativity = Associativity{ WaysOfAssociativity };
 			}
-			Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( CacheLevel, CacheType, CacheSizeInBytes, CacheAssociativity, CacheLineSizeInBytes, CacheLinesPerSector ) ) ) ) );
+			Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( CacheLevel, CacheType, CacheSizeInBytes, CacheAssociativity, CacheLineSizeInBytes, CacheLinesPerSector ) ) );
 		}
 
 
@@ -542,20 +543,6 @@ namespace CPU
 		std::vector< max::CPU::CPUIDSubleafArgumentsAndResult > GetCPUIDSubleafResults() noexcept;
 
 	} // anonymous namespace
-
-	CPUID MakeCPUID() noexcept
-	{
-		typedef VCIntrinsicCPUIDPolicy CPUIDPolicy;
-		typedef AssemblyIsCPUIDAvailablePolicy IsCPUIDAvailablePolicy;
-
-
-		if( ! IsCPUIDAvailablePolicy::IsCPUIDAvailable() )
-		{
-			return CPUID{ std::vector< CPUIDSubleafArgumentsAndResult >{} };
-		}
-
-		return CPUID{ GetCPUIDSubleafResults< CPUIDPolicy >() };
-	}
 
 	CPUID::CPUID( std::vector< CPUIDSubleafArgumentsAndResult > && SubleafResults ) noexcept
 		: SubleafResults( std::move( SubleafResults ) )
@@ -627,62 +614,6 @@ namespace CPU
 			return ( RegisterValue & ( 1 << BitNumber ) ) != 0;
 		}
 
-		template< typename CPUIDPolicy >
-		std::vector< max::CPU::CPUIDSubleafArgumentsAndResult > GetCPUIDSubleafResults() noexcept
-		{
-			std::vector< max::CPU::CPUIDSubleafArgumentsAndResult > SubleafResults;
-
-
-			// cpuid function 0 returns the highest valid function number in EAX
-			max::CPU::CPUIDSubleafResult Result = {};
-			CPUIDPolicy::CPUID( Result, 0 );
-			const auto LeafCount = Result.EAX;
-
-
-			// Populate CPUID results
-			// We already ran function 0.
-			SubleafResults.emplace_back( 0, 0, std::move( Result ) );
-			// So we will loop through 1-x
-			for( uint32_t Leaf = 1; Leaf <= LeafCount; Leaf++ )
-			{
-				if( Leaf == 4 )
-				{
-					for( uint32_t Subleaf = 0; ; Subleaf++ )
-					{
-						CPUIDPolicy::CPUIDExtended( Result, Leaf, Subleaf );
-						if( Result.EAX == 0 && Result.EBX == 0 && Result.ECX == 0 && Result.EDX == 0 )
-						{
-							break;
-						}
-
-						SubleafResults.emplace_back( Leaf, Subleaf, std::move( Result ) );
-					}
-				} else {
-					CPUIDPolicy::CPUID( Result, Leaf );
-					SubleafResults.emplace_back( Leaf, 0, std::move( Result ) );
-				}
-			}
-
-
-
-			// cpuid function 0x8000'0000 returns the highest valid extended function number in EAX
-			CPUIDPolicy::CPUID( Result, 0x8000'0000 );
-			const auto ExtendedLeafCount = Result.EAX - 0x8000'0000;
-
-	
-			// Populate CPUID results
-			// We already ran extended function 0.
-			SubleafResults.emplace_back( 0x8000'0000, 0, std::move( Result ) );
-			// So we will loop through 1-x
-			for( uint32_t i = 1; i <= ExtendedLeafCount; i++ )
-			{
-				CPUIDPolicy::CPUID( Result, i + 0x8000'0000 );
-				SubleafResults.emplace_back( i + 0x8000'0000, 0, std::move( Result ) );
-			}
-
-
-			return SubleafResults;
-		}
 
 		void Split32BitsInto8Bits( const uint32_t             Input,
 		                           std::array< uint8_t, 4 > & Bytes ) noexcept;
@@ -739,145 +670,145 @@ namespace CPU
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 32 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x02: // Instruction TLB: 4 MByte pages, fully associative, 2 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ Associativity::FullyAssociative{} }, 2 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x03: // Data TLB: 4 KByte pages, 4-way set associative, 64 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 64 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x04: // Data TLB: 4 MByte pages, 4-way set associative, 8 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ 4 }, 8 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x05: // Data TLB: 4 MByte pages, 4-way set associative, 32 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
-					Configurations.emplace_back(std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ 4 }, 64);
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ 4 }, 64 );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x06: // 1st-level instruction cache: 8 KBytes, 4-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Instruction, 8 * 1024, Associativity{ 4 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Instruction, 8 * 1024, Associativity{ 4 }, 32, 1 ) ) );
 				break;
 			case 0x08: // 1st-level instruction cache: 16 KBytes, 4-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Instruction, 16 * 1024, Associativity{ 4 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Instruction, 16 * 1024, Associativity{ 4 }, 32, 1 ) ) );
 				break;
 			case 0x09: // 1st-level instruction cache: 32 KBytes, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Instruction, 32 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Instruction, 32 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0x0a: // 1st-level data cache: 8 KBytes, 2-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 8 * 1024, Associativity{ 2 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 8 * 1024, Associativity{ 2 }, 32, 1 ) ) );
 				break;
 			case 0x0b: // Instruction TLB: 4 MByte pages, 4-way set associative, 4 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ 4 }, 4 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x0c: // 1st-level data cache: 16 KBytes, 4-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 16 * 1024, Associativity{ 4 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 16 * 1024, Associativity{ 4 }, 32, 1 ) ) );
 				break;
 			case 0x0d: // 1st-level data cache: 16 KBytes, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 16 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 16 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0x0e: // 1st-level data cache: 24 KBytes, 6-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 24 * 1024, Associativity{ 6 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 24 * 1024, Associativity{ 6 }, 64, 1 ) ) );
 				break;
 			case 0x1d: // 2nd-level cache: 128 KBytes, 2-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 128 * 1024, Associativity{ 2 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 128 * 1024, Associativity{ 2 }, 64, 1 ) ) );
 				break;
 			case 0x21: // 2nd-level cache: 256 KBytes, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 256 * 1024, Associativity{ 8 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 256 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0x22: // 3rd-level cache: 512 KBytes, 4-way set associative, 64 byte line size, 2 lines per sector
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 4 }, 64, 2 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 4 }, 64, 2 ) ) );
 				break;
 			case 0x23: // 3rd-level cache: 1 MBytes, 8-way set associative, 64 byte line size, 2 lines per sector
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 64, 2 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 64, 2 ) ) );
 				break;
 			case 0x24: // 2nd-level cache: 1 MBytes, 16-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) );
 				break;
 			case 0x25: // 3rd-level cache: 2 MBytes, 8-way set associative, 64 byte line size, 2 lines per sector
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 8 }, 64, 2 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 8 }, 64, 2 ) ) );
 				break;
 			case 0x29: // 3rd-level cache: 4 MBytes, 8-way set associative, 64 byte line size, 2 lines per sector
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 8 }, 64, 2 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 8 }, 64, 2 ) ) );
 				break;
 			case 0x2c: // 1st-level data cache: 32 KBytes, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 32 * 1024, Associativity{ 8 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 32 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0x30: // 1st-level instruction cache: 32 KBytes, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Instruction, 32 * 1024, Associativity{ 8 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Instruction, 32 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0x41: // 2nd-level cache: 128 KBytes, 4-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 128 * 1024, Associativity{ 4 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 128 * 1024, Associativity{ 4 }, 32, 1 ) ) );
 				break;
 			case 0x42: // 2nd-level cache: 256 KBytes, 4-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 256 * 1024, Associativity{ 4 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 256 * 1024, Associativity{ 4 }, 32, 1 ) ) );
 				break;
 			case 0x43: // 2nd-level cache: 512 KBytes, 4-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 4 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 4 }, 32, 1 ) ) );
 				break;
 			case 0x44: // 2nd-level cache: 1 MByte, 4-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 4 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 4 }, 32, 1 ) ) );
 				break;
 			case 0x45: // 2nd-level cache: 2 MByte, 4-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 4 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 4 }, 32, 1 ) ) );
 				break;
 			case 0x46: // 3rd-level cache: 4 MByte, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0x47: // 3rd-level cache: 8 MByte, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 8 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 8 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0x48: // 2nd-level cache: 3 MByte, 12-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 3 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 3 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) );
 				break;
 			case 0x49: // 3rd-level cache: 4 MByte, 16-way set associative, 64 byte line size (Intel Xeon processor MP,
 					   // Family 0FH, Model 06H);
 					   // 2nd-level cache: 4 MByte, 16-way set associative, 64 byte line size
 				if( Family == 0x0f && Model == 0x06 ) {
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) );
 				} else {
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) );
 				}
 				break;
 			case 0x4a: // 3rd-level cache: 6 MByte, 12-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 6 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 6 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) );
 				break;
 			case 0x4b: // 3rd-level cache: 8 MByte, 16-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 8 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 8 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) );
 				break;
 			case 0x4c: // 3rd-level cache: 12 MByte, 12-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 12 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 12 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) );
 				break;
 			case 0x4d: // 3rd-level cache: 16 MByte, 16-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 16 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 16 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) );
 				break;
 			case 0x4e: // 2nd-level cache: 6 MByte, 24-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 6 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 6 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) );
 				break;
 			case 0x4f: // Instruction TLB: 4 KByte pages, 32 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 32 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x50: // Instruction TLB: 4 KByte and 2 MByte or 4 MByte pages, 64 entries
@@ -885,7 +816,7 @@ namespace CPU
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 64 );
 					Configurations.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024, 4 * 1024 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 64 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x51: // Instruction TLB: 4 KByte and 2 MByte or 4 MByte pages, 128 entries
@@ -893,7 +824,7 @@ namespace CPU
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 128 );
 					Configurations.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024, 4 * 1024 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 128 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x52: // Instruction TLB: 4 KByte and 2 MByte or 4 MByte pages, 256 entries
@@ -901,42 +832,42 @@ namespace CPU
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 256 );
 					Configurations.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024, 4 * 1024 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 256 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x55: // Instruction TLB: 2 MByte or 4 MByte pages, fully associative, 7 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024, 4 * 1024 * 1024 }, Associativity{ Associativity::FullyAssociative{} }, 7 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x56: // Data TLB: 4 MByte pages, 4-way set associative, 16 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ 4 }, 16 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x57: // Data TLB: 4 KByte pages, 4-way associative, 16 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 16 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x59: // Data TLB: 4 KByte pages, fully associative, 16 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ Associativity::FullyAssociative{} }, 16 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x5a: // Data TLB: 2 MByte or 4 MByte pages, 4-way set associative, 32 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024, 4 * 1024 * 1024 }, Associativity{ 4 }, 32 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x5b: // Data TLB: 4 KByte and 4 MByte pages, 64 entries
@@ -944,7 +875,7 @@ namespace CPU
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 64 );
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 64 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >(  std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x5c: // Data TLB: 4 KByte and 4 MByte pages, 128 entries
@@ -952,7 +883,7 @@ namespace CPU
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 128 );
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 128 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x5d: // Data TLB: 4 KByte and 4 MByte pages, 256 entries
@@ -960,17 +891,17 @@ namespace CPU
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 256 );
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ Associativity::UnknownAssociativity{} }, 256 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x60: // 1st-level data cache: 16 KByte, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 16 * 1024, Associativity{ 8 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 16 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0x61: // Instruction TLB: 4 KByte pages, fully associative, 48 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 48 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x63: // Data TLB: 2 MByte or 4 MByte pages, 4-way set associative, 32 entries and a separate array with 1 GByte
@@ -978,127 +909,127 @@ namespace CPU
 				{				
 					std::vector< max::CPU::TLBConfiguration > Configurations1 = {};
 					Configurations1.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024, 4 * 1024 * 1024 }, Associativity{ 4 }, 32 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations1 ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations1 ) ) ) );
 				
 					std::vector< max::CPU::TLBConfiguration > Configurations2 = {};
 					Configurations2.emplace_back( std::vector< uint32_t >{ 1 * 1024 * 1024 * 1024 }, Associativity{ 4 }, 4 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations2 ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations2 ) ) ) );
 				}
 				break;
 			case 0x64: // Data TLB: 4 KByte pages, 4-way set associative, 512 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 512 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x66: // 1st-level data cache: 8 KByte, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 8 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 8 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0x67: // 1st-level data cache: 16 KByte, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 16 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 16 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0x68: // 1st-level data cache: 32 KByte, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 32 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 1, CacheInfo::CacheContentType::Data, 32 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0x6a: // uTLB: 4 KByte pages, 8-way set associative, 64 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 8 }, 64 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x6b: // DTLB: 4 KByte pages, 8-way set associative, 256 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 8 }, 256 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x6c: // DTLB: 2M / 4M pages, 8-way set associative, 128 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024, 4 * 1024 * 1024 }, Associativity{ 8 }, 128 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x6d: // DTLB: 1 GByte pages, fully associative, 16 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 1 * 1024 * 1024 * 1024 }, Associativity{ Associativity::FullyAssociative{} }, 16 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x70: // Trace cache : 12 K-μop, 8-way set associative
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TraceCache >( 12 * 1024, Associativity{ 8 } ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TraceCache >( 12 * 1024, Associativity{ 8 } ) ) );
 				break;
 			case 0x71: // Trace cache : 16 K-μop, 8-way set associative
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TraceCache >( 16 * 1024, Associativity{ 8 } ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TraceCache >( 16 * 1024, Associativity{ 8 } ) ) );
 				break;
 			case 0x72: // Trace cache : 32 K-μop, 8-way set associative
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TraceCache >( 32 * 1024, Associativity{ 8 } ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TraceCache >( 32 * 1024, Associativity{ 8 } ) ) );
 				break;
 			case 0x76: // Instruction TLB: 2 MiB / 4 MiB pages, fully associative, 8 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024, 4 * 1024 * 1024 }, Associativity{ Associativity::FullyAssociative{} }, 8 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0x78: // 2nd-level cache: 1 MByte, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0x79: // 2nd-level cache: 128 KByte, 8-way set associative, 64 byte line size, 2 lines per sector
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 128 * 1024, Associativity{ 8 }, 64, 2 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 128 * 1024, Associativity{ 8 }, 64, 2 ) ) );
 				break;
 			case 0x7a: // 2nd-level cache: 256 KByte, 8-way set associative, 64 byte line size, 2 lines per sector
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 256 * 1024, Associativity{ 8 }, 64, 2 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 256 * 1024, Associativity{ 8 }, 64, 2 ) ) );
 				break;
 			case 0x7b: // 2nd-level cache: 512 KByte, 8-way set associative, 64 byte line size, 2 lines per sector
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 8 }, 64, 2 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 8 }, 64, 2 ) ) );
 				break;
 			case 0x7c: // 2nd-level cache: 1 MByte, 8-way set associative, 64 byte line size, 2 lines per sector
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 64, 2 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 64, 2 ) ) );
 				break;
 			case 0x7d: // 2nd-level cache: 2 MByte, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0x7f: // 2nd-level cache: 512 KByte, 2-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 2 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 2 }, 64, 1 ) ) );
 				break;
 			case 0x80: // 2nd-level cache: 512 KByte, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 8 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0x82: // 2nd-level cache: 256 KByte, 8-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 256 * 1024, Associativity{ 8 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 256 * 1024, Associativity{ 8 }, 32, 1 ) ) );
 				break;
 			case 0x83: // 2nd-level cache: 512 KByte, 8-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 8 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 8 }, 32, 1 ) ) );
 				break;
 			case 0x84: // 2nd-level cache: 1 MByte, 8-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 32, 1 ) ) );
 				break;
 			case 0x85: // 2nd-level cache: 2 MByte, 8-way set associative, 32 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 8 }, 32, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 8 }, 32, 1 ) ) );
 				break;
 			case 0x86: // 2nd-level cache: 512 KByte, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0x87: // 2nd-level cache: 1 MByte, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 2, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0xa0: // DTLB: 4k pages, fully associative, 32 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ Associativity::FullyAssociative{} }, 32 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xb0: // Instruction TLB: 4 KByte pages, 4-way set associative, 128 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 128 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xb1: // Instruction TLB: 2 MByte pages, 4-way, 8 entries or 4 MByte pages, 4-way, 4 entries
@@ -1106,70 +1037,70 @@ namespace CPU
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024 }, Associativity{ 4 }, 8 );
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 * 1024 }, Associativity{ 4 }, 4 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xb2: // Instruction TLB: 4 KByte pages, 4-way set associative, 64 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 64 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xb3: // Data TLB: 4 KByte pages, 4-way set associative, 128 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 128 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xb4: // Data TLB1: 4 KByte pages, 4-way associative, 256 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 256 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xb5: // Instruction TLB: 4 KByte pages, 8-way set associative, 64 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 8 }, 64 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xb6: // Instruction TLB: 4 KByte pages, 8-way set associative, 128 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 8 }, 128 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Instruction, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xba: // Data TLB1: 4 KByte pages, 4-way associative, 64 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 64 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xc0: // Data TLB: 4 KByte and 4 MByte pages, 4-way associative, 8 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024, 4 * 1024 * 1024 }, Associativity{ 4 }, 8 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xc1: // Shared 2nd-Level TLB: 4 KByte / 2 MByte pages, 8-way associative, 1024 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024, 2 * 1024 * 1024 }, Associativity{ 8 }, 1024 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xc2: // DTLB: 4 KByte / 2 MByte pages, 4-way associative, 16 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024, 2 * 1024 * 1024 }, Associativity{ 4 }, 16 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xc3: // Shared 2nd-Level TLB: 4 KByte / 2 MByte pages, 6-way associative, 1536 entries.
@@ -1177,77 +1108,77 @@ namespace CPU
 				{	
 					std::vector< max::CPU::TLBConfiguration > Configurations1 = {};
 					Configurations1.emplace_back( std::vector< uint32_t >{ 4 * 1024, 2 * 1024 * 1024 }, Associativity{ 6 }, 1536 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations1 ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations1 ) ) ) );
 				
 					std::vector< max::CPU::TLBConfiguration > Configurations2 = {};
 					Configurations2.emplace_back( std::vector< uint32_t >{ 1 * 1024 * 1024 * 1024 }, Associativity{ 4 }, 16 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations2 ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations2 ) ) ) );
 				}
 				break;
 			case 0xc4: // DTLB: 2M / 4M Byte pages, 4-way associative, 32 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 2 * 1024 * 1024, 2 * 1024 * 1024 }, Associativity{ 4 }, 32 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Data, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xca: // Shared 2nd-Level TLB: 4 KByte pages, 4-way associative, 512 entries
 				{
 					std::vector< max::CPU::TLBConfiguration > Configurations = {};
 					Configurations.emplace_back( std::vector< uint32_t >{ 4 * 1024 }, Associativity{ 4 }, 512 );
-					Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) ) ) );
+					Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::TLB >( CacheInfo::CacheContentType::Unified, std::move( Configurations ) ) ) );
 				}
 				break;
 			case 0xd0: // 3rd-level cache: 512 KByte, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 512 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0xd1: // 3rd-level cache: 1 MByte, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( std::move( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 4 }, 64, 1 ) ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0xd2: // 3rd-level cache: 2 MByte, 4-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 4 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 4 }, 64, 1 ) ) );
 				break;
 			case 0xd6: // 3rd-level cache: 1 MByte, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 1 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0xd7: // 3rd-level cache: 2 MByte, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0xd8: // 3rd-level cache: 4 MByte, 8-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 8 }, 64, 1 ) ) );
 				break;
 			case 0xdc: // 3rd-level cache: 1.5 MByte, 12-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, ( 1024 + 512 ) * 1024, Associativity{ 12 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, ( 1024 + 512 ) * 1024, Associativity{ 12 }, 64, 1 ) ) );
 				break;
 			case 0xdd: // 3rd-level cache: 3 MByte, 12-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 3 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 3 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) );
 				break;
 			case 0xde: // 3rd-level cache: 6 MByte, 12-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 6 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 6 * 1024 * 1024, Associativity{ 12 }, 64, 1 ) ) );
 				break;
 			case 0xe2: // 3rd-level cache: 2 MByte, 16-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 2 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) );
 				break;
 			case 0xe3: // 3rd-level cache: 4 MByte, 16-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 4 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) );
 				break;
 			case 0xe4: // 3rd-level cache: 8 MByte, 16-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 8 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 8 * 1024 * 1024, Associativity{ 16 }, 64, 1 ) ) );
 				break;
 			case 0xea: // 3rd-level cache: 12 MByte, 24-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 12 * 1024 * 1024, Associativity{ 24 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 12 * 1024 * 1024, Associativity{ 24 }, 64, 1 ) ) );
 				break;
 			case 0xeb: // 3rd-level cache: 18 MByte, 24-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 18 * 1024 * 1024, Associativity{ 24 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 18 * 1024 * 1024, Associativity{ 24 }, 64, 1 ) ) );
 				break;
 			case 0xec: // 3rd-level cache: 24 MByte, 24-way set associative, 64 byte line size
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::CacheLevel( 3, CacheInfo::CacheContentType::Unified, 24 * 1024 * 1024, Associativity{ 24 }, 64, 1 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::CacheLevel >( 3, CacheInfo::CacheContentType::Unified, 24 * 1024 * 1024, Associativity{ 24 }, 64, 1 ) ) );
 				break;
 			case 0xf0: // 64-Byte prefetching
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::Prefetch( 64 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::Prefetch >( 64 ) ) );
 				break;
 			case 0xf1: // 128-Byte prefetching
-				Returning.push_back( std::move( std::unique_ptr< max::CPU::CacheInfo >( new max::CPU::Prefetch( 128 ) ) ) );
+				Returning.push_back( std::unique_ptr< max::CPU::CacheInfo >( std::make_unique< max::CPU::Prefetch >( 128 ) ) );
 				break;
 			}
 
