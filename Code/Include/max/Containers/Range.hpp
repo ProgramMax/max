@@ -24,7 +24,7 @@ namespace Containers
 	public:
 
 		// Documentation: ../../../../Documentation/max/v0/Containers/Range_ctor.md
-		MAX_PURE( constexpr Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW );
+		MAX_SEMI_PURE( constexpr Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW );
 
 		T Minimum;
 		T Maximum;

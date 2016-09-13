@@ -9,13 +9,13 @@
 #include <functional>
 
 #define MAX_TESTING_ASSERT( CONDITION ) \
-	Assert( __FILE__, __LINE__, #CONDITION, CONDITION );
+	Assert( __FILE__, __LINE__, #CONDITION, CONDITION )
 
 #define MAX_TESTING_ASSERT_THROWS( FUNCTOR ) \
-	AssertThrows( __FILE__, __LINE__, #FUNCTOR, FUNCTOR );
+	AssertThrows( __FILE__, __LINE__, #FUNCTOR, FUNCTOR )
 
 #define MAX_TESTING_ASSERT_DOES_NOT_THROW( FUNCTOR ) \
-	AssertDoesNotThrow( __FILE__, __LINE__, #FUNCTOR, FUNCTOR );
+	AssertDoesNotThrow( __FILE__, __LINE__, #FUNCTOR, FUNCTOR )
 
 namespace max
 {

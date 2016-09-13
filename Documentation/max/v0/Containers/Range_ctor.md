@@ -7,7 +7,7 @@ API version: [**v0**](../../v0.md)
 This ctor does not enforce Maximum >= Minimum. It is the developer's responsibility to provide valid values.
 A convenience function, [max::Containers::MakeRange](MakeRange.md), is provided to order the values.
 
-This function is [pure](../Compiling/MAX_PURE.md).
+This function is [semi-pure](../Compiling/MAX_SEMI_PURE.md) since it accesses the 'this' pointer.
 
 ## Signature
 

@@ -12,7 +12,7 @@
 #if defined( MAX_COMPILER_GCC )
 	// this is only available in GCC 2.5 and later
 	#if MAX_COMPILER_VERSION_AT_LEAST( 2, 5, 0 )
-		#define MAX_PURE_V0( Declaration ) Declaration __attribute__( const )
+		#define MAX_PURE_V0( Declaration ) Declaration __attribute__((const))
 	#else
 		#define MAX_PURE_V0( Declaration ) Declaration
 	#endif
@@ -28,7 +28,7 @@
 #if defined( MAX_COMPILER_GCC )
 	// this is only available in GCC 2.96 and later
 	#if MAX_COMPILER_VERSION_AT_LEAST( 2, 96, 0 )
-		#define MAX_PURE_WITH_GLOBALS_V0( Declaration ) Declaration __attribute__( pure )
+		#define MAX_PURE_WITH_GLOBALS_V0( Declaration ) Declaration __attribute__((pure))
 	#else
 		#define MAX_PURE_WITH_GLOBALS_V0( Declaration ) Declaration
 	#endif

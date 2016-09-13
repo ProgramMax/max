@@ -20,7 +20,7 @@ namespace Algorithms
 
 	// Documentation: ../../../../Documentation/max/v0/Algorithms/IsBetween.md
 	template< typename T >
-	MAX_SEMI_PURE( constexpr bool IsBetween( const T Value, const max::Containers::Range< T > & Range ) MAX_DOES_NOT_THROW );
+	MAX_PURE( constexpr bool IsBetween( const T Value, const max::Containers::Range< T > & Range ) MAX_DOES_NOT_THROW );
 
 } // namespace Algorithms
 } // MAX_CURRENT_VERSION_NAMESPACE_BEGIN( v0 )
