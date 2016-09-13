@@ -85,6 +85,12 @@
     <Filter Include="Code\TranslationUnits\Hardware\CPU\CPUIDPolicies">
       <UniqueIdentifier>{a2f67fcd-70e1-4176-a3c8-30e6fa0d5df4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\TranslationUnits\Hardware\CPU\GCC">
+      <UniqueIdentifier>{cd62d288-7778-4f93-a87a-f5c279d2e329}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\TranslationUnits\Hardware\CPU\VC">
+      <UniqueIdentifier>{0943f17f-f740-4046-a510-0747041d7f52}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Code\Include\max\Algorithms\IsBetween.inl">
@@ -282,6 +288,9 @@
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp">
       <Filter>Code\Include\max\Hardware\CPU</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\MakeCPUID.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp">
@@ -328,6 +337,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\GCC\MakeCPUID.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU\GCC</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\VC\MakeCPUID.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU\VC</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
