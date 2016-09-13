@@ -40,7 +40,7 @@ namespace Testing
 	{
 	public:
 
-		TestSuite( char const * const Name );
+		explicit TestSuite( char const * const Name );
 
 		void AddTest( max::Testing::Test const &  TestToAdd );
 		void AddTest( max::Testing::Test       && TestToAdd );

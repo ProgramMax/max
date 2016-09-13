@@ -14,18 +14,15 @@ namespace Compiling
 
 	namespace {
 
-		bool unpure( int * write, int * read )
+		bool unpure( int * write, long * read )
 		{
 			write = reinterpret_cast< int * >( 5 );
 
-			return read == nullptr;
+			return read == write;
 		}
 
-		MAX_PURE( bool pure( int * write, int * read ) )
+		MAX_PURE( void pure( int * write, int * read ) )
 		{
-			write = reinterpret_cast< int * >( 5 );
-
-			return read == nullptr;
 		}
 
 
@@ -35,14 +32,14 @@ namespace Compiling
 		{
 			write = reinterpret_cast< int * >( 5 );
 
-			return read == nullptr && global == 0;
+			return read == write && global == 0;
 		}
 
 		MAX_PURE_WITH_GLOBALS( bool pure_with_globals( int * write, int * read ) )
 		{
 			write = reinterpret_cast< int * >( 5 );
 
-			return read == nullptr && global == 0;
+			return read == write && global == 0;
 		}
 
 	} // anonymous namespace
@@ -63,18 +60,22 @@ namespace Compiling
 		std::cin >> Overlap;
 		if( Overlap == 'y' )
 		{
+			delete Address2;
 			Address2 = Address1;
 		}
 
 
-		//std::cout << unpure( Address1, Address2 );
-		std::cout << pure(   Address1, Address2 );
+		std::cout << unpure( Address1, Address2 );
+		//std::cout << pure(   Address1, Address2 );
 
 		//std::cout << unpure_with_globals( Address1, Address2 );
 		//std::cout << pure_with_globals(   Address1, Address2 );
 
 		delete Address1;
-		delete Address2;
+		if( Overlap != 'y' )
+		{
+			delete Address2;
+		}
 	}
 
 } // namespace Compiling

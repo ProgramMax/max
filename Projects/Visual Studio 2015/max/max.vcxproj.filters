@@ -55,18 +55,6 @@
     <Filter Include="Code\TranslationUnits\Hardware\CPU">
       <UniqueIdentifier>{70481055-44ea-4c30-874f-98f6284c1f71}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\Include\max\Hardware\CPU\Policies">
-      <UniqueIdentifier>{fb3570ab-4640-4380-a9ae-f49e466bb4b9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\Include\max\Hardware\CPU\Policies\IsCPUIDAvailablePolicies">
-      <UniqueIdentifier>{42581643-92b1-4cb3-96f4-f8ab6697eb49}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\TranslationUnits\Hardware\CPU\Policies">
-      <UniqueIdentifier>{78c19d89-a40d-4250-8da2-574e7e5f1f00}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\Include\max\Hardware\CPU\Policies\CPUIDPolicies">
-      <UniqueIdentifier>{e5889ff7-80aa-4efc-850a-758178506362}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Documentation\max">
       <UniqueIdentifier>{7537fa1e-d771-4a81-84f1-c8e09f24fba0}</UniqueIdentifier>
     </Filter>
@@ -85,11 +73,17 @@
     <Filter Include="Code\Include\max\Containers">
       <UniqueIdentifier>{71aa0028-8a13-455b-8cd1-e5dcec8cb389}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\TranslationUnits\Hardware\CPU\CPUIDPolicis">
-      <UniqueIdentifier>{a2f67fcd-70e1-4176-a3c8-30e6fa0d5df4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies">
       <UniqueIdentifier>{2f6cdb25-9641-4172-be50-02d475b213ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max\Hardware\CPU\CPUIDPolicies">
+      <UniqueIdentifier>{e5889ff7-80aa-4efc-850a-758178506362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies">
+      <UniqueIdentifier>{42581643-92b1-4cb3-96f4-f8ab6697eb49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\TranslationUnits\Hardware\CPU\CPUIDPolicies">
+      <UniqueIdentifier>{a2f67fcd-70e1-4176-a3c8-30e6fa0d5df4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -241,43 +235,16 @@
       <Filter>Code\Include\max\Containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies\CPUIDPolicies</Filter>
+      <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\GCCAssemblyCPUIDPolicy.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies\CPUIDPolicies</Filter>
+      <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies\CPUIDPolicies</Filter>
+      <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies\IsCPUIDAvailablePolicies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Associativity.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheInfo.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheLevel.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUID.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafResult.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Prefetch.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TLB.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp">
-      <Filter>Code\Include\max\Hardware\CPU\Policies</Filter>
+      <Filter>Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Logging\DoNothingLogger.hpp">
       <Filter>Code\Include\max\Logging</Filter>
@@ -288,16 +255,43 @@
     <ClInclude Include="..\..\..\Code\Include\max\Testing\TestSuite.hpp">
       <Filter>Code\Include\max\Testing</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Associativity.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheInfo.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheLevel.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUID.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafResult.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Prefetch.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TLB.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp">
+      <Filter>Code\Include\max\Hardware\CPU</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicis</Filter>
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\GCCAssemblyCPUIDPolicy.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicis</Filter>
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicis</Filter>
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
