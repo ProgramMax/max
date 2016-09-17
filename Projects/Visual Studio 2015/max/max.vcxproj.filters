@@ -291,6 +291,9 @@
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\MakeCPUID.hpp">
       <Filter>Code\Include\max\Hardware\CPU</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.hpp">
+      <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp">
@@ -344,5 +347,13 @@
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\VC\MakeCPUID.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU\VC</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.asm">
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
