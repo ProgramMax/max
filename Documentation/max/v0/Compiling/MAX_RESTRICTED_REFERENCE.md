@@ -19,4 +19,4 @@ void Consume( MAX_RESTRICTED_REFERENCE int & value );
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Containers/Range.inl#L62).
+Go to [the implementation](../../../../Code/Include/max/Containers/Range.inl#L72).

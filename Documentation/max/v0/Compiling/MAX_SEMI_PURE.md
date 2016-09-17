@@ -25,4 +25,4 @@ MAX_SEMI_PURE( inline T Max( const T & lhs, const T & rhs ) );
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L42).
+Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L50).

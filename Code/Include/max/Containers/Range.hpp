@@ -24,7 +24,7 @@ namespace Containers
 	public:
 
 		// Documentation: ../../../../Documentation/max/v0/Containers/Range_ctor.md
-		MAX_SEMI_PURE( constexpr Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW );
+		MAX_SEMI_PURE_DECLARATION( constexpr Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW );
 
 		T Minimum;
 		T Maximum;
@@ -33,7 +33,7 @@ namespace Containers
 
 	// Documentation: ../../../../Documentation/max/v0/Containers/MakeRange.md
 	template< typename T >
-	MAX_PURE( Range< T > MakeRange( const T Value1, const T Value2 ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( Range< T > MakeRange( const T Value1, const T Value2 ) MAX_DOES_NOT_THROW );
 
 } // namespace Containers
 } // MAX_CURRENT_VERSION_NAMESPACE_BEGIN( v0 )
