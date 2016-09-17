@@ -17,4 +17,4 @@ MAX_RETURNS_RESTRICTED_POINTER void * malloc( size_t size );
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Containers/Range.inl#L77).
+Go to [the implementation](../../../../Code/Include/max/Containers/Range.inl#L87).
