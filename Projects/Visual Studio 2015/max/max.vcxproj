@@ -131,7 +131,8 @@
     <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\TestSuite.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.asm" />
+    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\max_Hardware_CPU_CPUIDPolicies_CPUID.asm" />
+    <MASM Include="max_Hardware_CPU_CPUIDPolicies_CPUIDExtended.asm" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3A9E3E87-9F00-4240-8E5D-489DC37C73DA}</ProjectGuid>

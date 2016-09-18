@@ -12,8 +12,8 @@
 extern "C"
 {
 
-	void __cdecl max_Hardware_CPU_CPUIDPolicies_CPUID(/*         max::CPU::CPUIDSubleafResult & Registers, uint32_t Leaf */);
-	void __cdecl max_Hardware_CPU_CPUIDPolicies_CPUIDExtended(/* max::CPU::CPUIDSubleafResult & Registers, uint32_t Leaf, uint32_t Subleaf */);
+	void __cdecl max_Hardware_CPU_CPUIDPolicies_CPUID(         max::CPU::CPUIDSubleafResult & Registers, uint32_t Leaf );
+	void __cdecl max_Hardware_CPU_CPUIDPolicies_CPUIDExtended( max::CPU::CPUIDSubleafResult & Registers, uint32_t Leaf, uint32_t Subleaf );
 
 }
 

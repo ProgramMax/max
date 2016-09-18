@@ -352,7 +352,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.asm">
+    <MASM Include="max_Hardware_CPU_CPUIDPolicies_CPUIDExtended.asm">
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
+    </MASM>
+    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\max_Hardware_CPU_CPUIDPolicies_CPUID.asm">
       <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
     </MASM>
   </ItemGroup>

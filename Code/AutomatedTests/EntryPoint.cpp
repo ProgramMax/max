@@ -7,7 +7,6 @@
 
 int main()
 {
-
 	maxAutomatedTests::Containers::RunRangeTestSuite();
 	maxAutomatedTests::Algorithms::RunIsBetweenTestSuite();
 
