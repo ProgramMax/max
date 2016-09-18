@@ -4,8 +4,10 @@
 
 #include <max/Hardware/CPU/MakeCPUID.hpp>
 #include <max/Hardware/CPU/CPUIDPolicies/VCIntrinsicCPUIDPolicy.hpp>
+#include <max/Hardware/CPU/CPUIDPolicies/X64AssemblyCPUIDPolicy.hpp>
 #include <max/Hardware/CPU/IsCPUIDAvailablePolicies/AssemblyIsCPUIDAvailablePolicy.hpp>
 #include <max/Hardware/CPU/CPUIDSubleafArgumentsAndResult.hpp>
+#include <max/Compiling/Configuration.hpp>
 
 #include <vector>
 
@@ -23,8 +25,15 @@ namespace CPU
 
 	CPUID MakeCPUID() noexcept
 	{
-		typedef VCIntrinsicCPUIDPolicy            CPUIDPolicy;
+#if defined( MAX_X86_64 )
+		typedef X64AssemblyCPUIDPolicy         CPUIDPolicy;
 		typedef AssemblyIsCPUIDAvailablePolicy IsCPUIDAvailablePolicy;
+#elif defined( MAX_X86 )
+		typedef VCIntrinsicCPUIDPolicy         CPUIDPolicy;
+		typedef AssemblyIsCPUIDAvailablePolicy IsCPUIDAvailablePolicy;
+#else
+		static_assert( false, "Unsupported platform" );
+#endif
 
 
 		if( ! IsCPUIDAvailablePolicy::IsCPUIDAvailable() )

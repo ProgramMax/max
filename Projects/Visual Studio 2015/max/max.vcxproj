@@ -82,6 +82,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafResult.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.hpp" />
@@ -98,7 +99,10 @@
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheInfo.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheLevel.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUID.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\GCCAssemblyCPUIDPolicy.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -106,6 +110,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\GCC\MakeCPUID.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -113,7 +118,10 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Prefetch.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp" />
@@ -121,6 +129,10 @@
     <ClCompile Include="..\..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\Test.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\TestSuite.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\max_Hardware_CPU_CPUIDPolicies_CPUID.asm" />
+    <MASM Include="max_Hardware_CPU_CPUIDPolicies_CPUIDExtended.asm" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3A9E3E87-9F00-4240-8E5D-489DC37C73DA}</ProjectGuid>
@@ -157,6 +169,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -253,5 +266,6 @@
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
   </ImportGroup>
 </Project>
