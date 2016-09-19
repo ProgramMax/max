@@ -85,12 +85,6 @@
     <Filter Include="Code\TranslationUnits\Hardware\CPU\CPUIDPolicies">
       <UniqueIdentifier>{a2f67fcd-70e1-4176-a3c8-30e6fa0d5df4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\TranslationUnits\Hardware\CPU\GCC">
-      <UniqueIdentifier>{cd62d288-7778-4f93-a87a-f5c279d2e329}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\TranslationUnits\Hardware\CPU\VC">
-      <UniqueIdentifier>{0943f17f-f740-4046-a510-0747041d7f52}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\Code\Include\max\Algorithms\IsBetween.inl">
@@ -288,11 +282,11 @@
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp">
       <Filter>Code\Include\max\Hardware\CPU</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\MakeCPUID.hpp">
-      <Filter>Code\Include\max\Hardware\CPU</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.hpp">
       <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\X64AssemblyIsCPUIDAvailablePolicy.hpp">
+      <Filter>Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -341,22 +335,25 @@
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\GCC\MakeCPUID.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\GCC</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\VC\MakeCPUID.cpp">
-      <Filter>Code\TranslationUnits\Hardware\CPU\VC</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\X64AssemblyIsCPUIDAvailablePolicy.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\GCCAssemblyIsCPUIDAvailablePolicy.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="max_Hardware_CPU_CPUIDPolicies_CPUIDExtended.asm">
-      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
-    </MASM>
     <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\max_Hardware_CPU_CPUIDPolicies_CPUID.asm">
       <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
+    </MASM>
+    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\max_Hardware_CPU_CPUIDPolicies_CPUIDExtended.asm">
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
+    </MASM>
+    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\max_Hardware_CPU_X64AssemblyIsCPUIDAvailablePolicies_IsCPUIDAvailable.asm">
+      <Filter>Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
     </MASM>
   </ItemGroup>
 </Project>

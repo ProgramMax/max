@@ -6,64 +6,34 @@
 
 max_Hardware_CPU_X64AssemblyIsCPUIDAvailablePolicies_IsCPUIDAvailable PROC
 
+	; Get the current rflags register and set the id bit
+
+	pushfq                   ; Save the current rflags register onto the stack
+	pop    rax               ; Put the rflags value in rax
+	mov    rcx, rax          ; Save the value so we can later restore it
+	xor    rax, 0200000h     ; Set the id bit
+	push   rax               ; Put the altered rflags value back onto the stack
+	popfq                    ; Restore the altered rflags register
 
 
-uint32_t AlteredEFLAGS = UINT32_C( 0 );
+	; Check if the altered rflags register stuck
 
-		__asm {
-			; Get the current EFLAGS register and set the ID bit
-
-			pushfd                   ; Save the current EFLAGS register onto the stack
-			pop    eax               ; Put the EFLAGS value in EAX
-			mov    ebx, eax          ; Save the value so we can later restore it
-			xor    eax, 0x200000     ; Set the ID bit
-			push   eax               ; Put the altered EFLAGS value back onto the stack
-			popfd                    ; Restore the altered EFLAGS register
-
-			; Check if the altered EFLAGS register stuck
-
-			pushfd                    ; Save the new (possibly altered) EFLAGS register onto the stack
-			pop    eax                ; Put the new EFLAGS value in EAX
-			mov    AlteredEFLAGS, eax ; Store the EFLAGS value in our C++ variable
-			push   ebx                ; Put the original, unaltered EFLAGS back on the stack
-			popfd                     ; Put the original, unaltered EFLAGS back into the EFLAGS register
-		}
-
-		return ( AlteredEFLAGS & 0x200000 ) == 0x200000;
+	pushfq                   ; Save the new (possibly altered) rflags register onto the stack
+	pop    rax               ; Put the new rflags value in rax
+	mov    rdx, rax          ; Store the rflags value
+	push   rcx               ; Put the original, unaltered rflags back on the stack
+	popfq                    ; Put the original, unaltered rflags back into the rflags register
 
 
-
-
-
-
-
-	; rbx is considered non-volatile in x64.
-	; It must be saved and restored inside the function, since we plan to use rbx.
-	; We can use the shadow space, since we do not need it otherwise.
-	mov   qword ptr [rsp + 8],   rbx
-
-
-	; Save the Registers pointer so we can later populate its members
-	mov   r9,    rcx ; Registers
-
-
-	; Set the leaf & subleaf parameters and call cpuid
-	mov   eax,   edx ; Leaf
-	mov   ecx,   0
-	cpuid
-
-
-	; Save the cpuid results in the Registers members
-	mov   dword ptr [r9],        eax
-	mov   dword ptr [r9 + 4],    ebx
-	mov   dword ptr [r9 + 8],    ecx
-	mov   dword ptr [r9 + 12],   edx
-
-
-	; restore RBX
-	mov   rbx,   qword ptr [rsp + 8]
-
-
+	; rdx now contains the altered rflags
+	; If the alteration stayed, cpuid is supported.
+	and   rdx,  0200000h
+	cmp   rdx,  0200000h
+	je    equal
+	xor   rax,  rax
+	ret
+equal:
+	mov   rax,  1
 	ret
 
 max_Hardware_CPU_X64AssemblyIsCPUIDAvailablePolicies_IsCPUIDAvailable ENDP

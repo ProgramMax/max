@@ -86,7 +86,7 @@
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafResult.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\MakeCPUID.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\X64AssemblyIsCPUIDAvailablePolicy.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Prefetch.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TLB.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp" />
@@ -112,27 +112,28 @@
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\X64AssemblyCPUIDPolicy.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\GCC\MakeCPUID.cpp">
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\GCCAssemblyIsCPUIDAvailablePolicy.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\AssemblyIsCPUIDAvailablePolicy.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\X64AssemblyIsCPUIDAvailablePolicy.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Prefetch.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\VC\MakeCPUID.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\Test.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\TestSuite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\max_Hardware_CPU_CPUIDPolicies_CPUID.asm" />
-    <MASM Include="max_Hardware_CPU_CPUIDPolicies_CPUIDExtended.asm" />
+    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\max_Hardware_CPU_CPUIDPolicies_CPUIDExtended.asm" />
+    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\max_Hardware_CPU_X64AssemblyIsCPUIDAvailablePolicies_IsCPUIDAvailable.asm" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{3A9E3E87-9F00-4240-8E5D-489DC37C73DA}</ProjectGuid>
