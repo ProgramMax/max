@@ -5,17 +5,7 @@
 #ifndef MAX_CPU_X64ASSEMBLYCPUIDPOLICY_HPP
 #define MAX_CPU_X64ASSEMBLYCPUIDPOLICY_HPP
 
-#include <array>
-#include <cstdint>
 #include "../CPUIDSubleafResult.hpp"
-		
-extern "C"
-{
-
-	void __cdecl max_Hardware_CPU_CPUIDPolicies_CPUID(         max::CPU::CPUIDSubleafResult & Registers, uint32_t Leaf );
-	void __cdecl max_Hardware_CPU_CPUIDPolicies_CPUIDExtended( max::CPU::CPUIDSubleafResult & Registers, uint32_t Leaf, uint32_t Subleaf );
-
-}
 
 namespace max
 {
