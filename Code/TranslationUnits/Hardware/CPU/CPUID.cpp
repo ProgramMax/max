@@ -17,12 +17,12 @@
 #include <max/Hardware/CPU/CacheInfo.hpp>
 #include <max/Hardware/CPU/Associativity.hpp>
 #include <max/Compiling/Configuration.hpp>
+
 #if defined( MAX_COMPILER_VC )
+	#include <max/Hardware/CPU/CPUIDPolicies/VCIntrinsicCPUIDPolicy.hpp>
 	#if defined( MAX_X86_64 )
-		#include <max/Hardware/CPU/CPUIDPolicies/X64AssemblyCPUIDPolicy.hpp>
 		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X64AssemblyIsCPUIDAvailablePolicy.hpp>
 	#elif defined( MAX_X86 )
-		#include <max/Hardware/CPU/CPUIDPolicies/VCIntrinsicCPUIDPolicy.hpp>
 		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/AssemblyIsCPUIDAvailablePolicy.hpp>
 	#else
 		static_assert( false, "Unsupported platform" );
@@ -1265,12 +1265,11 @@ namespace CPU
 	CPUID MakeCPUID() noexcept
 	{
 #if defined( MAX_COMPILER_VC )
+	typedef VCIntrinsicCPUIDPolicy                  CPUIDPolicy;
 	#if defined( MAX_X86_64 )
-		typedef X64AssemblyCPUIDPolicy            CPUIDPolicy;
-		typedef X64AssemblyIsCPUIDAvailablePolicy IsCPUIDAvailablePolicy;
+		typedef X64AssemblyIsCPUIDAvailablePolicy   IsCPUIDAvailablePolicy;
 	#elif defined( MAX_X86 )
-		typedef VCIntrinsicCPUIDPolicy         CPUIDPolicy;
-		typedef AssemblyIsCPUIDAvailablePolicy IsCPUIDAvailablePolicy;
+		typedef AssemblyIsCPUIDAvailablePolicy      IsCPUIDAvailablePolicy;
 	#else
 		static_assert( false, "Unsupported platform" );
 	#endif
