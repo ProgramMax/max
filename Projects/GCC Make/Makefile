@@ -3,7 +3,6 @@ CODE_DIRECTORY = ../../Code/TranslationUnits
 CXX_SRCS = \
 	$(CODE_DIRECTORY)/Hardware/CPU/CPUIDPolicies/GCCAssemblyCPUIDPolicy.cpp \
 	$(CODE_DIRECTORY)/Hardware/CPU/IsCPUIDAvailablePolicies/GCCAssemblyIsCPUIDAvailablePolicy.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/GCC/MakeCPUID.cpp \
 	$(CODE_DIRECTORY)/Hardware/CPU/Associativity.cpp \
 	$(CODE_DIRECTORY)/Hardware/CPU/CacheInfo.cpp \
 	$(CODE_DIRECTORY)/Hardware/CPU/CacheLevel.cpp \
@@ -41,26 +40,6 @@ MANUAL_TEST_CXX_OBJS = $(MANUAL_TEST_CXX_SRCS:.cpp=.o)
 CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++14 -Wall
 LINKER_FLAGS += $(LIBRARY_PATHS_FLAGS)
 
-CLANG_COMPILER_FLAGS =
-CLANG = clang++
-CLANG_LINKER_FLAGS =
-
-GCC_COMPILER_FLAGS =
-GCC = g++
-GCC_LINKER_FLAGS =
-
-COMPILER = $(CLANG)
-
-
-ifeq ($(COMPILER),$(GCC))
-	CPPFLAGS += $(GCC_COMPILER_FLAGS)
-	LINKER_FLAGS += $(GCC_LINKER_FLAGS)
-endif
-ifeq ($(COMPILER),$(CLANG))
-	CPPFLAGS += $(CLANG_COMPILER_FLAGS)
-	LINKER_FLAGS += $(CLANG_LINKER_FLAGS)
-endif
-
 
 
 
@@ -70,12 +49,12 @@ lib$(PROGRAM_NAME).a: $(PCH_OBJS) $(CXX_OBJS)
 	ar rcs lib$(PROGRAM_NAME).a $(CXX_OBJS)
 
 maxAutomatedTests: $(AUTOMATED_TEST_CXX_OBJS)
-	$(COMPILER) -g $(AUTOMATED_TEST_CXX_OBJS) $(LINKER_FLAGS) -l$(PROGRAM_NAME) -o maxAutomatedTests
+	g++ -g $(AUTOMATED_TEST_CXX_OBJS) $(LINKER_FLAGS) -l$(PROGRAM_NAME) -o maxAutomatedTests
 
 maxManualTests: $(MANUAL_TEST_CXX_OBJS)
-	$(COMPILER) -g $(MANUAL_TEST_CXX_OBJS) $(LINKER_FLAGS) -l$(PROGRAM_NAME) -o maxManualTests
+	g++ -g $(MANUAL_TEST_CXX_OBJS) $(LINKER_FLAGS) -l$(PROGRAM_NAME) -o maxManualTests
 .cpp.o:
-	$(COMPILER) -g $(CPPFLAGS) -c $< -o $@
+	g++ -g $(CPPFLAGS) -c $< -o $@
 
 clean:
 	@- $(RM) lib$(PROGRAM_NAME).a
