@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef MAX_CPU_ASSEMBLYCPUIDPOLICY_HPP
-#define MAX_CPU_ASSEMBLYCPUIDPOLICY_HPP
+#ifndef MAX_CPU_X64GCCASSEMBLYCPUIDPOLICY_HPP
+#define MAX_CPU_X64GCCASSEMBLYCPUIDPOLICY_HPP
 
 #include <array>
 #include <cstdint>
@@ -14,10 +14,10 @@ namespace max
 namespace CPU
 {
 
-	class AssemblyCPUIDPolicy
+	class X64GCCAssemblyCPUIDPolicy
 	{
 	public:
-		
+
 		static void CPUID(         CPUIDSubleafResult & Registers, uint32_t Leaf )                   noexcept;
 		static void CPUIDExtended( CPUIDSubleafResult & Registers, uint32_t Leaf, uint32_t Subleaf ) noexcept;
 
@@ -26,4 +26,4 @@ namespace CPU
 } // namespace CPU
 } // namespace max
 
-#endif // #ifndef MAX_CPU_ASSEMBLYCPUIDPOLICY_HPP
+#endif // #ifndef MAX_CPU_X64GCCASSEMBLYCPUIDPOLICY_HPP

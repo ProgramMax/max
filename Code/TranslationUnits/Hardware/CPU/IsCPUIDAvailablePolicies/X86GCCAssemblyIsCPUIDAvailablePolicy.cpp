@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/GCCAssemblyIsCPUIDAvailablePolicy.hpp>
+#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X86GCCAssemblyIsCPUIDAvailablePolicy.hpp>
 #include <cstdint>
 
 namespace max
@@ -10,7 +10,7 @@ namespace max
 namespace CPU
 {
 
-	bool GCCAssemblyIsCPUIDAvailablePolicy::IsCPUIDAvailable() noexcept
+	bool X86GCCAssemblyIsCPUIDAvailablePolicy::IsCPUIDAvailable() noexcept
 	{
 		uint32_t AlteredEFLAGS = UINT32_C( 0 );
 
@@ -19,7 +19,7 @@ namespace CPU
 
 			pushfl                     # Save the current EFLAGS register onto the stack
 			pop    %%eax               # Put the EFLAGS value in EAX
-			mov    %%eax, %%ebx        # Save the value so we can later restore it
+			mov    %%eax,     %%ebx    # Save the value so we can later restore it
 			xor    $0x200000, %%eax    # Set the ID bit
 			push   %%eax               # Put the altered EFLAGS value back onto the stack
 			popfl                      # Restore the altered EFLAGS register

@@ -9,34 +9,34 @@
 
 #define MAX_PLATFORM_WINDOWS
 
-#ifdef MAX_COMPILER_GCC
-	#ifdef __x86_64
+#if defined( MAX_COMPILER_GCC )
+	#if defined( __x86_64__ )
 		#define MAX_64BIT_WORD_SIZE
 		#define MAX_X86_64
-	#endif
-	#ifdef __i386__
+	#elif defined( __i386__ )
 		#define MAX_32BIT_WORD_SIZE
 		#define MAX_X86
-	#endif
-	#ifdef __IA64__
+	#elif defined( __IA64__ )
 		#define MAX_64BIT_WORD_SIZE
 		#define MAX_IA64
+	#else
+		static_assert( false, "Unknown platform" );
 	#endif
-#endif // #ifdef MAX_COMPILER_GCC
-
-#ifdef MAX_COMPILER_VC
-	#ifdef _M_X64
+#elif defined( MAX_COMPILER_VC )
+	#if defined( _M_X64 )
 		#define MAX_64BIT_WORD_SIZE
 		#define MAX_X86_64
-	#endif
-	#ifdef _M_IX86
+	#elif defined( _M_IX86 )
 		#define MAX_32BIT_WORD_SIZE
 		#define MAX_X86
-	#endif
-	#ifdef _M_IA64
+	#elif defined( _M_IA64 )
 		#define MAX_64BIT_WORD_SIZE
 		#define MAX_IA64
+	#else
+		static_assert( false, "Unknown platform" );
 	#endif
-#endif // #ifdef MAX_COMPILER_VC
+#else
+	static_assert( false, "Unknown platform" );
+#endif
 
 #endif // #ifndef MAX_CONFIGURATION_PLATFORM_WIN32_HPP
