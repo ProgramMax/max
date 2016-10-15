@@ -291,6 +291,9 @@
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\X86GCCAssemblyIsCPUIDAvailablePolicy.hpp">
       <Filter>Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\GCCIntrinsicCPUIDPolicy.hpp">
+      <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.cpp">
@@ -343,6 +346,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\X86GCCAssemblyIsCPUIDAvailablePolicy.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\GCCIntrinsicCPUIDPolicy.cpp">
+      <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.hpp">
+      <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
