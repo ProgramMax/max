@@ -4,8 +4,6 @@
 
 #include <max/Hardware/CPU/CPUID.hpp>
 #include <cstdint>
-#include <max/Hardware/CPU/CPUIDPolicies/VCIntrinsicCPUIDPolicy.hpp>
-#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/AssemblyIsCPUIDAvailablePolicy.hpp>
 #include <utility>
 #include <array>
 #include <memory>
@@ -23,13 +21,20 @@
 	#if defined( MAX_X86_64 )
 		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X64AssemblyIsCPUIDAvailablePolicy.hpp>
 	#elif defined( MAX_X86 )
-		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/AssemblyIsCPUIDAvailablePolicy.hpp>
+		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X86AssemblyIsCPUIDAvailablePolicy.hpp>
 	#else
 		static_assert( false, "Unsupported platform" );
 	#endif
 #elif defined( MAX_COMPILER_GCC ) || defined( MAX_COMPILER_CLANG )
-		#include <max/Hardware/CPU/CPUIDPolicies/GCCAssemblyCPUIDPolicy.hpp>
-		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/GCCAssemblyIsCPUIDAvailablePolicy.hpp>
+	#if defined( MAX_X86_64 )
+		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X64GCCAssemblyIsCPUIDAvailablePolicy.hpp>
+		#include <max/Hardware/CPU/CPUIDPolicies/X64GCCAssemblyCPUIDPolicy.hpp>
+	#elif defined (MAX_X86 )
+		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X86GCCAssemblyIsCPUIDAvailablePolicy.hpp>
+		#include <max/Hardware/CPU/CPUIDPolicies/X86GCCAssemblyCPUIDPolicy.hpp>
+	#else
+		static_assert( false, "Unsupported platform" );
+	#endif
 #else
 		static_assert( false, "Unsupported compiler" );
 #endif
@@ -1265,17 +1270,24 @@ namespace CPU
 	CPUID MakeCPUID() noexcept
 	{
 #if defined( MAX_COMPILER_VC )
-	typedef VCIntrinsicCPUIDPolicy                  CPUIDPolicy;
 	#if defined( MAX_X86_64 )
 		typedef X64AssemblyIsCPUIDAvailablePolicy   IsCPUIDAvailablePolicy;
 	#elif defined( MAX_X86 )
-		typedef AssemblyIsCPUIDAvailablePolicy      IsCPUIDAvailablePolicy;
+		typedef X86AssemblyIsCPUIDAvailablePolicy   IsCPUIDAvailablePolicy;
 	#else
 		static_assert( false, "Unsupported platform" );
 	#endif
+	typedef VCIntrinsicCPUIDPolicy                  CPUIDPolicy;
 #elif defined( MAX_COMPILER_GCC ) || defined( MAX_COMPILER_CLANG )
-		typedef GCCAssemblyCPUIDPolicy            CPUIDPolicy;
-		typedef GCCAssemblyIsCPUIDAvailablePolicy IsCPUIDAvailablePolicy;
+	#if defined( MAX_X86_64 )
+		typedef X64GCCAssemblyIsCPUIDAvailablePolicy   IsCPUIDAvailablePolicy;
+		typedef X64GCCAssemblyCPUIDPolicy              CPUIDPolicy;
+	#elif defined( MAX_X86 )
+		typedef X86GCCAssemblyIsCPUIDAvailablePolicy   IsCPUIDAvailablePolicy;
+		typedef X86GCCAssemblyCPUIDPolicy              CPUIDPolicy;
+	#else
+		static_assert( false, "Unsupported platform" );
+	#endif
 #else
 		static_assert( false, "Unsupported compiler" );
 #endif

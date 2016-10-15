@@ -2,15 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef MAX_CPUID_ASSEMBLYISCPUIDAVAILABLEPOLICY_HPP
-#define MAX_CPUID_ASSEMBLYISCPUIDAVAILABLEPOLICY_HPP
+#ifndef MAX_CPUID_X86GCCASSEMBLYISCPUIDAVAILABLEPOLICY_HPP
+#define MAX_CPUID_X86GCCASSEMBLYISCPUIDAVAILABLEPOLICY_HPP
 
 namespace max
 {
 namespace CPU
 {
 
-	class AssemblyIsCPUIDAvailablePolicy
+	class X86GCCAssemblyIsCPUIDAvailablePolicy
 	{
 	public:
 
@@ -21,4 +21,4 @@ namespace CPU
 } // namespace CPU
 } // namespace max
 
-#endif // #ifndef MAX_CPUID_ASSEMBLYISCPUIDAVAILABLEPOLICY_HPP
+#endif // #ifndef MAX_CPUID_X86GCCASSEMBLYISCPUIDAVAILABLEPOLICY_HPP

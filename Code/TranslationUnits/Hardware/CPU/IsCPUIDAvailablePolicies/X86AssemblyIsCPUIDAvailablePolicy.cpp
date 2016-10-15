@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/AssemblyIsCPUIDAvailablePolicy.hpp>
+#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X86AssemblyIsCPUIDAvailablePolicy.hpp>
 #include <cstdint>
 
 namespace max
@@ -10,7 +10,7 @@ namespace max
 namespace CPU
 {
 
-	bool AssemblyIsCPUIDAvailablePolicy::IsCPUIDAvailable() noexcept
+	bool X86AssemblyIsCPUIDAvailablePolicy::IsCPUIDAvailable() noexcept
 	{
 		uint32_t AlteredEFLAGS = UINT32_C( 0 );
 
