@@ -633,7 +633,7 @@ namespace CPU
 
 
 			// Check if the requested bit is set
-			return ( RegisterValue & ( 1 << BitNumber ) ) != 0;
+			return ( RegisterValue & ( 1u << BitNumber ) ) != 0;
 		}
 
 
@@ -649,22 +649,22 @@ namespace CPU
 			std::vector< std::unique_ptr< max::CPU::CacheInfo > > Returning = {};
 
 			// If the high bit is set this register contains valid information
-			if( ( RegisterValue & (1 << 31) ) == 0 )
+			if( ( RegisterValue & (1u << 31) ) == 0 )
 			{
 				// This register contains valid information
 				// Break this register into bytes
 				std::array< uint8_t, 4 > Bytes = {};
 				Split32BitsInto8Bits( RegisterValue, Bytes );
 
-				int i = 3;
+				size_t BytesToProcess = 4;
 				// Unlike the other registers, we ignore the last byte of EAX
 				if( IsRegisterEAX )
 				{
-					i = 2;
+					BytesToProcess = 3;
 				}
-				for( ; i >= 0; i-- )
+				for( ; BytesToProcess > 0; BytesToProcess-- )
 				{
-					auto CacheInfoForByte = GetCacheInfoForByte( Bytes[ i ], Family, Model );
+					auto CacheInfoForByte = GetCacheInfoForByte( Bytes[ BytesToProcess - 1 ], Family, Model );
 					std::move( std::begin( CacheInfoForByte ), std::end( CacheInfoForByte ), std::back_inserter( Returning ) );
 				}
 			}
@@ -674,10 +674,10 @@ namespace CPU
 
 		void Split32BitsInto8Bits( const uint32_t Input, std::array< uint8_t, 4 > & Bytes ) noexcept
 		{
-			Bytes[ 0 ] = static_cast< uint8_t >( ( Input & ( 0b1111'1111 << 24 ) ) >> 24 );
-			Bytes[ 1 ] = static_cast< uint8_t >( ( Input & ( 0b1111'1111 << 16 ) ) >> 16 );
-			Bytes[ 2 ] = static_cast< uint8_t >( ( Input & ( 0b1111'1111 << 8  ) ) >>  8 );
-			Bytes[ 3 ] = static_cast< uint8_t >( ( Input & ( 0b1111'1111 << 0  ) ) >>  0 );
+			Bytes[ 0 ] = static_cast< uint8_t >( ( Input & ( 0b1111'1111u << 24 ) ) >> 24 );
+			Bytes[ 1 ] = static_cast< uint8_t >( ( Input & ( 0b1111'1111u << 16 ) ) >> 16 );
+			Bytes[ 2 ] = static_cast< uint8_t >( ( Input & ( 0b1111'1111u << 8  ) ) >>  8 );
+			Bytes[ 3 ] = static_cast< uint8_t >( ( Input & ( 0b1111'1111u << 0  ) ) >>  0 );
 		}
 
 		std::vector< std::unique_ptr< max::CPU::CacheInfo > > GetCacheInfoForByte( const uint8_t Byte, const uint32_t Family, const uint32_t Model ) noexcept
