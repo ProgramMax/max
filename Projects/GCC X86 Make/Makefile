@@ -37,7 +37,7 @@ MANUAL_TEST_CXX_SRCS = \
 	$(MANUAL_TEST_CODE_DIRECTORY)/EntryPoint.cpp
 MANUAL_TEST_CXX_OBJS = $(MANUAL_TEST_CXX_SRCS:.cpp=.o)
 
-CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++14 -Wall -m32
+CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++14 -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -m32
 LINKER_FLAGS += $(LIBRARY_PATHS_FLAGS)
 
 

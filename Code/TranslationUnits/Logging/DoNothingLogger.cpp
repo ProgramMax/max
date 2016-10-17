@@ -25,5 +25,5 @@ namespace Logging
 	{
 	}
 
-}; // namespace Logging
-}; // namespace max
+} // namespace Logging
+} // namespace max
