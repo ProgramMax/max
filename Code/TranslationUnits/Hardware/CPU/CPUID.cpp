@@ -479,7 +479,7 @@ namespace CPU
 		std::vector< std::unique_ptr< max::CPU::CacheInfo > > Returning = {};
 
 		auto Family = this->Family();
-		auto Model = this->Model();
+		auto Model  = this->Model();
 
 
 
@@ -527,9 +527,9 @@ namespace CPU
 			// EAX 0b1'1111'1111'1110'0000'0000'0000 - Maximum number of addressable IDs for logical processors sharing this cache**, ***.
 			// EAX 0b1111'1110'0000'0000'0000'0000'0000'0000 - Maximum number of addressable IDs for processor cores in the physical
 
-			uint32_t CacheLineSizeInBytes = ( LeafFourSubleaf.Result.EBX & 0b1111'1111'1111 ) + 1;
-			uint32_t CacheLinesPerSector = ( ( LeafFourSubleaf.Result.EBX >> 12 ) & 0b11'1111'1111 ) + 1;
-			uint32_t WaysOfAssociativity = ( ( LeafFourSubleaf.Result.EBX >> 22 ) & 0b11'1111'1111 ) + 1;
+			uint32_t CacheLineSizeInBytes = (   LeafFourSubleaf.Result.EBX         & 0b1111'1111'1111 ) + 1;
+			uint32_t CacheLinesPerSector  = ( ( LeafFourSubleaf.Result.EBX >> 12 ) & 0b11'1111'1111   ) + 1;
+			uint32_t WaysOfAssociativity  = ( ( LeafFourSubleaf.Result.EBX >> 22 ) & 0b11'1111'1111   ) + 1;
 			uint32_t SetCount = LeafFourSubleaf.Result.ECX + 1;
 
 			uint32_t CacheSizeInBytes = CacheLineSizeInBytes * CacheLinesPerSector * WaysOfAssociativity * SetCount;
