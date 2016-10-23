@@ -118,6 +118,8 @@ namespace CPU
 
 	};
 
+	CPUID MakeCPUID() noexcept;
+
 } // namespace CPU
 } // namespace max
 
