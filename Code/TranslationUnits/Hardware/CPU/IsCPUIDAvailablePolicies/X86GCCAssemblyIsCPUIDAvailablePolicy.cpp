@@ -17,24 +17,24 @@ namespace CPU
 		__asm__( R"(
 			# Get the current EFLAGS register and set the ID bit
 
-			pushfl                     # Save the current EFLAGS register onto the stack
-			pop    %%eax               # Put the EFLAGS value in EAX
-			mov    %%eax,     %%ebx    # Save the value so we can later restore it
-			xor    $0x200000, %%eax    # Set the ID bit
-			push   %%eax               # Put the altered EFLAGS value back onto the stack
-			popfl                      # Restore the altered EFLAGS register
+			pushfl                                       # Save the current EFLAGS register onto the stack
+			pop    %[AlteredEFLAGS]                      # Put the EFLAGS value in EAX
+			mov    %[AlteredEFLAGS],  %%ebx              # Save the value so we can later restore it
+			xor    $0x200000,         %[AlteredEFLAGS]   # Set the ID bit
+			push   %[AlteredEFLAGS]                      # Put the altered EFLAGS value back onto the stack
+			popfl                                        # Restore the altered EFLAGS register
 
 
 			# Check if the altered EFLAGS register stuck
 
-			pushfl         # Save the new (possibly altered) EFLAGS register onto the stack
-			pop    %%eax   # Put the new EFLAGS value in EAX
-			push   %%ebx   # Put the original, unaltered EFLAGS back on the stack
-			popfl          # Put the original, unaltered EFLAGS back into the EFLAGS register
+			pushfl                    # Save the new (possibly altered) EFLAGS register onto the stack
+			pop    %[AlteredEFLAGS]   # Put the new EFLAGS value in EAX
+			push   %%ebx              # Put the original, unaltered EFLAGS back on the stack
+			popfl                     # Put the original, unaltered EFLAGS back into the EFLAGS register
 		)"
-			: "=eax"( AlteredEFLAGS )
+			: [AlteredEFLAGS] "=r" (AlteredEFLAGS)
 			:
-			: "ebx" );
+			: "%ebx" );
 
 		return ( AlteredEFLAGS & 0x200000 ) == 0x200000;
 	}
