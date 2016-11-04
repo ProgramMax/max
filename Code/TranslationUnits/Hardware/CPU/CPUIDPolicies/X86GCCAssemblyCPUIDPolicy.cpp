@@ -14,12 +14,12 @@ namespace CPU
 		__asm__( R"(
 			cpuid
 		)"
-			: "=eax"( Registers.EAX ),
-			  "=ebx"( Registers.EBX ),
-			  "=ecx"( Registers.ECX ),
-			  "=edx"( Registers.EDX )
-			: "eax"( Leaf ),
-			  "ecx"( 0 )
+			: "=a"( Registers.EAX ),
+			  "=b"( Registers.EBX ),
+			  "=c"( Registers.ECX ),
+			  "=d"( Registers.EDX )
+			: "a"( Leaf ),
+			  "c"( 0 )
 			: );
 	}
 
@@ -28,12 +28,12 @@ namespace CPU
 		__asm__( R"(
 			cpuid
 		)"
-			: "=eax"( Registers.EAX ),
-			  "=ebx"( Registers.EBX ),
-			  "=ecx"( Registers.ECX ),
-			  "=edx"( Registers.EDX )
-			: "eax"( Leaf ),
-			  "ecx"( Subleaf )
+			: "=a"( Registers.EAX ),
+			  "=b"( Registers.EBX ),
+			  "=c"( Registers.ECX ),
+			  "=d"( Registers.EDX )
+			: "a"( Leaf ),
+			  "c"( Subleaf )
 			: );
 	}
 
