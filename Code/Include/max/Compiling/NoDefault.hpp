@@ -6,16 +6,13 @@
 #define MAX_COMPILING_NODEFAULT_HPP
 
 #include <max/Compiling/Configuration/Compiler.hpp>
-#include <max/Compiling/Assume.hpp>
 
-#ifdef DEBUG
-	#define NODEFAULT
+#if defined( MAX_COMPILER_VC )
+	#define MAX_NO_DEFAULT __assume( 0 )
+#elif defined( MAX_COMPILER_GCC ) | defined( MAX_COMPILER_CLANG )
+	#define MAX_NO_DEFAULT __builtin_unreachable()
 #else
-	#if defined(MAX_COMPILER_VC)
-		#define NODEFAULT ASSUME( 0 )
-	#elif defined(MAX_COMPILER_GCC)
-			#define NODEFAULT __builtin_unreachable()
-	#endif
+	#error "Unsupported compiler"
 #endif
 
 #endif // #ifndef MAX_COMPILING_NODEFAULT_HPP
