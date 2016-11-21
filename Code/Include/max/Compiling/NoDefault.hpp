@@ -7,12 +7,14 @@
 
 #include <max/Compiling/Configuration/Compiler.hpp>
 
-#if defined( MAX_COMPILER_VC )
-	#define MAX_NO_DEFAULT __assume( 0 )
-#elif defined( MAX_COMPILER_GCC ) | defined( MAX_COMPILER_CLANG )
-	#define MAX_NO_DEFAULT __builtin_unreachable()
-#else
-	#error "Unsupported compiler"
+#if defined( NDEBUG )
+	#if defined( MAX_COMPILER_VC )
+		#define MAX_NO_DEFAULT __assume( 0 )
+	#elif defined( MAX_COMPILER_GCC ) | defined( MAX_COMPILER_CLANG )
+		#define MAX_NO_DEFAULT __builtin_unreachable()
+	#else
+		#error "Unsupported compiler"
+	#endif
 #endif
 
 #endif // #ifndef MAX_COMPILING_NODEFAULT_HPP
