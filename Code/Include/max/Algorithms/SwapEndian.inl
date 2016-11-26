@@ -6,7 +6,9 @@
 
 namespace max
 {
-namespace Algirhtms
+namespace v0
+{
+namespace Algorithms
 {
 
 #if defined( MAX_COMPILER_CLANG ) || \
@@ -311,4 +313,5 @@ namespace Algirhtms
 	}
 
 } // namespace Algorithms
+} // namespace v0
 } // namespace max

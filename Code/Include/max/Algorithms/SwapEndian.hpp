@@ -5,11 +5,14 @@
 #ifndef MAX_ALGORITHMS_SWAPENDIAN_HPP
 #define MAX_ALGORITHMS_SWAPENDIAN_HPP
 
+#include <max/Compiling/CurrentVersionNamespace.hpp>
 #include <max/Compiling/AliasingOptimizations.hpp>
 #include <cstdint>
 #include <max/Compiling/ThrowSpecification.hpp>
 
 namespace max
+{
+MAX_CURRENT_VERSION_NAMESPACE_BEGIN( v0 )
 {
 namespace Algorithms
 {
@@ -50,6 +53,8 @@ namespace Algorithms
 	MAX_PURE_DECLARATION( constexpr inline int16_t  HosttoBigEndian( const int16_t  Value ) MAX_DOES_NOT_THROW );
 
 } // namespace Algorithms
+} // MAX_CURRENT_VERSION_NAMESPACE_BEGIN( v0 )
+MAX_CURRENT_VERSION_NAMESPACE_END( v0 )
 } // namespace max
 
 #include <max/Algorithms/SwapEndian.inl>
