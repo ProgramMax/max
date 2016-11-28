@@ -52,6 +52,35 @@ namespace Algorithms
 	MAX_PURE_DECLARATION( constexpr inline int32_t  HostToBigEndian( const int32_t  Value ) MAX_DOES_NOT_THROW );
 	MAX_PURE_DECLARATION( constexpr inline int16_t  HosttoBigEndian( const int16_t  Value ) MAX_DOES_NOT_THROW );
 
+	MAX_PURE_DECLARATION( constexpr inline uint64_t CombinePieces( const uint8_t First8Bits,
+	                                                               const uint8_t Second8Bits,
+	                                                               const uint8_t Third8Bits,
+	                                                               const uint8_t Fourth8Bits,
+	                                                               const uint8_t Fifth8Bits,
+	                                                               const uint8_t Sixth8Bits,
+	                                                               const uint8_t Seventh8Bits,
+	                                                               const uint8_t Eighth8Bits ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline uint32_t CombinePieces( const uint8_t First8Bits,
+	                                                               const uint8_t Second8Bits,
+	                                                               const uint8_t Third8Bits,
+	                                                               const uint8_t Fourth8Bits ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline uint16_t CombinePieces( const uint8_t First8Bits,
+	                                                               const uint8_t Second8Bits ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline int64_t  CombinePieces( const int8_t  First8Bits,
+	                                                               const int8_t  Second8Bits,
+	                                                               const int8_t  Third8Bits,
+	                                                               const int8_t  Fourth8Bits,
+	                                                               const int8_t  Fifth8Bits,
+	                                                               const int8_t  Sixth8Bits,
+	                                                               const int8_t  Seventh8Bits,
+	                                                               const int8_t  Eighth8Bits ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline int32_t  CombinePieces( const int8_t  First8Bits,
+	                                                               const int8_t  Second8Bits,
+	                                                               const int8_t  Third8Bits,
+	                                                               const int8_t  Fourth8Bits ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline int16_t  CombinePieces( const int8_t  First8Bits,
+	                                                               const int8_t  Second8Bits ) MAX_DOES_NOT_THROW );
+
 } // namespace Algorithms
 } // MAX_CURRENT_VERSION_NAMESPACE_BEGIN( v0 )
 MAX_CURRENT_VERSION_NAMESPACE_END( v0 )
