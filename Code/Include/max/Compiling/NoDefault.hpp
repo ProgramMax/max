@@ -15,6 +15,8 @@
 	#else
 		#error "Unsupported compiler"
 	#endif
+#else
+	#define MAX_NO_DEFAULT std::terminate()
 #endif
 
 #endif // #ifndef MAX_COMPILING_NODEFAULT_HPP
