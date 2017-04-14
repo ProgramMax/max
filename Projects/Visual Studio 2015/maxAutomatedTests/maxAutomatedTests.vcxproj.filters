@@ -16,6 +16,9 @@
     <ClCompile Include="..\..\..\Code\AutomatedTests\RangeTest.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\AutomatedTests\BitScanForwardTest.cpp">
+      <Filter>Algorithms</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\AutomatedTests\IsBetweenTest.hpp">
@@ -23,6 +26,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\AutomatedTests\RangeTest.hpp">
       <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\AutomatedTests\BitScanForwardTest.hpp">
+      <Filter>Algorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

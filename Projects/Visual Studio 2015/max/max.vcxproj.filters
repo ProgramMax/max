@@ -145,6 +145,12 @@
       <Filter>Documentation</Filter>
     </None>
     <None Include="..\..\..\LICENSE" />
+    <None Include="..\..\..\Code\Include\max\Algorithms\BitScanForward.inl">
+      <Filter>Code\Include\max\Algorithms</Filter>
+    </None>
+    <None Include="..\..\..\Documentation\max\v0\Algorithms\BitScanForward.md">
+      <Filter>Documentation\max\v0\Algorithms</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\Include\max\Algorithms\IsBetween.hpp">
@@ -293,6 +299,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\GCCIntrinsicCPUIDPolicy.hpp">
       <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\BitScanForward.hpp">
+      <Filter>Code\Include\max\Algorithms</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

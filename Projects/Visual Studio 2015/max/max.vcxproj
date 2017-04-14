@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\Code\Include\max\Algorithms\BitScanForward.inl" />
     <None Include="..\..\..\Code\Include\max\Algorithms\IsBetween.inl" />
     <None Include="..\..\..\Code\Include\max\Algorithms\ScopedFunctor.inl" />
     <None Include="..\..\..\Code\Include\max\Algorithms\SwapEndian.inl" />
@@ -26,6 +27,7 @@
     <None Include="..\..\..\Code\Include\max\Containers\Range.inl" />
     <None Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md" />
     <None Include="..\..\..\Documentation\max\v0.md" />
+    <None Include="..\..\..\Documentation\max\v0\Algorithms\BitScanForward.md" />
     <None Include="..\..\..\Documentation\max\v0\Algorithms\IsBetween.md" />
     <None Include="..\..\..\Documentation\max\v0\Compiling\AliasingOptimizations.md" />
     <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_PURE.md" />
@@ -41,6 +43,7 @@
     <None Include="..\..\..\LICENSE" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\BitScanForward.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Algorithms\IsBetween.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Algorithms\OptimizingAssert.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Algorithms\ScopedFunctor.hpp" />
