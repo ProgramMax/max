@@ -4,11 +4,14 @@
 
 #include "RangeTest.hpp"
 #include "IsBetweenTest.hpp"
+#include "BitsTest.hpp"
+#include <iostream>
 
 int main()
 {
 	maxAutomatedTests::Containers::RunRangeTestSuite();
 	maxAutomatedTests::Algorithms::RunIsBetweenTestSuite();
+	maxAutomatedTests::Containers::RunBitsTestSuite();
 
 	return 0;
 }

@@ -24,6 +24,7 @@
     <None Include="..\..\..\Code\Include\max\Algorithms\ScopedFunctor.inl" />
     <None Include="..\..\..\Code\Include\max\Algorithms\SwapEndian.inl" />
     <None Include="..\..\..\Code\Include\max\Compiling\UnreferencedValue.inl" />
+    <None Include="..\..\..\Code\Include\max\Containers\Bits.inl" />
     <None Include="..\..\..\Code\Include\max\Containers\Range.inl" />
     <None Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md" />
     <None Include="..\..\..\Documentation\max\v0.md" />
@@ -72,6 +73,7 @@
     <ClInclude Include="..\..\..\Code\Include\max\Compiling\ThrowSpecification.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Compiling\UnreferencedValue.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Compiling\VirtualFunctionSpecification.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Containers\Range.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Associativity.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheInfo.hpp" />
