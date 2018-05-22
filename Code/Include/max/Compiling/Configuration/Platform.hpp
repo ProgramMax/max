@@ -6,7 +6,7 @@
 #define MAX_COMPILING_CONFIGURATION_PLATFORM_HPP
 
 #if defined(__ANDROID__)
-	// Android
+	// Android -- must come before the Linux check
 	#include <max/Compiling/Configuration/Platform/Andoid.hpp>
 #elif defined( linux ) || defined( __linux ) || defined( __linux__ ) || defined( __GNU__ )
 	// Linux
@@ -17,6 +17,10 @@
 #elif defined( macintosh ) || defined( __APPLE__ ) || defined( __APPLE_CC__ )
 	// MacOS / OSX
 	#include <max/Compiling/Configuration/Platform/MacOS.hpp>
+#elif defined __asmjs__
+	// AsmJS
+#elif defined __Fuchsia__
+	// Fuchsia
 //#elif defined( AVR )
 	// AVR Studio
 	//__AVR_ARCH__
