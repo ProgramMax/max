@@ -33,6 +33,8 @@ namespace Testing
 		Setup();
 		std::cout << "Done setting up test suite " << Name << "." << std::endl;
 
+		int TestsPassed = 0;
+		int TestsFailed = 0;
 		for( auto & CurrentTest : Tests )
 		{
 			std::cout << "Running test " << CurrentTest.Name << "." << std::endl;
@@ -40,8 +42,10 @@ namespace Testing
 			auto TestPassed = CurrentTest.DidTestPass();
 			if( TestPassed )
 			{
+				TestsPassed++;
 				std::cout << "Passed test " << CurrentTest.Name << "." << std::endl;
 			} else {
+				TestsFailed++;
 				std::cout << "Failed test " << CurrentTest.Name << "." << std::endl;
 			}
 		}
@@ -49,6 +53,8 @@ namespace Testing
 		std::cout << "Tearing down test suite " << Name << "." << std::endl;
 		TearDown();
 		std::cout << "Done tearing down test suite " << Name << "." << std::endl;
+		std::cout << "Passed: " << TestsPassed << std::endl;
+		std::cout << "Failed: " << TestsFailed << std::endl;
 	}
 
 	void TestSuite::Setup()
