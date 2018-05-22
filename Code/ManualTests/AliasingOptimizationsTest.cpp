@@ -14,37 +14,83 @@ namespace Compiling
 
 	namespace {
 
-		bool unpure( int * write, long * read )
+		bool UnpureFunction( int * WriteAddress, int * ReadAddress )
 		{
-			write = reinterpret_cast< int * >( 5 );
+			WriteAddress = reinterpret_cast< int * >( 5 );
 
-			return read == write;
+			return WriteAddress == ReadAddress;
 		}
 
-		MAX_PURE( void pure( int * write, int * read ) )
+		MAX_PURE_DEFINITION( bool PureFunction( int * WriteAddress, int * ReadAddress ) )
 		{
+			// In a pure function, we cannot dereference parameters.
+			// However, we can still read the value of the pointer itself.
+			return WriteAddress == ReadAddress;
 		}
 
 
-		static int global = 5;
+		static int Global = 5;
 
-		bool unpure_with_globals( int * write, int * read )
+		bool UnpureWithGlobals( int * WriteAddress, int * ReadAddress )
 		{
-			write = reinterpret_cast< int * >( 5 );
+			WriteAddress = reinterpret_cast< int * >( 5 );
 
-			return read == write && global == 0;
+			return WriteAddress == ReadAddress && Global == 0;
 		}
 
-		MAX_PURE_WITH_GLOBALS( bool pure_with_globals( int * write, int * read ) )
+		MAX_PURE_WITH_GLOBALS_DEFINITION( bool PureWithGlobals( int * WriteAddress, int * ReadAddress ) )
 		{
-			write = reinterpret_cast< int * >( 5 );
+			// In a pure-with-globals function, we cannot dereference parameters.
+			// But in this case we can access globals as well.
+			WriteAddress = reinterpret_cast< int * >( 5 );
 
-			return read == write && global == 0;
+			return ReadAddress == WriteAddress && Global == 0;
+		}
+
+		struct Address
+		{
+			explicit Address( int * Addr )
+				: Address_( Addr )
+			{
+			}
+
+			bool operator ==( const Address& rhs ) const
+			{
+				return Address_ == rhs.Address_;
+			}
+
+			int * Address_ = nullptr;
+		};
+
+		struct ReadWriteAddresses
+		{
+			explicit ReadWriteAddresses( int * ReadAddress, int * WriteAddress )
+				: ReadAddress( ReadAddress )
+				, WriteAddress( WriteAddress )
+			{
+			}
+
+			Address ReadAddress;
+			Address WriteAddress;
+		};
+
+		bool NotSemipure( ReadWriteAddresses * ReadWrite )
+		{
+			ReadWrite->WriteAddress = Address( reinterpret_cast< int * >( 5 ) );
+
+			return ReadWrite->ReadAddress.Address_ == ReadWrite->WriteAddress.Address_ && Global == 0;		
+		}
+
+		MAX_SEMI_PURE_DEFINITION( bool Semipure( ReadWriteAddresses * ReadWrite ) )
+		{
+			ReadWrite->WriteAddress = Address( reinterpret_cast< int * >( 5 ) );
+
+			return ReadWrite->ReadAddress == ReadWrite->WriteAddress;
 		}
 
 	} // anonymous namespace
 
-/* [MAX_SEMI_PURE](MAX_SEMI_PURE.md)
+/*
 * [MAX_RESTRICTED_POINTER](MAX_RESTRICTED_POINTER.md)
 * [MAX_RESTRICTED_REFERENCE](MAX_RESTRICTED_REFERENCE.md)
 * [MAX_RETURNS_RESTRICTED_POINTER](MAX_RETURNS_RESTRICTED_POINTER.md)
@@ -64,12 +110,18 @@ namespace Compiling
 			Address2 = Address1;
 		}
 
+		std::cout << UnpureFunction( Address1, Address2 );
+		std::cout << PureFunction(   Address1, Address2 );
 
-		std::cout << unpure( Address1, Address2 );
-		//std::cout << pure(   Address1, Address2 );
 
-		//std::cout << unpure_with_globals( Address1, Address2 );
-		//std::cout << pure_with_globals(   Address1, Address2 );
+		std::cin >> Global;
+
+		std::cout << UnpureWithGlobals( Address1, Address2 );
+		std::cout << PureWithGlobals(   Address1, Address2 );
+
+		ReadWriteAddresses ReadWrite( Address1, Address2 );
+		std::cout << NotSemipure( & ReadWrite );
+		std::cout << Semipure( & ReadWrite );
 
 		delete Address1;
 		if( Overlap != 'y' )
