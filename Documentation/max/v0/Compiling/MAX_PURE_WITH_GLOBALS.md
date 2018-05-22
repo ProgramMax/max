@@ -18,10 +18,15 @@ Use [MAX_SEMI_PURE](MAX_SEMI_PURE.md) instead if the code needs to follow first-
 ## Example
 
 ```c++
-MAX_PURE_WITH_GLOBALS( void UpdateGlobalStats( int ElapsedTicks ) );
+int gTotalTime = 0;
+
+MAX_PURE_WITH_GLOBALS_DECLARATION( void UpdateGlobalStats( int ElapsedTicks ) );
 
 template< typename T >
-MAX_PURE_WITH_GLOBALS( void UpdateGlobalStats( int ElapsedTicks, T ExtraInformation ) );
+MAX_PURE_WITH_GLOBALS_DEFINITION( void UpdateGlobalStats( int ElapsedTicks ) )
+{
+	gTotalTime += ElapsedTicks;
+}
 ```
 
 ## Implementation
