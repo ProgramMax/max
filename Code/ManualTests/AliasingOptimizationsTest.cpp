@@ -14,39 +14,37 @@ namespace Compiling
 
 	namespace {
 
-		bool UnpureFunction( int * WriteAddress, int * ReadAddress )
-		{
-			WriteAddress = reinterpret_cast< int * >( 5 );
 
-			return WriteAddress == ReadAddress;
+		// In a pure function, we cannot dereference parameters.
+		// However, we can still read the value of the pointer itself.
+		bool UnpureFunction( int * Address1, int * Address2 )
+		{
+			return Address1 == Address2;
 		}
 
-		MAX_PURE_DEFINITION( bool PureFunction( int * WriteAddress, int * ReadAddress ) )
+		MAX_PURE_DEFINITION( bool PureFunction( int * Address1, int * Address2 ) )
 		{
-			// In a pure function, we cannot dereference parameters.
-			// However, we can still read the value of the pointer itself.
-			return WriteAddress == ReadAddress;
+			return Address1 == Address2;
 		}
 
 
+		// In a pure-with-globals function, we cannot dereference parameters.
+		// But in this case we can access globals as well.
 		static int Global = 5;
 
-		bool UnpureWithGlobals( int * WriteAddress, int * ReadAddress )
+		bool UnpureWithGlobals( int * Address1, int * Address2 )
 		{
-			WriteAddress = reinterpret_cast< int * >( 5 );
-
-			return WriteAddress == ReadAddress && Global == 0;
+			return Address1 == Address2 && Global == 0;
 		}
 
-		MAX_PURE_WITH_GLOBALS_DEFINITION( bool PureWithGlobals( int * WriteAddress, int * ReadAddress ) )
+		MAX_PURE_WITH_GLOBALS_DEFINITION( bool PureWithGlobals( int * Address1, int * Address2 ) )
 		{
-			// In a pure-with-globals function, we cannot dereference parameters.
-			// But in this case we can access globals as well.
-			WriteAddress = reinterpret_cast< int * >( 5 );
-
-			return ReadAddress == WriteAddress && Global == 0;
+			return Address1 == Address2 && Global == 0;
 		}
 
+
+		// In a semipure function, we can follow first-level indirections
+		// but not second-level indirections.
 		struct Address
 		{
 			explicit Address( int * Addr )
@@ -62,30 +60,26 @@ namespace Compiling
 			int * Address_ = nullptr;
 		};
 
-		struct ReadWriteAddresses
+		struct AddressesHolder
 		{
-			explicit ReadWriteAddresses( int * ReadAddress, int * WriteAddress )
-				: ReadAddress( ReadAddress )
-				, WriteAddress( WriteAddress )
+			explicit AddressesHolder( int * Address1, int * Address2 )
+				: Address1( Address1 )
+				, Address2( Address2 )
 			{
 			}
 
-			Address ReadAddress;
-			Address WriteAddress;
+			Address Address1;
+			Address Address2;
 		};
 
-		bool NotSemipure( ReadWriteAddresses * ReadWrite )
+		bool NotSemipure( AddressesHolder * Addresses )
 		{
-			ReadWrite->WriteAddress = Address( reinterpret_cast< int * >( 5 ) );
-
-			return ReadWrite->ReadAddress.Address_ == ReadWrite->WriteAddress.Address_ && Global == 0;		
+			return Addresses->Address1.Address_ == Addresses->Address2.Address_ && Global == 0;
 		}
 
-		MAX_SEMI_PURE_DEFINITION( bool Semipure( ReadWriteAddresses * ReadWrite ) )
+		MAX_SEMI_PURE_DEFINITION( bool Semipure( AddressesHolder * Addresses ) )
 		{
-			ReadWrite->WriteAddress = Address( reinterpret_cast< int * >( 5 ) );
-
-			return ReadWrite->ReadAddress == ReadWrite->WriteAddress;
+			return Addresses->Address1 == Addresses->Address2;
 		}
 
 	} // anonymous namespace
@@ -102,29 +96,38 @@ namespace Compiling
 		int * Address1 = new int( 5 );
 		int * Address2 = new int( 6 );
 
-		char Overlap = 'n';
-		std::cin >> Overlap;
-		if( Overlap == 'y' )
+		bool Repeated = false;
+		char Overlap = 'a';
+		while (Overlap != 'y' && Overlap != 'Y' && Overlap != 'n' && Overlap != 'N')
 		{
-			delete Address2;
-			Address2 = Address1;
+			if (Repeated)
+				std::cout << "Invalid input. You must enter y or n\n";
+
+			std::cout << "Should the addresses overlap? (y/n)" << std::endl;
+			std::cin >> Overlap;
+			if( Overlap == 'y' )
+			{
+				delete Address2;
+				Address2 = Address1;
+			}
+			Repeated = true;
 		}
 
-		std::cout << UnpureFunction( Address1, Address2 );
-		std::cout << PureFunction(   Address1, Address2 );
+		std::cout << UnpureFunction( Address1, Address2 ) << '\n';
+		std::cout << PureFunction(   Address1, Address2 ) << '\n';
 
-
+		std::cout << "Enter a value to go in the global variable\n";
 		std::cin >> Global;
 
-		std::cout << UnpureWithGlobals( Address1, Address2 );
-		std::cout << PureWithGlobals(   Address1, Address2 );
+		std::cout << UnpureWithGlobals( Address1, Address2 ) << '\n';
+		std::cout << PureWithGlobals(   Address1, Address2 ) << '\n';
 
-		ReadWriteAddresses ReadWrite( Address1, Address2 );
-		std::cout << NotSemipure( & ReadWrite );
-		std::cout << Semipure( & ReadWrite );
+		AddressesHolder AddressPair( Address1, Address2 );
+		std::cout << NotSemipure( & AddressPair ) << '\n';
+		std::cout << Semipure( & AddressPair ) << '\n';
 
 		delete Address1;
-		if( Overlap != 'y' )
+		if( Overlap != 'y' || Overlap != 'Y')
 		{
 			delete Address2;
 		}

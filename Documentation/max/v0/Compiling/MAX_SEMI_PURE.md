@@ -12,6 +12,8 @@ This means param1->foo is okay.
 But param1->member1->foo isn't okay. This is a second-level indirection.
 A semi-pure function also cannot access globals.
 
+Note that member functions which reference member variables are following a first-level indirection.
+
 Use [MAX_PURE](MAX_PURE.md) instead if the code does not need to follow first-level indirections.
 
 Use [MAX_PURE_WITH_GLOBALS](MAX_PURE_WITH_GLOBALS.md) instead if the code needs to follow first-level indirections and access globals.
