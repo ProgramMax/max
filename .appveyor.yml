@@ -2,12 +2,21 @@
 # Use of this source code is governed by a BSD-style license that can be
 # found in the LICENSE file.
 
-version: 1.0.{build}
+version: 0.0.{build}
 
 pull_requests:
-    do_not_increment_build_number: true
+  do_not_increment_build_number: true
 
 skip_branch_with_pr: true
 
 image:
-    - Visual Studio 2015
+  - Visual Studio 2015
+  - Visual Studio 2017
+
+build:
+  project: "Projects/Visual Studio 2015/max.sln"
+
+test:
+  assemblies:
+    only:
+      - maxAutomatedTests.exe
