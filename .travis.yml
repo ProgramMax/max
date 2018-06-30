@@ -1,0 +1,14 @@
+# Copyright 2018, The max Contributors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+language: cpp
+
+matrix:
+  include:
+    - os: linux
+      compiler: clang
+    - os: linux
+      compiler: gcc
+    - os: osx
+      compiler: clang
