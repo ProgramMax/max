@@ -82,6 +82,18 @@ namespace Compiling
 			return Addresses->Address1 == Addresses->Address2;
 		}
 
+
+		// A restricted pointer parameter does not overlap any other pointed-to memory.
+		bool NotRestrictedPointerParameter( int * Address1, int * Address2 )
+		{
+			return Address1 == Address2;
+		}
+
+		bool RestrictedPointerParameter( MAX_RESTRICTED_POINTER int * Address1, MAX_RESTRICTED_POINTER int * Address2 )
+		{
+			return Address1 == Address2;
+		}
+
 	} // anonymous namespace
 
 /*
@@ -125,6 +137,9 @@ namespace Compiling
 		AddressesHolder AddressPair( Address1, Address2 );
 		std::cout << NotSemipure( & AddressPair ) << '\n';
 		std::cout << Semipure( & AddressPair ) << '\n';
+
+		std::cout << NotRestrictedPointerParameter( Address1, Address2 ) << '\n';
+		std::cout << RestrictedPointerParameter( Address1, Address2 ) << '\n';
 
 		delete Address1;
 		if( Overlap != 'y' || Overlap != 'Y')
