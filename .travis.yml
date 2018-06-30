@@ -30,5 +30,5 @@ matrix:
           script: cd Projects/GCC\ X86-64\ Make && make
         - stage: test
           script: Projects/GCC\ X86064\ Make/maxAutomatedTests
-    - os: osx
-      compiler: clang
+    #- os: osx
+    #compiler: clang
