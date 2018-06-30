@@ -16,7 +16,7 @@ image:
   - Visual Studio 2017
 
 build:
-  project: "Projects/Visual Studio 2015/max.sln"
+  project: "Projects/Visual Studio/max.sln"
 
 test:
   assemblies:
