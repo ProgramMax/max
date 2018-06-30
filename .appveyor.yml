@@ -1,0 +1,13 @@
+# Copyright 2018, The max Contributors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+version: 1.0.{build}
+
+pull_requests:
+    do_not_increment_build_number: true
+
+skip_branch_with_pr: true
+
+image:
+    - Visual Studio 2015
