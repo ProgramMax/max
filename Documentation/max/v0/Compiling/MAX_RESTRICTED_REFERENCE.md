@@ -14,7 +14,7 @@ Use [MAX_RESTRICTED_POINTER](MAX_RESTRICTED_POINTER.md) instead if the parameter
 ## Example
 
 ```c++
-void Consume( MAX_RESTRICTED_REFERENCE int & value );
+void Consume( MAX_RESTRICTED_REFERENCE( int & ) value );
 ```
 
 ## Implementation

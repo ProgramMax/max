@@ -89,7 +89,7 @@ namespace Compiling
 			return Address1 == Address2;
 		}
 
-		bool RestrictedPointerParameter( MAX_RESTRICTED_POINTER int * Address1, MAX_RESTRICTED_POINTER int * Address2 )
+		bool RestrictedPointerParameter( MAX_RESTRICTED_POINTER( int * ) Address1, MAX_RESTRICTED_POINTER( int * ) Address2 )
 		{
 			return Address1 == Address2;
 		}

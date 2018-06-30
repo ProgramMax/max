@@ -61,26 +61,26 @@
 // MAX_RESTRICTED_POINTER_V0
 // Documentation: ../../../../Documentation/max/v0/Compiling/MAX_RESTRICTED_POINTER.md
 #if defined( MAX_COMPILER_GCC )
-	#define MAX_RESTRICTED_POINTER_V0 __restrict__
+	#define MAX_RESTRICTED_POINTER_V0( Type ) __restrict__ Type
 #elif defined(MAX_COMPILER_VC)
-	#define MAX_RESTRICTED_POINTER_V0 __restrict
+	#define MAX_RESTRICTED_POINTER_V0( Type ) Type __restrict
 #else
-	#define MAX_RESTRICTED_POINTER_V0
+	#define MAX_RESTRICTED_POINTER_V0( Type ) Type
 #endif
 
 
 // MAX_RESTRICTED_REFERENCE_V0
 // Documentation: ../../../../Documentation/max/v0/Compiling/MAX_RESTRICTED_REFERENCE.md
 #if defined( MAX_COMPILER_GCC )
-	#define MAX_RESTRICTED_REFERENCE_V0 __restrict__
+	#define MAX_RESTRICTED_REFERENCE_V0( Type ) __restrict__ Type
 #elif defined( MAX_COMPILER_VC )
 	#if MAX_COMPILER_VERSION_AT_LEAST( 14, 0, 0 )
-		#define MAX_RESTRICTED_REFERENCE_V0 __restrict
+		#define MAX_RESTRICTED_REFERENCE_V0( Type ) Type __restrict
 	#else
-		#define MAX_RESTRICTED_REFERENCE_V0
+		#define MAX_RESTRICTED_REFERENCE_V0( Type ) Type
 	#endif
 #else
-	#define MAX_RESTRICTED_REFERENCE_V0
+	#define MAX_RESTRICTED_REFERENCE_V0( Type ) Type
 #endif
 
 
