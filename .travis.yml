@@ -10,7 +10,7 @@ matrix:
       compiler: clang
       #jobs:
       stage: build
-      script: "cd Projects/Clang\ X86\ Make && make"
+      script: cd Projects/Clang\ X86\ Make && make
       #- stage: test
       #   script: "Projects/Clang\ X86\ Make/maxAutomatedTests"
     - os: linux
