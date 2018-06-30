@@ -9,6 +9,8 @@ pull_requests:
 
 skip_branch_with_pr: true
 
+shallow_clone: true
+
 image:
   - Visual Studio 2015
   - Visual Studio 2017
