@@ -16,10 +16,13 @@
     <ClCompile Include="..\..\..\Code\AutomatedTests\RangeTest.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\AutomatedTests\BitScanForwardTest.cpp">
-      <Filter>Algorithms</Filter>
+    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits16Test.cpp">
+      <Filter>Containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\AutomatedTests\BitsTest.cpp">
+    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits8Test.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits32Test.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,10 +33,13 @@
     <ClInclude Include="..\..\..\Code\AutomatedTests\RangeTest.hpp">
       <Filter>Containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\AutomatedTests\BitScanForwardTest.hpp">
-      <Filter>Algorithms</Filter>
+    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits16Test.hpp">
+      <Filter>Containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\AutomatedTests\BitsTest.hpp">
+    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits8Test.hpp">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits32Test.hpp">
       <Filter>Containers</Filter>
     </ClInclude>
   </ItemGroup>

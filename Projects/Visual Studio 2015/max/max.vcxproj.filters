@@ -145,13 +145,16 @@
       <Filter>Documentation</Filter>
     </None>
     <None Include="..\..\..\LICENSE" />
-    <None Include="..\..\..\Code\Include\max\Algorithms\BitScanForward.inl">
-      <Filter>Code\Include\max\Algorithms</Filter>
+    <None Include="..\..\..\Code\Include\max\Containers\Bits16.inl">
+      <Filter>Code\Include\max\Containers</Filter>
     </None>
-    <None Include="..\..\..\Documentation\max\v0\Algorithms\BitScanForward.md">
-      <Filter>Documentation\max\v0\Algorithms</Filter>
+    <None Include="..\..\..\Code\Include\max\Containers\Bits8.inl">
+      <Filter>Code\Include\max\Containers</Filter>
     </None>
-    <None Include="..\..\..\Code\Include\max\Containers\Bits.inl">
+    <None Include="..\..\..\Code\Include\max\Compiling\Loop.inl">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Code\Include\max\Containers\Bits32.inl">
       <Filter>Code\Include\max\Containers</Filter>
     </None>
   </ItemGroup>
@@ -303,10 +306,16 @@
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\GCCIntrinsicCPUIDPolicy.hpp">
       <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\BitScanForward.hpp">
-      <Filter>Code\Include\max\Algorithms</Filter>
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits16.hpp">
+      <Filter>Code\Include\max\Containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits.hpp">
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits8.hpp">
+      <Filter>Code\Include\max\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Loop.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits32.hpp">
       <Filter>Code\Include\max\Containers</Filter>
     </ClInclude>
   </ItemGroup>
