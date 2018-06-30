@@ -145,6 +145,18 @@
       <Filter>Documentation</Filter>
     </None>
     <None Include="..\..\..\LICENSE" />
+    <None Include="..\..\..\Code\Include\max\Containers\Bits16.inl">
+      <Filter>Code\Include\max\Containers</Filter>
+    </None>
+    <None Include="..\..\..\Code\Include\max\Containers\Bits8.inl">
+      <Filter>Code\Include\max\Containers</Filter>
+    </None>
+    <None Include="..\..\..\Code\Include\max\Compiling\Loop.inl">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Code\Include\max\Containers\Bits32.inl">
+      <Filter>Code\Include\max\Containers</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\Include\max\Algorithms\IsBetween.hpp">
@@ -293,6 +305,18 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\GCCIntrinsicCPUIDPolicy.hpp">
       <Filter>Code\Include\max\Hardware\CPU\CPUIDPolicies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits16.hpp">
+      <Filter>Code\Include\max\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits8.hpp">
+      <Filter>Code\Include\max\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Loop.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits32.hpp">
+      <Filter>Code\Include\max\Containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

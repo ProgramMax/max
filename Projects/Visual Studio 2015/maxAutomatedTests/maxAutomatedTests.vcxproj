@@ -19,11 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits16Test.cpp" />
+    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits32Test.cpp" />
+    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits8Test.cpp" />
     <ClCompile Include="..\..\..\Code\AutomatedTests\EntryPoint.cpp" />
     <ClCompile Include="..\..\..\Code\AutomatedTests\IsBetweenTest.cpp" />
     <ClCompile Include="..\..\..\Code\AutomatedTests\RangeTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits16Test.hpp" />
+    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits32Test.hpp" />
+    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits8Test.hpp" />
     <ClInclude Include="..\..\..\Code\AutomatedTests\IsBetweenTest.hpp" />
     <ClInclude Include="..\..\..\Code\AutomatedTests\RangeTest.hpp" />
   </ItemGroup>
