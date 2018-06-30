@@ -12,13 +12,21 @@ skip_branch_with_pr: true
 shallow_clone: true
 
 image:
-  - Visual Studio 2015
   - Visual Studio 2017
 
 build:
-  project: "Projects/Visual Studio 2015/max.sln"
+  project: "Projects/Visual Studio/max.sln"
 
-test:
-  assemblies:
-    only:
-      - maxAutomatedTests.exe
+platform:
+  - x86
+  - x64
+configuration:
+  - Debug
+  - Release
+
+#test:
+  #assemblies:
+    #only:
+      #- maxAutomatedTests.exe
+#test_script:
+  #- maxAutomatedTests.exe

@@ -14,7 +14,7 @@ Use [MAX_RESTRICTED_REFERENCE](MAX_RESTRICTED_REFERENCE.md) instead if the param
 ## Example
 
 ```c++
-void free( MAX_RESTRICTED_POINTER void * ptr );
+void free( MAX_RESTRICTED_POINTER( void * ) ptr );
 ```
 
 ## Implementation
