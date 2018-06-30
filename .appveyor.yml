@@ -24,7 +24,5 @@ configuration:
   - Debug
   - Release
 
-test:
-  assemblies:
-    only:
-      - maxAutomatedTests.exe
+test_script:
+  - maxAutomatedTests.exe
