@@ -4,31 +4,36 @@
 
 language: cpp
 
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+        #- llvm-toolchain=trusty-5.0
+    packages:
+      - g++-6
+        #- clang-5.0
+
 matrix:
   include:
     - os: linux
       compiler: clang
-        - stage: build
-          script: cd Projects/Clang\ X86\ Make && make
-        - stage: test
-          script: Projects/Clang\ X86\ Make/maxAutomatedTests
+      env: PROJECT_DIR="Projects/Clang\ X86\ Make"
     - os: linux
       compiler: clang
-        - stage: build
-          script: cd Projects/Clang\ X86-64\ Make && make
-        - stage: test
-          script: Projects/Clang\ X86-64\ Make/maxAutomatedTests
+      env: PROJECT_DIR="Projects/Clang\ X86-64\ Make"
     - os: linux
       compiler: gcc
-        - stage: build
-          script: cd Projects/GCC\ X86\ Make && make
-        - stage: test
-          script: Projects/GCC\ X86\ Make/maxAutomatedTests
+      env: PROJECT_DIR="Projects/GCC\ X86\ Make"
     - os: linux
       compiler: gcc
-        - stage: build
-          script: cd Projects/GCC\ X86-64\ Make && make
-        - stage: test
-          script: Projects/GCC\ X86064\ Make/maxAutomatedTests
+      env: PROJECT_DIR="Projects/GCC\ X86-64\ Make"
     #- os: osx
     #compiler: clang
+
+jobs:
+  include:
+    - stage: build
+      script: echo $PROJECT_DIR
+      script: cd $PROJECT_DIR && make
+    - stage: test
+      script: $PROJECT_DIR/maxAutomatedTests
