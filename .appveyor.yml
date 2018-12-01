@@ -16,6 +16,7 @@ image:
 
 build:
   project: "Projects/Visual Studio/max.sln"
+  parallel: true
 
 platform:
   - x86
@@ -24,9 +25,9 @@ configuration:
   - Debug
   - Release
 
-#test:
-  #assemblies:
-    #only:
-      #- maxAutomatedTests.exe
+test:
+  assemblies:
+    only:
+      - "Projects/Visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
 #test_script:
-  #- maxAutomatedTests.exe
+  #- $TRAVIS_BUILD_DIR/maxAutomatedTests.exe
