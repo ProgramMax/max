@@ -15,7 +15,7 @@ image:
   - Visual Studio 2017
 
 build:
-  project: "Projects/Visual Studio/max.sln"
+  project: "Projects\Visual Studio\max.sln"
 
 platform:
   - x86
@@ -27,6 +27,6 @@ configuration:
 test:
   assemblies:
     only:
-      - "Projects/Visual Studio/%CONFIGURATION%/maxAutomatedTests.exe"
+      - "ProjectsVisual Studio\%PLATFORM%\%CONFIGURATION%\maxAutomatedTests.exe"
 #test_script:
   #- $TRAVIS_BUILD_DIR/maxAutomatedTests.exe
