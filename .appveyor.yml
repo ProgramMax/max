@@ -29,4 +29,4 @@ test:
     only:
       - maxAutomatedTests.exe
 #test_script:
-  - #$TRAVIS_BUILD_DIR/maxAutomatedTests.exe
+  #- $TRAVIS_BUILD_DIR/maxAutomatedTests.exe
