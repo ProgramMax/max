@@ -28,6 +28,6 @@ configuration:
 test:
   assemblies:
     only:
-      - "Projects/Visual Studio/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
+      - "Projects/Visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
 #test_script:
   #- $TRAVIS_BUILD_DIR/maxAutomatedTests.exe
