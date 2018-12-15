@@ -23,7 +23,7 @@ namespace Containers
 		static_assert( (0b0000'0000'0000'0000'0000'0000'0000'0010_b32).BitScanForward() == 1,  "max::Containers::Bits32::BitScanForward not reporting bit 1 set." );
 		static_assert( (0b0000'0000'0000'0000'0000'0000'0000'0100_b32).BitScanForward() == 2,  "max::Containers::Bits32::BitScanForward not reporting bit 2 set." );
 		static_assert( (0b0000'0000'0000'0000'0000'0000'0000'1000_b32).BitScanForward() == 3,  "max::Containers::Bits32::BitScanForward not reporting bit 3 set." );
-		static_assert( (0b0000'0000'0000'0000'0000'0000'0001'0000_b32).BitScanForward() == 4,  "max::Containers::Bits32::BitScanForward not reporting bit 4 set." );
+		static_assert( (0b0000'0000'0000'0000'0000'0000'0001'0000_b32).BitScanForward() == 4,  "max::Containers::Bits32::BitScanForward not reporting bit 4 set." ); //-V112
 		static_assert( (0b0000'0000'0000'0000'0000'0000'0010'0000_b32).BitScanForward() == 5,  "max::Containers::Bits32::BitScanForward not reporting bit 5 set." );
 		static_assert( (0b0000'0000'0000'0000'0000'0000'0100'0000_b32).BitScanForward() == 6,  "max::Containers::Bits32::BitScanForward not reporting bit 6 set." );
 		static_assert( (0b0000'0000'0000'0000'0000'0000'1000'0000_b32).BitScanForward() == 7,  "max::Containers::Bits32::BitScanForward not reporting bit 7 set." );
