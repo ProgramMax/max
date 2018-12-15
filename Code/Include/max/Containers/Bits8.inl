@@ -86,7 +86,7 @@ namespace Bits8
 
 		MAX_PURE_DEFINITION( constexpr inline uint8_t CheckBit4( const uint8_t Mask ) MAX_DOES_NOT_THROW )
 		{
-			return ( Mask & 0b10000 ) ? 4 : CheckBit5( Mask );
+			return ( Mask & 0b10000 ) ? 4 : CheckBit5( Mask ); //-V112
 		}
 
 		MAX_PURE_DEFINITION( constexpr inline uint8_t CheckBit5( const uint8_t Mask ) MAX_DOES_NOT_THROW )

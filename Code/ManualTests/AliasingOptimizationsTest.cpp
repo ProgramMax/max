@@ -37,7 +37,7 @@ namespace Compiling
 			return Address1 == Address2 && Global == 0;
 		}
 
-		MAX_PURE_WITH_GLOBALS_DEFINITION( bool PureWithGlobals( int * Address1, int * Address2 ) )
+		MAX_PURE_WITH_GLOBALS_DEFINITION( bool PureWithGlobals( int * Address1, int * Address2 ) ) //-V524
 		{
 			return Address1 == Address2 && Global == 0;
 		}
@@ -117,7 +117,7 @@ namespace Compiling
 
 			std::cout << "Should the addresses overlap? (y/n)" << std::endl;
 			std::cin >> Overlap;
-			if( Overlap == 'y' )
+			if( Overlap == 'y' || Overlap == 'Y')
 			{
 				delete Address2;
 				Address2 = Address1;
@@ -142,7 +142,7 @@ namespace Compiling
 		std::cout << RestrictedPointerParameter( Address1, Address2 ) << '\n';
 
 		delete Address1;
-		if( Overlap != 'y' || Overlap != 'Y')
+		if( Overlap != 'y' && Overlap != 'Y')
 		{
 			delete Address2;
 		}
