@@ -160,6 +160,9 @@
     <None Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md">
       <Filter>Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
     </None>
+    <None Include="..\..\..\Code\Include\max\Containers\Vector.inl">
+      <Filter>Code\Include\max\Containers</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\Include\max\Algorithms\IsBetween.hpp">
@@ -326,6 +329,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\X86GCCAssemblyIsCPUIDAvailablePolicy.hpp">
       <Filter>Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Vector.hpp">
+      <Filter>Code\Include\max\Containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

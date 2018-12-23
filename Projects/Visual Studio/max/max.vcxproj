@@ -29,6 +29,7 @@
     <None Include="..\..\..\Code\Include\max\Containers\Bits32.inl" />
     <None Include="..\..\..\Code\Include\max\Containers\Bits8.inl" />
     <None Include="..\..\..\Code\Include\max\Containers\Range.inl" />
+    <None Include="..\..\..\Code\Include\max\Containers\Vector.inl" />
     <None Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md" />
     <None Include="..\..\..\Documentation\max\v0.md" />
     <None Include="..\..\..\Documentation\max\v0\Algorithms\IsBetween.md" />
@@ -80,6 +81,7 @@
     <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits32.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits8.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Containers\Range.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Containers\Vector.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Associativity.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheInfo.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheLevel.hpp" />
@@ -165,7 +167,7 @@
     <ProjectGuid>{3A9E3E87-9F00-4240-8E5D-489DC37C73DA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>VisualStudio2015</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

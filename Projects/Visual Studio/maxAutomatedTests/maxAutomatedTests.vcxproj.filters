@@ -25,6 +25,9 @@
     <ClCompile Include="..\..\..\Code\AutomatedTests\Bits32Test.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\AutomatedTests\VectorTest.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\AutomatedTests\IsBetweenTest.hpp">
@@ -40,6 +43,9 @@
       <Filter>Containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\AutomatedTests\Bits32Test.hpp">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\AutomatedTests\VectorTest.hpp">
       <Filter>Containers</Filter>
     </ClInclude>
   </ItemGroup>
