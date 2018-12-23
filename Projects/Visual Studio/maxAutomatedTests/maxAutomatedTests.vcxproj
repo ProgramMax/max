@@ -25,6 +25,7 @@
     <ClCompile Include="..\..\..\Code\AutomatedTests\EntryPoint.cpp" />
     <ClCompile Include="..\..\..\Code\AutomatedTests\IsBetweenTest.cpp" />
     <ClCompile Include="..\..\..\Code\AutomatedTests\RangeTest.cpp" />
+    <ClCompile Include="..\..\..\Code\AutomatedTests\VectorTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\AutomatedTests\Bits16Test.hpp" />
@@ -32,12 +33,13 @@
     <ClInclude Include="..\..\..\Code\AutomatedTests\Bits8Test.hpp" />
     <ClInclude Include="..\..\..\Code\AutomatedTests\IsBetweenTest.hpp" />
     <ClInclude Include="..\..\..\Code\AutomatedTests\RangeTest.hpp" />
+    <ClInclude Include="..\..\..\Code\AutomatedTests\VectorTest.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0C521B83-BF62-47CC-82F0-6CA9B6EC3E29}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>maxTests</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>maxAutomatedTests</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
