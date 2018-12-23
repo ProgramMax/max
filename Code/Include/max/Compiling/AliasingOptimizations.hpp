@@ -61,7 +61,7 @@
 // MAX_RESTRICTED_POINTER_V0
 // Documentation: ../../../../Documentation/max/v0/Compiling/MAX_RESTRICTED_POINTER.md
 #if defined( MAX_COMPILER_GCC )
-	#define MAX_RESTRICTED_POINTER_V0( Type ) __restrict__ Type
+	#define MAX_RESTRICTED_POINTER_V0( Type ) Type __restrict__
 #elif defined(MAX_COMPILER_VC)
 	#define MAX_RESTRICTED_POINTER_V0( Type ) Type __restrict
 #else
