@@ -26,8 +26,12 @@ LIBRARY_PATHS_FLAGS = $(foreach d, $(LIBRARY_PATHS), -L$d)
 
 AUTOMATED_TEST_CODE_DIRECTORY = ../../Code/AutomatedTests
 AUTOMATED_TEST_CXX_SRCS = \
+	$(AUTOMATED_TEST_CODE_DIRECTORY)/Bits8Test.cpp \
+	$(AUTOMATED_TEST_CODE_DIRECTORY)/Bits16Test.cpp \
+	$(AUTOMATED_TEST_CODE_DIRECTORY)/Bits32Test.cpp \
 	$(AUTOMATED_TEST_CODE_DIRECTORY)/IsBetweenTest.cpp \
 	$(AUTOMATED_TEST_CODE_DIRECTORY)/RangeTest.cpp \
+	$(AUTOMATED_TEST_CODE_DIRECTORY)/VectorTest.cpp \
 	$(AUTOMATED_TEST_CODE_DIRECTORY)/EntryPoint.cpp
 AUTOMATED_TEST_CXX_OBJS = $(AUTOMATED_TEST_CXX_SRCS:.cpp=.o)
 
@@ -37,7 +41,7 @@ MANUAL_TEST_CXX_SRCS = \
 	$(MANUAL_TEST_CODE_DIRECTORY)/EntryPoint.cpp
 MANUAL_TEST_CXX_OBJS = $(MANUAL_TEST_CXX_SRCS:.cpp=.o)
 
-CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++14 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -m64
+CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++14 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion
 LINKER_FLAGS += $(LIBRARY_PATHS_FLAGS)
 
 
