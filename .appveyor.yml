@@ -15,19 +15,17 @@ image:
   - Visual Studio 2017
 
 build:
-  project: "Projects/Visual Studio/max.sln"
+  project: "Projects/VisualStudio/max.sln"
   parallel: true
 
 platform:
-  - x86
+  - Win32
   - x64
 configuration:
   - Debug
   - Release
 
-test:
-  assemblies:
-    only:
-      - "Projects/Visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
-#test_script:
-  #- $TRAVIS_BUILD_DIR/maxAutomatedTests.exe
+test_script:
+  #- "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/Win32/Debug/maxAutomatedTests.exe"
+  - echo "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
+  - "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
