@@ -23,7 +23,15 @@ Use [MAX_PURE_WITH_GLOBALS](MAX_PURE_WITH_GLOBALS.md) instead if the code needs 
 
 ```c++
 template< typename T >
-MAX_PURE( inline T Max( const T lhs, const T rhs ) );
+MAX_PURE_DECLARATION( inline T Max( const T lhs, const T rhs ) );
+
+template< typename T >
+MAX_PURE_DEFINITION( inline T Max( const T lhs, const T rhs ) )
+{
+	if ( lhs >= rhs )
+		return lhs;
+	return rhs;
+}
 ```
 
 ## Implementation
