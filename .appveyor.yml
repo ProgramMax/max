@@ -26,4 +26,4 @@ configuration:
   - Release
 
 test_script:
-  - "Projects/visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
+  - "%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
