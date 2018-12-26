@@ -15,7 +15,7 @@ image:
   - Visual Studio 2017
 
 build:
-  project: "Projects/Visual Studio/max.sln"
+  project: "Projects/VisualStudio/max.sln"
   parallel: true
 
 platform:
@@ -26,8 +26,8 @@ configuration:
   - Release
 
 test_script:
-  #- "%APPVEYOR_BUILD_FOLDER%/Projects/Visual\ Studio/maxAutomatedTests/Win32/Debug/maxAutomatedTests.exe"
-  - echo "%APPVEYOR_BUILD_FOLDER%/Projects/Visual\ Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
-  - "%APPVEYOR_BUILD_FOLDER%/Projects/Visual\ Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
+  #- "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/Win32/Debug/maxAutomatedTests.exe"
+  - echo "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
+  - "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
 #%PLATFORM%
 #%CONFIGURATION%
