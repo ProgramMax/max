@@ -27,6 +27,6 @@ configuration:
 
 test_script:
   #- "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/Win32/Debug/maxAutomatedTests.exe"
-  - echo %APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe
+  - "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
 #%PLATFORM%
 #%CONFIGURATION%
