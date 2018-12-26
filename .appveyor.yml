@@ -26,4 +26,4 @@ configuration:
   - Release
 
 test_script:
-  - "%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
+  - maxAutomatedTests.exe
