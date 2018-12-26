@@ -11,9 +11,13 @@ A pure function is one that references or modifies only locals and arguments.
 It cannot follow first-level indirections. This means no pointers or references.
 A pure function also cannot access globals.
 
-Use [MAX_PURE_WITH_GLOBALS](MAX_PURE_WITH_GLOBALS.md) instead if the code needs to access globals.
+MAX_PURE should not be used on methods / member functions.
+Methods have a hidden 'this' first parameter. Accessing a field / member variable happens through the 'this' pointer, which is a first-level indirection. This goes against the idea of MAX_PURE.
+MAX_PURE only applies to static methods and free functions.
 
 Use [MAX_SEMI_PURE](MAX_SEMI_PURE.md) instead if the code needs to follow first-level indirections.
+
+Use [MAX_PURE_WITH_GLOBALS](MAX_PURE_WITH_GLOBALS.md) instead if the code needs to access globals.
 
 ## Example
 

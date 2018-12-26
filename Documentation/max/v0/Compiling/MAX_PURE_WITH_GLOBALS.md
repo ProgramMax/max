@@ -22,7 +22,6 @@ int gTotalTime = 0;
 
 MAX_PURE_WITH_GLOBALS_DECLARATION( void UpdateGlobalStats( int ElapsedTicks ) );
 
-template< typename T >
 MAX_PURE_WITH_GLOBALS_DEFINITION( void UpdateGlobalStats( int ElapsedTicks ) )
 {
 	gTotalTime += ElapsedTicks;
