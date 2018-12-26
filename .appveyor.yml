@@ -26,4 +26,4 @@ configuration:
   - Release
 
 test_script:
-  - $TRAVIS_BUILD_DIR/Projects/Visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe
+  - %APPVEYoR_BUILD_FOLDER%/Projects/Visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe
