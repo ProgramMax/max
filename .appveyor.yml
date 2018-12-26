@@ -25,9 +25,5 @@ configuration:
   - Debug
   - Release
 
-test:
-  assemblies:
-    only:
-      - "Projects/Visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
-#test_script:
-  #- $TRAVIS_BUILD_DIR/maxAutomatedTests.exe
+test_script:
+  - "Projects/visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
