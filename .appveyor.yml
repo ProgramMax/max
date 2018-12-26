@@ -26,4 +26,4 @@ configuration:
   - Release
 
 test_script:
-  - %APPVEYOR_BUILD_FOLDER%/Projects/Visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe
+  - "%APPVEYOR_BUILD_FOLDER%/Projects/Visual Studio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
