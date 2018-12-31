@@ -30,4 +30,4 @@ test_script:
   #- echo "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
   #- "%APPVEYOR_BUILD_FOLDER%/Projects/VisualStudio/maxAutomatedTests/%PLATFORM%/%CONFIGURATION%/maxAutomatedTests.exe"
   #- ps: ./%APPVEYOR_BUILD_FOLDER%/Tooling/AppVeyor/RunTestingFramework.ps1
-  - ps: ./$($env:APPVEYOR_BUILD_FOLDER)/Tooling/AppVeyor/RunTestingFramework.ps1
+  - ps: C:/projects/max/Tooling/AppVeyor/RunTestingFramework.ps1
