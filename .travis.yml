@@ -17,16 +17,20 @@ matrix:
   include:
     - os: linux
       compiler: clang
-      env: PROJECT_DIR="Projects/Clang\ X86\ Make"
+      env:
+        - PROJECT_DIR="Projects/Clang\ X86\ Make"
     - os: linux
       compiler: clang
-      env: PROJECT_DIR="Projects/Clang\ X86-64\ Make"
+      env:
+        - PROJECT_DIR="Projects/Clang\ X86-64\ Make"
     - os: linux
       compiler: gcc
-      env: PROJECT_DIR="Projects/GCC\ X86\ Make"
+      env:
+        - PROJECT_DIR="Projects/GCC\ X86\ Make"
     - os: linux
       compiler: gcc
-      env: PROJECT_DIR="Projects/GCC\ X86-64\ Make"
+      env:
+        - PROJECT_DIR="Projects/GCC\ X86-64\ Make"
     #- os: osx
     #compiler: clang
 
