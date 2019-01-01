@@ -41,8 +41,9 @@ matrix:
 jobs:
   include:
     - stage: build
-      script: "cd ${PROJECT_DIR} && pwd && make"
-      script: "echo ${PROJECT_DIR}"
-      script: "echo ${TRAVIS_BUILD_DIR}"
+      script:
+        - "cd ${PROJECT_DIR} && pwd && make"
+        - "echo ${PROJECT_DIR}"
+        - "echo ${TRAVIS_BUILD_DIR}"
     - stage: test
       script: "${PROJECT_DIR}/maxAutomatedTests"
