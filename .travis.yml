@@ -16,20 +16,20 @@ addons:
 matrix:
   include:
     - os: linux
-      compiler: clang
-      env:
+    - compiler: clang
+    - env:
         - PROJECT_DIR="Projects/Clang\ X86\ Make"
     - os: linux
-      compiler: clang
-      env:
+    - compiler: clang
+    - env:
         - PROJECT_DIR="Projects/Clang\ X86-64\ Make"
     - os: linux
-      compiler: gcc
-      env:
+    - compiler: gcc
+    - env:
         - PROJECT_DIR="Projects/GCC\ X86\ Make"
     - os: linux
-      compiler: gcc
-      env:
+    - compiler: gcc
+    - env:
         - PROJECT_DIR="Projects/GCC\ X86-64\ Make"
     #- os: osx
     #compiler: clang
@@ -37,7 +37,7 @@ matrix:
 jobs:
   include:
     - stage: build
-      script: "echo $PROJECT_DIR"
+    - script: "echo $PROJECT_DIR"
       #script: cd $PROJECT_DIR && make
     - stage: test
       script: $PROJECT_DIR/maxAutomatedTests
