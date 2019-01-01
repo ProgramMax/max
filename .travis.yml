@@ -4,15 +4,6 @@
 
 language: cpp
 
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-      - llvm-toolchain-trusty-5.0
-    packages:
-      - g++-6
-      - clang-5.0
-
 matrix:
   include:
     - os: linux
@@ -25,6 +16,15 @@ matrix:
       compiler: clang
       env:
         - PROJECT_DIR="Projects/Clang\ X86\ Make"
+      jobs:
+        include:
+          - stage: build
+            script:
+              - "cd ${TRAVIS_BUILD_DIR}/${PROJECT_DIR} && pwd && make"
+              - "echo ${PROJECT_DIR}"
+              - "echo ${TRAVIS_BUILD_DIR}"
+          - stage: test
+            script: "${PROJECT_DIR}/maxAutomatedTests"
     - os: linux
       addons:
         apt:
@@ -35,6 +35,15 @@ matrix:
       compiler: clang
       env:
         - PROJECT_DIR="Projects/Clang\ X86-64\ Make"
+      jobs:
+        include:
+          - stage: build
+            script:
+              - "cd ${TRAVIS_BUILD_DIR}/${PROJECT_DIR} && pwd && make"
+              - "echo ${PROJECT_DIR}"
+              - "echo ${TRAVIS_BUILD_DIR}"
+          - stage: test
+            script: "${PROJECT_DIR}/maxAutomatedTests"
     - os: linux
       addons:
         apt:
@@ -46,6 +55,15 @@ matrix:
       compiler: gcc
       env:
         - PROJECT_DIR="Projects/GCC\ X86\ Make"
+      jobs:
+        include:
+          - stage: build
+            script:
+              - "cd ${TRAVIS_BUILD_DIR}/${PROJECT_DIR} && pwd && make"
+              - "echo ${PROJECT_DIR}"
+              - "echo ${TRAVIS_BUILD_DIR}"
+          - stage: test
+            script: "${PROJECT_DIR}/maxAutomatedTests"
     - os: linux
       addons:
         apt:
@@ -56,15 +74,14 @@ matrix:
       compiler: gcc
       env:
         - PROJECT_DIR="Projects/GCC\ X86-64\ Make"
+      jobs:
+        include:
+          - stage: build
+            script:
+              - "cd ${TRAVIS_BUILD_DIR}/${PROJECT_DIR} && pwd && make"
+              - "echo ${PROJECT_DIR}"
+              - "echo ${TRAVIS_BUILD_DIR}"
+          - stage: test
+            script: "${PROJECT_DIR}/maxAutomatedTests"
     #- os: osx
     #compiler: clang
-
-jobs:
-  include:
-    - stage: build
-      script:
-        - "cd ${TRAVIS_BUILD_DIR}/${PROJECT_DIR} && pwd && make"
-        - "echo ${PROJECT_DIR}"
-        - "echo ${TRAVIS_BUILD_DIR}"
-    - stage: test
-      script: "${PROJECT_DIR}/maxAutomatedTests"
