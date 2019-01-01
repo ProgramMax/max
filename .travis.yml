@@ -9,9 +9,9 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
         #- llvm-toolchain=trusty-5.0
-    #packages:
-      #- g++-6
-        #- clang-5.0
+    packages:
+      - g++-6
+      - clang-5.0
 
 matrix:
   include:
@@ -42,7 +42,7 @@ jobs:
   include:
     - stage: build
       script:
-        - "cd ${PROJECT_DIR} && pwd && make"
+        - "cd ${TRAVIS_BUILD_DIR}/${PROJECT_DIR} && pwd && make"
         - "echo ${PROJECT_DIR}"
         - "echo ${TRAVIS_BUILD_DIR}"
     - stage: test
