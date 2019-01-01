@@ -38,5 +38,6 @@ jobs:
   include:
     - stage: build
       script: "cd ${PROJECT_DIR} && pwd && make"
+      script: "echo ${PROJECT_DIR}"
     - stage: test
       script: "${PROJECT_DIR}/maxAutomatedTests"
