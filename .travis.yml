@@ -37,7 +37,7 @@ matrix:
 jobs:
   include:
     - stage: build
-      script: echo $PROJECT_DIR
+      script: "echo $PROJECT_DIR"
       #script: cd $PROJECT_DIR && make
     - stage: test
       script: $PROJECT_DIR/maxAutomatedTests
