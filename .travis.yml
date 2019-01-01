@@ -43,5 +43,6 @@ jobs:
     - stage: build
       script: "cd ${PROJECT_DIR} && pwd && make"
       script: "echo ${PROJECT_DIR}"
+      script: "echo ${TRAVIS_BUILD_DIR}"
     - stage: test
       script: "${PROJECT_DIR}/maxAutomatedTests"
