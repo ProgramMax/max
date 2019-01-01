@@ -8,7 +8,7 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain=trusty-5.0
+      - llvm-toolchain-trusty-5.0
     packages:
       - g++-6
       - clang-5.0
@@ -16,22 +16,43 @@ addons:
 matrix:
   include:
     - os: linux
-      packages: clang-5.0
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-trusty-5.0
+          packages:
+            - clang-5.0
       compiler: clang
       env:
         - PROJECT_DIR="Projects/Clang\ X86\ Make"
     - os: linux
-      packages: clang-5.0
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-trusty-5.0
+          packages:
+            - clang-5.0
       compiler: clang
       env:
         - PROJECT_DIR="Projects/Clang\ X86-64\ Make"
     - os: linux
-      packages: g++-6
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-trusty-5.0
+          packages:
+            - g++-6
       compiler: gcc
       env:
         - PROJECT_DIR="Projects/GCC\ X86\ Make"
     - os: linux
-      packages: g++-6
+      addons:
+        apt:
+          sources:
+            - llvm-toolchain-trusty-5.0
+          packages:
+            - g++-6
       compiler: gcc
       env:
         - PROJECT_DIR="Projects/GCC\ X86-64\ Make"
