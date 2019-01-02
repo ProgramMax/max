@@ -9,7 +9,7 @@ namespace v0
 namespace Algorithms
 {
 
-	// Documentation: ../../../../Documentation/max/v0/Algorithms/Math.md
+	// Documentation: ../../../../docs/max/v0/Algorithms/Math.md
 	template< typename T >
 	MAX_PURE_DEFINITION( constexpr inline T TwoToThePowerOf( const T Exponent ) MAX_DOES_NOT_THROW )
 	{
