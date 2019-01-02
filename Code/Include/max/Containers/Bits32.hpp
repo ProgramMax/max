@@ -5,7 +5,7 @@
 #ifndef MAX_CONTAINERS_BITS32_HPP
 #define MAX_CONTAINERS_BITS32_HPP
 
-// Documentaiton: ../../../../docs/max/v0/Containers/Bits32.md
+// Documentaiton: ../../../../Docs/max/v0/Containers/Bits32.md
 
 #include <max/Compiling/CurrentVersionNamespace.hpp>
 #include <max/Compiling/AliasingOptimizations.hpp>
@@ -23,7 +23,7 @@ namespace Containers
 	{
 	public:
 
-		// Documentation: ../../../../docs/max/v0/Containers/Bits_ctor.md
+		// Documentation: ../../../../Docs/max/v0/Containers/Bits_ctor.md
 		MAX_SEMI_PURE_DECLARATION( explicit constexpr Bits32( const uint32_t Value ) MAX_DOES_NOT_THROW );
 		MAX_SEMI_PURE_DECLARATION( explicit constexpr Bits32( const  int32_t Value ) MAX_DOES_NOT_THROW );
 

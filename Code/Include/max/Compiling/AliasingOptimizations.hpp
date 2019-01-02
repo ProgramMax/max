@@ -8,7 +8,7 @@
 #include <max/Compiling/Configuration/Compiler.hpp>
 
 // MAX_PURE_V0
-// Documentation: ../../../../docs/max/v0/Compiling/MAX_PURE.md
+// Documentation: ../../../../Docs/max/v0/Compiling/MAX_PURE.md
 #if defined( MAX_COMPILER_GCC )
 	// this is only available in GCC 2.5 and later
 	#if MAX_COMPILER_VERSION_AT_LEAST( 2, 5, 0 )
@@ -28,7 +28,7 @@
 
 
 // MAX_PURE_WITH_GLOBALS_V0
-// Documentation: ../../../../docs/max/v0/Compiling/MAX_PURE_WITH_GLOBALS.md
+// Documentation: ../../../../Docs/max/v0/Compiling/MAX_PURE_WITH_GLOBALS.md
 #if defined( MAX_COMPILER_GCC )
 	// this is only available in GCC 2.96 and later
 	#if MAX_COMPILER_VERSION_AT_LEAST( 2, 96, 0 )
@@ -48,7 +48,7 @@
 
 
 // MAX_SEMI_PURE_V0
-// Documentation: ../../../../docs/max/v0/Compiling/MAX_SEMI_PURE.md
+// Documentation: ../../../../Docs/max/v0/Compiling/MAX_SEMI_PURE.md
 #if defined( MAX_COMPILER_VC )
 	#define MAX_SEMI_PURE_DECLARATION_V0( Declaration ) __declspec( noalias ) Declaration
 	#define MAX_SEMI_PURE_DEFINITION_V0( Definition ) __declspec( noalias ) Definition
@@ -59,7 +59,7 @@
 
 
 // MAX_RESTRICTED_POINTER_V0
-// Documentation: ../../../../docs/max/v0/Compiling/MAX_RESTRICTED_POINTER.md
+// Documentation: ../../../../Docs/max/v0/Compiling/MAX_RESTRICTED_POINTER.md
 #if defined( MAX_COMPILER_GCC )
 	#define MAX_RESTRICTED_POINTER_V0( Type ) Type __restrict__
 #elif defined(MAX_COMPILER_VC)
@@ -70,7 +70,7 @@
 
 
 // MAX_RESTRICTED_REFERENCE_V0
-// Documentation: ../../../../docs/max/v0/Compiling/MAX_RESTRICTED_REFERENCE.md
+// Documentation: ../../../../Docs/max/v0/Compiling/MAX_RESTRICTED_REFERENCE.md
 #if defined( MAX_COMPILER_GCC )
 	#define MAX_RESTRICTED_REFERENCE_V0( Type ) __restrict__ Type
 #elif defined( MAX_COMPILER_VC )
@@ -85,7 +85,7 @@
 
 
 // MAX_RETURNS_RESTRICTED_POINTER_V0
-// Documentation: ../../../../docs/max/v0/Compiling/MAX_RETURNS_RESTRICTED_POINTER.md
+// Documentation: ../../../../Docs/max/v0/Compiling/MAX_RETURNS_RESTRICTED_POINTER.md
 #if defined( MAX_COMPILER_GCC )
 	#define MAX_RETURNS_RESTRICTED_POINTER_V0( Declaration ) Declaration __attribute__( malloc )
 #elif defined( MAX_COMPILER_VC )

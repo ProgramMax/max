@@ -50,7 +50,7 @@ namespace Bits32
 } // namespace Bits32
 } // namespace ImplementationDetails
 
-	// Documentation: ../../../../docs/max/v0/Containers/Bits32_ctor.md
+	// Documentation: ../../../../Docs/max/v0/Containers/Bits32_ctor.md
 	MAX_SEMI_PURE_DEFINITION( constexpr Bits32::Bits32( const uint32_t Value ) MAX_DOES_NOT_THROW )
 		: Value( Value )
 	{
