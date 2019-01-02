@@ -13,8 +13,6 @@ It includes common code such as logging, testing, abstractions for compiler and 
 
 ## Support
 
-Currently, max supports:
-
 * Compilers:
     * GCC
     * Clang
@@ -22,17 +20,13 @@ Currently, max supports:
 * OSes:
     * Some POSIX Linux (can't test them all)
     * Windows
+    * MacOS*
+    * Android*
+    * iOS*
 * Instruction sets:
     * x86 (64)
-
-In the future, max will also support:
-
-* OSes:
-    * MacOS
-    * Android
-    * iOS
-* Instruction sets:
-    * ARM
+    * ARM*
+*Coming soon
 
 If you would like max to support more contacts us and let us know.
 
