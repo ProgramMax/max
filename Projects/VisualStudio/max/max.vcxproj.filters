@@ -368,9 +368,6 @@
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\Include\max\Containers\Bits16.cpp">
-      <Filter>Code\Include\max\Containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU\CPUIDPolicies</Filter>
     </ClCompile>

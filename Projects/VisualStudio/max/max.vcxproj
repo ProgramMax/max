@@ -105,7 +105,6 @@
     <ClInclude Include="..\..\..\Code\Include\max\Testing\TestSuite.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Code\Include\max\Containers\Bits16.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Associativity.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheInfo.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheLevel.cpp" />
