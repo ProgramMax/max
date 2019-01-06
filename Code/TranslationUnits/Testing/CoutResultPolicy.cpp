@@ -54,7 +54,7 @@ namespace Testing
 		std::cout << "Tearing down test suite " << TestSuiteName << "." << std::endl;
 	}
 
-	void CoutResultPolicy::OnTestSuiteDone( char const * const TestSuiteName,
+	void CoutResultPolicy::OnTestSuiteDone( std::string const & TestSuiteName,
 	                                        int TestsPassed,
 	                                        int TestsFailed )
 	{
