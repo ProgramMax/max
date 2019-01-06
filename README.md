@@ -41,7 +41,7 @@ As an example, when a new version of Clang comes out you will have 5 years to mi
 ## Engage
 
 * **Community:** We have a welcoming community which follows the [Code of Conduct](/code_of_conduct.md).
-* **Contribute:** We accept pull requests.
+* **Contribute:** We accept pull requests. Take a look at some [good first tasks](https://github.com/ProgramMax/max/issues?q=is%3Aissue+is%3Aopen+label%3Agood-first-task).
 * **Support:** You can report bugs and request changes using GitHub issues.
 
 [travis-shield]: https://travis-ci.org/ProgramMax/max.svg?branch=master
