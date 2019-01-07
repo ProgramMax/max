@@ -26,6 +26,13 @@
 	// VC 14.0 and updates 1, 2, & 3 (2015)
 	#define MAX_COMPILER_VERSION_MAJOR 14
 	#define MAX_COMPILER_VERSION_MINOR  0
+	// All of VC 2015's updates show up with _MSC_VER 1900.
+	// So check _MSC_FULL_VER.
+	#if _MSC_FULL_VER >= 190023506
+		// VC 14.1 (2015 Update 1)
+		#undef MAX_COMPILER_VERSION_MINOR
+		#define MAX_COMPILER_VERSION_MINOR 1
+	#endif
 #elif _MSC_VER >= 1800
 	// VC 12.0 (2013)
 	#define MAX_COMPILER_VERSION_MAJOR 12
@@ -66,6 +73,10 @@
 	// VC 4.2
 	#define MAX_COMPILER_VERSION_MAJOR 4
 	#define MAX_COMPILER_VERSION_MINOR 2
+#elif _MSC_VER == 1010
+	// VC 4.1
+	#define MAX_COMPILER_VERSION_MAJOR 4
+	#define MAX_COMPILER_VERSION_MINOR 1
 #elif _MSC_VER >= 1000
 	// VC 4.0
 	#define MAX_COMPILER_VERSION_MAJOR 4
