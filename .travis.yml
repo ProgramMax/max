@@ -59,12 +59,12 @@ matrix:
     #- os: osx
     #compiler: clang
 
-jobs:
-  include:
-    - stage: build
-      script:
-        - "cd ${TRAVIS_BUILD_DIR}/${PROJECT_DIR} && pwd && make"
-        - "echo ${PROJECT_DIR}"
-        - "echo ${TRAVIS_BUILD_DIR}"
-    - stage: test
-      script: "${PROJECT_DIR}/maxAutomatedTests"
+#jobs:
+  #include:
+    #- stage: build
+      #script:
+        #- "cd ${TRAVIS_BUILD_DIR}/${PROJECT_DIR} && pwd && make"
+        #- "echo ${PROJECT_DIR}"
+        #- "echo ${TRAVIS_BUILD_DIR}"
+    #- stage: test
+      #script: "${PROJECT_DIR}/maxAutomatedTests"
