@@ -163,6 +163,12 @@
     <None Include="..\..\..\Code\Include\max\Containers\Vector.inl">
       <Filter>Code\Include\max\Containers</Filter>
     </None>
+    <None Include="..\..\..\Code\Include\max\Testing\Test.inl">
+      <Filter>Code\Include\max\Testing</Filter>
+    </None>
+    <None Include="..\..\..\Code\Include\max\Testing\TestSuite.inl">
+      <Filter>Code\Include\max\Testing</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\Include\max\Algorithms\IsBetween.hpp">
@@ -333,16 +339,13 @@
     <ClInclude Include="..\..\..\Code\Include\max\Containers\Vector.hpp">
       <Filter>Code\Include\max\Containers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Testing\CoutResultPolicy.hpp">
+      <Filter>Code\Include\max\Testing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp">
       <Filter>Code\TranslationUnits\Logging</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\Test.cpp">
-      <Filter>Code\TranslationUnits\Testing</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\TestSuite.cpp">
-      <Filter>Code\TranslationUnits\Testing</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Associativity.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU</Filter>
@@ -391,6 +394,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\X86GCCAssemblyIsCPUIDAvailablePolicy.cpp">
       <Filter>Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\CoutResultPolicy.cpp">
+      <Filter>Code\TranslationUnits\Testing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
