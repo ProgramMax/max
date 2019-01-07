@@ -12,8 +12,7 @@ CXX_SRCS = \
 	$(CODE_DIRECTORY)/Hardware/CPU/TLB.cpp \
 	$(CODE_DIRECTORY)/Hardware/CPU/TraceCache.cpp \
 	$(CODE_DIRECTORY)/Logging/DoNothingLogger.cpp \
-	$(CODE_DIRECTORY)/Testing/Test.cpp \
-	$(CODE_DIRECTORY)/Testing/TestSuite.cpp
+	$(CODE_DIRECTORY)/Testing/CoutResultPolicy.cpp
 CXX_OBJS = $(CXX_SRCS:.cpp=.o)
 
 INCLUDE_PATHS = \

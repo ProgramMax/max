@@ -9,38 +9,39 @@
 #include <functional>
 
 #define MAX_TESTING_ASSERT( CONDITION ) \
-	Assert( __FILE__, __LINE__, #CONDITION, CONDITION )
+	Assert( __FILE__, __LINE__, #CONDITION, CONDITION, ResultPolicy )
 
 #define MAX_TESTING_ASSERT_THROWS( FUNCTOR ) \
-	AssertThrows( __FILE__, __LINE__, #FUNCTOR, FUNCTOR )
+	AssertThrows( __FILE__, __LINE__, #FUNCTOR, FUNCTOR, ResultPolicy )
 
 #define MAX_TESTING_ASSERT_DOES_NOT_THROW( FUNCTOR ) \
-	AssertDoesNotThrow( __FILE__, __LINE__, #FUNCTOR, FUNCTOR )
+	AssertDoesNotThrow( __FILE__, __LINE__, #FUNCTOR, FUNCTOR, ResultPolicy )
 
 namespace max
 {
 namespace Testing
 {
 
+	template< typename ResultPolicyType >
 	class Test
 	{
 	public:
 
-		Test( char const * const Name, std::function< void( max::Testing::Test & CurrentTest ) > const & TestFunction  );
+		Test( char const * const Name, std::function< void( max::Testing::Test< ResultPolicyType > & CurrentTest, ResultPolicyType const & ResultPolicy ) > const & TestFunction  );
 
 		bool DidTestPass() const;
 
-		void Assert( char const * const FileName, int LineNumber, char const * const ExpressionString, bool Expression );
+		void Assert( char const * const FileName, int LineNumber, char const * const ExpressionString, bool Expression, ResultPolicyType const & ResultPolicy  );
 
 		template< typename ExceptionType, typename FunctorType >
-		void AssertThrows( char const * const FileName, int LineNumber, char const * const ExpressionString, FunctorType const & Functor );
+		void AssertThrows( char const * const FileName, int LineNumber, char const * const ExpressionString, FunctorType const & Functor, ResultPolicyType const & ResultPolicy );
 
 		template< typename ExceptionType, typename FunctorType >
-		void AssertDoesNotThrow( char const * const FileName, int LineNumber, char const * const ExpressionString, FunctorType const & Functor );
+		void AssertDoesNotThrow( char const * const FileName, int LineNumber, char const * const ExpressionString, FunctorType const & Functor, ResultPolicyType const & ResultPolicy );
 
 
 		const std::string Name;
-		std::function< void( max::Testing::Test & CurrentTest ) > TestFunction;
+		std::function< void( max::Testing::Test< ResultPolicyType > & CurrentTest, ResultPolicyType const & ResultPolicy ) > TestFunction;
 
 	private:
 
@@ -50,5 +51,7 @@ namespace Testing
 
 } // namespace Testing
 } // namespace max
+
+#include <max/Testing/Test.inl>
 
 #endif // #ifndef MAX_TESTING_TEST_HPP

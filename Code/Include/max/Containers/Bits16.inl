@@ -34,7 +34,7 @@ namespace Bits16
 } // namespace Bits16
 } // namespace ImplementationDetails
 
-	// Documentation: ../../../../Documentation/max/v0/Containers/Bits16_ctor.md
+	// Documentation: ../../../../Docs/max/v0/Containers/Bits16_ctor.md
 	MAX_SEMI_PURE_DEFINITION( constexpr Bits16::Bits16( const uint16_t Value ) MAX_DOES_NOT_THROW )
 		: Value( Value )
 	{

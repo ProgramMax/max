@@ -18,7 +18,7 @@ MAX_CURRENT_VERSION_NAMESPACE_BEGIN( v0 )
 namespace Algorithms
 {
 
-	// Documentation: ../../../../Documentation/max/v0/Algorithms/IsBetween.md
+	// Documentation: ../../../../Docs/max/v0/Algorithms/IsBetween.md
 	template< typename T >
 	MAX_PURE_DECLARATION( constexpr bool IsBetween( const T Value, const max::Containers::Range< T > & Range ) MAX_DOES_NOT_THROW );
 

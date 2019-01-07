@@ -5,6 +5,7 @@
 #include "VectorTest.hpp"
 #include <max/Containers/Vector.hpp>
 #include <max/Testing/TestSuite.hpp>
+#include <max/Testing/CoutResultPolicy.hpp>
 #include <utility>
 
 namespace maxAutomatedTests
@@ -14,9 +15,10 @@ namespace Containers
 
 	void RunVectorTestSuite()
 	{
-		auto VectorTestSuite = max::Testing::TestSuite{ "max::Containers::Vector test suite" };
+		max::Testing::CoutResultPolicy ResultPolicy;
+		auto VectorTestSuite = max::Testing::TestSuite< max::Testing::CoutResultPolicy >{ "max::Containers::Vector test suite", std::move( ResultPolicy ) };
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "initializer_list constructor populates elements", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "initializer_list constructor populates elements", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Test = { 1, 2, 3 };
 
 			CurrentTest.MAX_TESTING_ASSERT( Test[ 0 ] == 1 );
@@ -25,7 +27,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "copy constructor copies elements", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "copy constructor copies elements", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Original = { 1, 2, 3 };
 
 			max::Containers::Vector< int, 3 > Test = Original;
@@ -36,7 +38,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "move constructor moves elements", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "move constructor moves elements", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Original = { 1, 2, 3 };
 
 			max::Containers::Vector< int, 3 > Test = std::move( Original );
@@ -47,7 +49,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "copy assignment operator copies elements", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "copy assignment operator copies elements", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Original = { 1, 2, 3 };
 			max::Containers::Vector< int, 3 > Test;
 
@@ -59,7 +61,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "move assignment operator moves elements", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "move assignment operator moves elements", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Original = { 1, 2, 3 };
 			max::Containers::Vector< int, 3 > Test;
 
@@ -71,7 +73,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "operator + adds two vectors", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "operator + adds two vectors", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > lhs = { 1, 2, 3 };
 			max::Containers::Vector< int, 3 > rhs = { 4, 5, 6 };
 
@@ -83,7 +85,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "operator - subtracts from the first vector", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "operator - subtracts from the first vector", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > lhs = { 1, 2, 3 };
 			max::Containers::Vector< int, 3 > rhs = { 4, 6, 8 };
 
@@ -95,7 +97,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "Cross function returns cross product", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "Cross function returns cross product", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > lhs = { 1, 2, 3 };
 			max::Containers::Vector< int, 3 > rhs = { 4, 6, 8 };
 
@@ -107,7 +109,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "Dot function returns dot product", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "Dot function returns dot product", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > lhs = { 1, 2, 3 };
 			max::Containers::Vector< int, 3 > rhs = { 4, 6, 8 };
 
@@ -117,7 +119,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "scalar operator * scales", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "scalar operator * scales", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Original = { 1, 2, 3 };
 
 			max::Containers::Vector< int, 3 > Result = Original * 2;
@@ -128,7 +130,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "scalar operator / scales", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "scalar operator / scales", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Original = { 1, 2, 3 };
 
 			max::Containers::Vector< int, 3 > Result = Original / 2;
@@ -139,14 +141,14 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "Length function returns length", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "Length function returns length", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< double, 3 > Original = { 1.0, 2.0, 3.0 };
 
 			CurrentTest.MAX_TESTING_ASSERT( Original.Length() == 3.7416573867739413 );
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "Normalize function normalizes", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "Normalize function normalizes", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< double, 3 > Original = { 1.0, 2.0, 3.0 };
 
 			max::Containers::Vector< double, 3 > Result = Original.Normalize();
@@ -157,7 +159,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "non-const operator [] sets the value at that index", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "non-const operator [] sets the value at that index", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Original = { 1, 2, 3 };
 
 			Original[ 0 ] = 4;
@@ -170,7 +172,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "const operator [] reads the value", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "const operator [] reads the value", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Original = { 1, 2, 3 };
 
 			CurrentTest.MAX_TESTING_ASSERT( Original[ 0 ] == 1 );
@@ -179,7 +181,7 @@ namespace Containers
 		}
 		} );
 
-		VectorTestSuite.AddTest( max::Testing::Test{ "data function returns a pointer to the contiguous array", []( max::Testing::Test & CurrentTest ) {
+		VectorTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "data function returns a pointer to the contiguous array", []( max::Testing::Test< max::Testing::CoutResultPolicy > & CurrentTest, max::Testing::CoutResultPolicy const & ResultPolicy ) {
 			max::Containers::Vector< int, 3 > Original = { 1, 2, 3 };
 
 			const int * RawData = Original.data();
