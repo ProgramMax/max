@@ -30,6 +30,8 @@
     <None Include="..\..\..\Code\Include\max\Containers\Bits8.inl" />
     <None Include="..\..\..\Code\Include\max\Containers\Range.inl" />
     <None Include="..\..\..\Code\Include\max\Containers\Vector.inl" />
+    <None Include="..\..\..\Code\Include\max\Testing\Test.inl" />
+    <None Include="..\..\..\Code\Include\max\Testing\TestSuite.inl" />
     <None Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md" />
     <None Include="..\..\..\Documentation\max\v0.md" />
     <None Include="..\..\..\Documentation\max\v0\Algorithms\IsBetween.md" />
@@ -101,6 +103,7 @@
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TLB.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Logging\DoNothingLogger.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Testing\CoutResultPolicy.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Testing\Test.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Testing\TestSuite.hpp" />
   </ItemGroup>
@@ -153,8 +156,7 @@
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp" />
     <ClCompile Include="..\..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\Test.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\TestSuite.cpp" />
+    <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\CoutResultPolicy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\max_Hardware_CPU_X64AssemblyIsCPUIDAvailablePolicies_IsCPUIDAvailable.asm">
