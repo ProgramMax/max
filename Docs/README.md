@@ -4,7 +4,7 @@ max is a tool belt for C++.
 
 It includes common code such as logging, testing, abstractions for compiler and platform specific APIs (like endian conversion and CPU feature detection), and much more.
 
-[![Travis CI status][travis-shield]][travis-link]
+<!-- [![Travis CI status][travis-shield]][travis-link] -->
 [![AppVeyor CI status][appveyor-shield]][appveyor-link]
 
 ## Features
