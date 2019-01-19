@@ -39,6 +39,8 @@ In order to ease transition pressure, max will continue to provide support for 5
 
 As an example, when a new version of Clang comes out you will have 5 years to migrate off the now-old version.
 
+You can reference the [deprecation schedule](DeprecationSchedule.md) for exact dates.
+
 ## Engage
 
 * **Community:** We have a welcoming community which follows the [Code of Conduct](code_of_conduct.md).
