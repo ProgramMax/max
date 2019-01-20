@@ -6,6 +6,13 @@
 #define MAX_COMPILING_CONFIGURATION_COMPILER_VC_HPP
 
 #define MAX_COMPILER_VC
+
+#define MAX_INFORMATION(Message) __pragma(message(Message))
+// MSVC doesn't support custom warning messages.
+// Favor the more harsh error over information which could be missed.
+#define MAX_WARNING(Message) static_assert(false, Message)
+#define MAX_ERROR(Message) static_assert(false, Message)
+
 #if _MSC_VER == 1913
 	// VC 15.6 (2017)
 	#define MAX_COMPILER_VERSION_MAJOR 15

@@ -7,6 +7,12 @@
 
 
 #define MAX_COMPILER_GCC
+
+#define MAX_DO_PRAGMA(x) _Pragma (#x)
+#define MAX_INFORMATION(Message) MAX_DO_PRAGMA(message(Message))
+#define MAX_WARNING(Message) MAX_DO_PRAGMA(warning(Message))
+#define MAX_ERROR(Message) MAX_DO_PRAGMA(error(Message))
+
 #define MAX_COMPILER_VERSION_MAJOR __GNUC__
 #define MAX_COMPILER_VERSION_MINOR __GNUC_MINOR__
 #if __GNUC__ >= 3
