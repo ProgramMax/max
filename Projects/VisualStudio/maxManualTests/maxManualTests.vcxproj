@@ -20,10 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\ManualTests\AliasingOptimizationsTest.cpp" />
+    <ClCompile Include="..\..\..\Code\ManualTests\ConfigurationTest.cpp" />
     <ClCompile Include="..\..\..\Code\ManualTests\EntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\ManualTests\AliasingOptimizationsTest.hpp" />
+    <ClInclude Include="..\..\..\Code\ManualTests\ConfigurationTest.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{76F87B4A-ACB7-47BD-91B1-7071DFA4D870}</ProjectGuid>

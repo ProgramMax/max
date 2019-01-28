@@ -33,19 +33,24 @@
     <None Include="..\..\..\Code\Include\max\Testing\Test.inl" />
     <None Include="..\..\..\Code\Include\max\Testing\TestSuite.inl" />
     <None Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md" />
-    <None Include="..\..\..\Documentation\max\v0.md" />
-    <None Include="..\..\..\Documentation\max\v0\Algorithms\IsBetween.md" />
-    <None Include="..\..\..\Documentation\max\v0\Compiling\AliasingOptimizations.md" />
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_PURE.md" />
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_PURE_WITH_GLOBALS.md" />
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_POINTER.md" />
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_REFERENCE.md" />
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_SEMI_PURE.md" />
-    <None Include="..\..\..\Documentation\max\v0\Containers\MakeRange.md" />
-    <None Include="..\..\..\Documentation\max\v0\Containers\Range.md" />
-    <None Include="..\..\..\Documentation\max\v0\Containers\Range_ctor.md" />
-    <None Include="..\..\..\Documentation\StyleGuide.md" />
+    <None Include="..\..\..\Docs\code_of_conduct.md" />
+    <None Include="..\..\..\Docs\DeprecationSchedule.md" />
+    <None Include="..\..\..\Docs\max\v0.md" />
+    <None Include="..\..\..\Docs\max\v0\Algorithms\IsBetween.md" />
+    <None Include="..\..\..\Docs\max\v0\Compiling\AliasingOptimizations.md" />
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_COMPILER_MESSAGE.md" />
+    <None Include="..\..\..\Docs\max\v0\Compiling\Macros.md" />
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_PURE.md" />
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_PURE_WITH_GLOBALS.md" />
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_RESTRICTED_POINTER.md" />
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_RESTRICTED_REFERENCE.md" />
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_SEMI_PURE.md" />
+    <None Include="..\..\..\Docs\max\v0\Containers\MakeRange.md" />
+    <None Include="..\..\..\Docs\max\v0\Containers\Range.md" />
+    <None Include="..\..\..\Docs\max\v0\Containers\Range_ctor.md" />
+    <None Include="..\..\..\Docs\README.md" />
+    <None Include="..\..\..\Docs\StyleGuide.md" />
     <None Include="..\..\..\LICENSE" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +78,7 @@
     <ClInclude Include="..\..\..\Code\Include\max\Compiling\FavorBranchLocality.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Compiling\IsRegular.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Compiling\Loop.hpp" />
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Macros.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Compiling\MemoryBarrier.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Compiling\NoDefault.hpp" />
     <ClInclude Include="..\..\..\Code\Include\max\Compiling\StaticAssert.hpp" />

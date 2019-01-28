@@ -10,7 +10,7 @@
 
 #define MAX_COMPILER_GCC
 
-#define MAX_INFORMATION(Message) _Pragma(MAX_STRINGIFY2(message(Message)))
+#define MAX_COMPILER_MESSAGE(Message) _Pragma(MAX_STRINGIFY(message(Message)))
 
 #define MAX_COMPILER_VERSION_MAJOR __GNUC__
 #define MAX_COMPILER_VERSION_MINOR __GNUC_MINOR__

@@ -3,11 +3,13 @@
 // found in the LICENSE file.
 
 #include "AliasingOptimizationsTest.hpp"
+#include "ConfigurationTest.hpp"
 
 int main()
 {
 
 	maxManualTests::Compiling::RunAliasingOptimizationsTestSuite();
-	
+	maxManualTests::Compiling::RunConfigurationTestSuite();
+
 	return 0;
 }

@@ -9,7 +9,7 @@
 
 #define MAX_COMPILER_CLANG
 
-#define MAX_INFORMATION(Message) _Pragma(MAX_STRINGIFY2(message(Message)))
+#define MAX_COMPILER_MESSAGE(Message) _Pragma(MAX_STRINGIFY(message(Message)))
 
 #define MAX_COMPILER_VERSION_MAJOR __clang_major__
 #define MAX_COMPILER_VERSION_MINOR __clang_minor__

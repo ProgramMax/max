@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Documentation">
-      <UniqueIdentifier>{4c7c656f-4470-4128-82ed-47a0684591d2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Code">
       <UniqueIdentifier>{d2123baa-7920-4f49-b290-6d7dc9d9a7fb}</UniqueIdentifier>
     </Filter>
@@ -55,21 +52,6 @@
     <Filter Include="Code\TranslationUnits\Hardware\CPU">
       <UniqueIdentifier>{70481055-44ea-4c30-874f-98f6284c1f71}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Documentation\max">
-      <UniqueIdentifier>{7537fa1e-d771-4a81-84f1-c8e09f24fba0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Documentation\max\v0">
-      <UniqueIdentifier>{f7b357b5-721d-4bec-8443-b6182a1fd974}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Documentation\max\v0\Containers">
-      <UniqueIdentifier>{02e79c1a-a9dc-42f6-91ea-66de4f005068}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Documentation\max\v0\Algorithms">
-      <UniqueIdentifier>{b10e5494-b7eb-49a0-8b13-064f9ea93fb7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Documentation\max\v0\Compiling">
-      <UniqueIdentifier>{c79a2bc5-4845-4128-8999-f4ae5cf4ca9e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Code\Include\max\Containers">
       <UniqueIdentifier>{71aa0028-8a13-455b-8cd1-e5dcec8cb389}</UniqueIdentifier>
     </Filter>
@@ -84,6 +66,24 @@
     </Filter>
     <Filter Include="Code\TranslationUnits\Hardware\CPU\CPUIDPolicies">
       <UniqueIdentifier>{a2f67fcd-70e1-4176-a3c8-30e6fa0d5df4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs">
+      <UniqueIdentifier>{4c7c656f-4470-4128-82ed-47a0684591d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs\max">
+      <UniqueIdentifier>{7537fa1e-d771-4a81-84f1-c8e09f24fba0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs\max\v0">
+      <UniqueIdentifier>{f7b357b5-721d-4bec-8443-b6182a1fd974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs\max\v0\Containers">
+      <UniqueIdentifier>{02e79c1a-a9dc-42f6-91ea-66de4f005068}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs\max\v0\Algorithms">
+      <UniqueIdentifier>{b10e5494-b7eb-49a0-8b13-064f9ea93fb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Docs\max\v0\Compiling">
+      <UniqueIdentifier>{c79a2bc5-4845-4128-8999-f4ae5cf4ca9e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -101,45 +101,6 @@
     </None>
     <None Include="..\..\..\Code\Include\max\Containers\Range.inl">
       <Filter>Code\Include\max\Containers</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Algorithms\IsBetween.md">
-      <Filter>Documentation\max\v0\Algorithms</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Compiling\AliasingOptimizations.md">
-      <Filter>Documentation\max\v0\Compiling</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_PURE.md">
-      <Filter>Documentation\max\v0\Compiling</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_PURE_WITH_GLOBALS.md">
-      <Filter>Documentation\max\v0\Compiling</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_POINTER.md">
-      <Filter>Documentation\max\v0\Compiling</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_RESTRICTED_REFERENCE.md">
-      <Filter>Documentation\max\v0\Compiling</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md">
-      <Filter>Documentation\max\v0\Compiling</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Compiling\MAX_SEMI_PURE.md">
-      <Filter>Documentation\max\v0\Compiling</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Containers\MakeRange.md">
-      <Filter>Documentation\max\v0\Containers</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Containers\Range.md">
-      <Filter>Documentation\max\v0\Containers</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0\Containers\Range_ctor.md">
-      <Filter>Documentation\max\v0\Containers</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\max\v0.md">
-      <Filter>Documentation\max</Filter>
-    </None>
-    <None Include="..\..\..\Documentation\StyleGuide.md">
-      <Filter>Documentation</Filter>
     </None>
     <None Include="..\..\..\LICENSE" />
     <None Include="..\..\..\Code\Include\max\Algorithms\Math.inl">
@@ -168,6 +129,60 @@
     </None>
     <None Include="..\..\..\Code\Include\max\Testing\TestSuite.inl">
       <Filter>Code\Include\max\Testing</Filter>
+    </None>
+    <None Include="..\..\..\Docs\code_of_conduct.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="..\..\..\Docs\DeprecationSchedule.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="..\..\..\Docs\README.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="..\..\..\Docs\StyleGuide.md">
+      <Filter>Docs</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0.md">
+      <Filter>Docs\max\v0</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Compiling\AliasingOptimizations.md">
+      <Filter>Docs\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_PURE.md">
+      <Filter>Docs\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_PURE_WITH_GLOBALS.md">
+      <Filter>Docs\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_RESTRICTED_POINTER.md">
+      <Filter>Docs\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_RESTRICTED_REFERENCE.md">
+      <Filter>Docs\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md">
+      <Filter>Docs\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_SEMI_PURE.md">
+      <Filter>Docs\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Algorithms\IsBetween.md">
+      <Filter>Docs\max\v0\Algorithms</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Containers\MakeRange.md">
+      <Filter>Docs\max\v0\Containers</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Containers\Range.md">
+      <Filter>Docs\max\v0\Containers</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Containers\Range_ctor.md">
+      <Filter>Docs\max\v0\Containers</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Compiling\Macros.md">
+      <Filter>Docs\max\v0\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_COMPILER_MESSAGE.md">
+      <Filter>Docs\max\v0\Compiling</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -341,6 +356,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\Include\max\Testing\CoutResultPolicy.hpp">
       <Filter>Code\Include\max\Testing</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Macros.hpp">
+      <Filter>Code\Include\max\Compiling</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
