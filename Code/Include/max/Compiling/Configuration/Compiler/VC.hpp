@@ -7,7 +7,7 @@
 
 #define MAX_COMPILER_VC
 
-#define MAX_INFORMATION(Message) __pragma(message(Message))
+#define MAX_COMPILER_MESSAGE(Message) __pragma(message(Message))
 
 #if _MSC_VER == 1913
 	// VC 15.6 (2017)

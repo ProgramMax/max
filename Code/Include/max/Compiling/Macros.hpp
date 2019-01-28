@@ -6,8 +6,10 @@
 #define MAX_COMPILING_MACROS_HPP
 
 
-#define MAX_STRINGIFY2(Message) #Message
-#define MAX_STRINGIFY(Message) MAX_STRINGIFY2(Message)
+// Documentation: ../../../../Docs/max/v0/Compiling/Macros.md
+
+#define MAX_STRINGIFY(Message) #Message
+#define MAX_EXPAND_AND_STRINGIFY(Message) MAX_STRINGIFY(Message)
 
 
 #endif // #ifndef MAX_COMPILING_MACROS_HPP
