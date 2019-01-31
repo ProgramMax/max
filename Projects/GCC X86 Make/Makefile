@@ -1,43 +1,41 @@
 PROGRAM_NAME = max
-CODE_DIRECTORY = ../../Code/TranslationUnits
 CXX_SRCS = \
-	$(CODE_DIRECTORY)/Hardware/CPU/CPUIDPolicies/X86GCCAssemblyCPUIDPolicy.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/IsCPUIDAvailablePolicies/X86GCCAssemblyIsCPUIDAvailablePolicy.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/Associativity.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/CacheInfo.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/CacheLevel.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/CPUID.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/CPUIDSubleafArgumentsAndResult.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/Prefetch.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/TLB.cpp \
-	$(CODE_DIRECTORY)/Hardware/CPU/TraceCache.cpp \
-	$(CODE_DIRECTORY)/Logging/DoNothingLogger.cpp \
-	$(CODE_DIRECTORY)/Testing/CoutResultPolicy.cpp
+	../../Code/max/Hardware/CPU/CPUIDPolicies/X86GCCAssemblyCPUIDPolicy.cpp \
+	../../Code/max/Hardware/CPU/IsCPUIDAvailablePolicies/X86GCCAssemblyIsCPUIDAvailablePolicy.cpp \
+	../../Code/max/Hardware/CPU/Associativity.cpp \
+	../../Code/max/Hardware/CPU/CacheInfo.cpp \
+	../../Code/max/Hardware/CPU/CacheLevel.cpp \
+	../../Code/max/Hardware/CPU/CPUID.cpp \
+	../../Code/max/Hardware/CPU/CPUIDSubleafArgumentsAndResult.cpp \
+	../../Code/max/Hardware/CPU/Prefetch.cpp \
+	../../Code/max/Hardware/CPU/TLB.cpp \
+	../../Code/max/Hardware/CPU/TraceCache.cpp \
+	../../Code/max/Logging/DoNothingLogger.cpp \
+	../../Code/max/Testing/CoutResultPolicy.cpp
 CXX_OBJS = $(CXX_SRCS:.cpp=.o)
 
 INCLUDE_PATHS = \
-	$(CODE_DIRECTORY)/../Include
+	../../Code
 INCLUDE_PATHS_FLAGS = $(foreach d, $(INCLUDE_PATHS), -I$d)
 
 LIBRARY_PATHS = \
 	.
 LIBRARY_PATHS_FLAGS = $(foreach d, $(LIBRARY_PATHS), -L$d)
 
-AUTOMATED_TEST_CODE_DIRECTORY = ../../Code/AutomatedTests
 AUTOMATED_TEST_CXX_SRCS = \
-	$(AUTOMATED_TEST_CODE_DIRECTORY)/Bits8Test.cpp \
-	$(AUTOMATED_TEST_CODE_DIRECTORY)/Bits16Test.cpp \
-	$(AUTOMATED_TEST_CODE_DIRECTORY)/Bits32Test.cpp \
-	$(AUTOMATED_TEST_CODE_DIRECTORY)/IsBetweenTest.cpp \
-	$(AUTOMATED_TEST_CODE_DIRECTORY)/RangeTest.cpp \
-	$(AUTOMATED_TEST_CODE_DIRECTORY)/VectorTest.cpp \
-	$(AUTOMATED_TEST_CODE_DIRECTORY)/EntryPoint.cpp
+	../../Code/max/Algorithms/IsBetweenTest.cpp \
+	../../Code/max/Containers/Bits8Test.cpp \
+	../../Code/max/Containers/Bits16Test.cpp \
+	../../Code/max/Containers/Bits32Test.cpp \
+	../../Code/max/Containers/RangeTest.cpp \
+	../../Code/max/Containers/VectorTest.cpp \
+	../../Code/max/Testing/AutomatedTestsEntryPoint.cpp
 AUTOMATED_TEST_CXX_OBJS = $(AUTOMATED_TEST_CXX_SRCS:.cpp=.o)
 
-MANUAL_TEST_CODE_DIRECTORY = ../../Code/ManualTests
 MANUAL_TEST_CXX_SRCS = \
-	$(MANUAL_TEST_CODE_DIRECTORY)/AliasingOptimizationsTest.cpp \
-	$(MANUAL_TEST_CODE_DIRECTORY)/EntryPoint.cpp
+	../../Code/max/Compiling/AliasingOptimizationsTest.cpp \
+	../../Code/max/Compiling/ConfigurationTest.cpp \
+	../../Code/max/Testing/ManualTestsEntryPoint.cpp
 MANUAL_TEST_CXX_OBJS = $(MANUAL_TEST_CXX_SRCS:.cpp=.o)
 
 CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++14 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion
