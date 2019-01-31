@@ -31,7 +31,7 @@ It includes common code such as logging, testing, abstractions for compiler and 
 
 If you would like max to support more contacts us and let us know.
 
-## End Of Life
+## Deprecation Schedule
 
 We know transitioning a codebase to a new technology takes time. And we know customers may still be on an old OS.
 
@@ -39,7 +39,7 @@ In order to ease transition pressure, max will continue to provide support for 5
 
 As an example, when a new version of Clang comes out you will have 5 years to migrate off the now-old version.
 
-You can reference the [deprecation schedule](DeprecationSchedule.md) for exact dates.
+You can reference the full [deprecation schedule](DeprecationSchedule.md) for exact dates.
 
 ## Engage
 
