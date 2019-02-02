@@ -9,8 +9,12 @@
 
 #define MAX_COMPILER_MESSAGE(Message) __pragma(message(Message))
 
-#if _MSC_VER > 1916
+#if _MSC_VER > 1920
 	MAX_COMPILER_MESSAGE("Compiling with a newer version of MSVC than max recognizes.");
+#elif _MSC_VER >= 1920
+	// VC 16.0 (2019)
+	#define MAX_COMPILER_VERSION_MAJOR 16
+	#define MAX_COMPILER_VERSION_MINOR 0
 #elif _MSC_VER >= 1916
 	// VC 15.9 (2017)
 	#define MAX_COMPILER_VERSION_MAJOR 15
