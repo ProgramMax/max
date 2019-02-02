@@ -1,6 +1,6 @@
 # MAX_RETURNS_RESTRICTED_POINTER
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## Note
 
@@ -17,4 +17,4 @@ MAX_RETURNS_RESTRICTED_POINTER void * malloc( size_t size );
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L87).
+Go to [the implementation](AliasingOptimizations.hpp#L87).

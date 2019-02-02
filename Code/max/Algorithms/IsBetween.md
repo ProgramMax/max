@@ -1,6 +1,6 @@
 # max::Algorithms::IsBetween
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## Note
 
@@ -42,4 +42,4 @@ if( max::Algorithms::IsBetween( 50, range ) )
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Algorithms/IsBetween.inl#L13).
+Go to [the implementation](IsBetween.inl#L13).

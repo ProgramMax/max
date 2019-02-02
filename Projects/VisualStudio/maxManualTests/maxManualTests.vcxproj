@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Code\ManualTests\AliasingOptimizationsTest.cpp" />
-    <ClCompile Include="..\..\..\Code\ManualTests\ConfigurationTest.cpp" />
-    <ClCompile Include="..\..\..\Code\ManualTests\EntryPoint.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Compiling\ConfigurationTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Testing\ManualTestsEntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Code\ManualTests\AliasingOptimizationsTest.hpp" />
-    <ClInclude Include="..\..\..\Code\ManualTests\ConfigurationTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\ConfigurationTest.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{76F87B4A-ACB7-47BD-91B1-7071DFA4D870}</ProjectGuid>
@@ -80,28 +80,28 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\Code;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\max\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\Code;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\max\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\Code;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\max\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\Code;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\max\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>

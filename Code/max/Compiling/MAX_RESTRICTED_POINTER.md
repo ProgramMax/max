@@ -1,6 +1,6 @@
 # MAX_RESTRICTED_POINTER
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## Note
 
@@ -19,4 +19,4 @@ void free( MAX_RESTRICTED_POINTER( void * ) ptr );
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L61).
+Go to [the implementation](AliasingOptimizations.hpp#L61).

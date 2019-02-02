@@ -27,7 +27,6 @@ namespace Bits8
 } // namespace Bits8
 } // namespace ImplementationDetails
 
-	// Documentation: ../../../../Docs/max/v0/Containers/Bits8_ctor.md
 	MAX_SEMI_PURE_DEFINITION( constexpr Bits8::Bits8( const uint8_t Value ) MAX_DOES_NOT_THROW )
 		: Value( Value )
 	{

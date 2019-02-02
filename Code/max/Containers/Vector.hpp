@@ -5,8 +5,6 @@
 #ifndef MAX_CONTAINERS_VECTOR_HPP
 #define MAX_CONTAINERS_VECTOR_HPP
 
-// Documentaiton: ../../../../Docs/max/v0/Containers/Vector.md
-
 #include <max/Compiling/CurrentVersionNamespace.hpp>
 #include <max/Compiling/AliasingOptimizations.hpp>
 #include <max/Compiling/ThrowSpecification.hpp>

@@ -1,6 +1,6 @@
 # MAX_SEMI_PURE
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## Note
 
@@ -36,4 +36,4 @@ MAX_SEMI_PURE_DEFINITION( T Max( const T & lhs, const T & rhs ) )
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L50).
+Go to [the implementation](AliasingOptimizations.hpp#L50).

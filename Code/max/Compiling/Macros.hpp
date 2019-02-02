@@ -6,7 +6,7 @@
 #define MAX_COMPILING_MACROS_HPP
 
 
-// Documentation: ../../../../Docs/max/v0/Compiling/Macros.md
+// Documentation: Macros.md
 
 #define MAX_STRINGIFY(Message) #Message
 #define MAX_EXPAND_AND_STRINGIFY(Message) MAX_STRINGIFY(Message)

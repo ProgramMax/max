@@ -1,6 +1,6 @@
 # max::Compiling::AliasingOptimizations
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## What is it?
 
