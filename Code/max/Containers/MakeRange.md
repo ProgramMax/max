@@ -1,6 +1,6 @@
 # max::Containers::MakeRange
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## Note
 
@@ -40,4 +40,4 @@ max::Algorithms::IsBetween( 50, range );
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Containers/Range.inl#L24).
+Go to [the implementation](Range.inl#L24).

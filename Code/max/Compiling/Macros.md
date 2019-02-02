@@ -1,6 +1,6 @@
 # MAX_STRINGIFY and MAX_EXPAND_AND_STRINGIFY
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## Note
 
@@ -19,4 +19,4 @@ MAX_COMPILER_MESSAGE(MAX_STRINGIFY(__LINE__) " has the value " MAX_EXPAND_AND_ST
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/Macros.hpp#L11).
+Go to [the implementation](Macros.hpp#L11).

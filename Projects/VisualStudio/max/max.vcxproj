@@ -19,153 +19,309 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Code\Include\max\Algorithms\IsBetween.inl" />
-    <None Include="..\..\..\Code\Include\max\Algorithms\Math.inl" />
-    <None Include="..\..\..\Code\Include\max\Algorithms\ScopedFunctor.inl" />
-    <None Include="..\..\..\Code\Include\max\Algorithms\SwapEndian.inl" />
-    <None Include="..\..\..\Code\Include\max\Compiling\Loop.inl" />
-    <None Include="..\..\..\Code\Include\max\Compiling\UnreferencedValue.inl" />
-    <None Include="..\..\..\Code\Include\max\Containers\Bits16.inl" />
-    <None Include="..\..\..\Code\Include\max\Containers\Bits32.inl" />
-    <None Include="..\..\..\Code\Include\max\Containers\Bits8.inl" />
-    <None Include="..\..\..\Code\Include\max\Containers\Range.inl" />
-    <None Include="..\..\..\Code\Include\max\Containers\Vector.inl" />
-    <None Include="..\..\..\Code\Include\max\Testing\Test.inl" />
-    <None Include="..\..\..\Code\Include\max\Testing\TestSuite.inl" />
-    <None Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md" />
+    <None Include="..\..\..\.github\ISSUE_TEMPLATE\bug_report.md" />
+    <None Include="..\..\..\.github\ISSUE_TEMPLATE\feature_request.md" />
+    <None Include="..\..\..\.travis.yml" />
+    <None Include="..\..\..\AUTHORS" />
+    <None Include="..\..\..\Code\max\Algorithms\IsBetween.inl" />
+    <None Include="..\..\..\Code\max\Algorithms\IsBetween.md" />
+    <None Include="..\..\..\Code\max\Algorithms\Math.inl" />
+    <None Include="..\..\..\Code\max\Algorithms\ScopedFunctor.inl" />
+    <None Include="..\..\..\Code\max\Algorithms\SwapEndian.inl" />
+    <None Include="..\..\..\Code\max\Algorithms\SwapEndian.md" />
+    <None Include="..\..\..\Code\max\Compiling\AliasingOptimizations.md" />
+    <None Include="..\..\..\Code\max\Compiling\Loop.inl" />
+    <None Include="..\..\..\Code\max\Compiling\Macros.md" />
+    <None Include="..\..\..\Code\max\Compiling\MAX_COMPILER_MESSAGE.md" />
+    <None Include="..\..\..\Code\max\Compiling\MAX_PURE.md" />
+    <None Include="..\..\..\Code\max\Compiling\MAX_PURE_WITH_GLOBALS.md" />
+    <None Include="..\..\..\Code\max\Compiling\MAX_RESTRICTED_POINTER.md" />
+    <None Include="..\..\..\Code\max\Compiling\MAX_RESTRICTED_REFERENCE.md" />
+    <None Include="..\..\..\Code\max\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
+    <None Include="..\..\..\Code\max\Compiling\MAX_SEMI_PURE.md" />
+    <None Include="..\..\..\Code\max\Compiling\UnreferencedValue.inl" />
+    <None Include="..\..\..\Code\max\Containers\Bits16.inl" />
+    <None Include="..\..\..\Code\max\Containers\Bits32.inl" />
+    <None Include="..\..\..\Code\max\Containers\Bits8.inl" />
+    <None Include="..\..\..\Code\max\Containers\MakeRange.md" />
+    <None Include="..\..\..\Code\max\Containers\Range.inl" />
+    <None Include="..\..\..\Code\max\Containers\Range.md" />
+    <None Include="..\..\..\Code\max\Containers\Range_ctor.md" />
+    <None Include="..\..\..\Code\max\Containers\Vector.inl" />
+    <None Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md" />
+    <None Include="..\..\..\Code\max\Testing\Test.inl" />
+    <None Include="..\..\..\Code\max\Testing\TestSuite.inl" />
     <None Include="..\..\..\Docs\code_of_conduct.md" />
     <None Include="..\..\..\Docs\DeprecationSchedule.md" />
-    <None Include="..\..\..\Docs\max\v0.md" />
-    <None Include="..\..\..\Docs\max\v0\Algorithms\IsBetween.md" />
-    <None Include="..\..\..\Docs\max\v0\Compiling\AliasingOptimizations.md" />
-    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_COMPILER_MESSAGE.md" />
-    <None Include="..\..\..\Docs\max\v0\Compiling\Macros.md" />
-    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_PURE.md" />
-    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_PURE_WITH_GLOBALS.md" />
-    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_RESTRICTED_POINTER.md" />
-    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_RESTRICTED_REFERENCE.md" />
-    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
-    <None Include="..\..\..\Docs\max\v0\Compiling\MAX_SEMI_PURE.md" />
-    <None Include="..\..\..\Docs\max\v0\Containers\MakeRange.md" />
-    <None Include="..\..\..\Docs\max\v0\Containers\Range.md" />
-    <None Include="..\..\..\Docs\max\v0\Containers\Range_ctor.md" />
     <None Include="..\..\..\Docs\README.md" />
     <None Include="..\..\..\Docs\StyleGuide.md" />
+    <None Include="..\..\..\Docs\v0.md" />
     <None Include="..\..\..\LICENSE" />
+    <None Include="..\..\..\Tooling\AppVeyor\AppVeyor.yml" />
+    <None Include="..\..\..\Tooling\Cppcheck\max.cppcheck" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\IsBetween.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\Math.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\OptimizingAssert.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\ScopedFunctor.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\SwapEndian.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Algorithms\Yield.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\AliasingOptimizations.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Alignment.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Assume.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Compiler.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Compiler\Clang.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Compiler\GCC.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Compiler\VC.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform\Android.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform\Linux.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform\MacOS.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\Platform\Win32.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Configuration\StandardLibrary.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\CurrentVersionNamespace.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\FavorBranchLocality.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\IsRegular.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Loop.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\Macros.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\MemoryBarrier.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\NoDefault.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\StaticAssert.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\ThrowSpecification.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\UnreferencedValue.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Compiling\VirtualFunctionSpecification.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits16.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits32.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Containers\Bits8.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Containers\Range.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Containers\Vector.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Associativity.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheInfo.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CacheLevel.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUID.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\GCCIntrinsicCPUIDPolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\X64GCCAssemblyCPUIDPolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDPolicies\X86GCCAssemblyCPUIDPolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\CPUIDSubleafResult.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\X64AssemblyIsCPUIDAvailablePolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\X64GCCAssemblyIsCPUIDAvailablePolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\X86AssemblyIsCPUIDAvailablePolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\IsCPUIDAvailablePolicies\X86GCCAssemblyIsCPUIDAvailablePolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\Prefetch.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TLB.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Hardware\CPU\TraceCache.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Logging\DoNothingLogger.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Testing\CoutResultPolicy.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Testing\Test.hpp" />
-    <ClInclude Include="..\..\..\Code\Include\max\Testing\TestSuite.hpp" />
+    <Xml Include="..\..\..\Tooling\AppVeyor\junit-results.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Associativity.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheInfo.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CacheLevel.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUID.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\GCCIntrinsicCPUIDPolicy.cpp">
+    <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetween.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\X64GCCAssemblyCPUIDPolicy.cpp">
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\Math.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\OptimizingAssert.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\ScopedFunctor.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndian.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\Yield.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\AliasingOptimizations.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDPolicies\X86GCCAssemblyCPUIDPolicy.cpp">
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Compiling\Alignment.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Assume.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\ConfigurationTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\X64GCCAssemblyIsCPUIDAvailablePolicy.cpp">
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler\Clang.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler\GCC.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler\VC.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Platform.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Platform\Android.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Platform\Linux.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Platform\MacOS.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Platform\Win32.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\StandardLibrary.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\CurrentVersionNamespace.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\FavorBranchLocality.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\IsRegular.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Loop.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Macros.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\MemoryBarrier.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\NoDefault.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\StaticAssert.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\ThrowSpecification.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\UnreferencedValue.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\VirtualFunctionSpecification.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits16.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits16Test.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\X86AssemblyIsCPUIDAvailablePolicy.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\X86GCCAssemblyIsCPUIDAvailablePolicy.cpp">
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits32.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits32Test.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\Prefetch.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TLB.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Hardware\CPU\TraceCache.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Logging\DoNothingLogger.cpp" />
-    <ClCompile Include="..\..\..\Code\TranslationUnits\Testing\CoutResultPolicy.cpp" />
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits8.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits8Test.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\Range.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\Vector.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\VectorTest.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\Associativity.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CacheInfo.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CacheLevel.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CPUID.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\GCCIntrinsicCPUIDPolicy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\X64GCCAssemblyCPUIDPolicy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\X86GCCAssemblyCPUIDPolicy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\CPUIDSubleafResult.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\X64AssemblyIsCPUIDAvailablePolicy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\X64GCCAssemblyIsCPUIDAvailablePolicy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\X86AssemblyIsCPUIDAvailablePolicy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\X86GCCAssemblyIsCPUIDAvailablePolicy.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\Prefetch.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\TLB.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\TraceCache.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Logging\DoNothingLogger.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Testing\CoutResultPolicy.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Testing\Test.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Testing\TestSuite.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <MASM Include="..\..\..\Code\TranslationUnits\Hardware\CPU\IsCPUIDAvailablePolicies\max_Hardware_CPU_X64AssemblyIsCPUIDAvailablePolicies_IsCPUIDAvailable.asm">
+    <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Compiling\ConfigurationTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\Bits16Test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\Bits32Test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\Bits8Test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\RangeTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\VectorTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\Associativity.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\CacheInfo.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\CacheLevel.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\CPUID.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\AssemblyCPUIDPolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\GCCIntrinsicCPUIDPolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\VCIntrinsicCPUIDPolicy.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\X64GCCAssemblyCPUIDPolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\CPUIDPolicies\X86GCCAssemblyCPUIDPolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\CPUIDSubleafArgumentsAndResult.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\X64GCCAssemblyIsCPUIDAvailablePolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\X86AssemblyIsCPUIDAvailablePolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\X86GCCAssemblyIsCPUIDAvailablePolicy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\Prefetch.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\TLB.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\TraceCache.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Logging\DoNothingLogger.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Testing\AutomatedTestsEntryPoint.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Testing\CoutResultPolicy.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Testing\ManualTestsEntryPoint.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\max_Hardware_CPU_X64AssemblyIsCPUIDAvailablePolicies_IsCPUIDAvailable.asm">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </MASM>
@@ -223,28 +379,28 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\Code;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <EnableCppCoreCheck>true</EnableCppCoreCheck>
     <EnableExperimentalCppCoreCheck>true</EnableExperimentalCppCoreCheck>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\Code;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <EnableCppCoreCheck>true</EnableCppCoreCheck>
     <EnableExperimentalCppCoreCheck>true</EnableExperimentalCppCoreCheck>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\Code;$(IncludePath)</IncludePath>
     <EnableCppCoreCheck>true</EnableCppCoreCheck>
     <EnableExperimentalCppCoreCheck>true</EnableExperimentalCppCoreCheck>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\Code;$(IncludePath)</IncludePath>
     <EnableCppCoreCheck>true</EnableCppCoreCheck>
     <EnableExperimentalCppCoreCheck>true</EnableExperimentalCppCoreCheck>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>

@@ -19,21 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits16Test.cpp" />
-    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits32Test.cpp" />
-    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits8Test.cpp" />
-    <ClCompile Include="..\..\..\Code\AutomatedTests\EntryPoint.cpp" />
-    <ClCompile Include="..\..\..\Code\AutomatedTests\IsBetweenTest.cpp" />
-    <ClCompile Include="..\..\..\Code\AutomatedTests\RangeTest.cpp" />
-    <ClCompile Include="..\..\..\Code\AutomatedTests\VectorTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Containers\Bits16Test.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Containers\Bits32Test.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Containers\Bits8Test.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Containers\RangeTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Containers\VectorTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Testing\AutomatedTestsEntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits16Test.hpp" />
-    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits32Test.hpp" />
-    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits8Test.hpp" />
-    <ClInclude Include="..\..\..\Code\AutomatedTests\IsBetweenTest.hpp" />
-    <ClInclude Include="..\..\..\Code\AutomatedTests\RangeTest.hpp" />
-    <ClInclude Include="..\..\..\Code\AutomatedTests\VectorTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits16Test.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits32Test.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits8Test.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\VectorTest.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0C521B83-BF62-47CC-82F0-6CA9B6EC3E29}</ProjectGuid>
@@ -89,28 +89,28 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\Code;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\max\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\Code;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\max\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\Code;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\max\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(ProjectDir)..\..\..\Code\Include;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)..\..\..\Code;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\max\$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
     <OutDir>$(SolutionDir)\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</OutDir>

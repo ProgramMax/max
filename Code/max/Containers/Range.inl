@@ -11,7 +11,7 @@ namespace v0
 namespace Containers
 {
 
-	// Documentation: ../../../../Docs/max/v0/Containers/Range_ctor.md
+	// Documentation: Range_ctor.md
 	template< typename T >
 	MAX_SEMI_PURE_DEFINITION( constexpr Range< T >::Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW )
 		: Minimum( Minimum )
@@ -19,7 +19,7 @@ namespace Containers
 	{
 	}
 
-	// Documentation: ../../../../Docs/max/v0/Containers/MakeRange.md
+	// Documentation: MakeRange.md
 	template< typename T >
 	MAX_PURE_DEFINITION( Range< T > MakeRange( const T Value1, const T Value2 ) MAX_DOES_NOT_THROW )
 	{

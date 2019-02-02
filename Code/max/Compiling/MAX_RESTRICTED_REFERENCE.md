@@ -1,6 +1,6 @@
 # MAX_RESTRICTED_REFERENCE
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## Note
 
@@ -19,4 +19,4 @@ void Consume( MAX_RESTRICTED_REFERENCE( int & ) value );
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L72).
+Go to [the implementation](AliasingOptimizations.hpp#L72).

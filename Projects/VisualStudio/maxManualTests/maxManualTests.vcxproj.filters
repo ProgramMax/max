@@ -4,21 +4,26 @@
     <Filter Include="Compiling">
       <UniqueIdentifier>{a912e3ab-9b38-421e-bf85-f01f5b6e4eb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Testing">
+      <UniqueIdentifier>{49455bd4-1ab9-426b-a405-00ab2efc1688}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Code\ManualTests\EntryPoint.cpp" />
-    <ClCompile Include="..\..\..\Code\ManualTests\AliasingOptimizationsTest.cpp">
+    <ClCompile Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.cpp">
       <Filter>Compiling</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\ManualTests\ConfigurationTest.cpp">
+    <ClCompile Include="..\..\..\Code\max\Compiling\ConfigurationTest.cpp">
       <Filter>Compiling</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Testing\ManualTestsEntryPoint.cpp">
+      <Filter>Testing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Code\ManualTests\AliasingOptimizationsTest.hpp">
+    <ClInclude Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.hpp">
       <Filter>Compiling</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\ManualTests\ConfigurationTest.hpp">
+    <ClInclude Include="..\..\..\Code\max\Compiling\ConfigurationTest.hpp">
       <Filter>Compiling</Filter>
     </ClInclude>
   </ItemGroup>

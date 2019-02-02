@@ -1,6 +1,6 @@
 # max::Containers::Range
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## What is it?
 
@@ -13,4 +13,4 @@ The Range class holds lower and upper bounds for a range (inclusive).
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Containers/Range.hpp#L21).
+Go to [the implementation](Range.hpp#L21).

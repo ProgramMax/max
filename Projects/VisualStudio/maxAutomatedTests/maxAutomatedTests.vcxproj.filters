@@ -7,45 +7,50 @@
     <Filter Include="Containers">
       <UniqueIdentifier>{3d56c41a-5f3c-4682-8c25-496962d4d235}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Testing">
+      <UniqueIdentifier>{063edf7c-90f0-4b88-adf5-9046829dcfb4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Code\AutomatedTests\EntryPoint.cpp" />
-    <ClCompile Include="..\..\..\Code\AutomatedTests\IsBetweenTest.cpp">
+    <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp">
       <Filter>Algorithms</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\AutomatedTests\RangeTest.cpp">
+    <ClCompile Include="..\..\..\Code\max\Containers\Bits8Test.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits8Test.cpp">
+    <ClCompile Include="..\..\..\Code\max\Containers\Bits16Test.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits16Test.cpp">
+    <ClCompile Include="..\..\..\Code\max\Containers\Bits32Test.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\AutomatedTests\Bits32Test.cpp">
+    <ClCompile Include="..\..\..\Code\max\Containers\RangeTest.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\AutomatedTests\VectorTest.cpp">
+    <ClCompile Include="..\..\..\Code\max\Containers\VectorTest.cpp">
       <Filter>Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Testing\AutomatedTestsEntryPoint.cpp">
+      <Filter>Testing</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Code\AutomatedTests\IsBetweenTest.hpp">
+    <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp">
       <Filter>Algorithms</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\AutomatedTests\RangeTest.hpp">
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits8Test.hpp">
       <Filter>Containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits8Test.hpp">
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits16Test.hpp">
       <Filter>Containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits16Test.hpp">
+    <ClInclude Include="..\..\..\Code\max\Containers\Bits32Test.hpp">
       <Filter>Containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\AutomatedTests\Bits32Test.hpp">
+    <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp">
       <Filter>Containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\AutomatedTests\VectorTest.hpp">
+    <ClInclude Include="..\..\..\Code\max\Containers\VectorTest.hpp">
       <Filter>Containers</Filter>
     </ClInclude>
   </ItemGroup>

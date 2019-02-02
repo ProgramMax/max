@@ -5,7 +5,7 @@
 #ifndef MAX_CONTAINERS_RANGE_HPP
 #define MAX_CONTAINERS_RANGE_HPP
 
-// Documentaiton: ../../../../Docs/max/v0/Containers/Range.md
+// Documentaiton: Range.md
 
 #include <max/Compiling/CurrentVersionNamespace.hpp>
 #include <max/Compiling/AliasingOptimizations.hpp>
@@ -23,7 +23,7 @@ namespace Containers
 	{
 	public:
 
-		// Documentation: ../../../../Docs/max/v0/Containers/Range_ctor.md
+		// Documentation: Range_ctor.md
 		MAX_SEMI_PURE_DECLARATION( constexpr Range( const T Minimum, const T Maximum ) MAX_DOES_NOT_THROW );
 
 		T Minimum;
@@ -31,7 +31,7 @@ namespace Containers
 
 	};
 
-	// Documentation: ../../../../Docs/max/v0/Containers/MakeRange.md
+	// Documentation: MakeRange.md
 	template< typename T >
 	MAX_PURE_DECLARATION( Range< T > MakeRange( const T Value1, const T Value2 ) MAX_DOES_NOT_THROW );
 

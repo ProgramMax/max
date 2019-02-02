@@ -18,7 +18,6 @@ MAX_CURRENT_VERSION_NAMESPACE_BEGIN( v0 )
 namespace Algorithms
 {
 
-	// Documentation: ../../../../Docs/max/v0/Algorithms/Math.md
 	template< typename T >
 	MAX_PURE_DECLARATION( constexpr T TwoToThePowerOf( const T Exponent ) MAX_DOES_NOT_THROW );
 

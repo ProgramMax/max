@@ -1,6 +1,6 @@
 # MAX_PURE_WITH_GLOBALS
 
-API version: [**v0**](../../v0.md)
+API version: [**v0**](../../../Docs/v0.md)
 
 ## Note
 
@@ -30,4 +30,4 @@ MAX_PURE_WITH_GLOBALS_DEFINITION( void UpdateGlobalStats( int ElapsedTicks ) )
 
 ## Implementation
 
-Go to [the implementation](../../../../Code/Include/max/Compiling/AliasingOptimizations.hpp#L30).
+Go to [the implementation](AliasingOptimizations.hpp#L30).
