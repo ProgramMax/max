@@ -9,10 +9,14 @@
 
 #define MAX_COMPILER_MESSAGE(Message) __pragma(message(Message))
 
-#if _MSC_VER > 1920
+#if _MSC_VER > 1921
 	MAX_COMPILER_MESSAGE("Compiling with a newer version of MSVC than max recognizes.");
+#elif _MSC_VER == 1921
+	// MSVC++ 14.21 (Visual Studio 2019 / version 16.1)
+	#define MAX_COMPILER_VERSION_MAJOR 16
+	#define MAX_COMPILER_VERSION_MINOR 1
 #elif _MSC_VER >= 1920
-	// MSVC++ 15.0 (Visual Studio 2019)
+	// MSVC++ 14.2 (Visual Studio 2019 / version 16.0)
 	#define MAX_COMPILER_VERSION_MAJOR 16
 	#define MAX_COMPILER_VERSION_MINOR 0
 #elif _MSC_VER >= 1916
@@ -51,16 +55,10 @@
 	// So check _MSC_FULL_VER.
 	#if _MSC_FULL_VER >= 190024210
 		// MSVC++ 14.3 (Visual Studio 2015 Update 3)
-		#undef MAX_COMPILER_VERSION_MINOR
-		#define MAX_COMPILER_VERSION_MINOR 3
 	#elif _MSC_FULL_VER >= 190023918
 		// MSVC++ 14.2 (Visual Studio 2015 Update 2)
-		#undef MAX_COMPILER_VERSION_MINOR
-		#define MAX_COMPILER_VERSION_MINOR 2
 	#elif _MSC_FULL_VER >= 190023506
 		// MSVC++ 14.1 (Visual Studio 2015 Update 1)
-		#undef MAX_COMPILER_VERSION_MINOR
-		#define MAX_COMPILER_VERSION_MINOR 1
 	#endif
 #elif _MSC_VER >= 1800
 	// MSVC++ 12.0 (Visual Studio 2013 / version 12.0)
@@ -92,6 +90,13 @@
 	// MSVC++ 7.1 (Visual Studio .NET 2003 / version 7.1)
 	#define MAX_COMPILER_VERSION_MAJOR 7
 	#define MAX_COMPILER_VERSION_MINOR 1
+	#if _MSC_FULL_VER >= 13106030
+		// Visual Studio .NET 2003 SP 1
+	#elif _MSC_FULL_VER >= 13103077
+		// Visual Studio .NET 2003
+	#elif _MSC_FULL_VER >= 13102292
+		// Visual Studio .NET 2003 Beta
+	#endif
 #elif _MSC_VER >= 1300
 	// MSVC++ 7.0 (Visual Studio .NET 2002 / version 7.0)
 	#define MAX_COMPILER_VERSION_MAJOR 7
@@ -111,7 +116,7 @@
 	// MSVC++ 4.2 (Developer Studio 4.2)
 	#define MAX_COMPILER_VERSION_MAJOR 4
 	#define MAX_COMPILER_VERSION_MINOR 2
-#elif _MSC_VER == 1010
+#elif _MSC_VER >= 1010
 	// MSVC++ 4.1 (Developer Studio 4.1)
 	#define MAX_COMPILER_VERSION_MAJOR 4
 	#define MAX_COMPILER_VERSION_MINOR 1
@@ -121,14 +126,14 @@
 	#define MAX_COMPILER_VERSION_MINOR 0
 #elif _MSC_VER >= 900
 	// MSVC++ 2.0
-	#define MAX_COMPILER_VERSION_MAJOR 3
+	#define MAX_COMPILER_VERSION_MAJOR 2
 	#define MAX_COMPILER_VERSION_MINOR 0
 #elif _MSC_VER >= 800
 	// MSVC++ 1.0
 	#define MAX_COMPILER_VERSION_MAJOR 1
 	#define MAX_COMPILER_VERSION_MINOR 0
 #elif _MSC_VER >= 700
-	// MSC 7.0
+	// MSC/C++ 7.0
 	#define MAX_COMPILER_VERSION_MAJOR 7
 	#define MAX_COMPILER_VERSION_MINOR 0
 #elif _MSC_VER >= 600
