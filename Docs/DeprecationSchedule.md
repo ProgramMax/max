@@ -2,7 +2,8 @@
 
 |Clang version|Release date|max deprecation date|
 |-------------|-----------:|-------------------:|
-|Clang 7.0.x  |Sep 19, 2018|             Current|
+|Clang 8.0.x  |Mar 20, 2019|             Current|
+|Clang 7.0.x  |Sep 19, 2018|        Mar 20, 2024|
 |Clang 6.0.x  |Mar  8, 2018|        Sep 19, 2023|
 |Clang 5.0.x  |Sep  7, 2018|        Mar  8, 2023|
 |Clang 4.0.x  |Mar 13, 2017|        Sep  7, 2023|
@@ -16,7 +17,9 @@
 
 |GCC version|Release date|max deprecation date|
 |-----------|-----------:|-------------------:|
-|GCC 8.2    |Jul 26, 2018|             Current|
+|GCC 9.1    |May  3, 2019|             Current|
+|GCC 8.3    |Feb 22, 2019|        May  3, 2024|
+|GCC 8.2    |Jul 26, 2018|        Feb 22, 2024|
 |GCC 7.3    |Jan 25, 2018|        Jul 26, 2023|
 |GCC 7.2    |Aug 14, 2017|        Jan 25, 2023|
 |GCC 7.1    |May  2, 2017|        Aug 14, 2023|
@@ -27,12 +30,13 @@
 |GCC 5.2    |Jul 16, 2015|        Dec  4, 2020|
 |GCC 5.1    |Apr 22, 2015|        Jul 16, 2020|
 |GCC 4.9.x  |Apr 22, 2014|        Apr 22, 2020|
-|GCC 4.8.x  |Mar 22, 2013|        Apr 22, 2019|
-|GCC 4.7.x  |Mar 22, 2012|          Deprecated|
+|GCC 4.8.x  |Mar 22, 2013|          Deprecated|
 
 |MSVC version      |Release date|max deprecation date|
 |------------------|-----------:|-------------------:|
-|MSVC 15.9.x       |Nov 13, 2018|             Current|
+|MSVC 16.1.x       |May 21, 2019|             Current|
+|MSVC 16.0.x       |Apr  2, 2019|        May 21, 2024|
+|MSVC 15.9.x       |Nov 13, 2018|        Apr  2, 2024|
 |MSVC 15.8.x       |Aug 14, 2018|        Nov 13, 2023|
 |MSVC 15.7.x       |May  7, 2018|        Aug 14, 2023|
 |MSVC 15.6.x       |Mar  5, 2018|        May  7, 2023|
@@ -49,8 +53,7 @@
 |MSVC 2013 Update 4|Nov 12, 2014|        Jul 20, 2020|
 |MSVC 2013 Update 3|Aug  4, 2014|        Nov 12, 2019|
 |MSVC 2013 Update 2|Apr  2, 2014|        Aug  4, 2019|
-|MSVC 2013 Update 1|Jan 20, 2014|        Apr  2, 2019|
-|MSVC 2013         |Oct 17, 2013|          Deprecated|
+|MSVC 2013 Update 1|Jan 20, 2014|          Deprecated|
 
 |Windows version|Release date|max deprecation date|
 |---------------|-----------:|-------------------:|
