@@ -29,9 +29,12 @@
 	#if defined( MAX_X86_64 )
 		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X64GCCAssemblyIsCPUIDAvailablePolicy.hpp>
 		#include <max/Hardware/CPU/CPUIDPolicies/X64GCCAssemblyCPUIDPolicy.hpp>
-	#elif defined (MAX_X86 )
+	#elif defined( MAX_X86 )
 		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X86GCCAssemblyIsCPUIDAvailablePolicy.hpp>
 		#include <max/Hardware/CPU/CPUIDPolicies/X86GCCAssemblyCPUIDPolicy.hpp>
+	#elif defined( MAX_AARCH64 ) || defined( MAX_ARM ) || defined( MAX_THUMB )
+		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/ArmIsCPUIDAvailablePolicy.hpp>
+		#include <max/Hardware/CPU/CPUIDPolicies/AArch64CPUIDPolicy.hpp>
 	#else
 		static_assert( false, "Unsupported platform" );
 	#endif
@@ -1285,6 +1288,9 @@ namespace CPU
 	#elif defined( MAX_X86 )
 		typedef X86GCCAssemblyIsCPUIDAvailablePolicy   IsCPUIDAvailablePolicy;
 		typedef X86GCCAssemblyCPUIDPolicy              CPUIDPolicy;
+	#elif defined( MAX_AARCH64 ) || defined( MAX_ARM ) || defined( MAX_THUMB )
+		typedef ArmIsCPUIDAvailablePolicy              IsCPUIDAvailablePolicy;
+		typedef AArch64CPUIDPolicy                     CPUIDPolicy;
 	#else
 		static_assert( false, "Unsupported platform" );
 	#endif

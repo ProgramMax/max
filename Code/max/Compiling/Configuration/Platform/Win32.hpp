@@ -38,6 +38,13 @@
 		#define MAX_64BIT_WORD_SIZE
 		#define MAX_IA64
 		#define MAX_LITTLE_ENDIAN
+	#elif defined( _M_ARM )
+		#define MAX_32BIT_WORD_SIZE
+		#define MAX_ARM
+	#elif defined( _M_ARMT )
+		// Thumb mode
+		#define MAX_16BIT_WORD_SIZE
+		#define MAX_THUMB
 	#else
 		static_assert( false, "Unknown platform" );
 	#endif

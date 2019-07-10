@@ -25,7 +25,7 @@ It includes common code such as logging, testing, abstractions for compiler and 
     * iOS*
 * Instruction sets:
     * x86 (64)
-    * ARM*
+    * ARM
 
 *Coming soon
 
