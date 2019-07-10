@@ -44,9 +44,9 @@ namespace Testing
 	                                 int LineNumber,
 	                                 char const * const ExpressionString )
 	{
-		std::cout << L"Assert failed: " << ExpressionString << "\n";
-		std::cout << L"\tin file " << FileName << "\n";
-		std::cout << L"\ton line " << LineNumber << std::endl;
+		std::cout << "Assert failed: " << ExpressionString << "\n";
+		std::cout << "\tin file " << FileName << "\n";
+		std::cout << "\ton line " << LineNumber << std::endl;
 	}
 
 	void CoutResultPolicy::OnTestSuiteTearDown( std::string const & TestSuiteName )
