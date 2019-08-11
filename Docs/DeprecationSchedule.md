@@ -12,7 +12,7 @@
 |Clang 3.7.x  |Sep  1, 2015|        Mar  8, 2021|
 |Clang 3.6.x  |Feb 27, 2015|        Sep  1, 2020|
 |Clang 3.5.x  |Sep  3, 2014|        Feb 27, 2020|
-|Clang 3.4.x  |Jan  2, 2014|        Sep  3, 2029|
+|Clang 3.4.x  |Jan  2, 2014|        Sep  3, 2019|
 |Clang 3.3    |Jun 17, 2013|          Deprecated|
 
 |GCC version|Release date|max deprecation date|
@@ -34,7 +34,8 @@
 
 |MSVC version      |Release date|max deprecation date|
 |------------------|-----------:|-------------------:|
-|MSVC 16.1.x       |May 21, 2019|             Current|
+|MSVC 16.2.x       |Jul 24, 2019|             Current|
+|MSVC 16.1.x       |May 21, 2019|        Jul 24, 2024|
 |MSVC 16.0.x       |Apr  2, 2019|        May 21, 2024|
 |MSVC 15.9.x       |Nov 13, 2018|        Apr  2, 2024|
 |MSVC 15.8.x       |Aug 14, 2018|        Nov 13, 2023|
@@ -52,8 +53,7 @@
 |MSVC 2015         |Jul 20, 2015|        Nov 30, 2020|
 |MSVC 2013 Update 4|Nov 12, 2014|        Jul 20, 2020|
 |MSVC 2013 Update 3|Aug  4, 2014|        Nov 12, 2019|
-|MSVC 2013 Update 2|Apr  2, 2014|        Aug  4, 2019|
-|MSVC 2013 Update 1|Jan 20, 2014|          Deprecated|
+|MSVC 2013 Update 2|Apr  2, 2014|          Deprecated|
 
 |Windows version|Release date|max deprecation date|
 |---------------|-----------:|-------------------:|
