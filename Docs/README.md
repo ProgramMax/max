@@ -49,5 +49,5 @@ You can reference the full [deprecation schedule](DeprecationSchedule.md) for ex
 
 [travis-shield]: https://travis-ci.org/ProgramMax/max.svg?branch=master
 [travis-link]: https://travis-ci.org/ProgramMax/max/builds
-[appveyor-shield]: https://ci.appveyor.com/api/projects/status/7wjmpyqh6gnc70g5?svg=true
-[appveyor-link]: https://ci.appveyor.com/project/ProgramMax/max
+[appveyor-shield]: https://ci.appveyor.com/api/projects/status/7wjmpyqh6gnc70g5/branch/master?svg=true
+[appveyor-link]: https://ci.appveyor.com/project/ProgramMax/max/branch/master
