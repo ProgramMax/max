@@ -17,7 +17,8 @@
 
 |GCC version|Release date|max deprecation date|
 |-----------|-----------:|-------------------:|
-|GCC 9.1    |May  3, 2019|             Current|
+|GCC 9.2    |Aug 12, 2019|             Current|
+|GCC 9.1    |May  3, 2019|        Aug 12, 2024|
 |GCC 8.3    |Feb 22, 2019|        May  3, 2024|
 |GCC 8.2    |Jul 26, 2018|        Feb 22, 2024|
 |GCC 7.3    |Jan 25, 2018|        Jul 26, 2023|
