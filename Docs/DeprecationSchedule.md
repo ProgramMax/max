@@ -12,8 +12,7 @@
 |Clang 3.8.x  |Mar  8, 2016|        Sep  2, 2021|
 |Clang 3.7.x  |Sep  1, 2015|        Mar  8, 2021|
 |Clang 3.6.x  |Feb 27, 2015|        Sep  1, 2020|
-|Clang 3.5.x  |Sep  3, 2014|        Feb 27, 2020|
-|Clang 3.4.x  |Jan  2, 2014|          Deprecated|
+|Clang 3.5.x  |Sep  3, 2014|          Deprecated|
 
 |GCC version|Release date|max deprecation date|
 |-----------|-----------:|-------------------:|
