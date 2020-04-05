@@ -9,9 +9,13 @@
 
 #define MAX_COMPILER_MESSAGE(Message) __pragma(message(Message))
 
-#if _MSC_VER > 1924
-MAX_COMPILER_MESSAGE("Compiling with a newer version of MSVC than max recognizes.");
-#elif _MSC_VER == 1924
+#if _MSC_VER > 1925
+	MAX_COMPILER_MESSAGE("Compiling with a newer version of MSVC than max recognizes. Using last known version.");
+#elif _MSC_VER >= 1925
+	// MSVC++ 14.25 (Visual Studio 2019 / version 16.5)
+	#define MAX_COMPILER_VERSION_MAJOR 16
+	#define MAX_COMPILER_VERSION_MINOR 5
+#elif _MSC_VER >= 1924
 	// MSVC++ 14.24 (Visual Studio 2019 / version 16.4)
 	#define MAX_COMPILER_VERSION_MAJOR 16
 	#define MAX_COMPILER_VERSION_MINOR 4
