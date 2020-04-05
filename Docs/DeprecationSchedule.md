@@ -29,12 +29,12 @@
 |GCC 5.3    |Dec  4, 2015|        Apr 27, 2021|
 |GCC 5.2    |Jul 16, 2015|        Dec  4, 2020|
 |GCC 5.1    |Apr 22, 2015|        Jul 16, 2020|
-|GCC 4.9.x  |Apr 22, 2014|        Apr 22, 2020|
-|GCC 4.8.x  |Mar 22, 2013|          Deprecated|
+|GCC 4.9.x  |Apr 22, 2014|          Deprecated|
 
 |MSVC version      |Release date|max deprecation date|
 |------------------|-----------:|-------------------:|
-|MSVC 16.4.x       |Dec  3, 2019|             Current|
+|MSVC 16.5.x       |Mar 16, 2020|             Current|
+|MSVC 16.4.x       |Dec  3, 2019|        Mar 16, 2025|
 |MSVC 16.3.x       |Sep 23, 2019|        Dec  3, 2024|
 |MSVC 16.2.x       |Jul 24, 2019|        Sep 23, 2024|
 |MSVC 16.1.x       |May 21, 2019|        Jul 24, 2024|
