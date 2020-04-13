@@ -23,6 +23,7 @@
     <None Include="..\..\..\.github\ISSUE_TEMPLATE\feature_request.md" />
     <None Include="..\..\..\.travis.yml" />
     <None Include="..\..\..\AUTHORS" />
+    <None Include="..\..\..\Code\max\Algorithms\BitScan.inl" />
     <None Include="..\..\..\Code\max\Algorithms\IsBetween.inl" />
     <None Include="..\..\..\Code\max\Algorithms\IsBetween.md" />
     <None Include="..\..\..\Code\max\Algorithms\Math.inl" />
@@ -40,9 +41,6 @@
     <None Include="..\..\..\Code\max\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
     <None Include="..\..\..\Code\max\Compiling\MAX_SEMI_PURE.md" />
     <None Include="..\..\..\Code\max\Compiling\UnreferencedValue.inl" />
-    <None Include="..\..\..\Code\max\Containers\Bits16.inl" />
-    <None Include="..\..\..\Code\max\Containers\Bits32.inl" />
-    <None Include="..\..\..\Code\max\Containers\Bits8.inl" />
     <None Include="..\..\..\Code\max\Containers\MakeRange.md" />
     <None Include="..\..\..\Code\max\Containers\Range.inl" />
     <None Include="..\..\..\Code\max\Containers\Range.md" />
@@ -64,6 +62,7 @@
     <Xml Include="..\..\..\Tooling\AppVeyor\junit-results.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\BitScan.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetween.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -75,6 +74,12 @@
     <ClInclude Include="..\..\..\Code\max\Algorithms\OptimizingAssert.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\ScopedFunctor.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndian.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Algorithms\Yield.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\AliasingOptimizations.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.hpp">
@@ -113,27 +118,6 @@
     <ClInclude Include="..\..\..\Code\max\Compiling\ThrowSpecification.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\UnreferencedValue.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\VirtualFunctionSpecification.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits16.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits16Test.hpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits32.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits32Test.hpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits8.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits8Test.hpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Containers\Range.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -214,6 +198,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Algorithms\SwapEndianTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
@@ -221,24 +211,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Compiling\ConfigurationTest.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\max\Containers\Bits16Test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\max\Containers\Bits32Test.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\max\Containers\Bits8Test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>

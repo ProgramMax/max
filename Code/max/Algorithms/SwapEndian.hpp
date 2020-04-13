@@ -17,12 +17,19 @@ MAX_CURRENT_VERSION_NAMESPACE_BEGIN( v0 )
 namespace Algorithms
 {
 
-	MAX_PURE_DECLARATION( constexpr inline uint64_t SwapEndian( const uint64_t Value ) MAX_DOES_NOT_THROW );
-	MAX_PURE_DECLARATION( constexpr inline uint32_t SwapEndian( const uint32_t Value ) MAX_DOES_NOT_THROW );
-	MAX_PURE_DECLARATION( constexpr inline uint16_t SwapEndian( const uint16_t Value ) MAX_DOES_NOT_THROW );
-	MAX_PURE_DECLARATION( constexpr inline int64_t  SwapEndian( const int64_t  Value ) MAX_DOES_NOT_THROW );
-	MAX_PURE_DECLARATION( constexpr inline int32_t  SwapEndian( const int32_t  Value ) MAX_DOES_NOT_THROW );
-	MAX_PURE_DECLARATION( constexpr inline int16_t  SwapEndian( const int16_t  Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( inline uint64_t SwapEndian( const uint64_t Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( inline uint32_t SwapEndian( const uint32_t Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( inline uint16_t SwapEndian( const uint16_t Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( inline int64_t  SwapEndian( const int64_t  Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( inline int32_t  SwapEndian( const int32_t  Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( inline int16_t  SwapEndian( const int16_t  Value ) MAX_DOES_NOT_THROW );
+
+	MAX_PURE_DECLARATION( constexpr inline uint64_t SwapEndianConstexpr( const uint64_t Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline uint32_t SwapEndianConstexpr( const uint32_t Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline uint16_t SwapEndianConstexpr( const uint16_t Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline int64_t  SwapEndianConstexpr( const int64_t  Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline int32_t  SwapEndianConstexpr( const int32_t  Value ) MAX_DOES_NOT_THROW );
+	MAX_PURE_DECLARATION( constexpr inline int16_t  SwapEndianConstexpr( const int16_t  Value ) MAX_DOES_NOT_THROW );
 
 	MAX_PURE_DECLARATION( constexpr inline uint64_t LittleEndianToHost( const uint64_t Value ) MAX_DOES_NOT_THROW );
 	MAX_PURE_DECLARATION( constexpr inline uint32_t LittleEndianToHost( const uint32_t Value ) MAX_DOES_NOT_THROW );
