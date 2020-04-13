@@ -15,15 +15,6 @@
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp">
       <Filter>Algorithms</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\max\Containers\Bits8Test.cpp">
-      <Filter>Containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\max\Containers\Bits16Test.cpp">
-      <Filter>Containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Code\max\Containers\Bits32Test.cpp">
-      <Filter>Containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Containers\RangeTest.cpp">
       <Filter>Containers</Filter>
     </ClCompile>
@@ -33,25 +24,28 @@
     <ClCompile Include="..\..\..\Code\max\Testing\AutomatedTestsEntryPoint.cpp">
       <Filter>Testing</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Algorithms\SwapEndianTest.cpp">
+      <Filter>Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Algorithms\BitScanTest.cpp">
+      <Filter>Algorithms</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp">
       <Filter>Algorithms</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits8Test.hpp">
-      <Filter>Containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits16Test.hpp">
-      <Filter>Containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits32Test.hpp">
-      <Filter>Containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp">
       <Filter>Containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Containers\VectorTest.hpp">
       <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp">
+      <Filter>Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\BitScanTest.hpp">
+      <Filter>Algorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

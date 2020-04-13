@@ -19,19 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Code\max\Algorithms\BitScanTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp" />
-    <ClCompile Include="..\..\..\Code\max\Containers\Bits16Test.cpp" />
-    <ClCompile Include="..\..\..\Code\max\Containers\Bits32Test.cpp" />
-    <ClCompile Include="..\..\..\Code\max\Containers\Bits8Test.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Algorithms\SwapEndianTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\RangeTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\VectorTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Testing\AutomatedTestsEntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\BitScanTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits16Test.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits32Test.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Containers\Bits8Test.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\VectorTest.hpp" />
   </ItemGroup>

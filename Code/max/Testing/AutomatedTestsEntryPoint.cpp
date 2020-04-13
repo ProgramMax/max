@@ -3,18 +3,16 @@
 // found in the LICENSE file.
 
 #include <max/Algorithms/IsBetweenTest.hpp>
-#include <max/Containers/Bits8Test.hpp>
-#include <max/Containers/Bits16Test.hpp>
-#include <max/Containers/Bits32Test.hpp>
+#include <max/Algorithms/SwapEndianTest.hpp>
+#include <max/Algorithms/BitScanTest.hpp>
 #include <max/Containers/RangeTest.hpp>
 #include <max/Containers/VectorTest.hpp>
 
 int main()
 {
 	maxAutomatedTests::Algorithms::RunIsBetweenTestSuite();
-	maxAutomatedTests::Containers::RunBits8TestSuite();
-	maxAutomatedTests::Containers::RunBits16TestSuite();
-	maxAutomatedTests::Containers::RunBits32TestSuite();
+	maxAutomatedTests::Algorithms::RunSwapEndianTestSuite();
+	maxAutomatedTests::Algorithms::RunBitScanTestSuite();
 	maxAutomatedTests::Containers::RunRangeTestSuite();
 	maxAutomatedTests::Containers::RunVectorTestSuite();
 

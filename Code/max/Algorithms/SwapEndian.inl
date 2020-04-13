@@ -4,6 +4,10 @@
 
 #include <max/Compiling/Configuration.hpp>
 
+#if defined( MAX_COMPILER_VC )
+#include <stdlib.h>
+#endif
+
 namespace max
 {
 namespace v0
@@ -13,58 +17,56 @@ namespace Algorithms
 
 #if defined( MAX_COMPILER_CLANG ) || \
 	( defined( MAX_COMPILER_GCC ) && MAX_COMPILER_VERSION_AT_LEAST( 4, 3, 0 )  )
-	MAX_PURE_DEFINITION( constexpr inline uint64_t SwapEndian( const uint64_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline uint64_t SwapEndian( const uint64_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return __builtin_bswap64( Value );
 	}
 
-	MAX_PURE_DEFINITION( constexpr inline uint32_t SwapEndian( const uint32_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline uint32_t SwapEndian( const uint32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return __builtin_bswap32( Value );
 	}
 
-	MAX_PURE_DEFINITION( constexpr inline uint16_t SwapEndian( const uint16_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline uint16_t SwapEndian( const uint16_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return __builtin_bswap16( Value );
 	}
 #elif defined( MAX_COMPILER_VC )
-	#include <stdlib.h>
-
-	MAX_PURE_DEFINITION( constexpr inline uint64_t SwapEndian( const uint64_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline uint64_t SwapEndian( const uint64_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return _byteswap_uint64( Value );
 	}
 
-	MAX_PURE_DEFINITION( constexpr inline uint32_t SwapEndian( const uint32_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline uint32_t SwapEndian( const uint32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return _byteswap_ulong( Value );
 	}
 
-	MAX_PURE_DEFINITION( constexpr inline uint16_t SwapEndian( const uint16_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline uint16_t SwapEndian( const uint16_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return _byteswap_ushort( Value );
 	}
 #else
-	MAX_PURE_DEFINITION( constexpr inline uint64_t SwapEndian( const uint64_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline uint64_t SwapEndian( const uint64_t Value ) MAX_DOES_NOT_THROW )
 	{
-		return static_cast< const uint16_t >(
-			( ( Value & 0xff00'0000'0000'0000ull >> 56 ) |
-			( ( Value & 0x0000'0000'0000'00ffull << 56 ) |
-			( ( Value & 0x00ff'0000'0000'0000ull >> 40 ) |
-			( ( Value & 0x0000'0000'0000'ff00ull << 40 ) |
-			( ( Value & 0x0000'ff00'0000'0000ull >> 24 ) |
-			( ( Value & 0x0000'0000'00ff'0000ull << 24 ) |
-			( ( Value & 0x0000'00ff'0000'0000ull >> 8  ) |
-			( ( Value & 0x0000'0000'ff00'0000ull << 8  ) ) );
+		return static_cast< const uint64_t >(
+			( ( Value & 0xff00'0000'0000'0000ull ) >> 56 ) |  // move byte 7 to byte 0
+			( ( Value & 0x00ff'0000'0000'0000ull ) >> 40 ) |  // move byte 6 to byte 1
+			( ( Value & 0x0000'ff00'0000'0000ull ) >> 24 ) |  // move byte 5 to byte 2
+			( ( Value & 0x0000'00ff'0000'0000ull ) >> 8  ) |  // move byte 4 to byte 3
+			( ( Value & 0x0000'0000'ff00'0000ull ) << 8  ) |  // move byte 3 to byte 4
+			( ( Value & 0x0000'0000'00ff'0000ull ) << 24 ) |  // move byte 2 to byte 5
+			( ( Value & 0x0000'0000'0000'ff00ull ) << 40 ) |  // move byte 1 to byte 6
+			( ( Value & 0x0000'0000'0000'00ffull ) << 56 ) ); // move byte 0 to byte 7
 	}
 
-	MAX_PURE_DEFINITION( constexpr inline uint32_t SwapEndian( const uint32_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline uint32_t SwapEndian( const uint32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< const uint32_t >(
-			( ( Value & 0xff000000 ) >> 24 ) |
-			( ( Value & 0x000000ff ) << 24 ) |
-			( ( Value & 0x00ff0000 ) >> 8  ) |
-			( ( Value & 0x0000ff00 ) << 8  ) ) );
+			( ( Value & 0xff000000 ) >> 24 ) |  // move byte 3 to byte 0
+			( ( Value & 0x00ff0000 ) >> 8  ) |  // move byte 2 to byte 1
+			( ( Value & 0x0000ff00 ) << 8  ) |  // move byte 1 to byte 2
+			( ( Value & 0x000000ff ) << 24 ) ); // move byte 0 to byte 3
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline uint16_t SwapEndian( const uint16_t Value ) MAX_DOES_NOT_THROW )
@@ -75,25 +77,95 @@ namespace Algorithms
 	}
 #endif
 
-	MAX_PURE_DEFINITION( constexpr inline int64_t SwapEndian( const int64_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline int64_t SwapEndian( const int64_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int64_t >(
 			SwapEndian( static_cast< const uint64_t >( Value ) )
 		);
 	}
 
-	MAX_PURE_DEFINITION( constexpr inline int32_t SwapEndian( const int32_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline int32_t SwapEndian( const int32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int32_t >(
 			SwapEndian( static_cast< const uint32_t >( Value ) )
 		);
 	}
 
-	MAX_PURE_DEFINITION( constexpr inline int16_t SwapEndian( const int16_t Value ) MAX_DOES_NOT_THROW )
+	MAX_PURE_DEFINITION( inline int16_t SwapEndian( const int16_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int16_t >(
 			SwapEndian( static_cast< const uint16_t >( Value ) )
 		);
+	}
+
+#if defined( MAX_COMPILER_CLANG ) || \
+	( defined( MAX_COMPILER_GCC ) && MAX_COMPILER_VERSION_AT_LEAST( 4, 3, 0 )  )
+	MAX_PURE_DEFINITION( constexpr inline uint64_t SwapEndianConstexpr( const uint64_t Value ) MAX_DOES_NOT_THROW )
+	{
+		return __builtin_bswap64( Value );
+	}
+
+	MAX_PURE_DEFINITION( constexpr inline uint32_t SwapEndianConstexpr( const uint32_t Value ) MAX_DOES_NOT_THROW )
+	{
+		return __builtin_bswap32( Value );
+	}
+
+	MAX_PURE_DEFINITION( constexpr inline uint16_t SwapEndianConstexpr( const uint16_t Value ) MAX_DOES_NOT_THROW )
+	{
+		return __builtin_bswap16( Value );
+	}
+#else
+	// MSVC does not allow intrinsics inside a constexpr. So use the normal functions.
+
+	MAX_PURE_DEFINITION( constexpr inline uint64_t SwapEndianConstexpr( const uint64_t Value ) MAX_DOES_NOT_THROW )
+	{
+		return static_cast<const uint64_t>(
+			( ( Value & 0xff00'0000'0000'0000ull ) >> 56 ) |  // move byte 7 to byte 0
+			( ( Value & 0x00ff'0000'0000'0000ull ) >> 40 ) |  // move byte 6 to byte 1
+			( ( Value & 0x0000'ff00'0000'0000ull ) >> 24 ) |  // move byte 5 to byte 2
+			( ( Value & 0x0000'00ff'0000'0000ull ) >> 8  ) |  // move byte 4 to byte 3
+			( ( Value & 0x0000'0000'ff00'0000ull ) << 8  ) |  // move byte 3 to byte 4
+			( ( Value & 0x0000'0000'00ff'0000ull ) << 24 ) |  // move byte 2 to byte 5
+			( ( Value & 0x0000'0000'0000'ff00ull ) << 40 ) |  // move byte 1 to byte 6
+			( ( Value & 0x0000'0000'0000'00ffull ) << 56 ) ); // move byte 0 to byte 7
+	}
+
+	MAX_PURE_DEFINITION( constexpr inline uint32_t SwapEndianConstexpr( const uint32_t Value ) MAX_DOES_NOT_THROW )
+	{
+		return static_cast< const uint32_t >(
+			( ( Value & 0xff000000 ) >> 24 ) |  // move byte 3 to byte 0
+			( ( Value & 0x00ff0000 ) >> 8  ) |  // move byte 2 to byte 1
+			( ( Value & 0x0000ff00 ) << 8  ) |  // move byte 1 to byte 2
+			( ( Value & 0x000000ff ) << 24 ) ); // move byte 0 to byte 3
+	}
+
+	MAX_PURE_DEFINITION( constexpr inline uint16_t SwapEndianConstexpr( const uint16_t Value ) MAX_DOES_NOT_THROW )
+	{
+		return static_cast< const uint16_t >(
+			( ( Value & 0xff00 ) >> 8 ) |
+			( ( Value & 0x00ff ) << 8 ) );
+	}
+#endif
+
+	MAX_PURE_DEFINITION( constexpr inline int64_t SwapEndianConstexpr( const int64_t Value ) MAX_DOES_NOT_THROW )
+	{
+		return static_cast< int64_t >(
+			SwapEndianConstexpr( static_cast< const uint64_t >( Value ) )
+			);
+	}
+
+	MAX_PURE_DEFINITION( constexpr inline int32_t SwapEndianConstexpr( const int32_t Value ) MAX_DOES_NOT_THROW )
+	{
+		return static_cast< int32_t >(
+			SwapEndianConstexpr( static_cast< const uint32_t >( Value ) )
+			);
+	}
+
+	MAX_PURE_DEFINITION( constexpr inline int16_t SwapEndianConstexpr( const int16_t Value ) MAX_DOES_NOT_THROW )
+	{
+		return static_cast< int16_t >(
+			SwapEndianConstexpr( static_cast< const uint16_t >( Value ) )
+			);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline uint64_t LittleEndianToHost( const uint64_t Value ) MAX_DOES_NOT_THROW )
@@ -155,7 +227,7 @@ namespace Algorithms
 		#if defined( MAX_BIG_ENDIAN )
 			return Value;
 		#elif defined( MAX_LITTLE_ENDIAN )
-			return SwapEndian( Value );
+			return SwapEndianConstexpr( Value );
 		#else
 			static_assert( false, "Unknown endianness" );
 		#endif
@@ -166,7 +238,7 @@ namespace Algorithms
 		#if defined( MAX_BIG_ENDIAN )
 			return Value;
 		#elif defined( MAX_LITTLE_ENDIAN )
-			return SwapEndian( Value );
+			return SwapEndianConstexpr( Value );
 		#else
 			static_assert( false, "Unknown endianness" );
 		#endif
@@ -177,7 +249,7 @@ namespace Algorithms
 		#if defined( MAX_BIG_ENDIAN )
 			return Value;
 		#elif defined( MAX_LITTLE_ENDIAN )
-			return SwapEndian( Value );
+			return SwapEndianConstexpr( Value );
 		#else
 			static_assert( false, "Unknown endianness" );
 		#endif
@@ -263,7 +335,7 @@ namespace Algorithms
 		#if defined( MAX_BIG_ENDIAN )
 			return Value;
 		#elif defined( MAX_LITTLE_ENDIAN )
-			return SwapEndian( Value );
+			return SwapEndianConstexpr( Value );
 		#else
 			static_assert( false, "Unknown endianness" );
 		#endif
@@ -274,7 +346,7 @@ namespace Algorithms
 		#if defined( MAX_BIG_ENDIAN )
 			return Value;
 		#elif defined( MAX_LITTLE_ENDIAN )
-			return SwapEndian( Value );
+			return SwapEndianConstexpr( Value );
 		#else
 			static_assert( false, "Unknown endianness" );
 		#endif
@@ -285,7 +357,7 @@ namespace Algorithms
 		#if defined( MAX_BIG_ENDIAN )
 			return Value;
 		#elif defined( MAX_LITTLE_ENDIAN )
-			return SwapEndian( Value );
+			return SwapEndianConstexpr( Value );
 		#else
 			static_assert( false, "Unknown endianness" );
 		#endif
