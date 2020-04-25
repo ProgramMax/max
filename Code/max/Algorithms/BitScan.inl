@@ -8,7 +8,6 @@
 #if defined( MAX_COMPILER_VC )
 #include <stdlib.h>
 #include <intrin.h>
-//#include <type_traits>
 #endif
 
 namespace max
@@ -155,7 +154,7 @@ namespace max
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return __builtin_ctzll( Value );
-					#elif defined( MAX_COMPILER_VC )
+					#elif defined( MAX_COMPILER_VC ) && defined( MAX_X86_64 )
 						unsigned long Position = 0;
 						_BitScanForward64( &Position, Value );
 						return Position;
@@ -227,7 +226,7 @@ namespace max
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return __builtin_ctzll( Value );
-					#elif defined( MAX_COMPILER_VC )
+					#elif defined( MAX_COMPILER_VC ) && defined( MAX_X86_64 )
 						unsigned long Position = 0;
 						_BitScanForward64( &Position, static_cast< uint64_t >( Value ) );
 						return Position;
@@ -300,7 +299,7 @@ namespace max
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return __builtin_clzll( Value );
-					#elif defined( MAX_COMPILER_VC )
+					#elif defined( MAX_COMPILER_VC ) && defined( MAX_X86_64 )
 						unsigned long Position = 0;
 						_BitScanReverse64( &Position, Value );
 						return Position;
@@ -372,7 +371,7 @@ namespace max
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return __builtin_clzll( Value );
-					#elif defined( MAX_COMPILER_VC )
+					#elif defined( MAX_COMPILER_VC ) && defined( MAX_X86_64 )
 						unsigned long Position = 0;
 						_BitScanReverse64( &Position, static_cast< uint64_t >( Value ) );
 						return Position;
