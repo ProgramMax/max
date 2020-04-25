@@ -3,9 +3,12 @@
 // found in the LICENSE file.
 
 #include <max/Compiling/Configuration.hpp>
+#include <max/Compiling/Polyfills/IsConstantEvaluated.hpp>
 
 #if defined( MAX_COMPILER_VC )
 #include <stdlib.h>
+#include <intrin.h>
+//#include <type_traits>
 #endif
 
 namespace max
@@ -144,86 +147,293 @@ namespace max
 
 			} // namespace ImplementationDetails
 
-			// TODO: Add intrinsics
-			MAX_PURE_DEFINITION( inline uint64_t BitScanForward( const uint64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint64_t BitScanForward( const uint64_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( Value );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanForwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_ctzll( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanForward64( &Position, Value );
+						return Position;
+					#else
+						return ImplementationDetails::CheckBit0( Value );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline uint32_t BitScanForward( const uint32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint32_t BitScanForward( const uint32_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( Value );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanForwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_ctz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanForward( &Position, Value );
+						return Position;
+					#else
+						return ImplementationDetails::CheckBit0( Value );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline uint16_t BitScanForward( const uint16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint16_t BitScanForward( const uint16_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( Value );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanForwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_ctz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
+						return static_cast< uint16_t >( Position );
+					#else
+						return ImplementationDetails::CheckBit0( Value );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline uint8_t BitScanForward( const uint8_t Value) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint8_t BitScanForward( const uint8_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( Value );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanForwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_ctz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
+							return static_cast< uint8_t >( Position );
+					#else
+						return ImplementationDetails::CheckBit0( Value );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline int64_t BitScanForward( const int64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int64_t BitScanForward( const int64_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint64_t >( Value ) );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanForwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_ctzll( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanForward64( &Position, static_cast< uint64_t >( Value ) );
+						return Position;
+					#else
+						return ImplementationDetails::CheckBit0( static_cast< const uint64_t >( Value ) );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline int32_t BitScanForward( const int32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int32_t BitScanForward( const int32_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint32_t >( Value ) );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanForwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_ctz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
+						return Position;
+					#else
+						return ImplementationDetails::CheckBit0( static_cast< const uint32_t >( Value ) );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline int16_t BitScanForward( const int16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int16_t BitScanForward( const int16_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint16_t >( Value ) );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanForwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_ctz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
+						return static_cast< int16_t >( Position );
+					#else
+						return ImplementationDetails::CheckBit0( static_cast< const uint16_t >( Value ) );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline int8_t BitScanForward( const int8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int8_t BitScanForward( const int8_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint8_t >( Value ) );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanForwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_ctz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
+						return static_cast< int8_t >( Position );
+					#else
+						return ImplementationDetails::CheckBit0( static_cast< const uint8_t >( Value ) );
+					#endif
+				}
 			}
 
 			// TODO: Add the backwards bitscans
-			MAX_PURE_DEFINITION( inline uint64_t BitScanBackward( const uint64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint64_t BitScanBackward( const uint64_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( Value );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanBackwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_clzll( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanReverse64( &Position, Value );
+						return Position;
+					#else
+						return ImplementationDetails::CheckBit0( Value );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline uint32_t BitScanBackward( const uint32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint32_t BitScanBackward( const uint32_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( Value );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanBackwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_clz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanReverse( &Position, Value );
+						return Position;
+					#else
+						return ImplementationDetails::CheckBit0( Value );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline uint16_t BitScanBackward( const uint16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint16_t BitScanBackward( const uint16_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( Value );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanBackwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_clz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
+						return static_cast< uint16_t >( Position );
+					#else
+						return ImplementationDetails::CheckBit0( Value );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline uint8_t BitScanBackward( const uint8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint8_t BitScanBackward( const uint8_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( Value );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanBackwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_clz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
+						return static_cast< uint8_t >( Position );
+					#else
+						return ImplementationDetails::CheckBit0( Value );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline int64_t BitScanBackward( const int64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int64_t BitScanBackward( const int64_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint64_t >( Value ) );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanBackwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_clzll( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanReverse64( &Position, static_cast< uint64_t >( Value ) );
+						return Position;
+					#else
+						return ImplementationDetails::CheckBit0( static_cast< const uint64_t >( Value ) );
+					#endif
+			}
 			}
 
-			MAX_PURE_DEFINITION( inline int32_t BitScanBackward( const int32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int32_t BitScanBackward( const int32_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint32_t >( Value ) );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanBackwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_clz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
+						return Position;
+					#else
+						return ImplementationDetails::CheckBit0( static_cast< const uint32_t >( Value ) );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline int16_t BitScanBackward( const int16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int16_t BitScanBackward( const int16_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint16_t >( Value ) );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanBackwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_clz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
+						return static_cast< int16_t >( Position );
+					#else
+						return ImplementationDetails::CheckBit0( static_cast< const uint16_t >( Value ) );
+					#endif
+				}
 			}
 
-			MAX_PURE_DEFINITION( inline int8_t BitScanBackward( const int8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int8_t BitScanBackward( const int8_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint8_t >( Value ) );
+				if( max::Compiling::Polyfills::IsConstantEvaluated() )
+				{
+					return BitScanBackwardConstexpr( Value );
+				} else {
+					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
+						return __builtin_clz( Value );
+					#elif defined( MAX_COMPILER_VC )
+						unsigned long Position = 0;
+						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
+						return static_cast< int8_t >( Position );
+					#else
+						return ImplementationDetails::CheckBit0( static_cast< const uint8_t >( Value ) );
+					#endif
+				}
 			}
 
 			// These functions will continue a call chain until all bits are checked.

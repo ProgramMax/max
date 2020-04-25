@@ -31,6 +31,7 @@
     <None Include="..\..\..\Code\max\Algorithms\SwapEndian.inl" />
     <None Include="..\..\..\Code\max\Algorithms\SwapEndian.md" />
     <None Include="..\..\..\Code\max\Compiling\AliasingOptimizations.md" />
+    <None Include="..\..\..\Code\max\Compiling\Clonable.inl" />
     <None Include="..\..\..\Code\max\Compiling\Loop.inl" />
     <None Include="..\..\..\Code\max\Compiling\Macros.md" />
     <None Include="..\..\..\Code\max\Compiling\MAX_COMPILER_MESSAGE.md" />
@@ -40,6 +41,7 @@
     <None Include="..\..\..\Code\max\Compiling\MAX_RESTRICTED_REFERENCE.md" />
     <None Include="..\..\..\Code\max\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
     <None Include="..\..\..\Code\max\Compiling\MAX_SEMI_PURE.md" />
+    <None Include="..\..\..\Code\max\Compiling\Polyfills\IsConstantEvaluated.inl" />
     <None Include="..\..\..\Code\max\Compiling\UnreferencedValue.inl" />
     <None Include="..\..\..\Code\max\Containers\MakeRange.md" />
     <None Include="..\..\..\Code\max\Containers\Range.inl" />
@@ -90,6 +92,7 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Compiling\Alignment.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Assume.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Clonable.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Configuration.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\ConfigurationTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -114,6 +117,7 @@
     <ClInclude Include="..\..\..\Code\max\Compiling\Macros.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\MemoryBarrier.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\NoDefault.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Polyfills\IsConstantEvaluated.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\StaticAssert.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\ThrowSpecification.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\UnreferencedValue.hpp" />
@@ -387,6 +391,7 @@
       <SDLCheck>true</SDLCheck>
       <TreatWarningAsError>true</TreatWarningAsError>
       <PrecompiledHeaderFile />
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -404,6 +409,7 @@
       <SDLCheck>true</SDLCheck>
       <TreatWarningAsError>true</TreatWarningAsError>
       <PrecompiledHeaderFile />
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -423,6 +429,7 @@
       <SDLCheck>true</SDLCheck>
       <TreatWarningAsError>true</TreatWarningAsError>
       <PrecompiledHeaderFile />
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -444,6 +451,7 @@
       <SDLCheck>true</SDLCheck>
       <TreatWarningAsError>true</TreatWarningAsError>
       <PrecompiledHeaderFile />
+      <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

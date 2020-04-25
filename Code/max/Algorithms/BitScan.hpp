@@ -5,6 +5,7 @@
 #ifndef MAX_ALGORITHMS_BITSCAN_HPP
 #define MAX_ALGORITHMS_BITSCAN_HPP
 
+#include <max/Compiling/Configuration.hpp>
 #include <max/Compiling/CurrentVersionNamespace.hpp>
 #include <max/Compiling/AliasingOptimizations.hpp>
 #include <cstdint>
@@ -17,23 +18,29 @@ namespace max
 		namespace Algorithms
 		{
 
-			MAX_PURE_DECLARATION( inline uint64_t BitScanForward( const uint64_t Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline uint32_t BitScanForward( const uint32_t Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline uint16_t BitScanForward( const uint16_t Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline uint8_t  BitScanForward( const uint8_t  Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline int64_t  BitScanForward( const int64_t  Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline int32_t  BitScanForward( const int32_t  Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline int16_t  BitScanForward( const int16_t  Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline int8_t   BitScanForward( const int8_t   Value ) MAX_DOES_NOT_THROW );
+			#if defined( MAX_INTRINSICS_ALLOWED_INSIDE_CONSTEXPR )
+				#define MAX_BITSCAN_CONSTEXPR constexpr
+			#else
+				#define MAX_BITSCAN_CONSTEXPR
+			#endif
 
-			MAX_PURE_DECLARATION( inline uint64_t BitScanBackward( const uint64_t Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline uint32_t BitScanBackward( const uint32_t Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline uint16_t BitScanBackward( const uint16_t Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline uint8_t  BitScanBackward( const uint8_t  Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline int64_t  BitScanBackward( const int64_t  Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline int32_t  BitScanBackward( const int32_t  Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline int16_t  BitScanBackward( const int16_t  Value ) MAX_DOES_NOT_THROW );
-			MAX_PURE_DECLARATION( inline int8_t   BitScanBackward( const int8_t   Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline uint64_t BitScanForward( const uint64_t Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline uint32_t BitScanForward( const uint32_t Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline uint16_t BitScanForward( const uint16_t Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline uint8_t  BitScanForward( const uint8_t  Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline int64_t  BitScanForward( const int64_t  Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline int32_t  BitScanForward( const int32_t  Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline int16_t  BitScanForward( const int16_t  Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline int8_t   BitScanForward( const int8_t   Value ) MAX_DOES_NOT_THROW );
+
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline uint64_t BitScanBackward( const uint64_t Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline uint32_t BitScanBackward( const uint32_t Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline uint16_t BitScanBackward( const uint16_t Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline uint8_t  BitScanBackward( const uint8_t  Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline int64_t  BitScanBackward( const int64_t  Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline int32_t  BitScanBackward( const int32_t  Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline int16_t  BitScanBackward( const int16_t  Value ) MAX_DOES_NOT_THROW );
+			MAX_PURE_DECLARATION( MAX_BITSCAN_CONSTEXPR inline int8_t   BitScanBackward( const int8_t   Value ) MAX_DOES_NOT_THROW );
 
 			MAX_PURE_DECLARATION( constexpr inline uint64_t BitScanForwardConstexpr( const uint64_t Value ) MAX_DOES_NOT_THROW );
 			MAX_PURE_DECLARATION( constexpr inline uint32_t BitScanForwardConstexpr( const uint32_t Value ) MAX_DOES_NOT_THROW );

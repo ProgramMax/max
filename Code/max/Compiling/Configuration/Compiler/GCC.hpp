@@ -5,12 +5,13 @@
 #ifndef MAX_COMPILING_CONFIGURATION_COMPILER_GCC_HPP
 #define MAX_COMPILING_CONFIGURATION_COMPILER_GCC_HPP
 
+#include <version>
 
 #include <max/Compiling/Macros.hpp>
 
 #define MAX_COMPILER_GCC
 
-#define MAX_COMPILER_MESSAGE(Message) _Pragma(MAX_STRINGIFY(message(Message)))
+#define MAX_COMPILER_MESSAGE( Message ) _Pragma( MAX_STRINGIFY( message( Message ) ) )
 
 #define MAX_COMPILER_VERSION_MAJOR __GNUC__
 #define MAX_COMPILER_VERSION_MINOR __GNUC_MINOR__
@@ -22,18 +23,39 @@
 #endif
 
 
+#if __cplusplus > 201709L
+	MAX_COMPILER_MESSAGE( "Compiling with a newer version of C++ than max recognizes. Using last known version." );
+#elif __cplusplus >= 201709L
+	#define MAX_CPP_20
+#elif __cplusplus >= 201703L
+	#define MAX_CPP_17
+#elif __cplusplus >= 201402L
+	#define MAX_CPP_14
+#elif __cplusplus >= 201103L
+	#define MAX_CPP_11
+#elif __cplusplus >= 199711L
+	#define MAX_CPP_03
+#endif
+
 #if defined(__EXCEPTIONS)
 	#define MAX_EXCEPTIONS_SUPPORTED
 #endif
 
 // noexcept supported in GCC 4.6+
-#if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6) && defined(__GXX_EXPERIMENTAL_CXX0X__)
+#if MAX_COMPILER_VERSION_AT_LEAST( 4, 6, 0 ) && defined(__GXX_EXPERIMENTAL_CXX0X__)
 	#define MAX_NOEXCEPT_SUPPORTED
 #endif
 
 // inline namespaces are supported in GCC 4.4+
-#if __GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 4) && defined(__GXX_EXPERIMENTAL_CXX0X__)
+#if MAX_COMPILER_VERSION_AT_LEAST( 4, 4, 0 ) && defined(__GXX_EXPERIMENTAL_CXX0X__)
 	#define MAX_INLINE_NAMESPACES_SUPPORTED
+#endif
+
+#define MAX_INTRINSICS_ALLOWED_INSIDE_CONSTEXPR
+
+// std::is_constant_evaluated() supported in GCC 9.0+
+#if MAX_COMPILER_VERSION_AT_LEAST( 9, 0, 0 ) || __cpp_lib_is_constant_evaluated
+	#define MAX_IS_CONSTANT_EVALUATED_SUPPORTED
 #endif
 
 
