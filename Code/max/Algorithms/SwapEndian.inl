@@ -80,21 +80,21 @@ namespace Algorithms
 	MAX_PURE_DEFINITION( inline int64_t SwapEndian( const int64_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int64_t >(
-			SwapEndian( static_cast< const uint64_t >( Value ) )
+			SwapEndian( static_cast< uint64_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( inline int32_t SwapEndian( const int32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int32_t >(
-			SwapEndian( static_cast< const uint32_t >( Value ) )
+			SwapEndian( static_cast< uint32_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( inline int16_t SwapEndian( const int16_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int16_t >(
-			SwapEndian( static_cast< const uint16_t >( Value ) )
+			SwapEndian( static_cast< uint16_t >( Value ) )
 		);
 	}
 
@@ -150,21 +150,21 @@ namespace Algorithms
 	MAX_PURE_DEFINITION( constexpr inline int64_t SwapEndianConstexpr( const int64_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int64_t >(
-			SwapEndianConstexpr( static_cast< const uint64_t >( Value ) )
+			SwapEndianConstexpr( static_cast< uint64_t >( Value ) )
 			);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int32_t SwapEndianConstexpr( const int32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int32_t >(
-			SwapEndianConstexpr( static_cast< const uint32_t >( Value ) )
+			SwapEndianConstexpr( static_cast< uint32_t >( Value ) )
 			);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int16_t SwapEndianConstexpr( const int16_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int16_t >(
-			SwapEndianConstexpr( static_cast< const uint16_t >( Value ) )
+			SwapEndianConstexpr( static_cast< uint16_t >( Value ) )
 			);
 	}
 
@@ -204,21 +204,21 @@ namespace Algorithms
 	MAX_PURE_DEFINITION( constexpr inline int64_t LittleEndianToHost( const int64_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int64_t >(
-			LittleEndianToHost( static_cast< const uint64_t >( Value ) )
+			LittleEndianToHost( static_cast< uint64_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int32_t LittleEndianToHost( const int32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int32_t >(
-			LittleEndianToHost( static_cast< const uint32_t >( Value ) )
+			LittleEndianToHost( static_cast< uint32_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int16_t LittleEndianToHost( const int16_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int16_t >(
-			LittleEndianToHost( static_cast< const uint16_t >( Value ) )
+			LittleEndianToHost( static_cast< uint16_t >( Value ) )
 		);
 	}
 
@@ -258,21 +258,21 @@ namespace Algorithms
 	MAX_PURE_DEFINITION( constexpr inline int64_t BigEndianToHost( const int64_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int64_t >(
-			BigEndianToHost( static_cast< const uint64_t >( Value ) )
+			BigEndianToHost( static_cast< uint64_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int32_t BigEndianToHost( const int32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int32_t >(
-			BigEndianToHost( static_cast< const uint32_t >( Value ) )
+			BigEndianToHost( static_cast< uint32_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int16_t BigEndianToHost( const int16_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int16_t >(
-			BigEndianToHost( static_cast< const uint16_t >( Value ) )
+			BigEndianToHost( static_cast< uint16_t >( Value ) )
 		);
 	}
 
@@ -312,21 +312,21 @@ namespace Algorithms
 	MAX_PURE_DEFINITION( constexpr inline int64_t HostToLittleEndian( const int64_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int64_t >(
-			HostToLittleEndian( static_cast< const uint64_t >( Value ) )
+			HostToLittleEndian( static_cast< uint64_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int32_t HostToLittleEndian( const int32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int32_t >(
-			HostToLittleEndian( static_cast< const uint32_t >( Value ) )
+			HostToLittleEndian( static_cast< uint32_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int16_t HostToLittleEndian( const int16_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int16_t >(
-			HostToLittleEndian( static_cast< const uint16_t >( Value ) )
+			HostToLittleEndian( static_cast< uint16_t >( Value ) )
 		);
 	}
 
@@ -366,21 +366,21 @@ namespace Algorithms
 	MAX_PURE_DEFINITION( constexpr inline int64_t HostToBigEndian( const int64_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int64_t >(
-			HostToBigEndian( static_cast< const uint64_t >( Value ) )
+			HostToBigEndian( static_cast< uint64_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int32_t HostToBigEndian( const int32_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int32_t >(
-			HostToBigEndian( static_cast< const uint32_t >( Value ) )
+			HostToBigEndian( static_cast< uint32_t >( Value ) )
 		);
 	}
 
 	MAX_PURE_DEFINITION( constexpr inline int16_t HostToBigEndian( int16_t Value ) MAX_DOES_NOT_THROW )
 	{
 		return static_cast< int16_t >(
-			HostToBigEndian( static_cast< const uint16_t >( Value ) )
+			HostToBigEndian( static_cast< uint16_t >( Value ) )
 		);
 	}
 

@@ -27,22 +27,22 @@ namespace maxAutomatedTests
 
 			SwapEndianTestSuite.AddTest(max::Testing::Test< max::Testing::CoutResultPolicy >{ "SwapEndian", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
 				uint64_t Unsigned64BitValue = UINT64_C( 0x1234567890abcdef );
-				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Unsigned64BitValue ) == UINT64_C( 0xefcdab9078563412 ) );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Unsigned64BitValue ) == uint64_t{ 0xefcdab9078563412 } );
 
 				uint32_t Unsigned32BitValue = UINT32_C( 0x12345678 );
-				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Unsigned32BitValue ) == UINT32_C( 0x78563412 ) );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Unsigned32BitValue ) == uint32_t{ 0x78563412 } );
 
 				uint16_t Unsigned16BitValue = UINT16_C( 0x1234 );
-				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Unsigned16BitValue ) == UINT16_C( 0x3412 ) );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Unsigned16BitValue ) == uint16_t{ 0x3412 } );
 
 				int64_t Signed64BitValue = INT64_C( 0x1234567890abcdef );
-				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Signed64BitValue ) == INT64_C( 0xefcdab9078563412 ) );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Signed64BitValue ) == static_cast< int64_t >( 0xefcdab9078563412 ) );
 
 				int32_t Signed32BitValue = INT32_C( 0x12345678 );
-				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Signed32BitValue ) == INT32_C( 0x78563412 ) );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Signed32BitValue ) == int32_t{ 0x78563412 } );
 
 				int16_t Signed16BitValue = UINT16_C( 0x1234 );
-				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Signed16BitValue ) == INT16_C( 0x3412 ) );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::SwapEndian( Signed16BitValue ) == int16_t{ 0x3412 } );
 				}
 			});
 

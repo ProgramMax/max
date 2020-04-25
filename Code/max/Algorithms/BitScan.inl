@@ -153,7 +153,7 @@ namespace max
 					return BitScanForwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_ctzll( Value );
+						return static_cast< uint64_t >( __builtin_ctzll( Value ) );
 					#elif defined( MAX_COMPILER_VC ) && defined( MAX_X86_64 )
 						unsigned long Position = 0;
 						_BitScanForward64( &Position, Value );
@@ -171,7 +171,7 @@ namespace max
 					return BitScanForwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_ctz( Value );
+						return static_cast< uint32_t >( __builtin_ctz( Value ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanForward( &Position, Value );
@@ -189,7 +189,7 @@ namespace max
 					return BitScanForwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_ctz( Value );
+						return static_cast< uint16_t >( __builtin_ctz( Value ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
@@ -207,7 +207,7 @@ namespace max
 					return BitScanForwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_ctz( Value );
+						return static_cast< uint8_t >( __builtin_ctz( Value ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
@@ -225,7 +225,7 @@ namespace max
 					return BitScanForwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_ctzll( Value );
+						return __builtin_ctzll( static_cast< uint64_t >( Value ) );
 					#elif defined( MAX_COMPILER_VC ) && defined( MAX_X86_64 )
 						unsigned long Position = 0;
 						_BitScanForward64( &Position, static_cast< uint64_t >( Value ) );
@@ -243,7 +243,7 @@ namespace max
 					return BitScanForwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_ctz( Value );
+						return __builtin_ctz( static_cast< uint32_t >( Value ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
@@ -261,7 +261,7 @@ namespace max
 					return BitScanForwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_ctz( Value );
+						return static_cast< int16_t >( __builtin_ctz( static_cast< uint16_t >( Value ) ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
@@ -279,7 +279,7 @@ namespace max
 					return BitScanForwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_ctz( Value );
+						return static_cast< int8_t >( __builtin_ctz( static_cast< uint8_t >( Value ) ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanForward( &Position, static_cast< unsigned long >( Value ) );
@@ -298,7 +298,7 @@ namespace max
 					return BitScanBackwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_clzll( Value );
+						return static_cast< uint64_t >( __builtin_clzll( Value ) );
 					#elif defined( MAX_COMPILER_VC ) && defined( MAX_X86_64 )
 						unsigned long Position = 0;
 						_BitScanReverse64( &Position, Value );
@@ -316,7 +316,7 @@ namespace max
 					return BitScanBackwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_clz( Value );
+						return static_cast< uint32_t >( __builtin_clz( Value ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, Value );
@@ -334,7 +334,7 @@ namespace max
 					return BitScanBackwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_clz( Value );
+						return static_cast< uint16_t >( __builtin_clz( Value ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
@@ -352,7 +352,7 @@ namespace max
 					return BitScanBackwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_clz( Value );
+						return static_cast< uint8_t >( __builtin_clz( Value ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
@@ -370,7 +370,7 @@ namespace max
 					return BitScanBackwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_clzll( Value );
+						return __builtin_clzll( static_cast< uint64_t >( Value ) );
 					#elif defined( MAX_COMPILER_VC ) && defined( MAX_X86_64 )
 						unsigned long Position = 0;
 						_BitScanReverse64( &Position, static_cast< uint64_t >( Value ) );
@@ -388,7 +388,7 @@ namespace max
 					return BitScanBackwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_clz( Value );
+						return __builtin_clz( static_cast< uint32_t >( Value ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
@@ -406,7 +406,7 @@ namespace max
 					return BitScanBackwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_clz( Value );
+						return static_cast< int16_t >( __builtin_clz( static_cast< uint16_t >( Value ) ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
@@ -424,7 +424,7 @@ namespace max
 					return BitScanBackwardConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return __builtin_clz( Value );
+						return static_cast< int8_t >( __builtin_clz( static_cast< uint8_t >( Value ) ) );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
@@ -458,22 +458,22 @@ namespace max
 
 			MAX_PURE_DEFINITION( constexpr inline int64_t BitScanForwardConstexpr( const int64_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint64_t >( Value ) );
+				return ImplementationDetails::CheckBit0( static_cast< uint64_t >( Value ) );
 			}
 
 			MAX_PURE_DEFINITION( constexpr inline int32_t BitScanForwardConstexpr( const int32_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint32_t >( Value ) );
+				return ImplementationDetails::CheckBit0( static_cast< uint32_t >( Value ) );
 			}
 
 			MAX_PURE_DEFINITION( constexpr inline int16_t BitScanForwardConstexpr( const int16_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint16_t >( Value ) );
+				return ImplementationDetails::CheckBit0( static_cast< uint16_t >( Value ) );
 			}
 
 			MAX_PURE_DEFINITION( constexpr inline int8_t BitScanForwardConstexpr( const int8_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint8_t >( Value ) );
+				return static_cast< int8_t >( ImplementationDetails::CheckBit0( static_cast< uint8_t >( Value ) ) );
 			}
 
 			// TODO: Add the backwards bitscans
@@ -499,22 +499,22 @@ namespace max
 
 			MAX_PURE_DEFINITION( constexpr inline int64_t BitScanBackwardConstexpr( const int64_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint64_t >( Value ) );
+				return ImplementationDetails::CheckBit0( static_cast< uint64_t >( Value ) );
 			}
 
 			MAX_PURE_DEFINITION( constexpr inline int32_t BitScanBackwardConstexpr( const int32_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint32_t >( Value ) );
+				return ImplementationDetails::CheckBit0( static_cast< uint32_t >( Value ) );
 			}
 
 			MAX_PURE_DEFINITION( constexpr inline int16_t BitScanBackwardConstexpr( const int16_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint16_t >( Value ) );
+				return ImplementationDetails::CheckBit0( static_cast< uint16_t >( Value ) );
 			}
 
 			MAX_PURE_DEFINITION( constexpr inline int8_t BitScanBackwardConstexpr( const int8_t Value ) MAX_DOES_NOT_THROW )
 			{
-				return ImplementationDetails::CheckBit0( static_cast< const uint8_t >( Value ) );
+				return static_cast< int8_t >( ImplementationDetails::CheckBit0( static_cast< uint8_t >( Value ) ) );
 			}
 
 			namespace ImplementationDetails
