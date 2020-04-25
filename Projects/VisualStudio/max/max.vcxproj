@@ -23,7 +23,7 @@
     <None Include="..\..\..\.github\ISSUE_TEMPLATE\feature_request.md" />
     <None Include="..\..\..\.travis.yml" />
     <None Include="..\..\..\AUTHORS" />
-    <None Include="..\..\..\Code\max\Algorithms\BitScan.inl" />
+    <None Include="..\..\..\Code\max\Algorithms\CountZeroes.inl" />
     <None Include="..\..\..\Code\max\Algorithms\IsBetween.inl" />
     <None Include="..\..\..\Code\max\Algorithms\IsBetween.md" />
     <None Include="..\..\..\Code\max\Algorithms\Math.inl" />
@@ -64,7 +64,7 @@
     <Xml Include="..\..\..\Tooling\AppVeyor\junit-results.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Code\max\Algorithms\BitScan.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroes.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetween.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>

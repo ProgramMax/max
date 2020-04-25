@@ -172,11 +172,11 @@
     <None Include="..\..\..\Code\max\Algorithms\SwapEndian.inl">
       <Filter>Code\max\Algorithms</Filter>
     </None>
-    <None Include="..\..\..\Code\max\Algorithms\BitScan.inl">
-      <Filter>Code\max\Algorithms</Filter>
-    </None>
     <None Include="..\..\..\Code\max\Compiling\Polyfills\IsConstantEvaluated.inl">
       <Filter>Code\max\Compiling\Polyfills</Filter>
+    </None>
+    <None Include="..\..\..\Code\max\Algorithms\CountZeroes.inl">
+      <Filter>Code\max\Algorithms</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -366,14 +366,14 @@
       <Filter>Code\max\Testing</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Compiling\Clonable.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Algorithms\BitScan.hpp">
-      <Filter>Code\max\Algorithms</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp">
       <Filter>Code\max\Algorithms</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Compiling\Polyfills\IsConstantEvaluated.hpp">
       <Filter>Code\max\Compiling\Polyfills</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroes.hpp">
+      <Filter>Code\max\Algorithms</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

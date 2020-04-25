@@ -27,7 +27,7 @@
     <ClCompile Include="..\..\..\Code\max\Algorithms\SwapEndianTest.cpp">
       <Filter>Algorithms</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\max\Algorithms\BitScanTest.cpp">
+    <ClCompile Include="..\..\..\Code\max\Algorithms\CountZeroesTest.cpp">
       <Filter>Algorithms</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,7 +44,7 @@
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp">
       <Filter>Algorithms</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Algorithms\BitScanTest.hpp">
+    <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroesTest.hpp">
       <Filter>Algorithms</Filter>
     </ClInclude>
   </ItemGroup>

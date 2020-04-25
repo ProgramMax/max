@@ -4,7 +4,7 @@
 
 #include <max/Algorithms/IsBetweenTest.hpp>
 #include <max/Algorithms/SwapEndianTest.hpp>
-#include <max/Algorithms/BitScanTest.hpp>
+#include <max/Algorithms/CountZeroesTest.hpp>
 #include <max/Containers/RangeTest.hpp>
 #include <max/Containers/VectorTest.hpp>
 
@@ -12,7 +12,7 @@ int main()
 {
 	maxAutomatedTests::Algorithms::RunIsBetweenTestSuite();
 	maxAutomatedTests::Algorithms::RunSwapEndianTestSuite();
-	maxAutomatedTests::Algorithms::RunBitScanTestSuite();
+	maxAutomatedTests::Algorithms::RunCountZeroesTestSuite();
 	maxAutomatedTests::Containers::RunRangeTestSuite();
 	maxAutomatedTests::Containers::RunVectorTestSuite();
 
