@@ -24,9 +24,8 @@ LIBRARY_PATHS_FLAGS = $(foreach d, $(LIBRARY_PATHS), -L$d)
 
 AUTOMATED_TEST_CXX_SRCS = \
 	../../Code/max/Algorithms/IsBetweenTest.cpp \
-	../../Code/max/Containers/Bits8Test.cpp \
-	../../Code/max/Containers/Bits16Test.cpp \
-	../../Code/max/Containers/Bits32Test.cpp \
+	../../Code/max/Algorithms/BitScanTest.cpp \
+	../../Code/max/Algorithms/SwapEndianTest.cpp \
 	../../Code/max/Containers/RangeTest.cpp \
 	../../Code/max/Containers/VectorTest.cpp \
 	../../Code/max/Testing/AutomatedTestsEntryPoint.cpp
@@ -38,7 +37,7 @@ MANUAL_TEST_CXX_SRCS = \
 	../../Code/max/Testing/ManualTestsEntryPoint.cpp
 MANUAL_TEST_CXX_OBJS = $(MANUAL_TEST_CXX_SRCS:.cpp=.o)
 
-CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++14 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion
+CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++14 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -m32
 LINKER_FLAGS += $(LIBRARY_PATHS_FLAGS)
 
 
@@ -50,10 +49,10 @@ lib$(PROGRAM_NAME).a: $(PCH_OBJS) $(CXX_OBJS)
 	ar rcs lib$(PROGRAM_NAME).a $(CXX_OBJS)
 
 maxAutomatedTests: $(AUTOMATED_TEST_CXX_OBJS)
-	g++ -g $(AUTOMATED_TEST_CXX_OBJS) $(LINKER_FLAGS) -l$(PROGRAM_NAME) -o maxAutomatedTests
+	g++ -m32 -g $(AUTOMATED_TEST_CXX_OBJS) $(LINKER_FLAGS) -l$(PROGRAM_NAME) -o maxAutomatedTests
 
 maxManualTests: $(MANUAL_TEST_CXX_OBJS)
-	g++ -g $(MANUAL_TEST_CXX_OBJS) $(LINKER_FLAGS) -l$(PROGRAM_NAME) -o maxManualTests
+	g++ -m32 -g $(MANUAL_TEST_CXX_OBJS) $(LINKER_FLAGS) -l$(PROGRAM_NAME) -o maxManualTests
 .cpp.o:
 	g++ -g $(CPPFLAGS) -c $< -o $@
 

@@ -26,6 +26,7 @@
 #if __cplusplus > 201709L
 	MAX_COMPILER_MESSAGE( "Compiling with a newer version of C++ than max recognizes. Using last known version." );
 #elif __cplusplus >= 201709L
+MAX_COMPILER_MESSAGE("test");
 	#define MAX_CPP_20
 #elif __cplusplus >= 201703L
 	#define MAX_CPP_17
@@ -42,19 +43,19 @@
 #endif
 
 // noexcept supported in GCC 4.6+
-#if MAX_COMPILER_VERSION_AT_LEAST( 4, 6, 0 ) && defined(__GXX_EXPERIMENTAL_CXX0X__)
+#if MAX_COMPILER_VERSION_AT_LEAST( 4, 6, 0 ) && defined( __GXX_EXPERIMENTAL_CXX0X__ )
 	#define MAX_NOEXCEPT_SUPPORTED
 #endif
 
 // inline namespaces are supported in GCC 4.4+
-#if MAX_COMPILER_VERSION_AT_LEAST( 4, 4, 0 ) && defined(__GXX_EXPERIMENTAL_CXX0X__)
+#if MAX_COMPILER_VERSION_AT_LEAST( 4, 4, 0 ) && defined( __GXX_EXPERIMENTAL_CXX0X__ )
 	#define MAX_INLINE_NAMESPACES_SUPPORTED
 #endif
 
 #define MAX_INTRINSICS_ALLOWED_INSIDE_CONSTEXPR
 
 // std::is_constant_evaluated() supported in GCC 9.0+
-#if MAX_COMPILER_VERSION_AT_LEAST( 9, 0, 0 ) || __cpp_lib_is_constant_evaluated
+#if ( MAX_COMPILER_VERSION_AT_LEAST( 9, 0, 0 ) && defined( MAX_CPP_20 ) ) || __cpp_lib_is_constant_evaluated
 	#define MAX_IS_CONSTANT_EVALUATED_SUPPORTED
 #endif
 
