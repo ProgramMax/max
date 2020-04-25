@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Code\max\Algorithms\BitScanTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Algorithms\CountZeroesTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Algorithms\SwapEndianTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\RangeTest.cpp" />
@@ -27,7 +27,7 @@
     <ClCompile Include="..\..\..\Code\max\Testing\AutomatedTestsEntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Code\max\Algorithms\BitScanTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroesTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp" />

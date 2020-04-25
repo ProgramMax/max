@@ -146,11 +146,11 @@ namespace max
 
 			} // namespace ImplementationDetails
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint64_t BitScanForward( const uint64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint64_t CountTrailingZeroes( const uint64_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanForwardConstexpr( Value );
+					return CountTrailingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< uint64_t >( __builtin_ctzll( Value ) );
@@ -164,11 +164,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint32_t BitScanForward( const uint32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint32_t CountTrailingZeroes( const uint32_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanForwardConstexpr( Value );
+					return CountTrailingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< uint32_t >( __builtin_ctz( Value ) );
@@ -182,11 +182,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint16_t BitScanForward( const uint16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint16_t CountTrailingZeroes( const uint16_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanForwardConstexpr( Value );
+					return CountTrailingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< uint16_t >( __builtin_ctz( Value ) );
@@ -200,11 +200,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint8_t BitScanForward( const uint8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint8_t CountTrailingZeroes( const uint8_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanForwardConstexpr( Value );
+					return CountTrailingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< uint8_t >( __builtin_ctz( Value ) );
@@ -218,11 +218,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int64_t BitScanForward( const int64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int64_t CountTrailingZeroes( const int64_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanForwardConstexpr( Value );
+					return CountTrailingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return __builtin_ctzll( static_cast< uint64_t >( Value ) );
@@ -236,11 +236,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int32_t BitScanForward( const int32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int32_t CountTrailingZeroes( const int32_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanForwardConstexpr( Value );
+					return CountTrailingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return __builtin_ctz( static_cast< uint32_t >( Value ) );
@@ -254,11 +254,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int16_t BitScanForward( const int16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int16_t CountTrailingZeroes( const int16_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanForwardConstexpr( Value );
+					return CountTrailingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< int16_t >( __builtin_ctz( static_cast< uint16_t >( Value ) ) );
@@ -272,11 +272,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int8_t BitScanForward( const int8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int8_t CountTrailingZeroes( const int8_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanForwardConstexpr( Value );
+					return CountTrailingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< int8_t >( __builtin_ctz( static_cast< uint8_t >( Value ) ) );
@@ -291,11 +291,11 @@ namespace max
 			}
 
 			// TODO: Add the backwards bitscans
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint64_t BitScanBackward( const uint64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint64_t CountLeadingZeroes( const uint64_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanBackwardConstexpr( Value );
+					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< uint64_t >( __builtin_clzll( Value ) );
@@ -309,11 +309,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint32_t BitScanBackward( const uint32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint32_t CountLeadingZeroes( const uint32_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanBackwardConstexpr( Value );
+					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< uint32_t >( __builtin_clz( Value ) );
@@ -327,11 +327,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint16_t BitScanBackward( const uint16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint16_t CountLeadingZeroes( const uint16_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanBackwardConstexpr( Value );
+					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< uint16_t >( __builtin_clz( Value ) );
@@ -345,11 +345,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint8_t BitScanBackward( const uint8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline uint8_t CountLeadingZeroes( const uint8_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanBackwardConstexpr( Value );
+					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< uint8_t >( __builtin_clz( Value ) );
@@ -363,11 +363,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int64_t BitScanBackward( const int64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int64_t CountLeadingZeroes( const int64_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanBackwardConstexpr( Value );
+					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return __builtin_clzll( static_cast< uint64_t >( Value ) );
@@ -381,11 +381,11 @@ namespace max
 			}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int32_t BitScanBackward( const int32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int32_t CountLeadingZeroes( const int32_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanBackwardConstexpr( Value );
+					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return __builtin_clz( static_cast< uint32_t >( Value ) );
@@ -399,11 +399,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int16_t BitScanBackward( const int16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int16_t CountLeadingZeroes( const int16_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanBackwardConstexpr( Value );
+					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< int16_t >( __builtin_clz( static_cast< uint16_t >( Value ) ) );
@@ -417,11 +417,11 @@ namespace max
 				}
 			}
 
-			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int8_t BitScanBackward( const int8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( MAX_BITSCAN_CONSTEXPR inline int8_t CountLeadingZeroes( const int8_t Value ) MAX_DOES_NOT_THROW )
 			{
 				if( max::Compiling::Polyfills::IsConstantEvaluated() )
 				{
-					return BitScanBackwardConstexpr( Value );
+					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
 						return static_cast< int8_t >( __builtin_clz( static_cast< uint8_t >( Value ) ) );
@@ -436,83 +436,83 @@ namespace max
 			}
 
 			// These functions will continue a call chain until all bits are checked.
-			MAX_PURE_DEFINITION( constexpr inline uint64_t BitScanForwardConstexpr( const uint64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline uint64_t CountTrailingZeroesConstexpr( const uint64_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( Value );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline uint32_t BitScanForwardConstexpr( const uint32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline uint32_t CountTrailingZeroesConstexpr( const uint32_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( Value );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline uint16_t BitScanForwardConstexpr( const uint16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline uint16_t CountTrailingZeroesConstexpr( const uint16_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( Value );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline uint8_t BitScanForwardConstexpr( const uint8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline uint8_t CountTrailingZeroesConstexpr( const uint8_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( Value );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline int64_t BitScanForwardConstexpr( const int64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline int64_t CountTrailingZeroesConstexpr( const int64_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( static_cast< uint64_t >( Value ) );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline int32_t BitScanForwardConstexpr( const int32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline int32_t CountTrailingZeroesConstexpr( const int32_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( static_cast< uint32_t >( Value ) );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline int16_t BitScanForwardConstexpr( const int16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline int16_t CountTrailingZeroesConstexpr( const int16_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( static_cast< uint16_t >( Value ) );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline int8_t BitScanForwardConstexpr( const int8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline int8_t CountTrailingZeroesConstexpr( const int8_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return static_cast< int8_t >( ImplementationDetails::CheckBit0( static_cast< uint8_t >( Value ) ) );
 			}
 
 			// TODO: Add the backwards bitscans
-			MAX_PURE_DEFINITION( constexpr inline uint64_t BitScanBackwardConstexpr( const uint64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline uint64_t CountLeadingZeroesConstexpr( const uint64_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( Value );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline uint32_t BitScanBackwardConstexpr( const uint32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline uint32_t CountLeadingZeroesConstexpr( const uint32_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( Value );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline uint16_t BitScanBackwardConstexpr( const uint16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline uint16_t CountLeadingZeroesConstexpr( const uint16_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( Value );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline uint8_t BitScanBackwardConstexpr( const uint8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline uint8_t CountLeadingZeroesConstexpr( const uint8_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( Value );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline int64_t BitScanBackwardConstexpr( const int64_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline int64_t CountLeadingZeroesConstexpr( const int64_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( static_cast< uint64_t >( Value ) );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline int32_t BitScanBackwardConstexpr( const int32_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline int32_t CountLeadingZeroesConstexpr( const int32_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( static_cast< uint32_t >( Value ) );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline int16_t BitScanBackwardConstexpr( const int16_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline int16_t CountLeadingZeroesConstexpr( const int16_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return ImplementationDetails::CheckBit0( static_cast< uint16_t >( Value ) );
 			}
 
-			MAX_PURE_DEFINITION( constexpr inline int8_t BitScanBackwardConstexpr( const int8_t Value ) MAX_DOES_NOT_THROW )
+			MAX_PURE_DEFINITION( constexpr inline int8_t CountLeadingZeroesConstexpr( const int8_t Value ) MAX_DOES_NOT_THROW )
 			{
 				return static_cast< int8_t >( ImplementationDetails::CheckBit0( static_cast< uint8_t >( Value ) ) );
 			}

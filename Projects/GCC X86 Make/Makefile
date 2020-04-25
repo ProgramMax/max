@@ -24,7 +24,7 @@ LIBRARY_PATHS_FLAGS = $(foreach d, $(LIBRARY_PATHS), -L$d)
 
 AUTOMATED_TEST_CXX_SRCS = \
 	../../Code/max/Algorithms/IsBetweenTest.cpp \
-	../../Code/max/Algorithms/BitScanTest.cpp \
+	../../Code/max/Algorithms/CountZeroesTest.cpp \
 	../../Code/max/Algorithms/SwapEndianTest.cpp \
 	../../Code/max/Containers/RangeTest.cpp \
 	../../Code/max/Containers/VectorTest.cpp \
