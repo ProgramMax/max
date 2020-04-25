@@ -18,7 +18,7 @@ namespace maxAutomatedTests
 			static_assert( max::Algorithms::SwapEndianConstexpr( uint64_t{ 0x1234567890abcdef } ) == uint64_t{ 0xefcdab9078563412 }, "max::Algorithms::SwapEndianConstexpr( uint64_t ) isn't swapping endian correctly." );
 			static_assert( max::Algorithms::SwapEndianConstexpr( uint32_t{ 0x12345678         } ) == uint32_t{ 0x78563412         }, "max::Algorithms::SwapEndianConstexpr( uint32_t ) isn't swapping endian correctly." );
 			static_assert( max::Algorithms::SwapEndianConstexpr( uint16_t{ 0x1234             } ) == uint16_t{ 0x3412             }, "max::Algorithms::SwapEndianConstexpr( uint16_t ) isn't swapping endian correctly." );
-			static_assert( max::Algorithms::SwapEndianConstexpr(  int64_t{ 0x1234567890abcd00 } ) ==  int64_t{ 0xcdab9078563412   }, "max::Algorithms::SwapEndianConstexpr( int64_t ) isn't swapping endian correctly."  );
+			static_assert( max::Algorithms::SwapEndianConstexpr(  int64_t{ 0x1234567890abcd00 } ) ==  int64_t{ 0x00cdab9078563412 }, "max::Algorithms::SwapEndianConstexpr( int64_t ) isn't swapping endian correctly."  );
 			static_assert( max::Algorithms::SwapEndianConstexpr(  int32_t{ 0x12345678         } ) ==  int32_t{ 0x78563412         }, "max::Algorithms::SwapEndianConstexpr( int32_t ) isn't swapping endian correctly."  );
 			static_assert( max::Algorithms::SwapEndianConstexpr(  int16_t{ 0x1234             } ) ==  int16_t{ 0x3412             }, "max::Algorithms::SwapEndianConstexpr( int16_t ) isn't swapping endian correctly."  );
 

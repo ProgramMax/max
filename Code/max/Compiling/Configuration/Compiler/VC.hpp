@@ -5,12 +5,21 @@
 #ifndef MAX_COMPILING_CONFIGURATION_COMPILER_VC_HPP
 #define MAX_COMPILING_CONFIGURATION_COMPILER_VC_HPP
 
+
+#include <version>
+
+#include <max/Compiling/Macros.hpp>
+
 #define MAX_COMPILER_VC
 
-#define MAX_COMPILER_MESSAGE(Message) __pragma(message(Message))
+#define MAX_COMPILER_MESSAGE( Message ) __pragma( message( Message ) )
 
-#if _MSC_VER > 1925
-	MAX_COMPILER_MESSAGE("Compiling with a newer version of MSVC than max recognizes. Using last known version.");
+#if _MSC_VER > 1926
+	MAX_COMPILER_MESSAGE( "Compiling with a newer version of MSVC than max recognizes. Using last known version." );
+#elif _MSC_VER >= 1926
+	// MSVC++ 14.26 (Visual Studio 2019 / version 16.6)
+	#define MAX_COMPILER_VERSION_MAJOR 16
+	#define MAX_COMPILER_VERSION_MINOR 6
 #elif _MSC_VER >= 1925
 	// MSVC++ 14.25 (Visual Studio 2019 / version 16.5)
 	#define MAX_COMPILER_VERSION_MAJOR 16
@@ -182,6 +191,25 @@
 #define MAX_COMPILER_VERSION_PATCH 0
 
 
+#if _MSC_FULL_VER >= 190024210 // MSVC++ 14.3 (Visual Studio 2015 Update 3)
+	// Visual Studio 2015 Update 3 introduced the _MSVC_LANG pre-defined macro
+	#if _MSVC_LANG > 201704L
+		MAX_COMPILER_MESSAGE( "Compiling with a newer version of C++ than max recognizes. Using last known version." );
+	#elif _MSVC_LANG >= 201704L
+		#define MAX_CPP_20
+	#elif _MSVC_LANG >= 201703L
+		#define MAX_CPP_17
+	#elif _MSVC_LANG >= 201402L
+		#define MAX_CPP_14
+	#elif _MSVC_LANG >= 201103L
+		#define MAX_CPP_11
+	#elif _MSVC_LANG >= 199711L
+		#define MAX_CPP_03
+	#endif
+#else
+	#define MAX_CPP_03
+#endif
+
 // VC sets _CPPUNWIND on /EHsc but not /EHa ... I think?
 #if defined(_CPPUNWIND)
 	#define MAX_EXCEPTIONS_SUPPORTED
@@ -191,8 +219,13 @@
 	#define MAX_NOEXCEPT_SUPPORTED
 #endif
 
-#if _MSC_VER >= 1900
+#if MAX_COMPILER_VERSION_AT_LEAST( 14, 0, 0 )
 	#define	MAX_INLINE_NAMESPACES_SUPPORTED
 #endif
+
+#if ( MAX_COMPILER_VERSION_AT_LEAST( 16, 5, 0 ) && defined ( _MSVC_LANG ) && _MSVC_LANG >= 201704L ) || __cpp_lib_is_constant_evaluated
+	#define MAX_IS_CONSTANT_EVALUATED_SUPPORTED
+#endif
+
 
 #endif // #ifndef MAX_COMPILING_CONFIGURATION_COMPILER_VC_HPP

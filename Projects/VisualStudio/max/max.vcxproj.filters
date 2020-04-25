@@ -61,6 +61,9 @@
     <Filter Include="Code\max\Testing">
       <UniqueIdentifier>{2b1fb250-788a-4040-8309-4aa3ccbb47a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\max\Compiling\Polyfills">
+      <UniqueIdentifier>{2b8a8077-c85e-4bfc-a095-8c61f9c532c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\LICENSE" />
@@ -165,11 +168,15 @@
     <None Include="..\..\..\Code\max\Testing\TestSuite.inl">
       <Filter>Code\max\Testing</Filter>
     </None>
+    <None Include="..\..\..\Code\max\Compiling\Clonable.inl" />
     <None Include="..\..\..\Code\max\Algorithms\SwapEndian.inl">
       <Filter>Code\max\Algorithms</Filter>
     </None>
     <None Include="..\..\..\Code\max\Algorithms\BitScan.inl">
       <Filter>Code\max\Algorithms</Filter>
+    </None>
+    <None Include="..\..\..\Code\max\Compiling\Polyfills\IsConstantEvaluated.inl">
+      <Filter>Code\max\Compiling\Polyfills</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -358,11 +365,15 @@
     <ClInclude Include="..\..\..\Code\max\Testing\TestSuite.hpp">
       <Filter>Code\max\Testing</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Compiling\Clonable.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\BitScan.hpp">
       <Filter>Code\max\Algorithms</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp">
       <Filter>Code\max\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Compiling\Polyfills\IsConstantEvaluated.hpp">
+      <Filter>Code\max\Compiling\Polyfills</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
