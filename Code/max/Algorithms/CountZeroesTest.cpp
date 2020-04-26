@@ -15,8 +15,142 @@ namespace maxAutomatedTests
 
 		void RunCountZeroesTestSuite()
 		{
-			// TODO: Add 64-bit tests
 			// TODO: Add CountLeadingZeroes tests
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001 } ) == 0,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010 } ) == 1,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100 } ) == 2,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000 } ) == 3,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000 } ) == 4,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000 } ) == 5,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000 } ) == 6,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000 } ) == 7,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000 } ) == 8,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000 } ) == 9,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000 } ) == 10,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000 } ) == 11,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000 } ) == 12,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000 } ) == 13,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000 } ) == 14,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000 } ) == 15,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000 } ) == 16,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000 } ) == 17,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000 } ) == 18,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000 } ) == 19,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000 } ) == 20,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000 } ) == 21,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000 } ) == 22,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000 } ) == 23,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000 } ) == 24,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000 } ) == 25,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000 } ) == 26,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000 } ) == 27,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000 } ) == 28,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000 } ) == 29,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000 } ) == 30,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000 } ) == 31,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 32,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 33,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 34,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 35,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 36,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 37,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 38,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 39,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 40,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 41,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 42,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 43,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 44,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 45,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 46,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 47,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 48,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 49,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 50,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 51,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 52,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 53,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 54,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 55,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 56,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 57,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 58,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 59,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 60,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 61,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 62,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 63,  "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1111'1111'1100'0000 } ) == 6,   "max::Algorithms::CountTrailingZeroesConstexpr( uint64_t ) not reporting bit 0 set."  );
+
+
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001 } ) == 0,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010 } ) == 1,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100 } ) == 2,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000 } ) == 3,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000 } ) == 4,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000 } ) == 5,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000 } ) == 6,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000 } ) == 7,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000 } ) == 8,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000 } ) == 9,   "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000 } ) == 10,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000 } ) == 11,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000 } ) == 12,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000 } ) == 13,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000 } ) == 14,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000 } ) == 15,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000 } ) == 16,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000 } ) == 17,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000 } ) == 18,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000 } ) == 19,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000 } ) == 20,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000 } ) == 21,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000 } ) == 22,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000 } ) == 23,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000 } ) == 24,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000 } ) == 25,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000 } ) == 26,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000 } ) == 27,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000 } ) == 28,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000 } ) == 29,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000 } ) == 30,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000 } ) == 31,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 32,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 33,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 34,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 35,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 36,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 37,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 38,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 39,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 40,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 41,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 42,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 43,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 44,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 45,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 46,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 47,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 48,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 49,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 50,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 51,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 52,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 53,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 54,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 55,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 56,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 57,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 58,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 59,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 60,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 61,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 62,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( static_cast< int64_t >( uint64_t{ 0b1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) ) == 63,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1111'1111'1100'0000 } ) == 6,  "max::Algorithms::CountTrailingZeroesConstexpr( int64_t ) not reporting bit 0 set."  );
+
 
 			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint32_t{ 0b0000'0000'0000'0000'0000'0000'0000'0001 } ) == 0,  "max::Algorithms::CountTrailingZeroesConstexpr( uint32_t ) not reporting bit 0 set."  );
 			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint32_t{ 0b0000'0000'0000'0000'0000'0000'0000'0010 } ) == 1,  "max::Algorithms::CountTrailingZeroesConstexpr( uint32_t ) not reporting bit 1 set."  );
@@ -49,7 +183,7 @@ namespace maxAutomatedTests
 			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint32_t{ 0b0001'0000'0000'0000'0000'0000'0000'0000 } ) == 28, "max::Algorithms::CountTrailingZeroesConstexpr( uint32_t ) not reporting bit 28 set." );
 			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint32_t{ 0b0010'0000'0000'0000'0000'0000'0000'0000 } ) == 29, "max::Algorithms::CountTrailingZeroesConstexpr( uint32_t ) not reporting bit 29 set." );
 			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint32_t{ 0b0100'0000'0000'0000'0000'0000'0000'0000 } ) == 30, "max::Algorithms::CountTrailingZeroesConstexpr( uint32_t ) not reporting bit 30 set." );
-			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint32_t{ 0b1000'0000'0000'0000'0000'0000'0000'0000 } ) == 31, "max::Algorithms::CountTrailingZeroesConstexpr( uint32_t ) not reporting bit 31 set." );
+			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( static_cast< int32_t >( uint32_t{ 0b1000'0000'0000'0000'0000'0000'0000'0000 } ) ) == 31, "max::Algorithms::CountTrailingZeroesConstexpr( uint32_t ) not reporting bit 31 set." );
 
 			static_assert( max::Algorithms::CountTrailingZeroesConstexpr( uint32_t{ 0b0000'0000'0000'0000'1111'1111'1111'1000 } ) == 3,  "max::Algorithms::CountTrailingZeroesConstexpr( uint32_t ) should report the last significant set bit.");
 
@@ -156,7 +290,149 @@ namespace maxAutomatedTests
 			max::Testing::CoutResultPolicy ResultPolicy;
 			auto BitScanTestSuite = max::Testing::TestSuite< max::Testing::CoutResultPolicy >{ "max::Algorithms::CountZeroes test suite", std::move( ResultPolicy ) };
 
-			BitScanTestSuite.AddTest(max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( uint32_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
+			BitScanTestSuite.AddTest (max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( uint64_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001 } ) == 0  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010 } ) == 1  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100 } ) == 2  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000 } ) == 3  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000 } ) == 4  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000 } ) == 5  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000 } ) == 6  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000 } ) == 7  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000 } ) == 8  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000 } ) == 9  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000 } ) == 10 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000 } ) == 11 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000 } ) == 12 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000 } ) == 13 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000 } ) == 14 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000 } ) == 15 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000 } ) == 16 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000 } ) == 17 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000 } ) == 18 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000 } ) == 19 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000 } ) == 20 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000 } ) == 21 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000 } ) == 22 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000 } ) == 23 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000 } ) == 24 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000 } ) == 25 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000 } ) == 26 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000 } ) == 27 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000 } ) == 28 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000 } ) == 29 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000 } ) == 30 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000 } ) == 31 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 32 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 33 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 34 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 35 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 36 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 37 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 38 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 39 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 40 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 41 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 42 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 43 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 44 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 45 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 46 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 47 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 48 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 49 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 50 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 51 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 52 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 53 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 54 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 55 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 56 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 57 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 58 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 59 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 60 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 61 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 62 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 63 );
+
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1111'1111'1100'0000 } ) == 6  );
+				}
+			});
+
+			BitScanTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( int64_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001 } ) == 0  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010 } ) == 1  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100 } ) == 2  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000 } ) == 3  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000 } ) == 4  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000 } ) == 5  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000 } ) == 6  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000 } ) == 7  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000 } ) == 8  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000 } ) == 9  );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000 } ) == 10 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000 } ) == 11 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000 } ) == 12 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000 } ) == 13 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000 } ) == 14 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000 } ) == 15 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000 } ) == 16 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000 } ) == 17 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000 } ) == 18 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000 } ) == 19 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000 } ) == 20 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000 } ) == 21 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000 } ) == 22 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000 } ) == 23 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000 } ) == 24 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000 } ) == 25 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000 } ) == 26 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000 } ) == 27 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000 } ) == 28 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000 } ) == 29 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000 } ) == 30 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000 } ) == 31 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 32 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 33 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 34 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 35 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 36 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 37 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 38 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 39 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 40 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 41 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 42 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 43 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 44 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 45 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 46 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 47 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 48 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 49 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 50 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 51 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 52 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 53 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 54 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 55 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 56 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 57 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 58 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 59 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0001'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 60 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0010'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 61 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0100'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) == 62 );
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( static_cast< int64_t >( uint64_t{ 0b1000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000 } ) ) == 63 );
+
+				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int64_t{ 0b0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'0000'1111'1111'1100'0000 } ) == 6 );
+
+				}
+			});
+
+
+			BitScanTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( uint32_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint32_t{ 0b0000'0000'0000'0000'0000'0000'0000'0001 } ) == 0  );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint32_t{ 0b0000'0000'0000'0000'0000'0000'0000'0010 } ) == 1  );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint32_t{ 0b0000'0000'0000'0000'0000'0000'0000'0100 } ) == 2  );
@@ -194,7 +470,7 @@ namespace maxAutomatedTests
 				}
 			});
 
-			BitScanTestSuite.AddTest(max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( int32_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
+			BitScanTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( int32_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int32_t{ 0b0000'0000'0000'0000'0000'0000'0000'0001 } ) == 0  );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int32_t{ 0b0000'0000'0000'0000'0000'0000'0000'0010 } ) == 1  );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int32_t{ 0b0000'0000'0000'0000'0000'0000'0000'0100 } ) == 2  );
@@ -232,7 +508,7 @@ namespace maxAutomatedTests
 				}
 			});
 
-			BitScanTestSuite.AddTest(max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( uint16_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
+			BitScanTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( uint16_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint16_t{ 0b0000'0000'0000'0001 } ) == 0  );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint16_t{ 0b0000'0000'0000'0010 } ) == 1  );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint16_t{ 0b0000'0000'0000'0100 } ) == 2  );
@@ -254,7 +530,7 @@ namespace maxAutomatedTests
 				}
 			});
 
-			BitScanTestSuite.AddTest(max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( int16_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
+			BitScanTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( int16_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int16_t{ 0b0000'0000'0000'0001 } ) == 0  );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int16_t{ 0b0000'0000'0000'0010 } ) == 1  );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int16_t{ 0b0000'0000'0000'0100 } ) == 2  );
@@ -276,7 +552,7 @@ namespace maxAutomatedTests
 				}
 			});
 
-			BitScanTestSuite.AddTest(max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( uint8_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
+			BitScanTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( uint8_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint8_t{ 0b0000'0001 } ) == 0 );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint8_t{ 0b0000'0010 } ) == 1 );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( uint8_t{ 0b0000'0100 } ) == 2 );
@@ -290,7 +566,7 @@ namespace maxAutomatedTests
 				}
 			});
 
-			BitScanTestSuite.AddTest(max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( int8_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
+			BitScanTestSuite.AddTest( max::Testing::Test< max::Testing::CoutResultPolicy >{ "CountTrailingZeroesConstexpr( int8_t )", []( max::Testing::Test< max::Testing::CoutResultPolicy >& CurrentTest, max::Testing::CoutResultPolicy const& ResultPolicy ) {
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int8_t{ 0b0000'0001 } ) == 0 );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int8_t{ 0b0000'0010 } ) == 1 );
 				CurrentTest.MAX_TESTING_ASSERT( max::Algorithms::CountTrailingZeroes( int8_t{ 0b0000'0100 } ) == 2 );
