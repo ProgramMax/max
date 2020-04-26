@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <intrin.h>
 #endif
+#include <iostream>
 
 namespace max
 {
@@ -458,7 +459,7 @@ namespace max
 					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return static_cast< uint16_t >( __builtin_clz( Value ) );
+						return static_cast< uint16_t >( __builtin_clz( Value ) - 16 );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
@@ -476,7 +477,7 @@ namespace max
 					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return static_cast< uint8_t >( __builtin_clz( Value ) );
+						return static_cast< uint8_t >( __builtin_clz( Value ) - 24 );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, static_cast< unsigned long >( Value ) );
@@ -530,7 +531,7 @@ namespace max
 					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return static_cast< int16_t >( __builtin_clz( static_cast< uint16_t >( Value ) ) );
+						return static_cast< int16_t >( __builtin_clz( static_cast< uint16_t >( Value ) ) - 16 );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, static_cast< uint16_t >( Value ) );
@@ -548,7 +549,7 @@ namespace max
 					return CountLeadingZeroesConstexpr( Value );
 				} else {
 					#if defined( MAX_COMPILER_CLANG ) || defined( MAX_COMPILER_GCC )
-						return static_cast< int8_t >( __builtin_clz( static_cast< uint8_t >( Value ) ) );
+						return static_cast< int8_t >( __builtin_clz( static_cast< uint8_t >( Value ) ) - 24 );
 					#elif defined( MAX_COMPILER_VC )
 						unsigned long Position = 0;
 						_BitScanReverse( &Position, static_cast< uint8_t >( Value ) );
