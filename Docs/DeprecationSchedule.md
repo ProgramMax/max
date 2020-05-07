@@ -2,7 +2,8 @@
 
 |Clang version|Release date|max deprecation date|
 |-------------|-----------:|-------------------:|
-|Clang 9.0.x  |Sep 19, 2019|             Current|
+|Clang 10.0.x |Mar 24, 2020|             Current|
+|Clang 9.0.x  |Sep 19, 2019|        Mar 24, 2025|
 |Clang 8.0.x  |Mar 20, 2019|        Sep 19, 2024|
 |Clang 7.0.x  |Sep 19, 2018|        Mar 20, 2024|
 |Clang 6.0.x  |Mar  8, 2018|        Sep 19, 2023|
@@ -16,7 +17,9 @@
 
 |GCC version|Release date|max deprecation date|
 |-----------|-----------:|-------------------:|
-|GCC 9.2    |Aug 12, 2019|             Current|
+|GCC 10.1   |May  7, 2020|             Current|
+|GCC 9.3    |Mar 12, 2020|        May  7, 2025|
+|GCC 9.2    |Aug 12, 2019|        Mar 12, 2025|
 |GCC 9.1    |May  3, 2019|        Aug 12, 2024|
 |GCC 8.3    |Feb 22, 2019|        May  3, 2024|
 |GCC 8.2    |Jul 26, 2018|        Feb 22, 2024|
