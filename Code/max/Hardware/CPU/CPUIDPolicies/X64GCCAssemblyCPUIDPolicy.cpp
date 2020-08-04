@@ -34,7 +34,7 @@ namespace CPU
 			  "=d"( Registers.EDX )
 			: "a"( Leaf ),
 			  "c"( Subleaf )
-			:  );
+			: );
 	}
 
 } // namespace CPU
