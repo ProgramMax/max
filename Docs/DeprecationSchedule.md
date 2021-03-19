@@ -12,8 +12,7 @@
 |Clang 4.0.x  |Mar 13, 2017|        Sep  7, 2023|std::optional         |
 |Clang 3.9.x  |Sep  2, 2016|        Mar 13, 2022|                      |
 |Clang 3.8.x  |Mar  8, 2016|        Sep  2, 2021|                      |
-|Clang 3.7.x  |Sep  1, 2015|        Mar  8, 2021|                      |
-|Clang 3.6.x  |Feb 27, 2015|          Deprecated|                      |
+|Clang 3.7.x  |Sep  1, 2015|          Deprecated|                      |
 
 |GCC version|Release date|max deprecation date|Adds support for                                |
 |-----------|-----------:|-------------------:|------------------------------------------------|
@@ -31,8 +30,7 @@
 |GCC 6.2    |Aug 22, 2016|        Dec 21, 2021|                                                |
 |GCC 6.1    |Apr 27, 2016|        Aug 22, 2021|                                                |
 |GCC 5.3    |Dec  4, 2015|        Apr 27, 2021|                                                |
-|GCC 5.2    |Jul 16, 2015|        Dec  4, 2020|                                                |
-|GCC 5.1    |Apr 22, 2015|          Deprecated|                                                |
+|GCC 5.2    |Jul 16, 2015|          Deprecated|                                                |
 
 |MSVC version      |Release date|max deprecation date|Adds support for           |
 |------------------|-----------:|-------------------:|---------------------------|
