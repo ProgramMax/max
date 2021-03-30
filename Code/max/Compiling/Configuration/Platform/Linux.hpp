@@ -9,7 +9,7 @@
 
 #define MAX_PLATFORM_LINUX
 
-#if defined( MAX_COMPILER_GCC ) || defined( MAX_COMPILER_CLANG )
+#if defined( MAX_COMPILER_CLANG )
 	#if defined( __x86_64__ )
 		#define MAX_64BIT_WORD_SIZE
 		#define MAX_X86_64

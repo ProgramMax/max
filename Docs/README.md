@@ -14,7 +14,6 @@ It includes common code such as logging, testing, abstractions for compiler and 
 ## Support
 
 * Compilers:
-    * GCC
     * Clang
     * Visual C++
 * OSes:
@@ -30,6 +29,7 @@ It includes common code such as logging, testing, abstractions for compiler and 
 *Coming soon
 
 If you would like max to support more contacts us and let us know.
+Note, GCC support was deliberately dropped due to non-inclusive behavior from its maintainers.
 
 ## Deprecation Schedule
 

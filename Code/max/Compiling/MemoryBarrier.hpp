@@ -26,15 +26,4 @@
 	#define FlushReadsAndWrites _ReadWriteBarrier()
 #endif
 
-#ifdef MAX_COMPILER_GCC
-	#error "GCC memory barriers not fully supported yet."
-	#define FlushReads
-	#ifdef MAX_SSE_SUPPORTED
-		#define FlushWrites	__builtin_ia32_sfence()
-	#else
-		#define FlushWrites
-	#endif
-	#define FlushReadsAndWrites
-#endif
-
 #endif // #ifndef MAX_COMPILING_MEMORYBARRIER_HPP
