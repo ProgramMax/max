@@ -11,11 +11,7 @@
 
 #include <max/Compiling/Configuration/Compiler.hpp>
 
-#ifdef MAX_COMPILER_GCC
-	#define MAX_FAVOR_BRANCH_LOCALITY( Expression, ExpectedValue ) __builtin_expect( Expression, ExpectedValue )
-#else
-	#define MAX_FAVOR_BRANCH_LOCALITY( Expression, ExpectedValue ) Expression
-#endif
+#define MAX_FAVOR_BRANCH_LOCALITY( Expression, ExpectedValue ) Expression
 
 #define MAX_FAVOR_TRUE_CASE( Expression ) MAX_FAVOR_BRANCH_LOCALITY( Expression, true )
 #define MAX_FAVOR_FALSE_CASE( Expression ) MAX_FAVOR_BRANCH_LOCALITY( Expression, false )

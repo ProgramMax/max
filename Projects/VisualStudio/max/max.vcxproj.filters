@@ -209,9 +209,6 @@
     <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler\Clang.hpp">
       <Filter>Code\max\Compiling\Configuration\Compiler</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler\GCC.hpp">
-      <Filter>Code\max\Compiling\Configuration\Compiler</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler\VC.hpp">
       <Filter>Code\max\Compiling\Configuration\Compiler</Filter>
     </ClInclude>
