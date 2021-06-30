@@ -19,7 +19,7 @@
 	#include <max/Compiling/Configuration/Compiler/Clang.hpp>
 #elif defined __GNUC__
 	// GNU C++
-	#error "GCC support was deliberately dropped due to non-inclusive behavior from its maintainers."
+	#include <max/Compiling/Configuration/Compiler/GCC.hpp>
 #elif defined _MSC_VER
 	// Microsoft Visual C++
 	#include <max/Compiling/Configuration/Compiler/VC.hpp>

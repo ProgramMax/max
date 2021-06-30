@@ -14,6 +14,24 @@
 |Clang 3.8.x  |Mar  8, 2016|        Sep  2, 2021|                      |
 |Clang 3.7.x  |Sep  1, 2015|          Deprecated|                      |
 
+|GCC version|Release date|max deprecation date|Adds support for                                |
+|-----------|-----------:|-------------------:|------------------------------------------------|
+|GCC 10.2   |Jul 23, 2020|             Current|                                                |
+|GCC 10.1   |May  7, 2020|        Jul 23, 2025|concepts, std::shift_*, constinit               |
+|GCC 9.3    |Mar 12, 2020|        May  7, 2025|                                                |
+|GCC 9.2    |Aug 12, 2019|        Mar 12, 2025|                                                |
+|GCC 9.1    |May  3, 2019|        Aug 12, 2024|<version>, std::assume_aligned(), bit operations|
+|GCC 8.3    |Feb 22, 2019|        May  3, 2024|                                                |
+|GCC 8.2    |Jul 26, 2018|        Feb 22, 2024|std::endian                                     |
+|GCC 7.3    |Jan 25, 2018|        Jul 26, 2023|                                                |
+|GCC 7.2    |Aug 14, 2017|        Jan 25, 2023|                                                |
+|GCC 7.1    |May  2, 2017|        Aug 14, 2023|std::optional                                   |
+|GCC 6.3    |Dec 21, 2016|        May  2, 2022|                                                |
+|GCC 6.2    |Aug 22, 2016|        Dec 21, 2021|                                                |
+|GCC 6.1    |Apr 27, 2016|        Aug 22, 2021|                                                |
+|GCC 5.3    |Dec  4, 2015|        Apr 27, 2021|                                                |
+|GCC 5.2    |Jul 16, 2015|          Deprecated|                                                |
+
 |MSVC version      |Release date|max deprecation date|Adds support for           |
 |------------------|-----------:|-------------------:|---------------------------|
 |MSVC 16.8.x       |Nov 10, 2020|             Current|modules, coroutines, ranges|
