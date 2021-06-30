@@ -9,7 +9,16 @@
 
 // MAX_PURE_V0
 // Documentation: MAX_PURE.md
-#if defined( MAX_COMPILER_VC )
+#if defined( MAX_COMPILER_GCC )
+	// this is only available in GCC 2.5 and later
+	#if MAX_COMPILER_VERSION_AT_LEAST( 2, 5, 0 )
+		#define MAX_PURE_DECLARATION_V0( Declaration ) Declaration __attribute__((const))
+		#define MAX_PURE_DEFINITION_V0( Definition ) Definition
+	#else
+		#define MAX_PURE_DECLARATION_V0( Declaration ) Declaration
+		#define MAX_PURE_DEFINITION_V0( Definition ) Definition
+	#endif
+#elif defined( MAX_COMPILER_VC )
 	#define MAX_PURE_DECLARATION_V0( Declaration ) __declspec( noalias ) Declaration
 	#define MAX_PURE_DEFINITION_V0( Definition ) __declspec( noalias ) Definition
 #else
@@ -20,7 +29,16 @@
 
 // MAX_PURE_WITH_GLOBALS_V0
 // Documentation: MAX_PURE_WITH_GLOBALS.md
-#if defined( MAX_COMPILER_VC )
+#if defined( MAX_COMPILER_GCC )
+	// this is only available in GCC 2.96 and later
+	#if MAX_COMPILER_VERSION_AT_LEAST( 2, 96, 0 )
+		#define MAX_PURE_WITH_GLOBALS_DECLARATION_V0( Declaration ) Declaration __attribute__((pure))
+		#define MAX_PURE_WITH_GLOBALS_DEFINITION_V0( Definition ) Definition
+	#else
+		#define MAX_PURE_WITH_GLOBALS_DECLARATION_V0( Declaration ) Declaration
+		#define MAX_PURE_WITH_GLOBALS_DEFINITION_V0( Definition ) Definition
+	#endif
+#elif defined( MAX_COMPILER_VC )
 	#define MAX_PURE_WITH_GLOBALS_DECLARATION_V0( Declaration ) __declspec( noalias ) Declaration
 	#define MAX_PURE_WITH_GLOBALS_DEFINITION_V0( Definition ) __declspec( noalias ) Definition
 #else
@@ -42,7 +60,9 @@
 
 // MAX_RESTRICTED_POINTER_V0
 // Documentation: MAX_RESTRICTED_POINTER.md
-#if defined(MAX_COMPILER_VC)
+#if defined( MAX_COMPILER_GCC )
+	#define MAX_RESTRICTED_POINTER_V0( Type ) Type __restrict__
+#elif defined(MAX_COMPILER_VC)
 	#define MAX_RESTRICTED_POINTER_V0( Type ) Type __restrict
 #else
 	#define MAX_RESTRICTED_POINTER_V0( Type ) Type
@@ -51,7 +71,9 @@
 
 // MAX_RESTRICTED_REFERENCE_V0
 // Documentation: MAX_RESTRICTED_REFERENCE.md
-#if defined( MAX_COMPILER_VC )
+#if defined( MAX_COMPILER_GCC )
+	#define MAX_RESTRICTED_REFERENCE_V0( Type ) __restrict__ Type
+#elif defined( MAX_COMPILER_VC )
 	#if MAX_COMPILER_VERSION_AT_LEAST( 14, 0, 0 )
 		#define MAX_RESTRICTED_REFERENCE_V0( Type ) Type __restrict
 	#else
@@ -64,7 +86,9 @@
 
 // MAX_RETURNS_RESTRICTED_POINTER_V0
 // Documentation: MAX_RETURNS_RESTRICTED_POINTER.md
-#if defined( MAX_COMPILER_VC )
+#if defined( MAX_COMPILER_GCC )
+	#define MAX_RETURNS_RESTRICTED_POINTER_V0( Declaration ) Declaration __attribute__( malloc )
+#elif defined( MAX_COMPILER_VC )
 	#define MAX_RETURNS_RESTRICTED_POINTER_V0( Declaration ) __declspec( restrict ) Declaration
 #else
 	#define MAX_RETURNS_RESTRICTED_POINTER_V0( Declaration ) Declaration

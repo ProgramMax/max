@@ -26,7 +26,7 @@
 	#else
 		static_assert( false, "Unsupported platform" );
 	#endif
-#elif defined( MAX_COMPILER_CLANG )
+#elif defined( MAX_COMPILER_GCC ) || defined( MAX_COMPILER_CLANG )
 	#if defined( MAX_X86_64 )
 		#include <max/Hardware/CPU/IsCPUIDAvailablePolicies/X64GCCAssemblyIsCPUIDAvailablePolicy.hpp>
 		#include <max/Hardware/CPU/CPUIDPolicies/X64GCCAssemblyCPUIDPolicy.hpp>
@@ -1282,7 +1282,7 @@ namespace CPU
 		static_assert( false, "Unsupported platform" );
 	#endif
 	typedef VCIntrinsicCPUIDPolicy                  CPUIDPolicy;
-#elif defined( MAX_COMPILER_CLANG )
+#elif defined( MAX_COMPILER_GCC ) || defined( MAX_COMPILER_CLANG )
 	#if defined( MAX_X86_64 )
 		typedef X64GCCAssemblyIsCPUIDAvailablePolicy   IsCPUIDAvailablePolicy;
 		typedef X64GCCAssemblyCPUIDPolicy              CPUIDPolicy;

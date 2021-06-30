@@ -14,4 +14,4 @@ MAX_COMPILER_MESSAGE("Perhaps warn the user that some code is deprecated");
 
 ## Implementation
 
-Go to the separate implementations for [Clang](Configuration/Compiler/Clang.hpp#L12) and [MSVC](Configuration/Compiler/Clang.hpp#L10).
+Go to the separate implementations for [Clang](Configuration/Compiler/Clang.hpp#L12), [GCC](Configuration/Compiler/Clang.hpp#L13), and [MSVC](Configuration/Compiler/Clang.hpp#L10).

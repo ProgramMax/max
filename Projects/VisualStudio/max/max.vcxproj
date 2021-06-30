@@ -102,6 +102,7 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler\Clang.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler\GCC.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Compiler\VC.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Platform.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Configuration\Platform\Android.hpp" />
