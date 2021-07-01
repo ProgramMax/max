@@ -17,6 +17,13 @@
 	#define MAX_FAVOR_BRANCH_LOCALITY( Expression, ExpectedValue ) Expression
 #endif
 
+#if __has_cpp_attribute(likely)
+#define MAX_FAVOR_TRUE_CASE( Expression ) Expression [[likely]]
+#endif
+#if __has_cpp_attribute(unlikely)
+#define MAX_FAVOR_FALSE_CASE( Expression ) Expression [[unlikely]]
+#endif
+
 #define MAX_FAVOR_TRUE_CASE( Expression ) MAX_FAVOR_BRANCH_LOCALITY( Expression, true )
 #define MAX_FAVOR_FALSE_CASE( Expression ) MAX_FAVOR_BRANCH_LOCALITY( Expression, false )
 
