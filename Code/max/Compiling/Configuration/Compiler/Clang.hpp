@@ -22,8 +22,6 @@
 #elif __cplusplus >= 202002L
 	#define MAX_CPP_20
 #elif __cplusplus >= 201703L
-	#define MAX_CPP_2A
-#elif __cplusplus >= 201703L
 	#define MAX_CPP_17
 #elif __cplusplus >= 201402L
 	#define MAX_CPP_14
