@@ -2,21 +2,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-#ifndef MAX_COMPILING_NODEFAULT_HPP
-#define MAX_COMPILING_NODEFAULT_HPP
+#ifndef MAX_COMPILING_UNREACHABLE_HPP
+#define MAX_COMPILING_UNREACHABLE_HPP
 
 #include <max/Compiling/Configuration/Compiler.hpp>
 
 #if defined( NDEBUG )
 	#if defined( MAX_COMPILER_VC )
-		#define MAX_NO_DEFAULT __assume( 0 )
+		#define MAX_UNREACHABLE __assume( 0 )
 	#elif defined( MAX_COMPILER_GCC ) | defined( MAX_COMPILER_CLANG )
-		#define MAX_NO_DEFAULT __builtin_unreachable()
+		#define MAX_UNREACHABLE __builtin_unreachable()
 	#else
 		#error "Unsupported compiler"
 	#endif
 #else
-	#define MAX_NO_DEFAULT std::terminate()
+	#define MAX_UNREACHABLE std::terminate()
 #endif
 
-#endif // #ifndef MAX_COMPILING_NODEFAULT_HPP
+#endif // #ifndef MAX_COMPILING_UNREACHABLE_HPP
