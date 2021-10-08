@@ -31,14 +31,7 @@ namespace CPU
 			Unified
 		};
 
-		explicit CacheInfo( CacheInfoType Type )        noexcept;
-		CacheInfo()                                     noexcept = delete;
-		CacheInfo( const CacheInfo & rhs)               noexcept = default;
-		CacheInfo( CacheInfo && rhs)                    noexcept = default;
-		~CacheInfo()                                    noexcept = default;
-
-		CacheInfo & operator =( const CacheInfo & rhs ) noexcept = default;
-		CacheInfo & operator =( CacheInfo && rhs )      noexcept = default;
+		explicit CacheInfo( CacheInfoType Type ) noexcept;
 
 		CacheInfoType Type;
 

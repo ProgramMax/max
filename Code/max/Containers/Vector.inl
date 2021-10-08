@@ -15,6 +15,7 @@ namespace Containers
 	Vector< T, Dimensions >::Vector( const std::initializer_list< T > & rhs ) noexcept
 		: Elements()
 	{
+		// TODO: Check bounds
 		std::copy( rhs.begin(), rhs.end(), Elements.begin() );
 	}
 

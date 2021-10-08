@@ -24,12 +24,6 @@ namespace Containers
 
 		Vector() noexcept = default;
 		Vector( const std::initializer_list< T > & rhs ) noexcept;
-		Vector( const Vector< T, Dimensions > & rhs ) noexcept = default;
-		Vector( Vector< T, Dimensions > && rhs ) noexcept = default;
-		~Vector() noexcept = default;
-
-		Vector< T, Dimensions > & operator =( const Vector< T, Dimensions > & rhs ) noexcept = default;
-		Vector< T, Dimensions > & operator =( Vector< T, Dimensions > && rhs ) noexcept = default;
 
 		Vector< T, Dimensions > operator +( const Vector< T, Dimensions > & rhs ) const noexcept;
 		Vector< T, Dimensions > operator -( const Vector< T, Dimensions > & rhs ) const noexcept;

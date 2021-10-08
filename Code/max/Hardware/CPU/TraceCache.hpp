@@ -20,13 +20,6 @@ namespace CPU
 
 		TraceCache( const uint32_t        SizeInMicroOperations,
 		            const Associativity & AssociativityInfo    ) noexcept;
-		TraceCache()                                             noexcept = delete;
-		TraceCache( const TraceCache & rhs )                     noexcept = default;
-		TraceCache( TraceCache && rhs )                          noexcept = default;
-		~TraceCache()                                            noexcept = default;
-
-		TraceCache & operator =( const TraceCache & rhs )        noexcept = default;
-		TraceCache & operator =( TraceCache && rhs )             noexcept = default;
 
 		uint32_t      SizeInMicroOperations;
 		Associativity AssociativityInfo;

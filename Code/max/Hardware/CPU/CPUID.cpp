@@ -598,7 +598,7 @@ namespace CPU
 		{
 			uint32_t MaxSubleaf = 0;
 
-			for( auto CurrentSubleaf : SubleafResults )
+			for( const auto & CurrentSubleaf : SubleafResults )
 			{
 				if( CurrentSubleaf.Leaf == Leaf )
 				{

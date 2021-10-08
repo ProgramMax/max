@@ -19,15 +19,8 @@ namespace CPU
 
 		CPUIDSubleafArgumentsAndResult( const uint32_t Leaf,
 		                                const uint32_t Subleaf,
-		                                CPUIDSubleafResult && Result )                            noexcept;
-		CPUIDSubleafArgumentsAndResult()                                                          noexcept = default; // TODO: make this = delete
-		CPUIDSubleafArgumentsAndResult( const CPUIDSubleafArgumentsAndResult & rhs )              noexcept = default;
-		CPUIDSubleafArgumentsAndResult( CPUIDSubleafArgumentsAndResult && rhs )                   noexcept = default;
-		~CPUIDSubleafArgumentsAndResult()                                                         noexcept = default;
-
-		CPUIDSubleafArgumentsAndResult & operator =( const CPUIDSubleafArgumentsAndResult & rhs ) noexcept = default;
-		CPUIDSubleafArgumentsAndResult & operator =( CPUIDSubleafArgumentsAndResult && rhs )      noexcept = default;
-
+		                                CPUIDSubleafResult && Result ) noexcept;
+		CPUIDSubleafArgumentsAndResult() noexcept = default; // TODO: make this = delete
 
 		uint32_t Leaf;
 		uint32_t Subleaf;
