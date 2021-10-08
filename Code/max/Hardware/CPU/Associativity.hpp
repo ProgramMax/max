@@ -24,13 +24,6 @@ namespace CPU
 		explicit Associativity( const UnknownAssociativity )         noexcept;
 		explicit Associativity( const FullyAssociative )             noexcept;
 		explicit Associativity( const uint32_t WaysOfAssociativity ) noexcept;
-		Associativity()                                              noexcept = delete;
-		Associativity( const Associativity & rhs )                   noexcept = default;
-		Associativity( Associativity && rhs )                        noexcept = default;
-		~Associativity()                                             noexcept = default;
-
-		Associativity & operator =( const Associativity & rhs ) noexcept = default;
-		Associativity & operator =( Associativity && rhs )      noexcept = default;
 
 		bool IsUnknown()               const noexcept;
 		bool IsFullyAssociative()      const noexcept;

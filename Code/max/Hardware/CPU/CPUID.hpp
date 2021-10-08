@@ -20,13 +20,6 @@ namespace CPU
 	{
 	public:
 
-		CPUID()                                  noexcept = delete;
-		CPUID( const CPUID &  rhs )                       = default;
-		CPUID(       CPUID && rhs )              noexcept = default;
-
-		CPUID & operator =( const CPUID &  rhs )          = default;
-		CPUID & operator =(       CPUID && rhs ) noexcept = default;
-
 		// Function 0
 		std::string Vendor()              const noexcept;
 

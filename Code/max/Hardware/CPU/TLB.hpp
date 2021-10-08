@@ -23,13 +23,6 @@ namespace CPU
 		TLBConfiguration(       std::vector< uint32_t  > && PageSizesInBytes,
 		                  const Associativity &             AssociativityInfo,
 		                  const uint32_t                    EntryCount        ) noexcept;
-		TLBConfiguration()                                                      noexcept = delete;
-		TLBConfiguration( const TLBConfiguration & rhs )                                 = default;
-		TLBConfiguration( TLBConfiguration && rhs )                             noexcept = default;
-		~TLBConfiguration()                                                     noexcept = default;
-
-		TLBConfiguration & operator =( const TLBConfiguration & rhs )                    = default;
-		TLBConfiguration & operator =( TLBConfiguration && rhs )                noexcept = default;
 
 		std::vector< uint32_t  >      PageSizesInBytes;
 		Associativity                 AssociativityInfo;
@@ -43,13 +36,6 @@ namespace CPU
 
 		TLB( const CacheContentType                   ContentType,
 		           std::vector< TLBConfiguration > && Configurations ) noexcept;
-		TLB()                                                          noexcept = delete;
-		TLB( const TLB & rhs )                                                  = default;
-		TLB( TLB && rhs )                                              noexcept = default;
-		~TLB()                                                         noexcept = default;
-
-		TLB & operator =( const TLB & rhs )                                     = default;
-		TLB & operator =( TLB && rhs )                                 noexcept = default;
 
 		CacheContentType ContentType;
 		std::vector< TLBConfiguration > Configurations;

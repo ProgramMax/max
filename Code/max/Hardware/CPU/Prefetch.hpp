@@ -18,13 +18,6 @@ namespace CPU
 	public:
 
 		explicit Prefetch( const uint32_t SizeInBytes ) noexcept;
-		Prefetch()                                      noexcept = delete;
-		Prefetch( const Prefetch & rhs )                noexcept = default;
-		Prefetch( Prefetch && rhs )                     noexcept = default;
-		~Prefetch()                                     noexcept = default;
-
-		Prefetch & operator =( const Prefetch & rhs )   noexcept = default;
-		Prefetch & operator =( Prefetch && rhs )        noexcept = default;
 
 		uint32_t SizeInBytes;
 
