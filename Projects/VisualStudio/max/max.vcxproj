@@ -23,11 +23,12 @@
     <None Include="..\..\..\.github\ISSUE_TEMPLATE\feature_request.md" />
     <None Include="..\..\..\.travis.yml" />
     <None Include="..\..\..\AUTHORS" />
+    <None Include="..\..\..\Code\max\Algorithms\Branchless.inl" />
     <None Include="..\..\..\Code\max\Algorithms\CountZeroes.inl" />
     <None Include="..\..\..\Code\max\Algorithms\IsBetween.inl" />
     <None Include="..\..\..\Code\max\Algorithms\IsBetween.md" />
     <None Include="..\..\..\Code\max\Algorithms\Math.inl" />
-    <None Include="..\..\..\Code\max\Algorithms\ScopedFunctor.inl" />
+    <None Include="..\..\..\Code\max\Algorithms\ScopedCleanupFunctor.inl" />
     <None Include="..\..\..\Code\max\Algorithms\SwapEndian.inl" />
     <None Include="..\..\..\Code\max\Algorithms\SwapEndian.md" />
     <None Include="..\..\..\Code\max\Compiling\AliasingOptimizations.md" />
@@ -42,11 +43,14 @@
     <None Include="..\..\..\Code\max\Compiling\MAX_RETURNS_RESTRICTED_POINTER.md" />
     <None Include="..\..\..\Code\max\Compiling\MAX_SEMI_PURE.md" />
     <None Include="..\..\..\Code\max\Compiling\Polyfills\IsConstantEvaluated.inl" />
+    <None Include="..\..\..\Code\max\Compiling\TypePunning.inl" />
     <None Include="..\..\..\Code\max\Compiling\UnreferencedValue.inl" />
     <None Include="..\..\..\Code\max\Containers\MakeRange.md" />
+    <None Include="..\..\..\Code\max\Containers\Point.inl" />
     <None Include="..\..\..\Code\max\Containers\Range.inl" />
     <None Include="..\..\..\Code\max\Containers\Range.md" />
     <None Include="..\..\..\Code\max\Containers\Range_ctor.md" />
+    <None Include="..\..\..\Code\max\Containers\Rectangle.inl" />
     <None Include="..\..\..\Code\max\Containers\Vector.inl" />
     <None Include="..\..\..\Code\max\Hardware\CPU\IsCPUIDAvailablePolicies\Documentation.md" />
     <None Include="..\..\..\Code\max\Testing\Test.inl" />
@@ -64,6 +68,7 @@
     <Xml Include="..\..\..\Tooling\AppVeyor\junit-results.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\Branchless.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroes.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetween.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp">
@@ -74,7 +79,7 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Algorithms\Math.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\OptimizingAssert.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Algorithms\ScopedFunctor.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\ScopedCleanupFunctor.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndian.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -92,6 +97,7 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Compiling\Alignment.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Assume.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Bitmask.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Clonable.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Configuration.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\ConfigurationTest.hpp">
@@ -116,12 +122,26 @@
     <ClInclude Include="..\..\..\Code\max\Compiling\Loop.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Macros.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\MemoryBarrier.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Compiling\NoDefault.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\Unreachable.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\Polyfills\IsConstantEvaluated.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Compiling\TypePunning.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\UnreferencedValue.hpp" />
-    <ClInclude Include="..\..\..\Code\max\Compiling\VirtualFunctionSpecification.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\Point.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\PointTest.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Containers\Range.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\Rectangle.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\RectangleTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -218,7 +238,19 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\PointTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Containers\RangeTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\RectangleTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>

@@ -102,7 +102,7 @@
     <None Include="..\..\..\Code\max\Algorithms\Math.inl">
       <Filter>Code\max\Algorithms</Filter>
     </None>
-    <None Include="..\..\..\Code\max\Algorithms\ScopedFunctor.inl">
+    <None Include="..\..\..\Code\max\Algorithms\ScopedCleanupFunctor.inl">
       <Filter>Code\max\Algorithms</Filter>
     </None>
     <None Include="..\..\..\Code\max\Algorithms\SwapEndian.md">
@@ -178,6 +178,18 @@
     <None Include="..\..\..\Code\max\Algorithms\CountZeroes.inl">
       <Filter>Code\max\Algorithms</Filter>
     </None>
+    <None Include="..\..\..\Code\max\Algorithms\Branchless.inl">
+      <Filter>Code\max\Algorithms</Filter>
+    </None>
+    <None Include="..\..\..\Code\max\Compiling\TypePunning.inl">
+      <Filter>Code\max\Compiling</Filter>
+    </None>
+    <None Include="..\..\..\Code\max\Containers\Point.inl">
+      <Filter>Code\max\Containers</Filter>
+    </None>
+    <None Include="..\..\..\Code\max\Containers\Rectangle.inl">
+      <Filter>Code\max\Containers</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\..\..\Tooling\AppVeyor\junit-results.xml">
@@ -197,7 +209,7 @@
     <ClInclude Include="..\..\..\Code\max\Algorithms\OptimizingAssert.hpp">
       <Filter>Code\max\Algorithms</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Algorithms\ScopedFunctor.hpp">
+    <ClInclude Include="..\..\..\Code\max\Algorithms\ScopedCleanupFunctor.hpp">
       <Filter>Code\max\Algorithms</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndian.hpp">
@@ -272,13 +284,10 @@
     <ClInclude Include="..\..\..\Code\max\Compiling\MemoryBarrier.hpp">
       <Filter>Code\max\Compiling</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Compiling\NoDefault.hpp">
+    <ClInclude Include="..\..\..\Code\max\Compiling\Unreachable.hpp">
       <Filter>Code\max\Compiling</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Compiling\UnreferencedValue.hpp">
-      <Filter>Code\max\Compiling</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Compiling\VirtualFunctionSpecification.hpp">
       <Filter>Code\max\Compiling</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Containers\Range.hpp">
@@ -369,6 +378,27 @@
     <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroes.hpp">
       <Filter>Code\max\Algorithms</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Compiling\Bitmask.hpp">
+      <Filter>Code\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\Branchless.hpp">
+      <Filter>Code\max\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Compiling\TypePunning.hpp">
+      <Filter>Code\max\Compiling</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\Point.hpp">
+      <Filter>Code\max\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\PointTest.hpp">
+      <Filter>Code\max\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\Rectangle.hpp">
+      <Filter>Code\max\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\RectangleTest.hpp">
+      <Filter>Code\max\Containers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp">
@@ -448,6 +478,12 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Algorithms\SwapEndianTest.cpp">
       <Filter>Code\max\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\PointTest.cpp">
+      <Filter>Code\max\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\RectangleTest.cpp">
+      <Filter>Code\max\Containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
