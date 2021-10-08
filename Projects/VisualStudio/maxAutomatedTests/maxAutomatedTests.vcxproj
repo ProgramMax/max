@@ -22,7 +22,9 @@
     <ClCompile Include="..\..\..\Code\max\Algorithms\CountZeroesTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Algorithms\SwapEndianTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Containers\PointTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\RangeTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Containers\RectangleTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\VectorTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Testing\AutomatedTestsEntryPoint.cpp" />
   </ItemGroup>
@@ -30,7 +32,9 @@
     <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroesTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\PointTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\RectangleTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\VectorTest.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

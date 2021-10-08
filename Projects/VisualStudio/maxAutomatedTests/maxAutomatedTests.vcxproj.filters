@@ -30,6 +30,12 @@
     <ClCompile Include="..\..\..\Code\max\Algorithms\CountZeroesTest.cpp">
       <Filter>Algorithms</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\PointTest.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\RectangleTest.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp">
@@ -46,6 +52,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroesTest.hpp">
       <Filter>Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\PointTest.hpp">
+      <Filter>Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\RectangleTest.hpp">
+      <Filter>Containers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
