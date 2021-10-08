@@ -1,8 +1,8 @@
 # max
 
-max is a tool belt for C++.
+max is a tool belt for C++ — a collection of parts commonly used in all C++ projects.
 
-It includes common code such as logging, testing, abstractions for compiler and platform specific APIs (like endian conversion and CPU feature detection), and much more.
+It includes logging, testing, abstractions for compiler and platform specific APIs (like endian conversion and CPU feature detection), and much more.
 
 <!-- [![Travis CI status][travis-shield]][travis-link] -->
 [![AppVeyor CI status][appveyor-shield]][appveyor-link]
@@ -25,7 +25,7 @@ It includes common code such as logging, testing, abstractions for compiler and 
     * iOS*
 * Instruction sets:
     * x86 (64)
-    * ARM
+    * ARM*
 
 *Coming soon
 
