@@ -8,31 +8,31 @@ namespace Algorithms
 {
 
 	template< typename FunctorType >
-	ScopedFunctor< FunctorType > MakeScopedFunctor( const FunctorType & Functor ) noexcept
+	ScopedCleanupFunctor< FunctorType > MakeScopedCleanupFunctor( const FunctorType & Functor ) noexcept
 	{
-		return ScopedFunctor< FunctorType >( Functor );
+		return ScopedCleanupFunctor< FunctorType >( Functor );
 	}
 
 	template< typename FunctorType >
-	ScopedFunctor< FunctorType > MakeScopedFunctor( FunctorType && Functor ) noexcept
+	ScopedCleanupFunctor< FunctorType > MakeScopedCleanupFunctor( FunctorType && Functor ) noexcept
 	{
 		return ScopedFunctor< FunctorType >( std::move( Functor ) );
 	}
 
 	template< typename FunctorType >
-	ScopedFunctor< FunctorType >::ScopedFunctor( const FunctorType & Functor ) noexcept
+	ScopedCleanupFunctor< FunctorType >::ScopedCleanupFunctor( const FunctorType & Functor ) noexcept
 		: Functor( Functor )
 	{
 	}
 
 	template< typename FunctorType >
-	ScopedFunctor< FunctorType >::ScopedFunctor( FunctorType && Functor ) noexcept
+	ScopedCleanupFunctor< FunctorType >::ScopedCleanupFunctor( FunctorType && Functor ) noexcept
 		: Functor( std::move( Functor ) )
 	{
 	}
 
 	template< typename FunctorType >
-	ScopedFunctor< FunctorType >::~ScopedFunctor() noexcept
+	ScopedCleanupFunctor< FunctorType >::~ScopedCleanupFunctor() noexcept
 	{
 		Functor();
 	}
