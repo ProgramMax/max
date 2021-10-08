@@ -2,7 +2,8 @@
 
 |Clang version|Release date|max deprecation date|Adds support for                    |
 |-------------|-----------:|-------------------:|------------------------------------|
-|Clang 12.0.x |Apr 15, 2021|             Current|constexpr bit intrinsics, [[likely]]|
+|Clang 13.0.x |Oct  4, 2021|             Current|                                    |
+|Clang 12.0.x |Apr 15, 2021|        Oct  4, 2026|constexpr bit intrinsics, [[likely]]|
 |Clang 11.0.x |Oct 12, 2020|        Apr 15, 2026|                                    |
 |Clang 10.0.x |Mar 24, 2020|        Oct 12, 2025|concepts, constinit                 |
 |Clang 9.0.x  |Sep 19, 2019|        Mar 24, 2025|bit operations                      |
@@ -12,8 +13,7 @@
 |Clang 5.0.x  |Sep  7, 2018|        Mar  8, 2023|                                    |
 |Clang 4.0.x  |Mar 13, 2017|        Sep  7, 2023|std::optional                       |
 |Clang 3.9.x  |Sep  2, 2016|        Mar 13, 2022|                                    |
-|Clang 3.8.x  |Mar  8, 2016|        Sep  2, 2021|                                    |
-|Clang 3.7.x  |Sep  1, 2015|          Deprecated|                                    |
+|Clang 3.8.x  |Mar  8, 2016|          Deprecated|                                    |
 
 |GCC version|Release date|max deprecation date|Adds support for                                |
 |-----------|-----------:|-------------------:|------------------------------------------------|
@@ -31,8 +31,7 @@
 |GCC 7.1    |May  2, 2017|        Aug 14, 2023|std::optional                                   |
 |GCC 6.3    |Dec 21, 2016|        May  2, 2022|                                                |
 |GCC 6.2    |Aug 22, 2016|        Dec 21, 2021|                                                |
-|GCC 6.1    |Apr 27, 2016|        Aug 22, 2021|                                                |
-|GCC 5.3    |Dec  4, 2015|          Deprecated|                                                |
+|GCC 6.1    |Apr 27, 2016|          Deprecated|                                                |
 
 |MSVC version      |Release date|max deprecation date|Adds support for           |
 |------------------|-----------:|-------------------:|---------------------------|
@@ -62,5 +61,6 @@
 
 |Windows version|Release date|max deprecation date|
 |---------------|-----------:|-------------------:|
-|Windows 10     |Jul 29, 2015|             Current|
+|Windows 11     |Oct  5, 2021|             Current|
+|Windows 10     |Jul 29, 2015|        Oct  5, 2026|
 |Windows 8.1    |Oct 17, 2013|          Deprecated|
