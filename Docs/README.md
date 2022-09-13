@@ -4,8 +4,7 @@ max is a tool belt for C++ — a collection of parts commonly used in all C++ proj
 
 It includes logging, testing, abstractions for compiler and platform specific APIs (like endian conversion and CPU feature detection), and much more.
 
-<!-- [![Travis CI status][travis-shield]][travis-link] -->
-[![AppVeyor CI status][appveyor-shield]][appveyor-link]
+[![Build and test](https://github.com/ProgramMax/max/actions/workflows/build-and-test.yaml/badge.svg)](https://github.com/ProgramMax/max/actions/workflows/build-and-test.yaml)
 
 ## Features
 
