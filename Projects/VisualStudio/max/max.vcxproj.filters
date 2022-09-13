@@ -10,9 +10,6 @@
     <Filter Include="Tooling">
       <UniqueIdentifier>{841b2720-c952-42b1-8f1f-4781ac290024}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tooling\AppVeyor">
-      <UniqueIdentifier>{275f20c9-c3ed-4ad3-9c96-95726fe91e98}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Tooling\Cppcheck">
       <UniqueIdentifier>{8d900c01-bfe5-4a86-8d8c-8f335ee41fee}</UniqueIdentifier>
     </Filter>
@@ -83,10 +80,6 @@
       <Filter>Docs</Filter>
     </None>
     <None Include="..\..\..\AUTHORS" />
-    <None Include="..\..\..\.travis.yml" />
-    <None Include="..\..\..\Tooling\AppVeyor\AppVeyor.yml">
-      <Filter>Tooling\AppVeyor</Filter>
-    </None>
     <None Include="..\..\..\Tooling\Cppcheck\max.cppcheck">
       <Filter>Tooling\Cppcheck</Filter>
     </None>
@@ -196,11 +189,6 @@
     <None Include="..\..\..\.github\workflows\build-and-test.yaml">
       <Filter>.github\workflows</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="..\..\..\Tooling\AppVeyor\junit-results.xml">
-      <Filter>Tooling\AppVeyor</Filter>
-    </Xml>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetween.hpp">
