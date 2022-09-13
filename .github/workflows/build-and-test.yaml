@@ -43,7 +43,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: Build
-      working-directory: ${{env.GITHUB_WORKSPACE}}/Projects/${{ matrix.compiler }}\ ${{ matrix.platform }}\ Make/
+      working-directory: ${{ github.workspace }}/Projects/${{ matrix.compiler }}\ ${{ matrix.platform }}\ Make
       run: make
 
     - name: Test
