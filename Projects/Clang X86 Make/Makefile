@@ -23,10 +23,12 @@ LIBRARY_PATHS = \
 LIBRARY_PATHS_FLAGS = $(foreach d, $(LIBRARY_PATHS), -L$d)
 
 AUTOMATED_TEST_CXX_SRCS = \
-	../../Code/max/Algorithms/IsBetweenTest.cpp \
 	../../Code/max/Algorithms/CountZeroesTest.cpp \
+	../../Code/max/Algorithms/IsBetweenTest.cpp \
 	../../Code/max/Algorithms/SwapEndianTest.cpp \
+	../../Code/max/Containers/PointTest.cpp \
 	../../Code/max/Containers/RangeTest.cpp \
+	../../Code/max/Containers/RectangleTest.cpp \
 	../../Code/max/Containers/VectorTest.cpp \
 	../../Code/max/Testing/AutomatedTestsEntryPoint.cpp
 AUTOMATED_TEST_CXX_OBJS = $(AUTOMATED_TEST_CXX_SRCS:.cpp=.o)
@@ -37,7 +39,7 @@ MANUAL_TEST_CXX_SRCS = \
 	../../Code/max/Testing/ManualTestsEntryPoint.cpp
 MANUAL_TEST_CXX_OBJS = $(MANUAL_TEST_CXX_SRCS:.cpp=.o)
 
-CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++14 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -m32
+CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++17 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -m32
 LINKER_FLAGS += $(LIBRARY_PATHS_FLAGS)
 
 
