@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  Build-and-test-Windows:
+  Windows:
     strategy:
       matrix:
         platform: [Win32, x64]
@@ -32,7 +32,7 @@ jobs:
     - name: Test
       run: ${{ github.workspace }}\Projects\VisualStudio\maxAutomatedTests\${{ matrix.platform }}\${{ matrix.configuration }}\maxAutomatedTests.exe
 
-  Build-and-test-Linux:
+  Linux:
     strategy:
       matrix:
         platform: [X86-64] # TODO: Add X86, AArch32, and AArch64 platforms
