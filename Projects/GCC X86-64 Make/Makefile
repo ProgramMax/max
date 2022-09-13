@@ -39,7 +39,7 @@ MANUAL_TEST_CXX_SRCS = \
 	../../Code/max/Testing/ManualTestsEntryPoint.cpp
 MANUAL_TEST_CXX_OBJS = $(MANUAL_TEST_CXX_SRCS:.cpp=.o)
 
-CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++20 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -m64
+CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++2a -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion -m64
 LINKER_FLAGS += $(LIBRARY_PATHS_FLAGS)
 
 
