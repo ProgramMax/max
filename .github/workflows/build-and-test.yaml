@@ -31,20 +31,20 @@ jobs:
     - name: Test
       run: ${{ github.workspace }}\Projects\VisualStudio\maxAutomatedTests\${{ matrix.platform }}\${{ matrix.configuration }}\maxAutomatedTests.exe
 
-  #Build-and-test-Linux:
-  #  strategy:
-  #    matrix:
-  #      platform: [X86, X86-64]
-  #      compiler: [Clang, GCC]
-  #  runs-on: ubuntu-latest
+  Build-and-test-Linux:
+    strategy:
+      matrix:
+        platform: [X86, X86-64]
+        compiler: [Clang, GCC]
+    runs-on: ubuntu-latest
 
-  #  steps:
-  #  - name: Checkout
-  #    uses: actions/checkout@v3
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
 
-  #  - name: Build
-  #    working-directory: ${{env.GITHUB_WORKSPACE}}/Projects/${{ matrix.compiler }} ${{ matrix.platform }} Make
-  #    run: make
+    - name: Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}/Projects/${{ matrix.compiler }} ${{ matrix.platform }} Make
+      run: make
 
-  #  - name: Test
-  #    run: ${{ github.workspace }}\Projects\
+    - name: Test
+      run: ${{ github.workspace }}\Projects\
