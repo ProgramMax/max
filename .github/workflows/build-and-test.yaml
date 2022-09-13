@@ -15,7 +15,7 @@ jobs:
       matrix:
         platform: [Win32, x64]
         configuration: [Debug, Release]
-    runs-on: windows-latest
+    runs-on: [windows-2022, windows-2019]
 
     steps:
     - name: Checkout
@@ -34,9 +34,9 @@ jobs:
   Build-and-test-Linux:
     strategy:
       matrix:
-        platform: [X86-64]
+        platform: [X86-64] # TODO: Add X86, AArch32, and AArch64 platforms
         compiler: [Clang, GCC]
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-22.04, ubuntu-20.04]
 
     steps:
     - name: Checkout
