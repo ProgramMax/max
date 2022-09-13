@@ -64,6 +64,9 @@
     <Filter Include="Code\max\Compiling\Polyfills">
       <UniqueIdentifier>{2b8a8077-c85e-4bfc-a095-8c61f9c532c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include=".github\workflows">
+      <UniqueIdentifier>{6f9dc649-7bf2-4fd9-b9ff-0716900e8862}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\LICENSE" />
@@ -189,6 +192,9 @@
     </None>
     <None Include="..\..\..\Code\max\Containers\Rectangle.inl">
       <Filter>Code\max\Containers</Filter>
+    </None>
+    <None Include="..\..\..\.github\workflows\build-and-test.yaml">
+      <Filter>.github\workflows</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
