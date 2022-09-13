@@ -34,7 +34,7 @@ jobs:
   Build-and-test-Linux:
     strategy:
       matrix:
-        platform: [X86, X86-64]
+        platform: [X86-64]
         compiler: [Clang, GCC]
     runs-on: ubuntu-latest
 
