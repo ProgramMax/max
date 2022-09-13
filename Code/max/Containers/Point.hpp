@@ -9,6 +9,7 @@
 #include <max/Compiling/AliasingOptimizations.hpp>
 #include <initializer_list>
 #include <array>
+#include <cstddef>
 
 namespace max
 {
