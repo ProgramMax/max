@@ -81,8 +81,8 @@ jobs:
            ${{ matrix.compiler }} --version
 
     - name: Build
-      #env:
-      #  CXX: ${{ matrix.compiler }}
+      env:
+        CXX: ${{ matrix.compiler }}
       working-directory: ${{ github.workspace }}/Projects/Make
       run: make
 
