@@ -36,7 +36,7 @@ jobs:
     strategy:
       matrix:
         platform: [X86-64] # TODO: Add X86, AArch32, and AArch64 platforms
-        compiler: [clang++, g++]
+        compiler: [clang++, g++-9, g++-10, g++-11, g++-12]
         runner: [ubuntu-22.04, ubuntu-20.04]
     runs-on: ${{ matrix.runner }}
 
@@ -44,10 +44,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    #- name: Install Compilers
-    #  run: |
-    #       sudo apt update
-    #       sudo apt install g++-9 g++-10 llvm-10 clang-10
+    - name: Install Compiler
+      run: |
+           sudo apt update
+           sudo apt install ${{ matrix.compiler }}
+           set CXX ${{ matrix.compiler }}
+           ${{ matrix.compiler }} --version
 
     - name: Build
       env:
