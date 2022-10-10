@@ -36,7 +36,7 @@ jobs:
     strategy:
       matrix:
         platform: [X86-64] # TODO: Add X86, AArch32, and AArch64 platforms
-        compiler: [Clang, GCC]
+        compiler: [clang++, g++]
         runner: [ubuntu-22.04, ubuntu-20.04]
     runs-on: ${{ matrix.runner }}
 
@@ -50,19 +50,19 @@ jobs:
     #       sudo apt install g++-9 g++-10 llvm-10 clang-10
 
     - name: Build
-      #env:
-      #  CXX: g++-10
-      working-directory: ${{ github.workspace }}/Projects/${{ matrix.compiler }} ${{ matrix.platform }} Make
+      env:
+        CXX: ${{ matrix.compiler }}
+      working-directory: ${{ github.workspace }}/Projects/Make
       run: make
 
     - name: Test
-      run: ${{ github.workspace }}/Projects/${{ matrix.compiler }}\ ${{ matrix.platform }}\ Make/maxAutomatedTests
+      run: ${{ github.workspace }}/Projects/Make/maxAutomatedTests
 
     # TODO: Should this use perf stat record?
     # TODO: GitHub won't let us run perf stat on their machines. That is fine, really. We should host our own stable hardware.
     # Disable until we are hosting our own.
     #- name: Performance Test
-    #  run: perf stat ${{ github.workspace }}/Projects/${{ matrix.compiler }}\ ${{ matrix.platform }}\ Make/maxAutomatedTests > perf_stats
+    #  run: perf stat ${{ github.workspace }}/Projects/Make/maxAutomatedTests > perf_stats
 
     #- name: Upload performance test artifact
     #  uses: actions/upload-artifact@v3
