@@ -51,7 +51,7 @@ jobs:
 
     - name: Build
       env:
-        CXX: ${{ matrix.compiler }]
+        CXX: ${{ matrix.compiler }}
       working-directory: ${{ github.workspace }}/Projects/Make
       run: make
 
