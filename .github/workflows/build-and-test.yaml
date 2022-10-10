@@ -73,9 +73,9 @@ jobs:
            sudo apt update
            sudo apt remove gcc
            sudo apt remove clang
-           sudo update-alternatives --remove-all gcc
-           sudo update-alternatives --remove-all g++
-           sudo update-alternatives --remove-all clang
+           #sudo update-alternatives --remove-all gcc
+           #sudo update-alternatives --remove-all g++
+           #sudo update-alternatives --remove-all clang
            apt search ^clang
            sudo apt install ${{ matrix.compiler }}
            sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/${{ matrix.compiler }} 50
@@ -85,7 +85,8 @@ jobs:
 
     - name: Build
       env:
-        CXX: ${{ matrix.compiler }}
+        #CXX: ${{ matrix.compiler }}
+        CXX: gcc
       working-directory: ${{ github.workspace }}/Projects/Make
       run: make
 
