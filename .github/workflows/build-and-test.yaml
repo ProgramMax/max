@@ -37,7 +37,7 @@ jobs:
       matrix:
         platform: [X86-64] # TODO: Add X86, AArch32, and AArch64 platforms
         #compiler: [clang-4, clang-5, clang-6, clang-7, clang-8, clang-9, clang-10, clang-11, clang-12, clang-13, clang-14, clang-15, clang-16, g++-7, g++-8, g++-9, g++-10, g++-11, g++-12]
-        compiler: [g++-7, g++-8, g++-9, g++-10, g++-11, g++-12]
+        compiler: [gcc-7, gcc-8, gcc-9, gcc-10, gcc-11, gcc-12]
         runner: [ubuntu-22.04, ubuntu-20.04]
     runs-on: ${{ matrix.runner }}
 
@@ -48,7 +48,7 @@ jobs:
     - name: Install Compiler
       run: |
            sudo apt update
-           apt search ^gcc
+           apt search ^clang
            sudo apt install ${{ matrix.compiler }}
            set CXX ${{ matrix.compiler }}
            ${{ matrix.compiler }} --version
