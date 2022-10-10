@@ -50,8 +50,8 @@ jobs:
     #       sudo apt install g++-9 g++-10 llvm-10 clang-10
 
     - name: Build
-      #env:
-      #  CXX: g++-10
+      env:
+        CXX: ${{ matrix.compiler }]
       working-directory: ${{ github.workspace }}/Projects/Make
       run: make
 
