@@ -48,7 +48,7 @@ jobs:
     - name: Install Compiler
       run: |
            sudo apt update
-           apt search ^g++$
+           apt search ^gcc$
            sudo apt install ${{ matrix.compiler }}
            set CXX ${{ matrix.compiler }}
            ${{ matrix.compiler }} --version
