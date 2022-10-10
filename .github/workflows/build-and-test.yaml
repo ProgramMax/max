@@ -36,7 +36,7 @@ jobs:
     strategy:
       matrix:
         platform: [X86-64] # TODO: Add X86, AArch32, and AArch64 platforms
-        compiler: [clang-11, clang-12, gcc-9, gcc-10, gcc-11, gcc-12]
+        compiler: [clang-11, clang-12, gcc-9, gcc-10, gcc-11]
         runner: [ubuntu-22.04, ubuntu-20.04]
         include:
           - runner: ubuntu-20.04
@@ -57,6 +57,8 @@ jobs:
             compiler: clang-13
           - runner: ubuntu-22.04
             compiler: clang-14
+          - runner: ubuntu-22.04
+            compiler: gcc-12
     runs-on: ${{ matrix.runner }}
 
     steps:
