@@ -71,6 +71,7 @@ jobs:
     - name: Install Compiler
       run: |
            sudo apt update
+           apt search ^clang
            sudo apt install ${{ matrix.compiler }}
            sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/${{ matrix.compiler }} 50
            sudo update-alternatives --install /usr/bin/clang clang /usr/bin/${{ matrix.compiler }} 50
