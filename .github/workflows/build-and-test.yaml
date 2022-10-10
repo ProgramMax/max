@@ -41,14 +41,21 @@ jobs:
         include:
           - runner: ubuntu-20.04
             compiler: clang-6
+          - runner: ubuntu-20.04
             compiler: clang-7
+          - runner: ubuntu-20.04
             compiler: clang-8
+          - runner: ubuntu-20.04
             compiler: clang-9
+          - runner: ubuntu-20.04
             compiler: clang-10
+          - runner: ubuntu-20.04
             compiler: gcc-7
+          - runner: ubuntu-20.04
             compiler: gcc-8
           - runner: ubuntu-22.04
             compiler: clang-13
+          - runner: ubuntu-22.04
             compiler: clang-14
     runs-on: ${{ matrix.runner }}
 
