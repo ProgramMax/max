@@ -77,12 +77,12 @@ jobs:
            sudo apt install ${{ matrix.compiler }}
            sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/${{ matrix.compiler }} 50
            sudo update-alternatives --install /usr/bin/clang clang /usr/bin/${{ matrix.compiler }} 50
-           set CXX ${{ matrix.compiler }}
+           #set CXX ${{ matrix.compiler }}
            ${{ matrix.compiler }} --version
 
     - name: Build
-      env:
-        CXX: ${{ matrix.compiler }}
+      #env:
+      #  CXX: ${{ matrix.compiler }}
       working-directory: ${{ github.workspace }}/Projects/Make
       run: make
 
