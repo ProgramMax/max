@@ -61,6 +61,8 @@ jobs:
     # TODO: Should this use perf stat record?
     - name: Performance Test
       run: perf stat ${{ github.workspace }}/Projects/${{ matrix.compiler }}\ ${{ matrix.platform }}\ Make/maxAutomatedTests > perf_stats
+
+    - name: Upload performance test artifact
       uses: actions/upload-artifact@v3
       with:
         name: perf_stats
