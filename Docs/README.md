@@ -45,8 +45,3 @@ You can reference the full [deprecation schedule](DeprecationSchedule.md) for ex
 * **Community:** We have a welcoming community which follows the [Code of Conduct](code_of_conduct.md).
 * **Contribute:** We accept pull requests. Take a look at some [good first tasks](https://github.com/ProgramMax/max/issues?q=is%3Aissue+is%3Aopen+label%3A"good+first+issue").
 * **Support:** You can [report bugs](https://github.com/ProgramMax/max/issues/new?assignees=&labels=&template=bug_report.md&title=) and [request changes](https://github.com/ProgramMax/max/issues/new?assignees=&labels=&template=feature_request.md&title=) using GitHub issues.
-
-[travis-shield]: https://travis-ci.org/ProgramMax/max.svg?branch=master
-[travis-link]: https://travis-ci.org/ProgramMax/max/builds
-[appveyor-shield]: https://ci.appveyor.com/api/projects/status/7wjmpyqh6gnc70g5/branch/master?svg=true
-[appveyor-link]: https://ci.appveyor.com/project/ProgramMax/max/branch/master
