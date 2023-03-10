@@ -36,22 +36,57 @@ jobs:
     strategy:
       matrix:
         platform: [X86-64] # TODO: Add X86, AArch32, and AArch64 platforms
-        compiler: [clang++, g++]
+        compiler: [clang-11, clang-12, gcc-9, gcc-10, gcc-11]
         runner: [ubuntu-22.04, ubuntu-20.04]
+        exclude:
+          - runner: ubuntu-22.04
+            compiler: clang-6
+        #include:
+        #  - runner: ubuntu-20.04
+        #    compiler: clang-6
+        #  - runner: ubuntu-20.04
+        #    compiler: clang-7
+        #  - runner: ubuntu-20.04
+        #    compiler: clang-8
+        #  - runner: ubuntu-20.04
+        #    compiler: clang-9
+        #  - runner: ubuntu-20.04
+        #    compiler: clang-10
+        #  - runner: ubuntu-20.04
+        #    compiler: gcc-7
+        #  - runner: ubuntu-20.04
+        #    compiler: gcc-8
+        #  - runner: ubuntu-22.04
+        #    compiler: clang-13
+        #  - runner: ubuntu-22.04
+        #    compiler: clang-14
+        #  - runner: ubuntu-22.04
+        #    compiler: gcc-12
     runs-on: ${{ matrix.runner }}
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
 
-    #- name: Install Compilers
-    #  run: |
-    #       sudo apt update
-    #       sudo apt install g++-9 g++-10 llvm-10 clang-10
+    - name: Install Compiler
+      run: |
+           sudo apt update
+           sudo apt remove gcc
+           sudo apt remove clang
+           #sudo update-alternatives --remove-all gcc
+           #sudo update-alternatives --remove-all g++
+           #sudo update-alternatives --remove-all clang
+           apt search ^clang
+           sudo apt install ${{ matrix.compiler }}
+           sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/${{ matrix.compiler }} 50
+           sudo update-alternatives --install /usr/bin/clang clang /usr/bin/${{ matrix.compiler }} 50
+           #set CXX ${{ matrix.compiler }}
+           ${{ matrix.compiler }} --version
 
     - name: Build
       env:
-        CXX: ${{ matrix.compiler }}
+        #CXX: ${{ matrix.compiler }}
+        CXX: gcc
       working-directory: ${{ github.workspace }}/Projects/Make
       run: make
 
