@@ -2,7 +2,8 @@
 
 |Clang version|Release date|max deprecation date|Adds support for                    |
 |-------------|-----------:|-------------------:|------------------------------------|
-|Clang 15.0.x |Sep  6, 2022|             Current|std::source_location                |
+|Clang 16.0.x |Mar 18, 2023|             Current|                                    |
+|Clang 15.0.x |Sep  6, 2022|        Mar 18, 2028|std::source_location                |
 |Clang 14.0.x |Mar 25, 2022|        Sep  6, 2027|                                    |
 |Clang 13.0.x |Oct  4, 2021|        Mar 25, 2027|                                    |
 |Clang 12.0.x |Apr 15, 2021|        Oct  4, 2026|constexpr bit intrinsics, [[likely]]|
@@ -60,8 +61,7 @@
 |MSVC 15.8.x       |Aug 14, 2018|        Nov 13, 2023|                                                    |
 |MSVC 15.7.x       |May  7, 2018|        Aug 14, 2023|                                                    |
 |MSVC 15.6.x       |Mar  5, 2018|        May  7, 2023|                                                    |
-|MSVC 15.5.x       |Dec  4, 2017|        Mar  5, 2023|                                                    |
-|MSVC 15.4.x       |Oct  9, 2017|          Deprecated|                                                    |
+|MSVC 15.5.x       |Dec  4, 2017|          Deprecated|                                                    |
 
 |Windows version|Release date|max deprecation date|
 |---------------|-----------:|-------------------:|
