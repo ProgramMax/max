@@ -19,7 +19,8 @@
 
 |GCC version|Release date|max deprecation date|Adds support for                                  |
 |-----------|-----------:|-------------------:|--------------------------------------------------|
-|GCC 12.2   |Aug 19, 2022|             Current|                                                  |
+|GCC 13.1   |Apr 26, 2023|             Current|                                                  |
+|GCC 12.2   |Aug 19, 2022|        Apr 26, 2028|                                                  |
 |GCC 12.1   |May  6, 2022|        Aug 19, 2027|if consteval, std::move_only_function             |
 |GCC 11.3   |Apr 21, 2022|        May  6, 2027|                                                  |
 |GCC 11.2   |Jul 28, 2021|        Apr 21, 2027|                                                  |
