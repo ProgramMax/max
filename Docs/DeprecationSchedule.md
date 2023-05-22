@@ -40,7 +40,8 @@
 
 |MSVC version      |Release date|max deprecation date|Adds support for                                    |
 |------------------|-----------:|-------------------:|----------------------------------------------------|
-|MSVC 17.5.x       |Feb 21, 2023|             Current|                                                    |
+|MSVC 17.6.x       |May 16, 2023|             Current|                                                    |
+|MSVC 17.5.x       |Feb 21, 2023|        May 16, 2028|                                                    |
 |MSVC 17.4.x       |Nov 15, 2022|        Feb 21, 2028|<stacktrace>                                        |
 |MSVC 17.3.x       |Aug  9, 2022|        Nov 15, 2027|<expected>                                          |
 |MSVC 17.2.x       |May 10, 2022|        Aug  9, 2027|deduced this, std::move_only_function, unreachable()|
@@ -61,8 +62,7 @@
 |MSVC 15.9.x       |Nov 13, 2018|        Apr  2, 2024|                                                    |
 |MSVC 15.8.x       |Aug 14, 2018|        Nov 13, 2023|                                                    |
 |MSVC 15.7.x       |May  7, 2018|        Aug 14, 2023|                                                    |
-|MSVC 15.6.x       |Mar  5, 2018|        May  7, 2023|                                                    |
-|MSVC 15.5.x       |Dec  4, 2017|          Deprecated|                                                    |
+|MSVC 15.6.x       |Mar  5, 2018|          Deprecated|                                                    |
 
 |Windows version|Release date|max deprecation date|
 |---------------|-----------:|-------------------:|
