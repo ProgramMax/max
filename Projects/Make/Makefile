@@ -21,6 +21,8 @@ ifeq (1, $(32_BIT))
 	IS_64_BIT = false
 endif
 
+LIBRARY = Build/libmax.a
+
 CXX_SRCS = \
 	../../Code/max/Hardware/CPU/Associativity.cpp \
 	../../Code/max/Hardware/CPU/CacheInfo.cpp \
@@ -49,8 +51,8 @@ else
 		../../Code/max/Hardware/CPU/IsCPUIDAvailablePolicies/X86GCCAssemblyIsCPUIDAvailablePolicy.cpp
 endif
 
+CXX_OBJS = $(patsubst ../../Code/%.cpp,Build/Objects/%.o,$(CXX_SRCS))
 
-CXX_OBJS = $(CXX_SRCS:.cpp=.o)
 
 INCLUDE_PATHS = \
 	../../Code
@@ -59,6 +61,9 @@ INCLUDE_PATHS_FLAGS = $(foreach d, $(INCLUDE_PATHS), -I$d)
 LIBRARY_PATHS = \
 	.
 LIBRARY_PATHS_FLAGS = $(foreach d, $(LIBRARY_PATHS), -L$d)
+
+
+AUTOMATED_TEST_PROGRAM = Build/maxAutomatedTests
 
 AUTOMATED_TEST_CXX_SRCS = \
 	../../Code/max/Algorithms/CountZeroesTest.cpp \
@@ -69,13 +74,16 @@ AUTOMATED_TEST_CXX_SRCS = \
 	../../Code/max/Containers/RectangleTest.cpp \
 	../../Code/max/Containers/VectorTest.cpp \
 	../../Code/max/Testing/AutomatedTestsEntryPoint.cpp
-AUTOMATED_TEST_CXX_OBJS = $(AUTOMATED_TEST_CXX_SRCS:.cpp=.o)
+AUTOMATED_TEST_CXX_OBJS = $(patsubst ../../Code/%.cpp,Build/Objects/%.o,$(AUTOMATED_TEST_CXX_SRCS))
+
+
+MANUAL_TEST_PROGRAM = Build/maxManualTests
 
 MANUAL_TEST_CXX_SRCS = \
 	../../Code/max/Compiling/AliasingOptimizationsTest.cpp \
 	../../Code/max/Compiling/ConfigurationTest.cpp \
 	../../Code/max/Testing/ManualTestsEntryPoint.cpp
-MANUAL_TEST_CXX_OBJS = $(MANUAL_TEST_CXX_SRCS:.cpp=.o)
+MANUAL_TEST_CXX_OBJS = $(patsubst ../../Code/%.cpp,Build/Objects/%.o,$(MANUAL_TEST_CXX_SRCS))
 
 ifeq ($(IS_64_BIT), true)
 	TARGET_BIT_FLAG = -m64
@@ -89,25 +97,32 @@ LINKER_FLAGS += $(LIBRARY_PATHS_FLAGS)
 
 
 
-all: libmax.a maxAutomatedTests maxManualTests
+all: $(LIBRARY) $(AUTOMATED_TEST_PROGRAM) $(MANUAL_TEST_PROGRAM)
 
-libmax.a: $(PCH_OBJS) $(CXX_OBJS)
+$(LIBRARY): $(PCH_OBJS) $(CXX_OBJS)
 	ar rcs libmax.a $(CXX_OBJS)
 
-maxAutomatedTests: $(AUTOMATED_TEST_CXX_OBJS)
+$(CXX_OBJS): $(CXX_SRCS)
+	mkdir -p $(dir $@)
+	$(CXX) -g $(CPPFLAGS) -c $(patsubst Build/Objects/%.o,../../Code/%.cpp,$@) -o $@
+
+$(AUTOMATED_TEST_PROGRAM): $(AUTOMATED_TEST_CXX_OBJS)
 	$(CXX) $(TARGET_BIT_FLAG) -g $(AUTOMATED_TEST_CXX_OBJS) $(LINKER_FLAGS) -lmax -o maxAutomatedTests
 
-maxManualTests: $(MANUAL_TEST_CXX_OBJS)
+$(AUTOMATED_TEST_CXX_OBJS): $(AUTOMATED_TEST_CXX_SRCS)
+	mkdir -p $(dir $@)
+	$(CXX) -g $(CPPFLAGS) -c $(patsubst Build/Objects/%.o,../../Code/%.cpp,$@) -o $@
+
+$(MANUAL_TEST_PROGRAM): $(MANUAL_TEST_CXX_OBJS)
 	$(CXX) $(TARGET_BIT_FLAG) -g $(MANUAL_TEST_CXX_OBJS) $(LINKER_FLAGS) -lmax -o maxManualTests
-.cpp.o:
-	$(CXX) -g $(CPPFLAGS) -c $< -o $@
 
-clean:
-	@- $(RM) libmax.a
-	@- $(RM) $(CXX_OBJS)
-	@- $(RM) maxAutomatedTests
-	@- $(RM) $(AUTOMATED_TEST_CXX_OBJS)
-	@- $(RM) maxManualTests
-	@- $(RM) $(MANUAL_TEST_CXX_OBJS)
+$(MANUAL_TEST_CXX_OBJS): $(AUTOMATED_TEST_CXX_SRCS)
+	mkdir -p $(dir $@)
+	$(CXX) -g $(CPPFLAGS) -c $(patsubst Build/Objects/%.o,../../Code/%.cpp,$@) -o $@
 
+.PHONY: clean
 distclean: clean
+clean:
+	for file in $(LIBRARY) $(CXX_OBJS) $(AUTOMATED_TEST_PROGRAM) $(AUTOMATED_TEST_CXX_OBJS) $(MANUAL_TEST_PROGRAM) $(MANUAL_TEST_CXX_OBJS) ; do \
+		rm $${file} ; \
+	done
