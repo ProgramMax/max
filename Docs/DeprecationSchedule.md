@@ -35,8 +35,7 @@
 |GCC 8.2    |Jul 26, 2018|        Feb 22, 2024|std::endian                                       |
 |GCC 7.3    |Jan 25, 2018|        Jul 26, 2023|                                                  |
 |GCC 7.2    |Aug 14, 2017|        Jan 25, 2023|                                                  |
-|GCC 7.1    |May  2, 2017|        Aug 14, 2023|std::optional                                     |
-|GCC 6.3    |Dec 21, 2016|          Deprecated|                                                  |
+|GCC 7.1    |May  2, 2017|          Deprecated|std::optional                                     |
 
 |MSVC version      |Release date|max deprecation date|Adds support for                                    |
 |------------------|-----------:|-------------------:|----------------------------------------------------|
@@ -61,8 +60,7 @@
 |MSVC 16.0.x       |Apr  2, 2019|        May 21, 2024|                                                    |
 |MSVC 15.9.x       |Nov 13, 2018|        Apr  2, 2024|                                                    |
 |MSVC 15.8.x       |Aug 14, 2018|        Nov 13, 2023|                                                    |
-|MSVC 15.7.x       |May  7, 2018|        Aug 14, 2023|                                                    |
-|MSVC 15.6.x       |Mar  5, 2018|          Deprecated|                                                    |
+|MSVC 15.7.x       |May  7, 2018|          Deprecated|                                                    |
 
 |Windows version|Release date|max deprecation date|
 |---------------|-----------:|-------------------:|
