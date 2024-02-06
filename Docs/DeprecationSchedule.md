@@ -2,7 +2,8 @@
 
 |Clang version|Release date|max deprecation date|Adds support for                    |
 |-------------|-----------:|-------------------:|------------------------------------|
-|Clang 16.0.x |Mar 18, 2023|             Current|                                    |
+|Clang 17.0.x |Sep  9, 2023|             Current|                                    |
+|Clang 16.0.x |Mar 18, 2023|        Sep  9, 2028|                                    |
 |Clang 15.0.x |Sep  6, 2022|        Mar 18, 2028|std::source_location                |
 |Clang 14.0.x |Mar 25, 2022|        Sep  6, 2027|                                    |
 |Clang 13.0.x |Oct  4, 2021|        Mar 25, 2027|                                    |
@@ -12,14 +13,12 @@
 |Clang 9.0.x  |Sep 19, 2019|        Mar 24, 2025|bit operations                      |
 |Clang 8.0.x  |Mar 20, 2019|        Sep 19, 2024|                                    |
 |Clang 7.0.x  |Sep 19, 2018|        Mar 20, 2024|std::endian, <version>              |
-|Clang 6.0.x  |Mar  8, 2018|        Sep 19, 2023|                                    |
-|Clang 5.0.x  |Sep  7, 2018|        Mar  8, 2023|                                    |
-|Clang 4.0.x  |Mar 13, 2017|        Sep  7, 2023|std::optional                       |
-|Clang 3.9.x  |Sep  2, 2016|          Deprecated|                                    |
+|Clang 6.0.x  |Mar  8, 2018|          Deprecated|                                    |
 
 |GCC version|Release date|max deprecation date|Adds support for                                  |
 |-----------|-----------:|-------------------:|--------------------------------------------------|
-|GCC 13.1   |Apr 26, 2023|             Current|                                                  |
+|GCC 13.2   |Jul 27, 2023|             Current|                                                  |
+|GCC 13.1   |Apr 26, 2023|        Jul 27, 2028|                                                  |
 |GCC 12.2   |Aug 19, 2022|        Apr 26, 2028|                                                  |
 |GCC 12.1   |May  6, 2022|        Aug 19, 2027|if consteval, std::move_only_function             |
 |GCC 11.3   |Apr 21, 2022|        May  6, 2027|                                                  |
@@ -33,9 +32,7 @@
 |GCC 9.1    |May  3, 2019|        Aug 12, 2024|<version>, std::assume_aligned(), bit operations  |
 |GCC 8.3    |Feb 22, 2019|        May  3, 2024|                                                  |
 |GCC 8.2    |Jul 26, 2018|        Feb 22, 2024|std::endian                                       |
-|GCC 7.3    |Jan 25, 2018|        Jul 26, 2023|                                                  |
-|GCC 7.2    |Aug 14, 2017|        Jan 25, 2023|                                                  |
-|GCC 7.1    |May  2, 2017|          Deprecated|std::optional                                     |
+|GCC 7.3    |Jan 25, 2018|          Deprecated|                                                  |
 
 |MSVC version      |Release date|max deprecation date|Adds support for                                    |
 |------------------|-----------:|-------------------:|----------------------------------------------------|
@@ -61,8 +58,7 @@
 |MSVC 16.1.x       |May 21, 2019|        Jul 24, 2024|std::shift_*                                        |
 |MSVC 16.0.x       |Apr  2, 2019|        May 21, 2024|                                                    |
 |MSVC 15.9.x       |Nov 13, 2018|        Apr  2, 2024|                                                    |
-|MSVC 15.8.x       |Aug 14, 2018|        Nov 13, 2023|                                                    |
-|MSVC 15.7.x       |May  7, 2018|          Deprecated|                                                    |
+|MSVC 15.8.x       |Aug 14, 2018|          Deprecated|                                                    |
 
 |Windows version|Release date|max deprecation date|
 |---------------|-----------:|-------------------:|
