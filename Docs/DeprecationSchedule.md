@@ -36,7 +36,8 @@
 
 |MSVC version      |Release date|max deprecation date|Adds support for                                    |
 |------------------|-----------:|-------------------:|----------------------------------------------------|
-|MSVC 17.8.x       |Nov 14, 2023|             Current|                                                    |
+|MSVC 17.9.x       |Feb 13, 2024|             Current|                                                    |
+|MSVC 17.8.x       |Nov 14, 2023|        Feb 13, 2029|                                                    |
 |MSVC 17.7.x       |Aug  8, 2023|        Nov 14, 2028|                                                    |
 |MSVC 17.6.x       |May 16, 2023|        Aug  8, 2028|                                                    |
 |MSVC 17.5.x       |Feb 21, 2023|        May 16, 2028|                                                    |
