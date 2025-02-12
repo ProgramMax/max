@@ -91,7 +91,7 @@ else
 	TARGET_BIT_FLAG = -m32
 endif
 
-CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++17 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion $(TARGET_BIT_FLAG)
+CPPFLAGS += $(INCLUDE_PATHS_FLAGS) -std=c++23 -Werror -Wall -Wextra -Wpedantic -Wconversion -Wsign-conversion $(TARGET_BIT_FLAG)
 LINKER_FLAGS += $(LIBRARY_PATHS_FLAGS)
 
 
