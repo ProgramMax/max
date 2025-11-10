@@ -11,9 +11,7 @@
 |Clang 11.0.x |Oct 12, 2020|        Apr 15, 2026|                                    |
 |Clang 10.0.x |Mar 24, 2020|        Oct 12, 2025|concepts, constinit                 |
 |Clang 9.0.x  |Sep 19, 2019|        Mar 24, 2025|bit operations                      |
-|Clang 8.0.x  |Mar 20, 2019|        Sep 19, 2024|                                    |
-|Clang 7.0.x  |Sep 19, 2018|        Mar 20, 2024|std::endian, <version>              |
-|Clang 6.0.x  |Mar  8, 2018|          Deprecated|                                    |
+|Clang 8.0.x  |Mar 20, 2019|          Deprecated|                                    |
 
 |GCC version|Release date|max deprecation date|Adds support for                                  |
 |-----------|-----------:|-------------------:|--------------------------------------------------|
@@ -29,14 +27,13 @@
 |GCC 10.1   |May  7, 2020|        Jul 23, 2025|concepts, std::shift_*, constinit                 |
 |GCC 9.3    |Mar 12, 2020|        May  7, 2025|                                                  |
 |GCC 9.2    |Aug 12, 2019|        Mar 12, 2025|                                                  |
-|GCC 9.1    |May  3, 2019|        Aug 12, 2024|<version>, std::assume_aligned(), bit operations  |
-|GCC 8.3    |Feb 22, 2019|        May  3, 2024|                                                  |
-|GCC 8.2    |Jul 26, 2018|        Feb 22, 2024|std::endian                                       |
-|GCC 7.3    |Jan 25, 2018|          Deprecated|                                                  |
+|GCC 9.1    |May  3, 2019|          Deprecated|<version>, std::assume_aligned(), bit operations  |
 
 |MSVC version      |Release date|max deprecation date|Adds support for                                    |
 |------------------|-----------:|-------------------:|----------------------------------------------------|
-|MSVC 17.8.x       |Nov 14, 2023|             Current|                                                    |
+|MSVC 17.13.x      |Feb 11, 2025|             Current|                                                    |
+|MSVC 17.9.x       |Feb 13, 2024|        Fab 11, 2030|                                                    |
+|MSVC 17.8.x       |Nov 14, 2023|        Feb 13, 2029|                                                    |
 |MSVC 17.7.x       |Aug  8, 2023|        Nov 14, 2028|                                                    |
 |MSVC 17.6.x       |May 16, 2023|        Aug  8, 2028|                                                    |
 |MSVC 17.5.x       |Feb 21, 2023|        May 16, 2028|                                                    |
@@ -53,12 +50,7 @@
 |MSVC 16.6.x       |May 19, 2020|        Aug  5, 2025|                                                    |
 |MSVC 16.5.x       |Mar 16, 2020|        May 19, 2025|bit operations                                      |
 |MSVC 16.4.x       |Dec  3, 2019|        Mar 16, 2025|                                                    |
-|MSVC 16.3.x       |Sep 23, 2019|        Dec  3, 2024|concepts                                            |
-|MSVC 16.2.x       |Jul 24, 2019|        Sep 23, 2024|std::endian, <version>                              |
-|MSVC 16.1.x       |May 21, 2019|        Jul 24, 2024|std::shift_*                                        |
-|MSVC 16.0.x       |Apr  2, 2019|        May 21, 2024|                                                    |
-|MSVC 15.9.x       |Nov 13, 2018|        Apr  2, 2024|                                                    |
-|MSVC 15.8.x       |Aug 14, 2018|          Deprecated|                                                    |
+|MSVC 16.3.x       |Sep 23, 2019|          Deprecated|concepts                                            |
 
 |Windows version|Release date|max deprecation date|
 |---------------|-----------:|-------------------:|
