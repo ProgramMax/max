@@ -83,6 +83,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\TaskThread.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\ThreadPool.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\Yield.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\AliasingOptimizations.hpp" />
     <ClInclude Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.hpp">
@@ -222,6 +224,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Algorithms\TaskThread.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Algorithms\ThreadPool.cpp" />
     <ClCompile Include="..\..\..\Code\max\Compiling\AliasingOptimizationsTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
