@@ -64,6 +64,9 @@
     <Filter Include=".github\workflows">
       <UniqueIdentifier>{6f9dc649-7bf2-4fd9-b9ff-0716900e8862}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\max\Containers\StateMachine">
+      <UniqueIdentifier>{3fe8751b-d582-43ad-85a1-4d1ad235b57d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\LICENSE" />
@@ -188,6 +191,18 @@
     </None>
     <None Include="..\..\..\.github\workflows\build-and-test.yaml">
       <Filter>.github\workflows</Filter>
+    </None>
+    <None Include="..\..\..\Code\max\Containers\StateMachine\AnythingMatcher.inl">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </None>
+    <None Include="..\..\..\Code\max\Containers\StateMachine\EnumMatcher.inl">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </None>
+    <None Include="..\..\..\Code\max\Containers\StateMachine\NumberInput.inl">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </None>
+    <None Include="..\..\..\Code\max\Containers\StateMachine\RangeMatcher.inl">
+      <Filter>Code\max\Containers\StateMachine</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -402,6 +417,63 @@
     <ClInclude Include="..\..\..\Code\max\Hardware\CPU\TaskQueue.hpp">
       <Filter>Code\max\Hardware\CPU</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\AnythingMatcher.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\AnythingMatcherTest.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\EnumMatcher.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\Input.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\Matcher.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\Node.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\NodeTest.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\NumberInput.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\NumberInputTest.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\RangeMatcher.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\RangeMatcherTest.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\StateMachine.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\StateMachineTest.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\StringInput.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\StringInputTest.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\StringMatcher.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\StringMatcherTest.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\Transition.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\TransitionTest.hpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp">
@@ -496,6 +568,36 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Hardware\CPU\TaskQueue.cpp">
       <Filter>Code\max\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\AnythingMatcherTest.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\EnumMatcher.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\NodeTest.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\NumberInputTest.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\RangeMatcherTest.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\StateMachineTest.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\StringInput.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\StringInputTest.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\StringMatcherTest.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\TransitionTest.cpp">
+      <Filter>Code\max\Containers\StateMachine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
