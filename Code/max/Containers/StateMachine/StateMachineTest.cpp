@@ -43,7 +43,7 @@ namespace StateMachine {
 
 			auto state_machine = max::Containers::StateMachine::StateMachine{std::make_tuple(std::move(node_0), std::move(node_1))};
 
-			state_machine.AttemptTransition(1);
+			state_machine.AttemptTransition(uint32_t{1});
 
 			CurrentTest.MAX_TESTING_ASSERT( state_machine.current_node_index_ == 1 );
 			CurrentTest.MAX_TESTING_ASSERT( range_callback_called );
