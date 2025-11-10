@@ -53,7 +53,7 @@ namespace StateMachine {
 			auto new_node_index = transition.AttemptTransition(uint32_t{1});
 
 			CurrentTest.MAX_TESTING_ASSERT( callback_called );
-			CurrentTest.MAX_TESTING_ASSERT( new_node_index == 2 );
+			CurrentTest.MAX_TESTING_ASSERT( new_node_index == size_t{2} );
 			}
 		} );
 
