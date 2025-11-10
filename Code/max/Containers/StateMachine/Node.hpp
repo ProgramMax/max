@@ -25,7 +25,7 @@ namespace StateMachine {
 		{}
 
 		template<typename T>
-		constexpr std::optional<size_t> AttemptTransition(T input) noexcept {
+		constexpr std::optional<size_t> AttemptTransition(const T& input) noexcept {
 			auto transition_happened = false;
 			auto new_node_index = std::optional<size_t>{std::nullopt};
 

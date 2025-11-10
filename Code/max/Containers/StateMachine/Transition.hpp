@@ -22,7 +22,7 @@ namespace StateMachine {
 		{}
 
 		template<typename T>
-		constexpr std::optional<size_t> AttemptTransition(T input) noexcept {
+		constexpr std::optional<size_t> AttemptTransition(const T& input) noexcept {
 			if (matcher_.DoesMatch(input)) {
 				return callback_(std::move(input));
 			}
