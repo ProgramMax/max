@@ -30,7 +30,7 @@ namespace StateMachine {
 				return size_t{2};
 			};
 
-			auto transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher{0, 1}, std::move(callback)};
+			auto transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(callback)};
 
 			auto new_node_index = transition.AttemptTransition(uint32_t{2});
 
@@ -48,7 +48,7 @@ namespace StateMachine {
 				return size_t{2};
 			};
 
-			auto transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher{0, 1}, std::move(callback)};
+			auto transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(callback)};
 
 			auto new_node_index = transition.AttemptTransition(uint32_t{1});
 
