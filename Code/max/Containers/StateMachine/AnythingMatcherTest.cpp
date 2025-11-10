@@ -10,6 +10,8 @@
 #include <max/Testing/CoutResultPolicy.hpp>
 #include <max/Testing/TestSuite.hpp>
 
+#include <cstdint>
+
 namespace maxStateMachine {
 
 	void RunAnythingMatcherTestSuite() noexcept {
