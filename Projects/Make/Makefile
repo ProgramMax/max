@@ -24,6 +24,8 @@ endif
 LIBRARY = Build/libmax.a
 
 CXX_SRCS = \
+	../../Code/max/Containers/StateMachine/EnumMatcher.cpp \
+	../../Code/max/Containers/StateMachine/StringInput.cpp \
 	../../Code/max/Hardware/CPU/Associativity.cpp \
 	../../Code/max/Hardware/CPU/CacheInfo.cpp \
 	../../Code/max/Hardware/CPU/CacheLevel.cpp \
@@ -73,6 +75,14 @@ AUTOMATED_TEST_CXX_SRCS = \
 	../../Code/max/Containers/RangeTest.cpp \
 	../../Code/max/Containers/RectangleTest.cpp \
 	../../Code/max/Containers/VectorTest.cpp \
+	../../Code/max/Containers/StateMachine/AnythingMatcherTest.cpp \
+	../../Code/max/Containers/StateMachine/NodeTest.cpp \
+	../../Code/max/Containers/StateMachine/NumberInputTest.cpp \
+	../../Code/max/Containers/StateMachine/RangeMatcherTest.cpp \
+	../../Code/max/Containers/StateMachine/StateMachineTest.cpp \
+	../../Code/max/Containers/StateMachine/StringInputTest.cpp \
+	../../Code/max/Containers/StateMachine/StringMatcherTest.cpp \
+	../../Code/max/Containers/StateMachine/TransitionTest.cpp \
 	../../Code/max/Testing/AutomatedTestsEntryPoint.cpp
 AUTOMATED_TEST_CXX_OBJS = $(patsubst ../../Code/%.cpp,Build/Objects/%.o,$(AUTOMATED_TEST_CXX_SRCS))
 
