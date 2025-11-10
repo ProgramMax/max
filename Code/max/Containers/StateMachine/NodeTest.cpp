@@ -44,7 +44,7 @@ namespace StateMachine {
 
 			auto node = max::Containers::StateMachine::MakeNode(std::move(range_transition), std::move(string_transition));
 
-			auto new_node_index = node.AttemptTransition(1);
+			auto new_node_index = node.AttemptTransition(uint32_t{1});
 
 			CurrentTest.MAX_TESTING_ASSERT( new_node_index == 2 );
 			CurrentTest.MAX_TESTING_ASSERT( range_callback_called );
@@ -71,7 +71,7 @@ namespace StateMachine {
 
 			auto node = max::Containers::StateMachine::MakeNode(std::move(range_transition), std::move(string_transition));
 
-			auto new_node_index = node.AttemptTransition(2);
+			auto new_node_index = node.AttemptTransition(uint32_t{2});
 
 			CurrentTest.MAX_TESTING_ASSERT( !new_node_index );
 			CurrentTest.MAX_TESTING_ASSERT( !range_callback_called );
