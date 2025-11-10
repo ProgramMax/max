@@ -393,11 +393,14 @@
     <ClInclude Include="..\..\..\Code\max\Compiling\Bitmask.hpp">
       <Filter>Code\max\Compiling</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Algorithms\TaskThread.hpp">
-      <Filter>Code\max\Algorithms</Filter>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\TaskThread.hpp">
+      <Filter>Code\max\Hardware\CPU</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\Code\max\Algorithms\ThreadPool.hpp">
-      <Filter>Code\max\Algorithms</Filter>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\Task.hpp">
+      <Filter>Code\max\Hardware\CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\TaskQueue.hpp">
+      <Filter>Code\max\Hardware\CPU</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -485,11 +488,14 @@
     <ClCompile Include="..\..\..\Code\max\Containers\RectangleTest.cpp">
       <Filter>Code\max\Containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\max\Algorithms\TaskThread.cpp">
-      <Filter>Code\max\Algorithms</Filter>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\TaskThread.cpp">
+      <Filter>Code\max\Hardware\CPU</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Code\max\Algorithms\ThreadPool.cpp">
-      <Filter>Code\max\Algorithms</Filter>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\Task.cpp">
+      <Filter>Code\max\Hardware\CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\TaskQueue.cpp">
+      <Filter>Code\max\Hardware\CPU</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

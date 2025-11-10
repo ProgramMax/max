@@ -241,7 +241,7 @@
 #if _MSC_FULL_VER >= 190024210 // MSVC++ 14.3 (Visual Studio 2015 Update 3)
 	// Visual Studio 2015 Update 3 introduced the _MSVC_LANG pre-defined macro
 	#if _MSVC_LANG > 202004L
-		#MAX_COMPILER_MESSAGE( "Compiling with a newer version of C++ than max recognizes. Using last known version.");
+		MAX_COMPILER_MESSAGE( "Compiling with a newer version of C++ than max recognizes. Using last known version.");
 	#elif _MSVC_LANG >= 202004L
 		#define MAX_CPP_20
 	#elif _MSVC_LANG >= 201705L
