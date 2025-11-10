@@ -15,6 +15,8 @@
 #include <max/Testing/CoutResultPolicy.hpp>
 #include <max/Testing/TestSuite.hpp>
 
+#include <cstdint>
+
 namespace max {
 namespace Containers {
 namespace StateMachine {
