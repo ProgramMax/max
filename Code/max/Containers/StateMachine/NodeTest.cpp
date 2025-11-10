@@ -32,7 +32,7 @@ namespace StateMachine {
 				return size_t{2};
 			};
 
-			auto range_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher{0, 1}, std::move(range_callback)};
+			auto range_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(range_callback)};
 
 			bool string_callback_called = false;
 			auto string_callback = [&string_callback_called](const std::string_view& /*input*/) {
@@ -59,7 +59,7 @@ namespace StateMachine {
 				return 2;
 			};
 
-			auto range_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher{0, 1}, std::move(range_callback)};
+			auto range_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(range_callback)};
 
 			bool string_callback_called = false;
 			auto string_callback = [&string_callback_called](const std::string_view& /*input*/) {
@@ -86,7 +86,7 @@ namespace StateMachine {
 				return 2;
 			};
 
-			auto range_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher{0, 1}, std::move(range_callback)};
+			auto range_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(range_callback)};
 
 			bool string_callback_called = false;
 			auto string_callback = [&string_callback_called](const std::string_view& /*input*/) {

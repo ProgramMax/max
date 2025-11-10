@@ -32,7 +32,7 @@ namespace StateMachine {
 				range_callback_called = true;
 				return size_t{1};
 			};
-			auto range_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher{0, 1}, std::move(range_callback)};
+			auto range_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(range_callback)};
 			auto node_0 = max::Containers::StateMachine::MakeNode(std::move(range_transition));
 
 			bool string_callback_called = false;
