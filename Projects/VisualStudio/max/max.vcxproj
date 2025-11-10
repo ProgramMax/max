@@ -202,6 +202,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Hardware\CPU\Prefetch.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\Task.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\TaskQueue.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Hardware\CPU\TaskThread.hpp" />
     <ClInclude Include="..\..\..\Code\max\Hardware\CPU\TLB.hpp" />
     <ClInclude Include="..\..\..\Code\max\Hardware\CPU\TraceCache.hpp" />
     <ClInclude Include="..\..\..\Code\max\Logging\DoNothingLogger.hpp" />
@@ -305,6 +308,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Hardware\CPU\Prefetch.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\Task.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\TaskQueue.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Hardware\CPU\TaskThread.cpp" />
     <ClCompile Include="..\..\..\Code\max\Hardware\CPU\TLB.cpp" />
     <ClCompile Include="..\..\..\Code\max\Hardware\CPU\TraceCache.cpp" />
     <ClCompile Include="..\..\..\Code\max\Logging\DoNothingLogger.cpp" />
