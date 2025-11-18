@@ -55,7 +55,7 @@ namespace StateMachine {
 	};
 
 	template<typename... TransitionTypes>
-	Node<TransitionTypes...> MakeNode(TransitionTypes... outbound_transitions) noexcept {
+	constexpr Node<TransitionTypes...> MakeNode(TransitionTypes... outbound_transitions) noexcept {
 		return Node{std::make_tuple(std::move(outbound_transitions) ...)};
 	}
 
