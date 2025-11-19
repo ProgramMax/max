@@ -21,8 +21,8 @@ namespace StateMachine {
 			, callback_(std::move(callback))
 		{}
 
-		template<typename T>
-		constexpr std::optional<size_t> AttemptTransition(const T& input) noexcept {
+		template<typename NodeIndexType, typename T>
+		constexpr std::optional<NodeIndexType> AttemptTransition(const T& input) noexcept {
 			if (matcher_.DoesMatch(input)) {
 				return callback_(std::move(input));
 			}

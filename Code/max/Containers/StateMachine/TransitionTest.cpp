@@ -30,9 +30,11 @@ namespace StateMachine {
 				return size_t{2};
 			};
 
-			auto transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(callback)};
+			auto transition = max::Containers::StateMachine::Transition{
+				max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(callback)
+			};
 
-			auto new_node_index = transition.AttemptTransition(uint32_t{2});
+			auto new_node_index = transition.AttemptTransition<size_t>(uint32_t{2});
 
 			// TODO: This should be constexpr, right??
 			//static_assert( !callback_called, "" );
@@ -48,9 +50,11 @@ namespace StateMachine {
 				return size_t{2};
 			};
 
-			auto transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(callback)};
+			auto transition = max::Containers::StateMachine::Transition{
+				max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(callback)
+			};
 
-			auto new_node_index = transition.AttemptTransition(uint32_t{1});
+			auto new_node_index = transition.AttemptTransition<size_t>(uint32_t{1});
 
 			CurrentTest.MAX_TESTING_ASSERT( callback_called );
 			CurrentTest.MAX_TESTING_ASSERT( new_node_index == size_t{2} );
