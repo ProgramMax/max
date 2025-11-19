@@ -35,7 +35,7 @@ namespace StateMachine {
 				//if constexpr (std::is_same_v<T, decltype(arg.matcher_)::parameter_type>) {
 				if constexpr (std::is_same_v<T, decltype(arg.matcher_.value_)>) {
 					if (!transition_happened) {
-						auto possible_new_node_index = arg.AttemptTransition<NodeIndexType>(input);
+						auto possible_new_node_index = arg.template AttemptTransition<NodeIndexType>(input);
 						if (possible_new_node_index) {
 							transition_happened = true;
 							new_node_index = std::move(possible_new_node_index);
