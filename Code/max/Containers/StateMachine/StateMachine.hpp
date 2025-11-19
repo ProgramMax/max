@@ -24,8 +24,7 @@ namespace StateMachine {
 		template<typename T>
 		constexpr void AttemptTransition(T input) noexcept {
 			auto transition_happened = false;
-			auto i = size_t{0};
-			auto attempt_transition = [this, &transition_happened, &i, &input](auto&& arg) {
+			auto attempt_transition = [this, &transition_happened, &input](auto&& arg) {
 				if (!transition_happened && current_node_index_ == arg.this_node_) {
 					auto possible_new_node_index = arg.AttemptTransition(input);
 					if (possible_new_node_index) {
