@@ -25,8 +25,8 @@ namespace StateMachine {
 			, outbound_transitions_(std::move(outbound_transitions))
 		{}
 
-		template<typename NodeIndexType, typename T>
-		constexpr std::optional<NodeIndexType> AttemptTransition(const T& input) noexcept {
+		template<typename T>
+ 		constexpr std::optional<NodeIndexType> AttemptTransition(const T& input) noexcept {
 			auto transition_happened = false;
 			auto new_node_index = std::optional<NodeIndexType>{std::nullopt};
 

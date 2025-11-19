@@ -17,8 +17,8 @@ namespace StateMachine {
 	public:
 
 		constexpr explicit StateMachine(NodeIndexType starting_node, std::tuple<NodeTypes...> nodes) noexcept
-			: nodes_(std::move(nodes))
-			, current_node_index_(std::move(starting_node))
+			: current_node_index_(std::move(starting_node))
+			, nodes_(std::move(nodes))
 		{}
 
 		template<typename T>
@@ -27,7 +27,7 @@ namespace StateMachine {
 			auto i = size_t{0};
 			auto attempt_transition = [this, &transition_happened, &i, &input](auto&& arg) {
 				if (!transition_happened && current_node_index_ == arg.this_node_) {
-					auto possible_new_node_index = arg.AttemptTransition<NodeIndexType>(input);
+					auto possible_new_node_index = arg.AttemptTransition(input);
 					if (possible_new_node_index) {
 						transition_happened = true;
 						current_node_index_ = std::move(possible_new_node_index.value());
@@ -40,8 +40,8 @@ namespace StateMachine {
 			}, nodes_);
 		}
 
-		std::tuple<NodeTypes...> nodes_;
 		NodeIndexType current_node_index_;
+		std::tuple<NodeTypes...> nodes_;
 
 	};
 

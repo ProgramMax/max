@@ -32,18 +32,22 @@ namespace StateMachine {
 				range_callback_called = true;
 				return size_t{1};
 			};
-			auto range_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(range_callback)};
-			auto node_0 = max::Containers::StateMachine::MakeNode(std::move(range_transition));
+			auto range_transition = max::Containers::StateMachine::Transition{
+				max::Containers::StateMachine::RangeMatcher<uint32_t>{0, 1}, std::move(range_callback)
+			};
+			auto node_0 = max::Containers::StateMachine::MakeNode(size_t{0}, std::move(range_transition));
 
 			bool string_callback_called = false;
 			auto string_callback = [&string_callback_called](const std::string_view& /*input*/) {
 				string_callback_called = true;
 				return size_t{0};
 			};
-			auto string_transition = max::Containers::StateMachine::Transition{max::Containers::StateMachine::StringMatcher{std::string_view{"test"}}, std::move(string_callback)};
-			auto node_1 = max::Containers::StateMachine::MakeNode(std::move(string_transition));
+			auto string_transition = max::Containers::StateMachine::Transition{
+				max::Containers::StateMachine::StringMatcher{std::string_view{"test"}}, std::move(string_callback)
+			};
+			auto node_1 = max::Containers::StateMachine::MakeNode(size_t{1}, std::move(string_transition));
 
-			auto state_machine = max::Containers::StateMachine::StateMachine{std::make_tuple(std::move(node_0), std::move(node_1))};
+			auto state_machine = max::Containers::StateMachine::StateMachine{size_t{0}, std::make_tuple(std::move(node_0), std::move(node_1))};
 
 			state_machine.AttemptTransition(uint32_t{1});
 
