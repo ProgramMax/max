@@ -112,7 +112,7 @@ namespace StateMachine {
 
 			auto new_node_index = node.AttemptTransition(std::string_view{"test"});
 
-			CurrentTest.MAX_TESTING_ASSERT( new_node_index == size_t{3} );
+			CurrentTest.MAX_TESTING_ASSERT( new_node_index == 3 );
 			CurrentTest.MAX_TESTING_ASSERT( !range_callback_called );
 			CurrentTest.MAX_TESTING_ASSERT( string_callback_called );
 			}
