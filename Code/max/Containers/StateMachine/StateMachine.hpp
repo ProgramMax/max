@@ -12,13 +12,13 @@ namespace max {
 namespace Containers {
 namespace StateMachine {
 
-	template<typename... NodeTypes>
+	template<typename NodeIndexType, typename... NodeTypes>
 	class StateMachine {
 	public:
 
-		constexpr explicit StateMachine(std::tuple<NodeTypes...> nodes) noexcept
+		constexpr explicit StateMachine(NodeIndexType starting_node, std::tuple<NodeTypes...> nodes) noexcept
 			: nodes_(std::move(nodes))
-			, current_node_index_(0)
+			, current_node_index_(std::move(starting_node))
 		{}
 
 		template<typename T>
@@ -26,8 +26,8 @@ namespace StateMachine {
 			auto transition_happened = false;
 			auto i = size_t{0};
 			auto attempt_transition = [this, &transition_happened, &i, &input](auto&& arg) {
-				if (!transition_happened && current_node_index_ == i++) {
-					auto possible_new_node_index = arg.AttemptTransition(input);
+				if (!transition_happened && current_node_index_ == arg.this_node_) {
+					auto possible_new_node_index = arg.AttemptTransition<NodeIndexType>(input);
 					if (possible_new_node_index) {
 						transition_happened = true;
 						current_node_index_ = std::move(possible_new_node_index.value());
@@ -41,7 +41,7 @@ namespace StateMachine {
 		}
 
 		std::tuple<NodeTypes...> nodes_;
-		size_t current_node_index_;
+		NodeIndexType current_node_index_;
 
 	};
 
