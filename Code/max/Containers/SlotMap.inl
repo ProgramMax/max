@@ -14,7 +14,7 @@ namespace v0
 namespace Containers
 {
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	HandleType SlotMap<T, HandleType, BackingType>::push_back(T element) noexcept {
 		const auto data_size = data_.size();
 		data_.push_back(std::move(element));
@@ -36,7 +36,7 @@ namespace Containers
 		}
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	template<class ...Args>
 	HandleType SlotMap<T, HandleType, BackingType>::emplace_back(Args&&... args) noexcept {
 		// TODO: constructing the element then moving it to push_back() really defeats the purpose of an emplace_back.
@@ -44,7 +44,7 @@ namespace Containers
 		return push_back(T{ std::forward<Args>(args)... });
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	typename SlotMap<T, HandleType, BackingType>::reference SlotMap<T, HandleType, BackingType>::operator[](HandleType handle) noexcept {
 		// Assumes |handle| is within range.
 
@@ -52,7 +52,7 @@ namespace Containers
 		return data_[index];
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	typename SlotMap<T, HandleType, BackingType>::const_reference SlotMap<T, HandleType, BackingType>::operator[](HandleType handle) const noexcept {
 		// Assumes |handle| is within range.
 
@@ -60,12 +60,12 @@ namespace Containers
 		return data_[index];
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	void SlotMap<T, HandleType, BackingType>::remove(HandleType handle) noexcept {
 		remove_by_index(indices_[handle]);
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	void SlotMap<T, HandleType, BackingType>::pop_back() noexcept {
 		remove_by_index(data_.size() - 1);
 	}
@@ -73,47 +73,47 @@ namespace Containers
 
 
 	// Required to satisfy the C++ "Container" requirements
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	typename SlotMap<T, HandleType, BackingType>::iterator SlotMap<T, HandleType, BackingType>::begin() noexcept {
 		return data_.begin();
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	typename SlotMap<T, HandleType, BackingType>::const_iterator SlotMap<T, HandleType, BackingType>::begin() const noexcept {
 		return data_.begin();
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	typename SlotMap<T, HandleType, BackingType>::const_iterator SlotMap<T, HandleType, BackingType>::cbegin() const noexcept {
 		return data_.begin();
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	typename SlotMap<T, HandleType, BackingType>::iterator SlotMap<T, HandleType, BackingType>::end() noexcept {
 		return data_.end();
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	typename SlotMap<T, HandleType, BackingType>::const_iterator SlotMap<T, HandleType, BackingType>::end() const noexcept {
 		return data_.end();
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	typename SlotMap<T, HandleType, BackingType>::const_iterator SlotMap<T, HandleType, BackingType>::cend() noexcept {
 		return data_.end();
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	typename SlotMap<T, HandleType, BackingType>::size_type SlotMap<T, HandleType, BackingType>::size() const noexcept {
 		return data_.size();
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	constexpr typename SlotMap<T, HandleType, BackingType>::size_type SlotMap<T, HandleType, BackingType>::max_size() const noexcept {
 		return data_.max_size();
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	void SlotMap<T, HandleType, BackingType>::remove_by_index(size_t index) noexcept {
 		// Removing an element in the middle of a vector will cause all elements after it to shift over.
 		// Removing the final element does not have this effect.
@@ -143,19 +143,19 @@ namespace Containers
 		indices_[reverse_index] = index;
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	bool operator ==(const SlotMap<T, HandleType, BackingType>& lhs, const SlotMap<T, HandleType, BackingType>& rhs) noexcept {
 		return lhs.indices_ == rhs.indices_ &&
 			lhs.data_ == rhs.data_ &&
 			lhs.reverse_indices_ == rhs.reverse_indices_;
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	bool operator !=(const SlotMap<T, HandleType, BackingType>& lhs, const SlotMap<T, HandleType, BackingType>& rhs) noexcept {
 		return !(lhs == rhs);
 	}
 
-	template<typename T, std::integral HandleType, template <typename T2> typename BackingType>
+	template<typename T, std::integral HandleType, template <typename T2, typename Allocator> typename BackingType>
 	void swap(SlotMap<T, HandleType, BackingType>& lhs, SlotMap<T, HandleType, BackingType>& rhs) noexcept {
 		using std::swap;
 

@@ -7,6 +7,7 @@
 
 #include <algorithm>
 #include <concepts>
+#include <memory>
 #include <utility>
 #include <vector>
 
@@ -27,7 +28,7 @@ namespace Containers
 	// Access:    O(1)
 	// Removal:   O(1)
 	// *Unless the BackingType requires reallocation. Then it is O(1) amortized.
-	template<typename T, std::integral HandleType = size_t, template <typename T2> typename BackingType = std::vector>
+	template<typename T, std::integral HandleType = size_t, template <typename T2, typename Allocator = std::allocator<T2>> typename BackingType = std::vector>
 	class SlotMap {
 	public:
 
@@ -87,11 +88,11 @@ namespace Containers
 
 		void remove_by_index(size_t index) noexcept;
 
-		template<typename T3, std::integral HandleType2, template <typename T4> typename BackingType2>
+		template<typename T3, std::integral HandleType2, template <typename T4, typename Allocator> typename BackingType2>
 		friend bool operator ==(const SlotMap<T3, HandleType2, BackingType2>& lhs, const SlotMap<T3, HandleType2, BackingType2>& rhs) noexcept;
-		template<typename T3, std::integral HandleType2, template <typename T4> typename BackingType2>
+		template<typename T3, std::integral HandleType2, template <typename T4, typename Allocator> typename BackingType2>
 		friend bool operator !=(const SlotMap<T3, HandleType2, BackingType2>& lhs, const SlotMap<T3, HandleType2, BackingType2>& rhs) noexcept;
-		template<typename T3, std::integral HandleType2, template <typename T4> typename BackingType2>
+		template<typename T3, std::integral HandleType2, template <typename T4, typename Allocator> typename BackingType2>
 		friend void swap(SlotMap<T3, HandleType2, BackingType2>& lhs, SlotMap<T3, HandleType2, BackingType2>& rhs) noexcept;
 
 	};
