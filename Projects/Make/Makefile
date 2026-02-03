@@ -74,6 +74,7 @@ AUTOMATED_TEST_CXX_SRCS = \
 	../../Code/max/Containers/PointTest.cpp \
 	../../Code/max/Containers/RangeTest.cpp \
 	../../Code/max/Containers/RectangleTest.cpp \
+	../../Code/max/Containers/SlotMapTest.cpp \
 	../../Code/max/Containers/VectorTest.cpp \
 	../../Code/max/Containers/StateMachine/AnythingMatcherTest.cpp \
 	../../Code/max/Containers/StateMachine/NodeTest.cpp \
