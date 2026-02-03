@@ -49,8 +49,8 @@ namespace Containers
 		template<class ...Args>
 		HandleType emplace_back(Args&&... args) noexcept;
 
-		typename reference operator[](HandleType handle) noexcept;
-		typename const_reference operator[](HandleType handle) const noexcept;
+		reference operator[](HandleType handle) noexcept;
+		const_reference operator[](HandleType handle) const noexcept;
 
 		void remove(HandleType handle) noexcept;
 		void pop_back() noexcept;
@@ -58,22 +58,22 @@ namespace Containers
 
 
 		// Required to satisfy the C++ "Container" requirements
-		typename iterator       begin() noexcept;
-		typename const_iterator begin() const noexcept;
-		typename const_iterator cbegin() const noexcept;
-		typename iterator       end() noexcept;
-		typename const_iterator end() const noexcept;
-		typename const_iterator cend() noexcept;
+		iterator       begin() noexcept;
+		const_iterator begin() const noexcept;
+		const_iterator cbegin() const noexcept;
+		iterator       end() noexcept;
+		const_iterator end() const noexcept;
+		const_iterator cend() noexcept;
 
-		typename size_type size() const noexcept;
-		constexpr typename size_type max_size() const noexcept;
+		size_type size() const noexcept;
+		constexpr size_type max_size() const noexcept;
 
 
 
 	private:
 
 		// The indices are stable and act as handles.
-		typename BackingType<HandleType> indices_;
+		BackingType<HandleType> indices_;
 		// If we wanted to prevent a user accidently reusing a handle from an object they removed,
 		// |indices_| could be a tuple of HandleType and generation counter.
 		// Increment the generation every time an element is removed and compare against it when accessing.
@@ -82,8 +82,8 @@ namespace Containers
 		// |data_| and |reverse_indices_| are parallel. The nth element in one corresponds to the nth element in the other.
 		// This means once we have an element's index into |data_|, we can use that same index into |reverse_indices_| to find
 		// the element in |indices_| that points here.
-		typename BackingType<T> data_;
-		typename BackingType<HandleType> reverse_indices_;
+		BackingType<T> data_;
+		BackingType<HandleType> reverse_indices_;
 
 		void remove_by_index(size_t index) noexcept;
 
