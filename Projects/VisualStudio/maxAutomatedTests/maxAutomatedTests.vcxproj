@@ -25,6 +25,7 @@
     <ClCompile Include="..\..\..\Code\max\Containers\PointTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\RangeTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\RectangleTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Containers\SlotMapTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\AnythingMatcherTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\NodeTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\NumberInputTest.cpp" />
@@ -43,6 +44,7 @@
     <ClInclude Include="..\..\..\Code\max\Containers\PointTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\RangeTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\RectangleTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\SlotMapTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\AnythingMatcherTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\NodeTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\NumberInputTest.hpp" />

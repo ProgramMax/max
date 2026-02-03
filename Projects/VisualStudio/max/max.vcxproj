@@ -51,6 +51,7 @@
     <None Include="..\..\..\Code\max\Containers\Range.md" />
     <None Include="..\..\..\Code\max\Containers\Range_ctor.md" />
     <None Include="..\..\..\Code\max\Containers\Rectangle.inl" />
+    <None Include="..\..\..\Code\max\Containers\SlotMap.inl" />
     <None Include="..\..\..\Code\max\Containers\StateMachine\AnythingMatcher.inl" />
     <None Include="..\..\..\Code\max\Containers\StateMachine\EnumMatcher.inl" />
     <None Include="..\..\..\Code\max\Containers\StateMachine\NumberInput.inl" />
@@ -142,6 +143,13 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Containers\Rectangle.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\RectangleTest.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\SlotMap.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Containers\SlotMapTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
@@ -313,6 +321,12 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Containers\RectangleTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\SlotMapTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>

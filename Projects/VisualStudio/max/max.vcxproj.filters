@@ -204,6 +204,9 @@
     <None Include="..\..\..\Code\max\Containers\StateMachine\RangeMatcher.inl">
       <Filter>Code\max\Containers\StateMachine</Filter>
     </None>
+    <None Include="..\..\..\Code\max\Containers\SlotMap.inl">
+      <Filter>Code\max\Containers</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetween.hpp">
@@ -474,6 +477,12 @@
     <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\TransitionTest.hpp">
       <Filter>Code\max\Containers\StateMachine</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\SlotMap.hpp">
+      <Filter>Code\max\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\SlotMapTest.hpp">
+      <Filter>Code\max\Containers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp">
@@ -598,6 +607,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\TransitionTest.cpp">
       <Filter>Code\max\Containers\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\SlotMapTest.cpp">
+      <Filter>Code\max\Containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

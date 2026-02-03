@@ -63,6 +63,9 @@
     <ClCompile Include="..\..\..\Code\max\Containers\StateMachine\TransitionTest.cpp">
       <Filter>Containers\StateMachine</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Containers\SlotMapTest.cpp">
+      <Filter>Containers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp">
@@ -109,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Containers\StateMachine\TransitionTest.hpp">
       <Filter>Containers\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Containers\SlotMapTest.hpp">
+      <Filter>Containers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
