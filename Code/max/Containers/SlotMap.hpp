@@ -87,8 +87,11 @@ namespace Containers
 
 		void remove_by_index(size_t index) noexcept;
 
+		template<>
 		friend bool operator ==(const SlotMap<T, HandleType, BackingType>& lhs, const SlotMap<T, HandleType, BackingType>& rhs) noexcept;
+		template<>
 		friend bool operator !=(const SlotMap<T, HandleType, BackingType>& lhs, const SlotMap<T, HandleType, BackingType>& rhs) noexcept;
+		template<>
 		friend void swap(SlotMap<T, HandleType, BackingType>& lhs, SlotMap<T, HandleType, BackingType>& rhs) noexcept;
 
 	};
