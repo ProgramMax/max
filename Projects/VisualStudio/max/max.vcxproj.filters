@@ -207,6 +207,9 @@
     <None Include="..\..\..\Code\max\Containers\SlotMap.inl">
       <Filter>Code\max\Containers</Filter>
     </None>
+    <None Include="..\..\..\Code\max\Algorithms\Defer.inl">
+      <Filter>Code\max\Algorithms</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetween.hpp">
@@ -483,6 +486,12 @@
     <ClInclude Include="..\..\..\Code\max\Containers\SlotMapTest.hpp">
       <Filter>Code\max\Containers</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\Defer.hpp">
+      <Filter>Code\max\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Algorithms\DeferTest.hpp">
+      <Filter>Code\max\Algorithms</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp">
@@ -610,6 +619,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Containers\SlotMapTest.cpp">
       <Filter>Code\max\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Code\max\Algorithms\DeferTest.cpp">
+      <Filter>Code\max\Algorithms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

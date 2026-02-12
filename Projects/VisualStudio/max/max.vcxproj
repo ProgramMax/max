@@ -25,6 +25,7 @@
     <None Include="..\..\..\AUTHORS" />
     <None Include="..\..\..\Code\max\Algorithms\Branchless.inl" />
     <None Include="..\..\..\Code\max\Algorithms\CountZeroes.inl" />
+    <None Include="..\..\..\Code\max\Algorithms\Defer.inl" />
     <None Include="..\..\..\Code\max\Algorithms\IsBetween.inl" />
     <None Include="..\..\..\Code\max\Algorithms\IsBetween.md" />
     <None Include="..\..\..\Code\max\Algorithms\Math.inl" />
@@ -71,6 +72,13 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\max\Algorithms\Branchless.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroes.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\Defer.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\DeferTest.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetween.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
@@ -284,6 +292,12 @@
     <ClInclude Include="..\..\..\Code\max\Testing\TestSuite.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Code\max\Algorithms\DeferTest.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
