@@ -2,9 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+#include <max/Algorithms/CountZeroesTest.hpp>
+#include <max/Algorithms/DeferTest.hpp>
 #include <max/Algorithms/IsBetweenTest.hpp>
 #include <max/Algorithms/SwapEndianTest.hpp>
-#include <max/Algorithms/CountZeroesTest.hpp>
 #include <max/Containers/PointTest.hpp>
 #include <max/Containers/RangeTest.hpp>
 #include <max/Containers/RectangleTest.hpp>
@@ -14,6 +15,7 @@
 
 int main()
 {
+	maxAutomatedTests::Algorithms::RunDeferTestSuite();
 	maxAutomatedTests::Algorithms::RunIsBetweenTestSuite();
 	maxAutomatedTests::Algorithms::RunSwapEndianTestSuite();
 	maxAutomatedTests::Algorithms::RunCountZeroesTestSuite();

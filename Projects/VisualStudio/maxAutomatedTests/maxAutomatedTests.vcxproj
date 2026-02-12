@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\max\Algorithms\CountZeroesTest.cpp" />
+    <ClCompile Include="..\..\..\Code\max\Algorithms\DeferTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Algorithms\SwapEndianTest.cpp" />
     <ClCompile Include="..\..\..\Code\max\Containers\PointTest.cpp" />
@@ -39,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Code\max\Algorithms\CountZeroesTest.hpp" />
+    <ClInclude Include="..\..\..\Code\max\Algorithms\DeferTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\IsBetweenTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Algorithms\SwapEndianTest.hpp" />
     <ClInclude Include="..\..\..\Code\max\Containers\PointTest.hpp" />
