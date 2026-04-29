@@ -492,6 +492,9 @@
     <ClInclude Include="..\..\..\Code\max\Algorithms\DeferTest.hpp">
       <Filter>Code\max\Algorithms</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\Code\max\Testing\TestingExport.hpp">
+      <Filter>Code\max\Testing</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Code\max\Algorithms\IsBetweenTest.cpp">
