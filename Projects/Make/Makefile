@@ -69,6 +69,7 @@ AUTOMATED_TEST_PROGRAM = Build/maxAutomatedTests
 
 AUTOMATED_TEST_CXX_SRCS = \
 	../../Code/max/Algorithms/CountZeroesTest.cpp \
+	../../Code/max/Algorithms/DeferTest.cpp \
 	../../Code/max/Algorithms/IsBetweenTest.cpp \
 	../../Code/max/Algorithms/SwapEndianTest.cpp \
 	../../Code/max/Containers/PointTest.cpp \
